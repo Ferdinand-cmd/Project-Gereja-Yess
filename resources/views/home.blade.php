@@ -7,24 +7,23 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400&display=swap" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
-  <link href="css/home.css" rel="stylesheet">
+  <link href="css/film.css" rel="stylesheet">
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="z-index: 1000;">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">
-        <img src="img/{{ $profile }}" class="profile-picture" alt="Profile Picture">
         <div class="brand-text">
-          <div>YESS</div>
-          <span class="lora-font">BEST CHURCH</span>
+          <img src="img/logo_putih.png" alt="" style="width: 20%; margin-left: 10px;">
+          <div class="lora-font">BEST CHURCH</div>
         </div>
       </a>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav mx-auto text-center">
+      <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+        <ul class="navbar-nav">
           <li class="nav-item">
             <a class="nav-link active" href="/">Home</a>
           </li>
@@ -49,11 +48,13 @@
       </div>
     </div>
   </nav>
-  <div class="content" style="position: relative; z-index: 0; text-align: center;">
+<div class="content" style="position: relative; z-index: 0; text-align: center;">
     <div class="container-fluid p-0">
         <div style="position: relative; display: flex; justify-content: center; align-items: center; height: 100vh;">
             <img src="img/home_bg2.png" alt="" class="w-100" style="position: absolute; top: 0; left: 0; height: 100vh; object-fit: cover; left: 0; top: 0;">
             <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; font-size: 20px;">
+                <img src="img/logo_putih.png" alt="" style="width: 20%;">
+                <br>
                 <p>SATURDAY 17:00 WIB</p>
                 <p>BEST CHURCH, CIPUTRA WORLD MALL 2ND FLOOR</p>
                 <p>SURABAYA</p>
@@ -66,28 +67,35 @@
             </div>
         </div>
     </div>
-</div>
-<div class="container mt-5">
-    <div class="row">
-        <div class="col">
-            <div class="event-container">
-                <h3 class="text-left mb-4 upcoming-event-heading">Soon-To-Happen</h3>
-                <h2 class="text-left mb-4">Upcoming Events</h2>
-                <div class="events-carousel">
-                    <div class="event">
-                        <div class="event-inner">
-                            <div class="black-rectangle"></div>
-                            <img src="img/event.png" alt="Event 1" class="event-image" width=50%>
-                            <h3>Putus atau Terus</h3>
-                            <p>30 Maret 2024 | 16.30 WIB</p>
-                            <a href="#" class="btn btn-primary">View Details</a>
-                        </div>
-                    </div>
+    <div class="container-white">
+    <h3 class="upcoming-event-heading">Soon-To-Happen</h3>
+    <h2>Upcoming Events</h2>
+
+    <div class="film-carousel">
+        <button class="prev">&#10094;</button>
+        <div class="film-list">
+            <div class="film">
+                <div class="date-box">30 MAR</div>
+                <img src="img/event.png" alt="Film 1" style="width: 300px;">
+                <div class="film-details">
+                    <h4 style="color: white;">Title 1</h4>
+                    <p class="date-time">30 Maret 2024 | 17:00 WIB</p>
                 </div>
             </div>
+            <!-- Tambahkan film lainnya di sini -->
         </div>
+        <button class="next">&#10095;</button>
     </div>
 </div>
+
+</div>
+
+</div>
+
+
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="js/home.js"></script>
 </body>
 </html>

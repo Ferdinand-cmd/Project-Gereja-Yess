@@ -36,6 +36,7 @@ body {
   color: inherit;
 }
 
+
 .navbar-nav .nav-link {
   color: #f5f5f5;
   display: inline-block;
@@ -74,7 +75,6 @@ body {
   border-radius: 5px;
   padding: 8px 20px;
   color: #fff;
-  margin-top: 20px; /* Adjust this margin as needed */
 }
 
 .navbar-nav .login-link a:hover {
@@ -84,7 +84,7 @@ body {
 }
 
 .navbar-toggler-icon {
-  background-color: #f5f5f5;
+  background-color: #000;
 }
 
 .navbar-toggler {
@@ -111,4 +111,3 @@ body {
 .content {
   margin-top: 70px;
 }
-
