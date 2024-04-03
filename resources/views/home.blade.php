@@ -77,72 +77,9 @@
                     <div class="event">
                         <div class="event-inner">
                             <div class="black-rectangle"></div>
-                            <img src="img/event.png" alt="Event 1" class="event-image" width=30%>
-                            <h3>Event 1 Title</h3>
-                            <p>Date and Time</p>
-                            <a href="#" class="btn btn-primary">View Details</a>
-                        </div>
-                    </div>
-                    <div class="event">
-                        <div class="event-inner">
-                            <div class="black-rectangle"></div>
-                            <img src="img/event.png" alt="Event 2" class="event-image">
-                            <h3>Event 2 Title</h3>
-                            <p>Date and Time</p>
-                            <a href="#" class="btn btn-primary">View Details</a>
-                        </div>
-                    </div>
-                    <div class="event">
-                        <div class="event-inner">
-                            <div class="black-rectangle"></div>
-                            <img src="img/event.png" alt="Event 3" class="event-image">
-                            <h3>Event 3 Title</h3>
-                            <p>Date and Time</p>
-                            <a href="#" class="btn btn-primary">View Details</a>
-                        </div>
-                    </div>
-                    <div class="event">
-                        <div class="event-inner">
-                            <div class="black-rectangle"></div>
-                            <img src="img/event.png" alt="Event 4" class="event-image">
-                            <h3>Event 4 Title</h3>
-                            <p>Date and Time</p>
-                            <a href="#" class="btn btn-primary">View Details</a>
-                        </div>
-                    </div>
-                    <div class="event">
-                        <div class="event-inner">
-                            <div class="black-rectangle"></div>
-                            <img src="img/event.png" alt="Event 5" class="event-image">
-                            <h3>Event 5 Title</h3>
-                            <p>Date and Time</p>
-                            <a href="#" class="btn btn-primary">View Details</a>
-                        </div>
-                    </div>
-                    <div class="event">
-                        <div class="event-inner">
-                            <div class="black-rectangle"></div>
-                            <img src="img/event.png" alt="Event 6" class="event-image">
-                            <h3>Event 6 Title</h3>
-                            <p>Date and Time</p>
-                            <a href="#" class="btn btn-primary">View Details</a>
-                        </div>
-                    </div>
-                    <div class="event">
-                        <div class="event-inner">
-                            <div class="black-rectangle"></div>
-                            <img src="img/event.png" alt="Event 7" class="event-image">
-                            <h3>Event 7 Title</h3>
-                            <p>Date and Time</p>
-                            <a href="#" class="btn btn-primary">View Details</a>
-                        </div>
-                    </div>
-                    <div class="event">
-                        <div class="event-inner">
-                            <div class="black-rectangle"></div>
-                            <img src="img/event.png" alt="Event 8" class="event-image">
-                            <h3>Event 8 Title</h3>
-                            <p>Date and Time</p>
+                            <img src="img/event.png" alt="Event 1" class="event-image" width=50%>
+                            <h3>Putus atau Terus</h3>
+                            <p>30 Maret 2024 | 16.30 WIB</p>
                             <a href="#" class="btn btn-primary">View Details</a>
                         </div>
                     </div>
