@@ -4,6 +4,62 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>YESS.SUB | Event</title>
+  <style>
+    .events-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    
+    .event {
+        width: calc(50% - 10px); /* Adjust the width of each event */
+        margin-bottom: 20px;
+    }
+    
+    .event img {
+        max-width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    .event-details {
+        width: 100%;
+    }
+    
+    .event-title {
+        font-weight: bold;
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
+    
+    .event-subtitle {
+        font-style: italic;
+        margin-bottom: 5px;
+    }
+    
+    .event-description {
+        margin-bottom: 5px;
+    }
+    
+    .event-date {
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    .show-more-button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+        .event {
+            width: 100%; /* On smaller screens, display events in a single column */
+        }
+    }
+  </style>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400&display=swap" rel="stylesheet">
@@ -50,9 +106,84 @@
       </div>
     </div>
   </nav>
-  <div class="container">
-    <h1>Hello! Tes!</h1>
+  <div class="events-container">
+    <div class="event">
+      <img src="event-photo1.jpg" alt="Event Photo">
+      <div class="event-details">
+        <div class="event-title">Event Title 1</div>
+        <div class="event-subtitle">Event Subtitle 1</div>
+        <div class="event-description">A little bit of the event description 1</div>
+        <div class="event-date">Event Date 1</div>
+      </div>
+    </div>
+
+    <div class="event">
+      <img src="event-photo2.jpg" alt="Event Photo">
+      <div class="event-details">
+        <div class="event-title">Event Title 2</div>
+        <div class="event-subtitle">Event Subtitle 2</div>
+        <div class="event-description">A little bit of the event description 2</div>
+        <div class="event-date">Event Date 2</div>
+      </div>
+    </div>
+
+    <div class="event">
+      <img src="event-photo3.jpg" alt="Event Photo">
+      <div class="event-details">
+        <div class="event-title">Event Title 3</div>
+        <div class="event-subtitle">Event Subtitle 3</div>
+        <div class="event-description">A little bit of the event description 3</div>
+        <div class="event-date">Event Date 3</div>
+      </div>
+    </div>
+
+    <div class="event">
+      <img src="event-photo4.jpg" alt="Event Photo">
+      <div class="event-details">
+        <div class="event-title">Event Title 4</div>
+        <div class="event-subtitle">Event Subtitle 4</div>
+        <div class="event-description">A little bit of the event description 4</div>
+        <div class="event-date">Event Date 4</div>
+      </div>
+    </div>
   </div>
+
+  <button class="show-more-button" onclick="showMoreEvents()">Show More Events</button>
+
+  <script>
+      function showMoreEvents() {
+        var eventsContainer = document.querySelector('.events-container');
+        var button = document.querySelector('.show-more-button');
+
+        // Add more events below the button
+        for (var i = 0; i < 4; i++) { // Add 4 more events
+          var eventDiv = document.createElement('div');
+          eventDiv.classList.add('event');
+
+          var eventContent = `
+            <img src="event-photo${i + 5}.jpg" alt="Event Photo">
+            <div class="event-details">
+                <div class="event-title">Event Title ${i + 5}</div>
+                <div class="event-subtitle">Event Subtitle ${i + 5}</div>
+                <div class="event-description">A little bit of the event description ${i + 5}</div>
+                <div class="event-date">Event Date ${i + 5}</div>
+            </div>
+          `;
+          eventDiv.innerHTML = eventContent;
+
+          eventsContainer.appendChild(eventDiv);
+        }
+
+        // Scroll to the bottom of the newly added events
+        var eventsContainerHeight = eventsContainer.getBoundingClientRect().height;
+        var windowHeight = window.innerHeight;
+        window.scrollTo({
+          top: eventsContainerHeight - windowHeight,
+          behavior: 'smooth'
+        });
+      }
+    </script>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
