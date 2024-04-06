@@ -1,19 +1,40 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>YESS.SUB | Event</title>
-  <style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YESS.SUB | Event</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<style>
+    body {
+        background-color: #020059; /* Set the background color */
+        color: #ffffff; /* Set text color to white for better contrast */
+        padding: 20px; /* Add some padding for better readability */
+    }
+
+    .event-header {
+        font-family: 'Roboto Slab', serif; /* Set font family */
+        text-align: center; /* Center align text */
+        font-size: 3em; /* Set font size to 6.25em */
+        margin-top: 50px; /* Add some top margin for spacing */
+        color: #EEB120; /* Set color to EEB120 */
+    }
+
     .events-container {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+        margin-top: 50px; /* Add some top margin for spacing */
     }
     
     .event {
         width: calc(50% - 10px); /* Adjust the width of each event */
         margin-bottom: 20px;
+        position: relative; /* Position relative for absolute positioning of date icon */
     }
     
     .event img {
@@ -27,22 +48,39 @@
     
     .event-title {
         font-weight: bold;
-        font-size: 18px;
-        margin-bottom: 5px;
+        font-size: 2em; /* Set font size to 2em */
+        color: #EEB120; /* Set color to EEB120 */
+        font-family: 'Share Tech', sans-serif; /* Set font family */
     }
     
     .event-subtitle {
         font-style: italic;
-        margin-bottom: 5px;
+        font-size: 1.5em; /* Set font size to 1.75em */
+        color: #ffffff; /* Set color to FFFFFF */
+        font-family: 'Ropa Sans', sans-serif; /* Set font family */
     }
     
     .event-description {
         margin-bottom: 5px;
+        font-size: 1.25em; /* Set font size to 1.4em */
+        color: #ffffff; /* Set color to FFFFFF */
+        font-family: 'Roboto', sans-serif; /* Set font family */
     }
     
     .event-date {
-        font-weight: bold;
-        font-size: 16px;
+        font-weight: 600; /* Set font weight to semibold */
+        font-size: 1em; /* Set font size to 0.82em */
+        color: #ffffff; /* Set color to FFFFFF */
+        font-family: 'Roboto', sans-serif; /* Set font family */
+    }
+
+    .date-icon {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        color: #ffffff; /* Set color to FFFFFF */
+        margin-right: 5px; /* Add margin to separate icon from date */
     }
 
     .show-more-button {
@@ -59,131 +97,134 @@
             width: 100%; /* On smaller screens, display events in a single column */
         }
     }
-  </style>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400&display=swap" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet">
+</style>
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg">
+<nav class="navbar navbar-expand-lg">
     <div class="container">
-      <!-- YESS, BEST CHURCH, and Profile Picture -->
-      <a class="navbar-brand" href="#">
+    <!-- YESS, BEST CHURCH, and Profile Picture -->
+    <a class="navbar-brand" href="#">
         <img src="img/{{ $profile }}" class="profile-picture" alt="Profile Picture">
         <div class="brand-text">
-          <div>YESS</div>
-          <span class="lora-font">BEST CHURCH</span>
+        <div>YESS</div>
+        <span class="lora-font">BEST CHURCH</span>
         </div>
-      </a>
+    </a>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav mx-auto text-center"> <!-- Use text-center to center the nav items -->
-          <li class="nav-item">
+        <li class="nav-item">
             <a class="nav-link" href="/">Home</a> <!-- Added 'active' class here -->
-          </li>
-          <li class="nav-item">
+        </li>
+        <li class="nav-item">
             <a class="nav-link" href="/pelayanan">Pelayanan</a> <!-- Removed 'active' class here -->
-          </li>
-          <li class="nav-item">
+        </li>
+        <li class="nav-item">
             <a class="nav-link" href="/komsel">KomSel</a>
-          </li>
-          <li class="nav-item">
+        </li>
+        <li class="nav-item">
             <a class="nav-link" href="/bareng">Bareng</a>
-          </li>
-          <li class="nav-item">
+        </li>
+        <li class="nav-item">
             <a class="nav-link active" href="/event">Event</a>
-          </li>
+        </li>
         </ul>
         <ul class="navbar-nav login-link">
-          <li class="nav-item">
+        <li class="nav-item">
             <a class="nav-link login-link-border" href="/login">Login</a>
-          </li>
+        </li>
         </ul>
-      </div>
     </div>
-  </nav>
-  <div class="events-container">
-    <div class="event">
-      <img src="event-photo1.jpg" alt="Event Photo">
-      <div class="event-details">
+    </div>
+</nav>
+
+<div class="event-header">Event</div>
+
+<!-- Events -->
+<div class="events-container">
+<div class="event">
+    <img src="event-photo1.jpg" alt="Event Photo">
+    <div class="event-details">
         <div class="event-title">Event Title 1</div>
-        <div class="event-subtitle">Event Subtitle 1</div>
         <div class="event-description">A little bit of the event description 1</div>
-        <div class="event-date">Event Date 1</div>
-      </div>
+        <div class="event-subtitle">Event Subtitle 1</div>
+        <div class="event-date"><i class="date-icon far fa-calendar-alt"></i> Event Date 1</div>
     </div>
+</div>
 
-    <div class="event">
-      <img src="event-photo2.jpg" alt="Event Photo">
-      <div class="event-details">
+<div class="event">
+    <img src="event-photo2.jpg" alt="Event Photo">
+    <div class="event-details">
         <div class="event-title">Event Title 2</div>
-        <div class="event-subtitle">Event Subtitle 2</div>
         <div class="event-description">A little bit of the event description 2</div>
-        <div class="event-date">Event Date 2</div>
-      </div>
+        <div class="event-subtitle">Event Subtitle 2</div>
+        <div class="event-date"><i class="date-icon far fa-calendar-alt"></i> Event Date 2</div>
     </div>
+</div>
 
-    <div class="event">
-      <img src="event-photo3.jpg" alt="Event Photo">
-      <div class="event-details">
+<div class="event">
+    <img src="event-photo3.jpg" alt="Event Photo">
+    <div class="event-details">
         <div class="event-title">Event Title 3</div>
-        <div class="event-subtitle">Event Subtitle 3</div>
         <div class="event-description">A little bit of the event description 3</div>
-        <div class="event-date">Event Date 3</div>
-      </div>
+        <div class="event-subtitle">Event Subtitle 3</div>
+        <div class="event-date"><i class="date-icon far fa-calendar-alt"></i> Event Date 3</div>
     </div>
+</div>
 
-    <div class="event">
-      <img src="event-photo4.jpg" alt="Event Photo">
-      <div class="event-details">
+<div class="event">
+    <img src="event-photo4.jpg" alt="Event Photo">
+    <div class="event-details">
         <div class="event-title">Event Title 4</div>
-        <div class="event-subtitle">Event Subtitle 4</div>
         <div class="event-description">A little bit of the event description 4</div>
-        <div class="event-date">Event Date 4</div>
-      </div>
+        <div class="event-subtitle">Event Subtitle 4</div>
+        <div class="event-date"><i class="date-icon far fa-calendar-alt"></i> Event Date 4</div>
     </div>
-  </div>
+</div>
+</div>
 
-  <button class="show-more-button" onclick="showMoreEvents()">Show More Events</button>
+<button class="show-more-button" onclick="showMoreEvents()">Show More Events</button>
 
-  <script>
-      function showMoreEvents() {
-        var eventsContainer = document.querySelector('.events-container');
-        var button = document.querySelector('.show-more-button');
+<script>
+function showMoreEvents() {
+    var eventsContainer = document.querySelector('.events-container');
+    var button = document.querySelector('.show-more-button');
 
-        // Add more events below the button
-        for (var i = 0; i < 4; i++) { // Add 4 more events
-          var eventDiv = document.createElement('div');
-          eventDiv.classList.add('event');
+    // Add more events below the button
+    for (var i = 0; i < 6; i++) { // Add 6 more events
+        var eventDiv = document.createElement('div');
+        eventDiv.classList.add('event');
 
-          var eventContent = `
+        var eventContent = `
             <img src="event-photo${i + 5}.jpg" alt="Event Photo">
             <div class="event-details">
                 <div class="event-title">Event Title ${i + 5}</div>
-                <div class="event-subtitle">Event Subtitle ${i + 5}</div>
                 <div class="event-description">A little bit of the event description ${i + 5}</div>
-                <div class="event-date">Event Date ${i + 5}</div>
+                <div class="event-subtitle">Event Subtitle ${i + 5}</div>
+                <div class="event-date"><i class="date-icon far fa-calendar-alt"></i> Event Date ${i + 5}</div>
             </div>
-          `;
-          eventDiv.innerHTML = eventContent;
+        `;
+        eventDiv.innerHTML = eventContent;
 
-          eventsContainer.appendChild(eventDiv);
-        }
+        eventsContainer.appendChild(eventDiv);
+    }
 
-        // Scroll to the bottom of the newly added events
-        var eventsContainerHeight = eventsContainer.getBoundingClientRect().height;
-        var windowHeight = window.innerHeight;
-        window.scrollTo({
-          top: eventsContainerHeight - windowHeight,
-          behavior: 'smooth'
-        });
-      }
-    </script>
+    // Scroll to the bottom of the newly added events
+    var eventsContainerHeight = eventsContainer.getBoundingClientRect().height;
+    var windowHeight = window.innerHeight;
+    window.scrollTo({
+        top: eventsContainerHeight - windowHeight,
+        behavior: 'smooth'
+    });
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    // Hide the button after it's clicked
+    button.style.display = 'none';
+}
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
