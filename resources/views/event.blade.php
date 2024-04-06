@@ -8,7 +8,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 <style>
     body {
         background-color: #020059; /* Set the background color */
@@ -34,16 +33,17 @@
     .event {
         width: calc(50% - 10px); /* Adjust the width of each event */
         margin-bottom: 20px;
-        position: relative; /* Position relative for absolute positioning of date icon */
+        display: flex;
     }
     
     .event img {
-        max-width: 100%;
-        margin-bottom: 10px;
+        max-width: 250px; /* Set max-width to 250px */
+        max-height: 250px; /* Set max-height to 250px */
+        margin-right: 20px; /* Add some margin between image and event details */
     }
     
     .event-details {
-        width: 100%;
+        flex: 1; /* Fill the remaining space */
     }
     
     .event-title {
@@ -74,15 +74,6 @@
         font-family: 'Roboto', sans-serif; /* Set font family */
     }
 
-    .date-icon {
-        position: absolute;
-        top: 50%;
-        right: 0;
-        transform: translateY(-50%);
-        color: #ffffff; /* Set color to FFFFFF */
-        margin-right: 5px; /* Add margin to separate icon from date */
-    }
-
     .show-more-button {
         margin-top: 20px;
         padding: 10px 20px;
@@ -104,7 +95,7 @@
     <div class="container">
     <!-- YESS, BEST CHURCH, and Profile Picture -->
     <a class="navbar-brand" href="#">
-        <img src="img/{{ $profile }}" class="profile-picture" alt="Profile Picture">
+        <img src="img/profile.jpg" class="profile-picture" alt="Profile Picture">
         <div class="brand-text">
         <div>YESS</div>
         <span class="lora-font">BEST CHURCH</span>
@@ -146,42 +137,42 @@
 <!-- Events -->
 <div class="events-container">
 <div class="event">
-    <img src="event-photo1.jpg" alt="Event Photo">
+    <img src="img/event-photo1.jpg" alt="Event Photo">
     <div class="event-details">
         <div class="event-title">Event Title 1</div>
-        <div class="event-description">A little bit of the event description 1</div>
         <div class="event-subtitle">Event Subtitle 1</div>
-        <div class="event-date"><i class="date-icon far fa-calendar-alt"></i> Event Date 1</div>
+        <div class="event-description">A little bit of the event description 1</div>
+        <div class="event-date">Event Date 1</div>
     </div>
 </div>
 
 <div class="event">
-    <img src="event-photo2.jpg" alt="Event Photo">
+    <img src="img/event-photo2.jpg" alt="Event Photo">
     <div class="event-details">
         <div class="event-title">Event Title 2</div>
-        <div class="event-description">A little bit of the event description 2</div>
         <div class="event-subtitle">Event Subtitle 2</div>
-        <div class="event-date"><i class="date-icon far fa-calendar-alt"></i> Event Date 2</div>
+        <div class="event-description">A little bit of the event description 2</div>
+        <div class="event-date">Event Date 2</div>
     </div>
 </div>
 
 <div class="event">
-    <img src="event-photo3.jpg" alt="Event Photo">
+    <img src="img/event-photo3.jpg" alt="Event Photo">
     <div class="event-details">
         <div class="event-title">Event Title 3</div>
-        <div class="event-description">A little bit of the event description 3</div>
         <div class="event-subtitle">Event Subtitle 3</div>
-        <div class="event-date"><i class="date-icon far fa-calendar-alt"></i> Event Date 3</div>
+        <div class="event-description">A little bit of the event description 3</div>
+        <div class="event-date">Event Date 3</div>
     </div>
 </div>
 
 <div class="event">
-    <img src="event-photo4.jpg" alt="Event Photo">
+    <img src="img/event-photo4.jpg" alt="Event Photo">
     <div class="event-details">
         <div class="event-title">Event Title 4</div>
-        <div class="event-description">A little bit of the event description 4</div>
         <div class="event-subtitle">Event Subtitle 4</div>
-        <div class="event-date"><i class="date-icon far fa-calendar-alt"></i> Event Date 4</div>
+        <div class="event-description">A little bit of the event description 4</div>
+        <div class="event-date">Event Date 4</div>
     </div>
 </div>
 </div>
@@ -199,12 +190,12 @@ function showMoreEvents() {
         eventDiv.classList.add('event');
 
         var eventContent = `
-            <img src="event-photo${i + 5}.jpg" alt="Event Photo">
+            <img src="img/event-photo${i + 5}.jpg" alt="Event Photo">
             <div class="event-details">
                 <div class="event-title">Event Title ${i + 5}</div>
-                <div class="event-description">A little bit of the event description ${i + 5}</div>
                 <div class="event-subtitle">Event Subtitle ${i + 5}</div>
-                <div class="event-date"><i class="date-icon far fa-calendar-alt"></i> Event Date ${i + 5}</div>
+                <div class="event-description">A little bit of the event description ${i + 5}</div>
+                <div class="event-date">Event Date ${i + 5}</div>
             </div>
         `;
         eventDiv.innerHTML = eventContent;
