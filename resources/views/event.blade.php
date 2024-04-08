@@ -33,17 +33,16 @@
     .event {
         width: calc(50% - 10px); /* Adjust the width of each event */
         margin-bottom: 20px;
-        display: flex;
     }
     
     .event img {
         max-width: 250px; /* Set max-width to 250px */
         max-height: 250px; /* Set max-height to 250px */
-        margin-right: 20px; /* Add some margin between image and event details */
+        margin-bottom: 10px;
     }
     
     .event-details {
-        flex: 1; /* Fill the remaining space */
+        width: 100%;
     }
     
     .event-title {
@@ -72,6 +71,21 @@
         font-size: 1em; /* Set font size to 0.82em */
         color: #ffffff; /* Set color to FFFFFF */
         font-family: 'Roboto', sans-serif; /* Set font family */
+    }
+
+    .pinned-events-heading {
+        font-size: 2em; /* Set font size */
+        font-weight: bold; /* Set font weight */
+        color: #EEB120; /* Set color to EEB120 */
+        margin-bottom: 20px; /* Add some bottom margin for spacing */
+    }
+
+    .pinned-events-container {
+        margin-bottom: 50px; /* Add bottom margin to separate pinned events from others */
+    }
+
+    .other-events-container {
+        margin-top: 100px; /* Add top margin to separate other events from pinned events */
     }
 
     .show-more-button {
@@ -134,54 +148,66 @@
 
 <div class="event-header">Event</div>
 
-<!-- Events -->
-<div class="events-container">
-<div class="event">
-    <img src="img/event-photo1.jpg" alt="Event Photo">
-    <div class="event-details">
-        <div class="event-title">Event Title 1</div>
-        <div class="event-subtitle">Event Subtitle 1</div>
-        <div class="event-description">A little bit of the event description 1</div>
-        <div class="event-date">Event Date 1</div>
+<!-- Pinned Events Heading -->
+<div class="pinned-events-heading">Pinned Events</div>
+
+<!-- Pinned Events -->
+<div class="pinned-events-container">
+    <div class="events-container">
+    <div class="event">
+        <img src="event-photo1.jpg" alt="Event Photo">
+        <div class="event-details">
+            <div class="event-title">Event Title 1</div>
+            <div class="event-subtitle">Event Subtitle 1</div>
+            <div class="event-description">A little bit of the event description 1</div>
+            <div class="event-date">Event Date 1</div>
+        </div>
+    </div>
+
+    <div class="event">
+        <img src="img/event-photo2.jpg" alt="Event Photo">
+        <div class="event-details">
+            <div class="event-title">Event Title 2</div>
+            <div class="event-subtitle">Event Subtitle 2</div>
+            <div class="event-description">A little bit of the event description 2</div>
+            <div class="event-date">Event Date 2</div>
+        </div>
+    </div>
+
+    <div class="event">
+        <img src="img/event-photo3.jpg" alt="Event Photo">
+        <div class="event-details">
+            <div class="event-title">Event Title 3</div>
+            <div class="event-subtitle">Event Subtitle 3</div>
+            <div class="event-description">A little bit of the event description 3</div>
+            <div class="event-date">Event Date 3</div>
+        </div>
+    </div>
+
+    <div class="event">
+        <img src="img/event-photo4.jpg" alt="Event Photo">
+        <div class="event-details">
+            <div class="event-title">Event Title 4</div>
+            <div class="event-subtitle">Event Subtitle 4</div>
+            <div class="event-description">A little bit of the event description 4</div>
+            <div class="event-date">Event Date 4</div>
+        </div>
+    </div>
     </div>
 </div>
 
-<div class="event">
-    <img src="img/event-photo2.jpg" alt="Event Photo">
-    <div class="event-details">
-        <div class="event-title">Event Title 2</div>
-        <div class="event-subtitle">Event Subtitle 2</div>
-        <div class="event-description">A little bit of the event description 2</div>
-        <div class="event-date">Event Date 2</div>
+<!-- Other Events -->
+<div class="other-events-container">
+    <div class="events-container">
+        <!-- Other events will be added dynamically -->
     </div>
-</div>
-
-<div class="event">
-    <img src="img/event-photo3.jpg" alt="Event Photo">
-    <div class="event-details">
-        <div class="event-title">Event Title 3</div>
-        <div class="event-subtitle">Event Subtitle 3</div>
-        <div class="event-description">A little bit of the event description 3</div>
-        <div class="event-date">Event Date 3</div>
-    </div>
-</div>
-
-<div class="event">
-    <img src="img/event-photo4.jpg" alt="Event Photo">
-    <div class="event-details">
-        <div class="event-title">Event Title 4</div>
-        <div class="event-subtitle">Event Subtitle 4</div>
-        <div class="event-description">A little bit of the event description 4</div>
-        <div class="event-date">Event Date 4</div>
-    </div>
-</div>
 </div>
 
 <button class="show-more-button" onclick="showMoreEvents()">Show More Events</button>
 
 <script>
 function showMoreEvents() {
-    var eventsContainer = document.querySelector('.events-container');
+    var eventsContainer = document.querySelector('.other-events-container .events-container');
     var button = document.querySelector('.show-more-button');
 
     // Add more events below the button
