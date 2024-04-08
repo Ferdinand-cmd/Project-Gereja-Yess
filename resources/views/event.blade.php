@@ -8,68 +8,73 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@700&display=swap" rel="stylesheet">
 <style>
     body {
-        background-color: #020059; /* Set the background color */
-        color: #ffffff; /* Set text color to white for better contrast */
+        background-color: white; /* Set the background color to white */
+        color: #000000; /* Set text color to black */
         padding: 20px; /* Add some padding for better readability */
     }
 
     .event-header {
-        font-family: 'Roboto Slab', serif; /* Set font family */
-        text-align: center; /* Center align text */
-        font-size: 3em; /* Set font size to 6.25em */
+        font-family: 'Kanit', sans-serif; /* Set font family */
+        text-align: left; /* Align text to left */
+        font-size: 3em; /* Set font size to 3em */
         margin-top: 50px; /* Add some top margin for spacing */
-        color: #EEB120; /* Set color to EEB120 */
+        color: black; /* Set color to black */
+        font-weight: bold; /* Set font weight to bold */
+    }
+
+    .event-subheader {
+        font-family: 'Open Sans Hebrew', sans-serif; /* Set font family */
+        text-align: left; /* Align text to left */
+        font-size: 2em; /* Set font size to 2em */
+        margin-top: 20px; /* Add some top margin for spacing */
+        color: black; /* Set color to black */
+        font-weight: lighter; /* Set font weight to lighter */
     }
 
     .events-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
         margin-top: 50px; /* Add some top margin for spacing */
     }
     
     .event {
-        width: calc(50% - 10px); /* Adjust the width of each event */
         margin-bottom: 20px;
+        border: 1px solid #F4F4F4; /* Add border with color #F4F4F4 */
+        padding: 20px; /* Add padding */
+        background-color: #F4F4F4; /* Fill the box with color #F4F4F4 */
+    }
+
+    .event-details {
+        display: inline-block;
+        vertical-align: top;
+        margin-left: 20px;
     }
     
     .event img {
-        max-width: 250px; /* Set max-width to 250px */
-        max-height: 250px; /* Set max-height to 250px */
-        margin-bottom: 10px;
-    }
-    
-    .event-details {
-        width: 100%;
+        width: 340px; /* Set width to 340px */
+        height: 242px; /* Set height to 242px */
+        display: block;
     }
     
     .event-title {
         font-weight: bold;
         font-size: 2em; /* Set font size to 2em */
-        color: #EEB120; /* Set color to EEB120 */
-        font-family: 'Share Tech', sans-serif; /* Set font family */
-    }
-    
-    .event-subtitle {
-        font-style: italic;
-        font-size: 1.5em; /* Set font size to 1.75em */
-        color: #ffffff; /* Set color to FFFFFF */
-        font-family: 'Ropa Sans', sans-serif; /* Set font family */
-    }
-    
-    .event-description {
-        margin-bottom: 5px;
-        font-size: 1.25em; /* Set font size to 1.4em */
-        color: #ffffff; /* Set color to FFFFFF */
-        font-family: 'Roboto', sans-serif; /* Set font family */
+        color: black; /* Set color to black */
+        font-family: 'Kanit', sans-serif; /* Set font family */
     }
     
     .event-date {
-        font-weight: 600; /* Set font weight to semibold */
-        font-size: 1em; /* Set font size to 0.82em */
-        color: #ffffff; /* Set color to FFFFFF */
+        font-weight: bold; /* Set font weight to bold */
+        font-size: 1.11em; /* Set font size to 1.11em */
+        color: #646464; /* Set color to #646464 */
+        font-family: 'Roboto', sans-serif; /* Set font family */
+    }
+    
+    .event-description {
+        margin-top: 32px; /* Add top margin for spacing */
+        font-size: 1.11em; /* Set font size to 1.11em */
+        color: #646464; /* Set color to #646464 */
         font-family: 'Roboto', sans-serif; /* Set font family */
     }
 
@@ -146,7 +151,8 @@
     </div>
 </nav>
 
-<div class="event-header">Event</div>
+<div class="event-header">Upcoming Events</div>
+<div class="event-subheader">What's coming up at YESS Surabaya >>> </div>
 
 <!-- Pinned Events Heading -->
 <div class="pinned-events-heading">Pinned Events</div>
@@ -157,10 +163,10 @@
     <div class="event">
         <img src="event-photo1.jpg" alt="Event Photo">
         <div class="event-details">
-            <div class="event-title">Event Title 1</div>
-            <div class="event-subtitle">Event Subtitle 1</div>
-            <div class="event-description">A little bit of the event description 1</div>
-            <div class="event-date">Event Date 1</div>
+            <div class="event-title">Putus atau Terus</div>
+            <div class="event-date">Ciputra World Mall 2nd floor | 30 Maret 2024 | 16.30 WIB</div>
+            <div class="event-description">YESS Surabaya Valentine’s Day Celebration “Putus atau Terus”
+Ini adalah kesempatan untuk terinspirasi sebagai pasangan! juga merupakan PENGALAMAN YANG HEBAT bagi kamu ya...</div>
         </div>
     </div>
 
@@ -168,9 +174,8 @@
         <img src="img/event-photo2.jpg" alt="Event Photo">
         <div class="event-details">
             <div class="event-title">Event Title 2</div>
-            <div class="event-subtitle">Event Subtitle 2</div>
-            <div class="event-description">A little bit of the event description 2</div>
             <div class="event-date">Event Date 2</div>
+            <div class="event-description">A little bit of the event description 2</div>
         </div>
     </div>
 
@@ -178,9 +183,8 @@
         <img src="img/event-photo3.jpg" alt="Event Photo">
         <div class="event-details">
             <div class="event-title">Event Title 3</div>
-            <div class="event-subtitle">Event Subtitle 3</div>
-            <div class="event-description">A little bit of the event description 3</div>
             <div class="event-date">Event Date 3</div>
+            <div class="event-description">A little bit of the event description 3</div>
         </div>
     </div>
 
@@ -188,9 +192,8 @@
         <img src="img/event-photo4.jpg" alt="Event Photo">
         <div class="event-details">
             <div class="event-title">Event Title 4</div>
-            <div class="event-subtitle">Event Subtitle 4</div>
-            <div class="event-description">A little bit of the event description 4</div>
             <div class="event-date">Event Date 4</div>
+            <div class="event-description">A little bit of the event description 4</div>
         </div>
     </div>
     </div>
@@ -198,16 +201,14 @@
 
 <!-- Other Events -->
 <div class="other-events-container">
-    <div class="events-container">
-        <!-- Other events will be added dynamically -->
-    </div>
+    <!-- Other events will be added dynamically -->
 </div>
 
 <button class="show-more-button" onclick="showMoreEvents()">Show More Events</button>
 
 <script>
 function showMoreEvents() {
-    var eventsContainer = document.querySelector('.other-events-container .events-container');
+    var eventsContainer = document.querySelector('.other-events-container');
     var button = document.querySelector('.show-more-button');
 
     // Add more events below the button
@@ -219,9 +220,8 @@ function showMoreEvents() {
             <img src="img/event-photo${i + 5}.jpg" alt="Event Photo">
             <div class="event-details">
                 <div class="event-title">Event Title ${i + 5}</div>
-                <div class="event-subtitle">Event Subtitle ${i + 5}</div>
-                <div class="event-description">A little bit of the event description ${i + 5}</div>
                 <div class="event-date">Event Date ${i + 5}</div>
+                <div class="event-description">A little bit of the event description ${i + 5}</div>
             </div>
         `;
         eventDiv.innerHTML = eventContent;
