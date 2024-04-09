@@ -43,6 +43,7 @@
         border: 1px solid #F4F4F4; /* Add border with color #F4F4F4 */
         padding: 20px; /* Add padding */
         background-color: #F4F4F4; /* Fill the box with color #F4F4F4 */
+        position: relative; /* Set position to relative for absolute positioning of the button */
     }
 
     .event-details {
@@ -102,10 +103,16 @@
         cursor: pointer;
     }
 
-    @media (max-width: 768px) {
-        .event {
-            width: 100%; /* On smaller screens, display events in a single column */
-        }
+    .event-button {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        background-color: #EEB120;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 10px; /* Set border-radius to create rounded corners */
+        font-weight: bold;
+        cursor: pointer;
     }
 </style>
 </head>
@@ -165,36 +172,45 @@
         <div class="event-details">
             <div class="event-title">Putus atau Terus</div>
             <div class="event-date">Ciputra World Mall 2nd floor | 30 Maret 2024 | 16.30 WIB</div>
-            <div class="event-description">YESS Surabaya Valentine’s Day Celebration “Putus atau Terus”
+            <div class="event-description">YESS Surabaya Valentine's Day Celebration “Putus atau Terus”<br>
 Ini adalah kesempatan untuk terinspirasi sebagai pasangan! juga merupakan PENGALAMAN YANG HEBAT bagi kamu ya...</div>
         </div>
+        <div class="event-button">Daftar -&gt;</div>
     </div>
 
     <div class="event">
         <img src="img/event-photo2.jpg" alt="Event Photo">
         <div class="event-details">
-            <div class="event-title">Event Title 2</div>
-            <div class="event-date">Event Date 2</div>
-            <div class="event-description">A little bit of the event description 2</div>
+            <div class="event-title">YESS Leardership Mission Training VII</div>
+            <div class="event-date">Desa Birkium, Soe, Nusa Tenggara Timur | 19-21 April 2024</div>
+            <div class="event-description">Biarlah semangat misi terus menyala dalam hidup kita.<br>
+Uis Neno nokan kit, Immanuel!<br>
+Sampe ketemu di YLMT, basodara dong!</div>
         </div>
+        <div class="event-button">Daftar -&gt;</div>
     </div>
 
     <div class="event">
         <img src="img/event-photo3.jpg" alt="Event Photo">
         <div class="event-details">
-            <div class="event-title">Event Title 3</div>
-            <div class="event-date">Event Date 3</div>
-            <div class="event-description">A little bit of the event description 3</div>
+            <div class="event-title">Putus atau Terus</div>
+            <div class="event-date">Ciputra World Mall 2nd floor | 30 Maret 2024 | 16.30 WIB</div>
+            <div class="event-description">YESS Surabaya Valentine's Day Celebration “Putus atau Terus”<br>
+Ini adalah kesempatan untuk terinspirasi sebagai pasangan! juga merupakan PENGALAMAN YANG HEBAT bagi kamu ya...</div>
         </div>
+        <div class="event-button">Daftar -&gt;</div>
     </div>
 
     <div class="event">
         <img src="img/event-photo4.jpg" alt="Event Photo">
         <div class="event-details">
-            <div class="event-title">Event Title 4</div>
-            <div class="event-date">Event Date 4</div>
-            <div class="event-description">A little bit of the event description 4</div>
+            <div class="event-title">YESS Leardership Mission Training VII</div>
+            <div class="event-date">Desa Birkium, Soe, Nusa Tenggara Timur | 19-21 April 2024</div>
+            <div class="event-description">Biarlah semangat misi terus menyala dalam hidup kita.<br>
+Uis Neno nokan kit, Immanuel!<br>
+Sampe ketemu di YLMT, basodara dong!</div>
         </div>
+        <div class="event-button">Daftar -&gt;</div>
     </div>
     </div>
 </div>
@@ -223,6 +239,7 @@ function showMoreEvents() {
                 <div class="event-date">Event Date ${i + 5}</div>
                 <div class="event-description">A little bit of the event description ${i + 5}</div>
             </div>
+            <div class="event-button">Daftar -&gt;</div>
         `;
         eventDiv.innerHTML = eventContent;
 
