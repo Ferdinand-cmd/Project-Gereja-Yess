@@ -28,6 +28,7 @@
         text-align: left; /* Align text to left */
         font-size: 2em; /* Set font size to 2em */
         margin-top: 20px; /* Add some top margin for spacing */
+        margin-bottom: 20px; /* Add margin-bottom to create space between subheading and events */
         color: black; /* Set color to black */
         font-weight: lighter; /* Set font weight to lighter */
     }
@@ -87,23 +88,6 @@
         margin-bottom: 10px;
     }
 
-    .daftar-button {
-        position: absolute; /* Set absolute positioning */
-        bottom: 10px; /* Adjust bottom spacing */
-        right: 10px; /* Adjust right spacing */
-        background-color: #FFD700;
-        color: #ffffff;
-        border: none;
-        border-radius: 10px;
-        padding: 10px 20px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-    }
-
-    .daftar-button:hover {
-        background-color: #FFCC00;
-    }
-
     /* Responsive adjustments */
     @media (max-width: 1205px) {
         .event {
@@ -119,63 +103,30 @@
         .event-details {
             margin-right: 0; /* Remove right margin for event details */
         }
-
-        .daftar-button {
-            position: static; /* Change position to static for button */
-            margin-top: 20px; /* Add top margin for button */
-            align-self: center; /* Center button horizontally */
-        }
-
-
     }
 
-    .pinned-events-heading {
-        font-size: 2em; /* Set font size */
-        font-weight: bold; /* Set font weight */
-        color: #EEB120; /* Set color to EEB120 */
-        margin-bottom: 20px; /* Add some bottom margin for spacing */
+    .archived-events-container {
+        margin-bottom: 50px; /* Add bottom margin to separate archived events from other content */
     }
 
-    .pinned-events-container {
-        margin-bottom: 50px; /* Add bottom margin to separate pinned events from others */
-    }
-
-    .other-events-container {
-        margin-top: 100px; /* Add top margin to separate other events from pinned events */
-    }
-
-    /* CSS for the "Show More Events" button */
-    .show-more-button {
-        margin-top: 20px;
+    .back-to-events-button {
+        background-color: #E3E3E3;
+        color: #000000;
+        border: none;
+        border-radius: 10px;
         padding: 10px 20px;
-        background-color: #007bff; /* Blue background color */
-        color: #fff; /* White text color */
-        border: none; /* Remove border */
-        border-radius: 10px; /* Add rounded corners */
-        cursor: pointer; /* Change cursor to pointer on hover */
-        transition: background-color 0.3s ease; /* Smooth transition for background color change */
+        font-size: 1em;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
     }
 
-    /* Change button background color on hover */
-    .show-more-button:hover {
-        background-color: #0056b3; /* Darker blue on hover */
+    .back-to-events-button:hover {
+        background-color: #CCCCCC;
     }
 
-    /* CSS for the "Show Archived Events" button */
-    .show-archived-button {
-        margin-top: 20px;
-        padding: 10px 20px;
-        background-color: #FFCC00; /* Yellow background color */
-        color: #ffffff; /* White text color */
-        border: none; /* Remove border */
-        border-radius: 10px; /* Add rounded corners */
-        cursor: pointer; /* Change cursor to pointer on hover */
-        transition: background-color 0.3s ease; /* Smooth transition for background color change */
-    }
-
-    /* Change button background color on hover */
-    .show-archived-button:hover {
-        background-color: #eeb120; /* Darker yellow on hover */
+    /* Container for button */
+    .button-container {
+        margin-bottom: 20px;
     }
 </style>
 </head>
@@ -221,15 +172,17 @@
     </div>
 </nav>
 
-<div class="event-header">Upcoming Events</div>
-<div class="event-subheader">What's coming up at YESS Surabaya >>> </div>
+<!-- "Kembali ke Events" button -->
+<div class="button-container">
+    <button class="back-to-events-button" onclick="goBackToEvents()">Kembali ke Events</button>
+</div>
 
-<!-- Pinned Events Heading -->
-<div class="pinned-events-heading">Pinned Events</div>
+<div class="event-header">Archived Events</div>
+<div class="event-subheader">Explore past events at YESS Surabaya >>> </div>
 
 <!-- Pinned Events -->
-<div class="pinned-events-container">
-    <div class="event" event-id="1">
+<div class="archived-events-container">
+    <div class="event" event-id="5">
         <img src="img/event-photo1.jpg" alt="Event Photo">
         <div class="event-details">
             <div class="event-title">Putus atau Terus</div>
@@ -237,10 +190,9 @@
             <div class="event-description">YESS Surabaya Valentine's Day Celebration “Putus atau Terus”<br>
 Ini adalah kesempatan untuk terinspirasi sebagai pasangan! juga merupakan PENGALAMAN YANG HEBAT bagi kamu ya...</div>
         </div>
-        <button class="daftar-button">Daftar -></button>
     </div>
 
-    <div class="event" event-id="2">
+    <div class="event" event-id="6">
         <img src="img/event-photo2.jpg" alt="Event Photo">
         <div class="event-details">
             <div class="event-title">YESS Leardership Mission Training VII</div>
@@ -249,19 +201,8 @@ Ini adalah kesempatan untuk terinspirasi sebagai pasangan! juga merupakan PENGAL
 Uis Neno nokan kit, Immanuel!<br>
 Sampe ketemu di YLMT, basodara dong!</div>
         </div>
-        <button class="daftar-button">Daftar -></button>
     </div>
 </div>
-
-<!-- Other Events -->
-<div class="other-events-container">
-    <!-- Other events will be added dynamically -->
-</div>
-
-<button class="show-more-button" onclick="showMoreEvents()">Show More Events</button>
-
-<!-- Button to show archived events -->
-<button class="show-archived-button" onclick="showArchivedEvents()">Show Archived Events</button>
 
 <script>
     // Function to redirect to the event detail page
@@ -271,15 +212,6 @@ Sampe ketemu di YLMT, basodara dong!</div>
         
         // Redirect the user to the event detail page
         window.location.href = eventDetailURL;
-    }
-
-    // Function to handle button click and redirect to the corresponding form event page
-    function redirectToFormEvent(eventId) {
-        // Construct the URL for the form event page using the eventId
-        var formEventURL = "form-event.blade.php?id=" + eventId;
-
-        // Redirect to the form event page
-        window.location.href = formEventURL;
     }
 
     // Function to attach event listeners to event elements
@@ -293,64 +225,15 @@ Sampe ketemu di YLMT, basodara dong!</div>
                 // Redirect to the event detail page
                 redirectToEventDetail(eventId);
             });
-
-            // Add event listener to 'daftar' buttons within each event
-            event.querySelector('.daftar-button').addEventListener('click', function(event) {
-                event.stopPropagation(); // Prevent event propagation to parent elements
-
-                // Retrieve the event-id from the closest event element
-                var eventId = this.closest('.event').getAttribute('event-id');
-
-                // Redirect to the form event page
-                redirectToFormEvent(eventId);
-            });
         });
     }
 
     // Call attachEventListeners initially
     attachEventListeners();
 
-    function showMoreEvents() {
-        var eventsContainer = document.querySelector('.other-events-container');
-        var button = document.querySelector('.show-more-button');
-
-        // Add more events below the button
-        for (var i = 0; i < 2; i++) { // Add 2 more events
-            var eventId = (i + 3); // Generate unique eventId
-            var eventDiv = document.createElement('div');
-            eventDiv.classList.add('event');
-            eventDiv.setAttribute('event-id', eventId); // Set event-id attribute
-
-            var eventContent = `
-                <img src="img/event-photo${i + 3}.jpg" alt="Event Photo">
-                <div class="event-details">
-                    <div class="event-title">Event Title ${i + 3}</div>
-                    <div class="event-date">Event Date ${i + 3}</div>
-                    <div class="event-description">A little bit of the event description ${i + 3}</div>
-                </div>
-                <button class="daftar-button">Daftar -></button>
-            `;
-            eventDiv.innerHTML = eventContent;
-
-            eventsContainer.appendChild(eventDiv);
-        }
-
-        // Scroll to the position of the first newly generated event
-        var firstNewEvent = eventsContainer.querySelector('.event');
-        if (firstNewEvent) {
-            firstNewEvent.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-
-        // Attach event listeners to the newly added events
-        attachEventListeners();
-
-        // Hide the button after it's clicked
-        button.style.display = 'none';
-    }
-
-    // Function to redirect to the archived events page
-    function showArchivedEvents() {
-        window.location.href = "archived-event.blade.php"; // Redirect to archived-event.blade.php
+    // Function to go back to the events page
+    function goBackToEvents() {
+        window.location.href = "event.blade.php"; // Redirect to event.blade.php
     }
 </script>
 
