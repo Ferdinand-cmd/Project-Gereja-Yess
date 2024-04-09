@@ -2,13 +2,13 @@
     position: relative;
     z-index: 2;
     background-color: white;
+    margin-top: -50px;
     padding: 20px;
     width: 80%;
-    height: 80%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    height: 65%;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .film-carousel {
@@ -21,15 +21,29 @@
 
 .film-list {
     display: flex;
+    overflow-x: auto; /* Menambahkan scroll horizontal */
+    scroll-snap-type: x mandatory; /* Membuat scrolling lebih halus */
+    -webkit-overflow-scrolling: touch; /* Membuat scrolling lebih halus di perangkat dengan layar sentuh */
     transition: transform 0.3s ease;
 }
 
 .film {
-    flex: 0 0 300px; /* Sesuaikan ini dengan lebar gambar */
+    flex: 0 0 300px;
     text-align: center;
     position: relative;
     background-color: black;
-    border-radius: 10px; /* Atur ini sesuai dengan keinginan Anda */
+    border-radius: 10px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+
+.film-last {
+    flex: 0 0 300px;
+    text-align: center;
+    position: relative;
+    background-color: black;
+    border-radius: 10px;
+    margin-bottom: 10px;
 }
 
 .date-box {
@@ -55,4 +69,29 @@
     font-size: 12px;
     color: white;
     margin-bottom: 5px;
+}
+
+.prev {
+    position: absolute;
+    left: 0; /* Ini akan memberikan sedikit ruang dari tepi kiri */
+    z-index: 3; /* Ini akan membuat tombol muncul di depan elemen .film */
+}
+
+.next {
+    position: absolute;
+    right: 0; /* Ini akan memindahkan tombol ke tepi kanan */
+}
+
+.next, .prev {
+    background-color: #000; /* Warna latar belakang */
+    color: white; /* Warna teks */
+    border: none; /* Menghapus border */
+    padding: 15px 20px; /* Padding di dalam tombol */
+    text-align: center; /* Menengahkan teks */
+    text-decoration: none; /* Menghapus garis bawah pada teks */
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer; /* Mengubah bentuk kursor saat di-hover */
+    opacity: 0.9; /* Menambahkan tingkat transparansi 50% */
 }
