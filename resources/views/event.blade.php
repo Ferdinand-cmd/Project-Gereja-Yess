@@ -92,7 +92,7 @@
         bottom: 10px; /* Adjust bottom spacing */
         right: 10px; /* Adjust right spacing */
         background-color: #FFD700;
-        color: #ffffff;
+        color: #FFFFFF;
         border: none;
         border-radius: 10px;
         padding: 10px 20px;
