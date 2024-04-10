@@ -3,36 +3,32 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('home',[ 
-        "profile" => "profile.jpg"
-    ]);
+    return view('home');
 });
 
 Route::get('/pelayanan', function () {
-    return view('pelayanan',[ 
-        "profile" => "profile.jpg"
-    ]);
+    return view('pelayanan');
 });
 Route::get('/komsel', function () {
-    return view('komsel',[ 
-        "profile" => "profile.jpg"
-    ]);
+    return view('komsel');
 });
 
 Route::get('/bareng', function () {
-    return view('bareng',[ 
-        "profile" => "profile.jpg"
-    ]);
+    return view('bareng');
 });
 
 Route::get('/event', function () {
-    return view('event',[ 
-        "profile" => "profile.jpg"
-    ]);
+    return view('event');
 });
 
 Route::get('/login', function () {
-    return view('login',[ 
-        "profile" => "profile.jpg"
-    ]);
+    return view('login');
+});
+
+Route::get('/event', function () {
+    return view('event');
+});
+
+Route::get('/archived', function () {
+    return view('archived-event');
 });

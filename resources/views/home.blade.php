@@ -123,7 +123,7 @@
     <!-- komsel -->
     <div class="container-fluid" style="margin-top: 20px;">
         <div style="position: relative; display: flex; justify-content: center; align-items: center; height: 50vh;">
-            <img src="img/komsel2.png" alt="" style="position: absolute; top: 0; width: 100vw; height: 50vh;">
+            <img src="img/komsel.png" alt="" style="position: absolute; top: 0; width: 100vw; height: 50vh;">
             <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; font-size: 20px;">
                 <h2 style="font-family: 'Share', cursive; font-weight: bold;">Get Connected and Grow with Us</h2>
                 <h3 style="font-family: 'Ropa Sans', sans-serif;">Dimulai dari  Komunitas Sel YESS</h3>
@@ -168,8 +168,8 @@
             <div class="col-md-6" style="display: flex; flex-direction: column; justify-content: center;">
                 <h2 style="font-size: 26px; margin-bottom: 0; font-family: 'Roboto', sans-serif;">Subscribe to our YouTube channel</h2>
                 <div style="position: relative;">
-                    <p style="font-size: 150px;"><strong><em>SEE MORE</em></strong></p>
-                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: rgba(255, 255, 0, 0.5); width: 700px; height: 80px; color: black; text-align: center; font-size: 54px; font-family: 'Roboto', sans-serif; font-weight: bold;">
+                    <p style="font-size: 140px;"><strong><em>SEE MORE</em></strong></p>
+                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: rgba(255, 255, 0, 0.5); width: 650px; height: 80px; color: black; text-align: center; font-size: 54px; font-family: 'Roboto', sans-serif; font-weight: bold;">
                         <p>on YESS BEST WORLD</p>
                     </div>
                 </div>
