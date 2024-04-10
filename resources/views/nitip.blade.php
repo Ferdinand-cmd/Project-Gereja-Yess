@@ -7,7 +7,6 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@700&display=swap" rel="stylesheet">
-<link href="css/style.css" rel="stylesheet">
 <style>
     body {
         background-color: white; /* Set the background color to white */
@@ -162,45 +161,46 @@
 </style>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="z-index: 1000;">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">
+<nav class="navbar navbar-expand-lg">
+    <div class="container">
+    <!-- YESS, BEST CHURCH, and Profile Picture -->
+    <a class="navbar-brand" href="#">
+        <img src="img/profile.jpg" class="profile-picture" alt="Profile Picture">
         <div class="brand-text">
-          <img src="img/logo_putih.png" alt="" style="width: 20%; margin-left: 10px;">
-          <!-- download logo YESS PUTIH -->
-          <div class="lora-font">BEST CHURCH</div>
+        <div>YESS</div>
+        <span class="lora-font">BEST CHURCH</span>
         </div>
-      </a>
+    </a>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link " href="/">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="/pelayanan">Pelayanan</a>
-          </li>
-          <li class="nav-item">
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto text-center"> <!-- Use text-center to center the nav items -->
+        <li class="nav-item">
+            <a class="nav-link" href="/">Home</a> <!-- Added 'active' class here -->
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/pelayanan">Pelayanan</a> <!-- Removed 'active' class here -->
+        </li>
+        <li class="nav-item">
             <a class="nav-link" href="/komsel">KomSel</a>
-          </li>
-          <li class="nav-item">
+        </li>
+        <li class="nav-item">
             <a class="nav-link" href="/bareng">Bareng</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/event">Event</a>
-          </li>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="/event">Event</a>
+        </li>
         </ul>
         <ul class="navbar-nav login-link">
-          <li class="nav-item">
+        <li class="nav-item">
             <a class="nav-link login-link-border" href="/login">Login</a>
-          </li>
+        </li>
         </ul>
-      </div>
     </div>
-  </nav>
+    </div>
+</nav>
 
 <div class="event-header">Upcoming Events</div>
 <div class="event-subheader">What's coming up at YESS Surabaya >>> </div>
@@ -354,7 +354,7 @@ $events = [
 
     // Function to redirect to the archived events page
     function showArchivedEvents() {
-        window.location.href = "/archived"; // Redirect to archived-event.blade.php
+        window.location.href = "archived-event.blade.php"; // Redirect to archived-event.blade.php
     }
 </script>
 
