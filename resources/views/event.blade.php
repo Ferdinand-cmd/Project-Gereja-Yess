@@ -105,6 +105,44 @@
         background-color: #FFCC00;
     }
 
+    .modal-event-title {
+        font-weight: bold;
+        font-size: 2em;
+        color: black;
+        font-family: 'Kanit', sans-serif;
+    }
+
+    .modal-event-date {
+        font-weight: bold;
+        font-size: 1.11em;
+        color: #646464;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .form-label-daftar {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.11em;
+        font-weight: normal; /* Regular weight */
+    }
+
+    .form-label-alergi, .form-label-informasi {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.33em;
+        font-weight: medium;
+    }
+
+    .form small {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.11em;
+        font-weight: medium;
+        color: #6D6D6D;
+    }
+    
+    .form img {
+        width: auto;
+        height: 207px;
+    }
+
     /* Responsive adjustments */
     @media (max-width: 1205px) {
         .event {
@@ -212,28 +250,28 @@ $events = [
         'id' => 1,
         'title' => 'Event Title 1 Event Title 1 Event Title 1 Event Title 1 Event Title 1 Event Title 1',
         'date' => 'Event Date 1 Event Date 1 Event Date 1 Event Date 1 Event Date 1 Event Date 1',
-        'description' => 'Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1',
+        'description' => 'Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1Event Description 1', 
         'image' => 'img/event-photo1.jpg'
     ],
     [
         'id' => 2,
         'title' => 'Event Title 2 Event Title 2 Event Title 2 Event Title 2 Event Title 2 Event Title 2',
         'date' => 'Event Date 2 Event Date 2 Event Date 2 Event Date 2 Event Date 2 Event Date 2',
-        'description' => 'Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2',
+        'description' => 'Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2',
         'image' => 'img/event-photo2.jpg'
     ],
     [
         'id' => 3,
         'title' => 'Event Title 3 Event Title 3 Event Title 3 Event Title 3 Event Title 3 Event Title 3',
         'date' => 'Event Date 3 Event Date 3 Event Date 3 Event Date 3 Event Date 3 Event Date 3',
-        'description' => 'Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3',
+        'description' => 'Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3',
         'image' => 'img/event-photo3.jpg'
     ],
     [
         'id' => 4,
         'title' => 'Event Title 4 Event Title 4 Event Title 4 Event Title 4 Event Title 4 Event Title 4',
         'date' => 'Event Date 4 Event Date 4 Event Date 4 Event Date 4 Event Date 4 Event Date 4',
-        'description' => 'Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4',
+        'description' => 'Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4',
         'image' => 'img/event-photo4.jpg'
     ]
 ];
@@ -242,25 +280,37 @@ $events = [
 <!-- Pinned Events Heading -->
 <div class="pinned-events-heading">Pinned Events</div>
 
-<!-- Modal -->
 <?php foreach ($events as $event): ?>
 <div class="modal fade" id="formModal<?php echo $event['id']; ?>" tabindex="-1" aria-labelledby="formModalLabel<?php echo $event['id']; ?>" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-        <div class="modal-header">
-            <h5 class="modal-title" id="formModalLabel<?php echo $event['id']; ?>">Daftar Event</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-            <!-- Your form content goes here -->
-            <!-- You can include the form for event registration or any other relevant content -->
-            <!-- For demonstration, let's assume there's a simple message -->
-            <p>Registration form goes here...</p>
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <!-- You can include additional buttons or actions here -->
-        </div>
+            <div class="modal-header">
+                <h5 class="modal-title modal-event-title" id="formModalLabel<?php echo $event['id']; ?>"><?php echo $event['title']; ?></h5>
+                <h6 class="modal-title modal-event-location" id="formModalLabel<?php echo $event['id']; ?>"><?php echo $event['date']; ?></h6>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Your form content goes here -->
+                <label for="daftar<?php echo $event['id']; ?>" class="form-label form-label-daftar">Bagi jemaat yang ingin mendaftar dalam event YESS Surabaya silahkan mengisi form pendaftaran event dibawah ini.</label>
+                <!-- Alergi Anda -->
+                <div class="mb-3">
+                    <label for="alergi<?php echo $event['id']; ?>" class="form-label form-label-alergi">Alergi Anda (jika tidak punya, isi "-")</label>
+                    <textarea class="form-control" id="alergi<?php echo $event['id']; ?>" rows="3" placeholder="Masukkan alergi Anda jika ada"></textarea>
+                </div>
+                <!-- Informasi keluarga yang dapat dihubungi -->
+                <div class="mb-3">
+                    <label for="informasi<?php echo $event['id']; ?>" class="form-label form-label-informasi">Informasi keluarga yang dapat dihubungi</label>
+                    <textarea class="form-control" id="informasi<?php echo $event['id']; ?>" rows="3" placeholder="Masukkan nama dan nomor telepon keluarga yang dapat dihubungi"></textarea>
+                    <small>*sertakan nama dan nomor telepon aktif</small>
+                </div>
+                <!-- Image -->
+                <img src="img/form.jpg" alt="Image">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary">Submit</button>
+                <!-- You can include additional buttons or actions here -->
+            </div>
         </div>
     </div>
 </div>
