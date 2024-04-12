@@ -6,16 +6,17 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="pelayanancss.css" />
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/pelayanan.css" rel="stylesheet">
 
 </head>
 <body>
+  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="z-index: 1000;">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">
         <div class="brand-text">
           <img src="img/logo_putih.png" alt="" style="width: 20%; margin-left: 10px;">
-          <!-- download logo YESS PUTIH -->
           <div class="lora-font">BEST CHURCH</div>
         </div>
       </a>
@@ -23,10 +24,10 @@
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
-        <ul class="navbar-nav">
+      <div class="collapse navbar-collapse justify-content-between" style="text-align:center;" id="navbarNav">
+        <ul class="navbar-nav" style="margin-bottom:10px;">
           <li class="nav-item">
-            <a class="nav-link " href="/">Home</a>
+            <a class="nav-link" href="/">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link active" href="/pelayanan">Pelayanan</a>
@@ -50,22 +51,19 @@
     </div>
   </nav>
 
-
   <!-- start pelayanan -->
-<div class="content" style="position: relative; z-index: 0; text-align: center;">
+<div class="content">
     <div class="container-fluid p-0">
         <div style="position: relative; display: flex; justify-content: center; align-items: center; height: 100vh;">
-            <img src="E:\Download to E\MANPROY\home ferdi\assets\images\backgoundptop.png" alt="" class="w-100" style="position: absolute; top: 0; left: 0; height: 410px; object-fit: cover; left: 0; top: 0;">
+            <img src="img/backgoundptop.png" alt="" class="w-100" style="position: absolute; top: 0; left: 0; height: 410px; object-fit: cover; left: 0; top: 0;">
             <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; font-size: 50px;">
             <div class="text-pyess">PELAYANAN YESS</div>
             <div class="text-rindu">Rindu untuk melayani ?</div>
-                   <!-- LINK DAFTAR PELAYANANN -->
                    <button class="button-5", data-toggle="modal" data-target="#popupForm">
                     <div class="button-advanced-animations">
                       <div class="base">
                         <div class="curtain"></div>
-                        <span class="text">Daftar disini </span>
-                       
+                        <span class="text">Daftar disini </span>                 
                       </div>
                     </div></button>
                   </a>
@@ -146,7 +144,7 @@
               </div>
             </div>
             <div class="rectangle-1f">
-              <div class="rectangle-20"><div class="screenshot-21"></div></div>
+              <div class="rectangle-20"><div class="screenshot-21" style="background: url(img/c5df6ea5a38488013a1e325e2697ef8cd193853e.png) no-repeat center;"></div>
               <div class="group"></div>
               <div class="rectangle-22"><span class="usher">Usher</span></div>
               <div class="rectangle-23">
@@ -176,18 +174,18 @@
               </div>
           </div>
       </div>
-      <!-- footer -->
-      <div class="container-footer">
-        <div class="left-section">
-            <!-- Ganti "#" dengan link yang sesuai untuk masing-masing media sosial -->
-            <a href="#" target="_blank"><img src="E:\Download to E\MANPROY\home ferdi\assets\images\instagram icon.png" alt="Instagram"></a>
-            <a href="#" target="_blank"><img src="E:\Download to E\MANPROY\home ferdi\assets\images\tiktok icon.png" alt="TikTok"></a>
-            <a href="#" target="_blank"><img src="E:\Download to E\MANPROY\home ferdi\assets\images\youtube icon.png" alt="YouTube"></a>
-        </div>
-        <div class="right-section">
-          <span class="contact-us">Contact Us</span>
-          <!-- Ganti "#" dengan link WhatsApp Anda -->
-            <a href="#" target="_blank"><img src="E:\Download to E\MANPROY\home ferdi\assets\images\whatsapp icon.png" alt="WhatsApp"></a>
+<!-- Footer -->
+<div class="container-fluid" style="background-color: black; color: white;">
+        <div class="row">
+            <div class="col-md-6 d-flex justify-content-start">
+                <img src="img/ig.png" alt="Instagram">
+                <img src="img/tiktok.png" alt="TikTok">
+                <img src="img/yt.png" alt="YouTube">
+            </div>
+            <div class="col-md-6 d-flex justify-content-end">
+                <span style="font-family: 'Roboto', sans-serif; font-size: 20px; margin-top: 20px;">Contact Us</span>
+                <img src="img/wa.png" alt="WhatsApp">
+            </div>
         </div>
     </div>
     

@@ -19,13 +19,6 @@
         font-family: 'Lora', serif;
     }
     
-    .profile-picture {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        margin-right: 10px;
-    }
-    
     .brand-text {
         display: inline-block;
         margin-left: 10px;
@@ -107,6 +100,11 @@
         z-index: 1000;
     }
     
+    /* Content */
+    .content {
+        margin-top: 70px;
+    }
+
 
     /* BUAT BAGIAN AWAL yang get connected blabla */
 
@@ -347,29 +345,20 @@
         }
     }
 
-    /* Buat Bagian informasinya */
 
+
+    /* Buat Bagian informasinya */
     .awal2-2 {
         align-self: center;
         width: 100%;
-        max-width: 1269px;
     }
-    @media (max-width: 991px) {
-        .awal2-2 {
-        max-width: 100%;
-        }
-    }
+    
     .awal2-3 {
         gap: 20px;
         display: flex;
+        align-self: center;
     }
-    @media (max-width: 991px) {
-        .awal2-3 {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0px;
-        }
-    }
+    
     .column {
         display: flex;
         flex-direction: column;
@@ -377,11 +366,7 @@
         width: 50%;
         margin-left: 18px;
     }
-    @media (max-width: 991px) {
-        .column {
-        width: 100%;
-        }
-    }
+    
     .awal2-4 {
         display: flex;
         margin-top: 12px;
@@ -391,25 +376,16 @@
         line-height: 50px;
         padding: 0 20px;
     }
-    @media (max-width: 991px) {
-        .awal2-4 {
-        max-width: 100%;
-        margin-top: 25px;
-        }
-    }
+    
     .awal2-5 {
         font: 32px 'Montserrat', sans-serif;
     }
-    @media (max-width: 991px) {
-        .awal2-5 {
-        max-width: 100%;
-        }
-    }
+    
     .awal2-6 {
         margin-top: 49px;
         font: 22px 'Montserrat', sans-serif;
     }
-
+    
     .awal2-6-2 {
         margin-top: 15px;
         padding: 10px;
@@ -417,40 +393,23 @@
         border: 2px solid #fff;
         font: 20px 'Montserrat', sans-serif;
     }
-
-    @media (max-width: 991px) {
-        .awal2-6 .awal2-6-2{
-        max-width: 100%;
-        margin-top: 40px;
-        }
-    }
-
+    
     .awal2-img {
         aspect-ratio: 1.06;
         object-fit: auto;
-        object-position:center;
+        object-position: center;
         width: 100%;
         z-index: 10;
         margin-top: 30px;
     }
-    @media (max-width: 991px) {
-        .awal2-img {
-        max-width: 100%;
-        margin-top: 40px;
-        }
-    }
+    
     .awal2-7 {
         margin-top: -32px;
         z-index: 10;
         margin-left: -15px;
         font: 900 54px 'Roboto Serif', sans-serif;
     }
-    @media (max-width: 991px) {
-        .awal2-7 {
-        max-width: 100%;
-        font-size: 40px;
-        }
-    }
+    
     .column-2 {
         display: flex;
         flex-direction: column;
@@ -458,33 +417,20 @@
         width: 46%;
         margin-left: -25px;
     }
-    @media (max-width: 991px) {
-        .column-2 {
-        width: 100%;
-        }
-    }
+    
     .awal2-8 {
         display: flex;
         flex-grow: 1;
         flex-direction: column;
     }
-    @media (max-width: 991px) {
-        .awal2-8 {
-        max-width: 100%;
-        margin-top: 13px;
-        }
-    }
+    
     .awal2-img-2 {
         aspect-ratio: 1.01;
         object-fit: auto;
         object-position: center;
         width: 100%;
     }
-    @media (max-width: 991px) {
-        .awal2-img-2 {
-        max-width: 100%;
-        }
-    }
+    
     .awal2-img-3 {
         aspect-ratio: 1.03;
         object-fit: auto;
@@ -492,8 +438,126 @@
         width: 100%;
         margin-top: 22px;
     }
-    @media (max-width: 991px) {
+    
+    /* For screens up to 620px */
+    @media (max-width: 620px) {
+        .awal2-2,
+        .awal2-3,
+        .column,
+        .awal2-4,
+        .awal2-5,
+        .awal2-6,
+        .awal2-6-2,
+        .awal2-img,
+        .awal2-7,
+        .column-2,
+        .awal2-8,
+        .awal2-img-2,
         .awal2-img-3 {
-        max-width: 100%;
+            width: 100%;
+            margin-left: 0;
         }
+    
+        .awal2-3 {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 0px;
+        }
+    
+        .awal2-4 {
+            max-width: 100%;
+            margin-top: 25px;
+        }
+    
+        .awal2-5 {
+            max-width: 100%;
+        }
+    
+        .awal2-6 .awal2-6-2 {
+            max-width: 100%;
+            margin-top: 40px;
+        }
+    
+        .awal2-img,
+        .awal2-img-2,
+        .awal2-img-3 {
+            max-width: 100%;
+            margin-top: 40px;
+        }
+    
+        .awal2-7 {
+            max-width: 100%;
+            font-size: 40px;
+        }
+    
+        .awal2-8 {
+            max-width: 100%;
+            margin-top: 13px;
+        }
+    }
+
+
+    
+    .footer1 {
+        border-radius: 40px 40px 0px 0px;
+        background-color: #000;
+        display: flex;
+        margin-top: 81px;
+        width: 100%;
+        gap: 20px;
+        justify-content: space-between;
+        padding: 36px 52px;
+    }
+    @media (max-width: 991px) {
+        .footer1 {
+        max-width: 100%;
+        flex-wrap: wrap;
+        margin-top: 40px;
+        padding: 0 20px;
+        }
+    }
+    .footer2 {
+        display: flex;
+        gap: 20px;
+        justify-content: space-between;
+    }
+    .img-4 {
+        aspect-ratio: 1;
+        object-fit: auto;
+        object-position: center;
+        width: 50px;
+    }
+    .img-5 {
+        aspect-ratio: 1;
+        object-fit: auto;
+        object-position: center;
+        width: 50px;
+    }
+    .img-6 {
+        aspect-ratio: 1;
+        object-fit: auto;
+        object-position: center;
+        width: 50px;
+    }
+    .footer3 {
+        align-self: start;
+        display: flex;
+        gap: 20px;
+        font-size: 32px;
+        color: #fff;
+        font-weight: 500;
+        line-height: 141%;
+    }
+    .footer4 {
+        font-family: 'Roboto', sans-serif;
+        flex-grow: 1;
+        font-size: 24px;
+        flex-basis: auto;
+        margin: auto 0;
+    }
+    .img-7 {
+        aspect-ratio: 1;
+        object-fit: auto;
+        object-position: center;
+        width: 50px;
     }

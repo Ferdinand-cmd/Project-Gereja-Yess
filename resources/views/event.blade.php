@@ -200,7 +200,7 @@
             <a class="nav-link " href="/">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="/pelayanan">Pelayanan</a>
+            <a class="nav-link" href="/pelayanan">Pelayanan</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/komsel">KomSel</a>
@@ -209,7 +209,7 @@
             <a class="nav-link" href="/bareng">Bareng</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/event">Event</a>
+            <a class="nav-link active" href="/event">Event</a>
           </li>
         </ul>
         <ul class="navbar-nav login-link">
@@ -262,6 +262,21 @@ Sampe ketemu di YLMT, basodara dong!</div>
 
 <!-- Button to show archived events -->
 <button class="show-archived-button" onclick="showArchivedEvents()">Show Archived Events</button>
+
+<!-- Footer -->
+<div class="container-fluid" style="background-color: black; color: white; border-radius: 30px 30px 0 0;">
+        <div class="row">
+            <div class="col-md-6 d-flex justify-content-start">
+                <img src="img/ig.png" alt="Instagram">
+                <img src="img/tiktok.png" alt="TikTok">
+                <img src="img/yt.png" alt="YouTube">
+            </div>
+            <div class="col-md-6 d-flex justify-content-end">
+                <span style="font-family: 'Roboto', sans-serif; font-size: 20px; margin-top: 20px;">Contact Us</span>
+                <img src="img/wa.png" alt="WhatsApp">
+            </div>
+        </div>
+    </div>
 
 <script>
     // Function to redirect to the event detail page

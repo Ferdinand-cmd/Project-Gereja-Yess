@@ -25,10 +25,18 @@ Route::get('/login', function () {
     return view('login');
 });
 
-Route::get('/event', function () {
-    return view('event');
+Route::get('/detail', function () {
+    return view('event-detail');
 });
 
 Route::get('/archived', function () {
-    return view('archived-event');
+    return view('event-archieved');
+});
+
+Route::get('/home-admin', function () {
+    return view('home-admin');
+});
+
+Route::get('/pelayanan-admin', function () {
+    return view('pelayanan-admin');
 });

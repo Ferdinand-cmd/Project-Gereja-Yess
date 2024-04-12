@@ -1,137 +1,3 @@
-/* Base styles */
-body {
-    background-color: #ffffff;
-  }
-  
-  /* Navbar styles */
-  .navbar {
-    background-color: #000 !important;
-  }
-  
-  .navbar-brand {
-    font-family: 'Libre Franklin', sans-serif;
-    color: #f5f5f5 !important;
-    display: flex;
-    align-items: center;
-  }
-
-  @media screen and (max-width: 768px) {
-    .navbar-brand {
-        font-size: 18px; /* Atur ukuran font lebih kecil untuk layar kecil */
-    }
-}
-.navbar-nav .nav-item {
-  margin-right: 10px; /* Atur jarak antar item menu */
-}
-
-/* Tambahkan properti untuk membuat konten responsif */
-.content {
-  margin-top: 70px;
-  position: relative;}
-
-.navbar-toggler-icon {
-  background-color: #fff; /* Ganti warna ikon hamburger */
-}
-
-  
-  .lora-font {
-    font-family: 'lora', serif;
-  }
-  
-  .profile-picture {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin-right: 10px;
-  }
-  
-  .brand-text {
-    display: inline-block;
-    margin-left: 10px;
-    color: #f5f5f5;
-  }
-  
-  .brand-text span {
-    color: inherit;
-  }
-  
-  
-  .navbar-nav .nav-link {
-    color: #f5f5f5;
-    display: inline-block;
-    position: relative;
-    font-family: 'Montserrat', sans-serif;
-  }
-  
-  .navbar-nav .nav-link:not(.login-link-border):after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: #EEB120;
-    transition: all 0.3s ease;
-    opacity: 0;
-  }
-  
-  .navbar-nav .nav-link:not(.login-link-border):hover:after {
-    opacity: 1;
-  }
-  
-  .navbar-nav .nav-link:not(.login-link-border).active:after {
-    opacity: 1;
-  }
-  
-  .navbar-nav .nav-link.active,
-  .navbar-nav .nav-link:focus,
-  .navbar-nav .nav-link:hover {
-    color: #EEB120;
-  }
-  
-  .navbar-nav .login-link a {
-    border: 1px solid #fff;
-    border-radius: 5px;
-    padding: 8px 20px;
-    color: #fff;
-  }
-  
-  .navbar-nav .login-link a:hover {
-    background-color: #fff;
-    color: #000;
-    border-color: #000;
-  }
-  
-  .navbar-toggler-icon {
-    background-color: #000;
-  }
-  
-  .navbar-toggler {
-    border-color: #f5f5f5;
-  }
-  
-  .login-link-border {
-    border: 1px solid #fff;
-    padding: 8px 20px;
-  }
-  
-  .navbar-nav .nav-item {
-    margin-right: 20px;
-  }
-  
-  .navbar.fixed-top {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-  }
-
-  /* Content */
-  .content {
-    margin-top: 70px;
-    position: relative;
-  }
-
   .text-pyess {
     display: flex;
     align-items: center;
@@ -232,7 +98,12 @@ body {
   .base:hover, .text:hover {
     background-color: #ffffff; /* Warna latar saat di-hover */
     color: #000000; /* Warna teks saat di-hover */
-    }
+  }
+
+  .base:hover .text {
+    color: #000000; /* Warna teks saat .base di-hover */
+}
+
     
   /* penjelasan pelayanan */
   
@@ -330,7 +201,7 @@ body {
     width: 75.84px;
     height: 79px;
     margin: 18px 0 0 64px;
-    background: url(./assets/images/4367064e-f35e-42cd-9555-e8b49597120b.png)
+    background: url(img/4367064e-f35e-42cd-9555-e8b49597120b.png)
       no-repeat center;
     background-size: cover;
     z-index: 50;
@@ -388,7 +259,7 @@ body {
     width: 98px;
     height: 83px;
     margin: 11px 0 0 46px;
-    background: url(./assets/images/ddfa98d25877cc0f154fb8fc55608ad5292b0c87.png)
+    background: url(img/ddfa98d25877cc0f154fb8fc55608ad5292b0c87.png)
       no-repeat center;
     background-size: cover;
     z-index: 83;
@@ -498,7 +369,7 @@ body {
     width: 132px;
     height: 97px;
     margin: 6px 0 0 35px;
-    background: url(./assets/images/aeced016-b937-4423-8492-589228a295a2.png)
+    background: url(img/aeced016-b937-4423-8492-589228a295a2.png)
       no-repeat center;
     background-size: cover;
     z-index: 72;
@@ -581,7 +452,7 @@ body {
     width: 142px;
     height: 109px;
     margin: 4px 0 0 38px;
-    background: url(./assets/images/e3409f52-7f30-41e2-ac08-6fed226e9f66.png)
+    background: url(img/e3409f52-7f30-41e2-ac08-6fed226e9f66.png)
       no-repeat center;
     background-size: cover;
     z-index: 64;
@@ -665,7 +536,7 @@ body {
     width: 111px;
     height: 112px;
     margin: 7px 0 0 47px;
-    background: url(./assets/images/4e4a699c-934e-4ac3-8ff4-79c092097ee8.png)
+    background: url(img/4e4a699c-934e-4ac3-8ff4-79c092097ee8.png)
       no-repeat center;
     background-size: cover;
     z-index: 56;
@@ -723,8 +594,6 @@ body {
     width: 77px;
     height: 91px;
     margin: 13px 0 0 58px;
-    background: url(./assets/images/c5df6ea5a38488013a1e325e2697ef8cd193853e.png)
-      no-repeat center;
     background-size: cover;
     z-index: 91;
   }
@@ -734,7 +603,7 @@ body {
     height: 219px;
     top: 13px;
     left: 63px;
-    background: url(./assets/images/fca2789c-dd29-421f-99de-3a221aa51b76.png)
+    background: url(img/fca2789c-dd29-421f-99de-3a221aa51b76.png)
       no-repeat center;
     background-size: cover;
     z-index: 10;

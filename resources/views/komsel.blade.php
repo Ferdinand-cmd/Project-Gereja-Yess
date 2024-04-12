@@ -26,7 +26,7 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav" style="margin-bottom:10px;">
         <li class="nav-item">
             <a class="nav-link" href="/">Home</a>
         </li>
@@ -53,9 +53,8 @@
 </nav>
 
 <body>
-    <br>
-    <br>
-    <div class="awal">
+    <div class="container">
+    <div class="awal" style="margin-top: 20px;">
         <div class="awal-2">
             <img
                 loading="lazy"
@@ -69,12 +68,11 @@
         </div>
         <button class="button button1" id = "butt1" onclick="myFunction()" >Daftar Disini</button>
         
-        <!-- Form -->
         <div id="myForm">
-            <div class = "awalForm">
-                <div class = "form1">Want to Join Us?</div>
-                <div class = "form2">Fill out form below and our team will reach out to you!</div>
-        </div>
+                <div class = "awalForm">
+                    <div class = "form1">Want to Join Us?</div>
+                    <div class = "form2">Fill out form below and our team will reach out to you!</div>
+                </div>
                 <div class="awal-2-Form">
                     <form action="#">
                     <div class="main-user-info">
@@ -123,9 +121,9 @@
                             <input type="submit" value="Register">
                         </div>
                     </form>
+                    </div>
                 </div>
-            </div>
-        </div>
+        </div> 
     
         <br>
         <br>
@@ -133,48 +131,46 @@
         <br>
         <br>
 
-        <div class="container-fluid" style="align: center;">
-          <div class="row">
-              <div class="awal2-2">
-                <div class="awal2-3">
-                    <div class="col-sm-6">
-                    <div class="awal2-4">
-                        <div class="awal2-5">
-                        Find a group where you can grow in your faith, get encouraged, and
-                        create community.
-                        </div>
-                        <div class="awal2-6">
-                        Every Tuesday at 19.00 WIB </div>
-                        <div class="awal2-6-2">
-                        Surabaya Timur | Surabaya Barat | Surabaya Selatan
-                        </div>
-                        <img
-                        loading="lazy"
-                        srcset="img/komsel2.png"
-                        class="awal2-img"
-                        />
-                        <div class="awal2-7">
-                        Discover our cell group, enhance your spiritual journey with us.
-                        </div>
-                    </div>
-                    </div>
-                    <div class="col-sm-6">
-                    <div class="awal2-8">
-                        <img
-                        loading="lazy"
-                        srcset="img/komsel1.png"
-                        class="awal2-img-2"
-                        />
-                        <img
-                        loading="lazy"
-                        srcset="img/komsel3.png"
-                        class="awal2-img-3"
-                        />
-                    </div>
-                    </div>
+        <!-- code buat informasi dll -->
+
+        <div class="awal2-2">
+        <div class="awal2-3">
+            <div class="column">
+            <div class="awal2-4">
+                <div class="awal2-5">
+                Find a group where you can grow in your faith, get encouraged, and
+                create community.
                 </div>
-              </div>
-          </div>
+                <div class="awal2-6">
+                Every Tuesday at 19.00 WIB </div>
+                <div class="awal2-6-2">
+                Surabaya Timur | Surabaya Barat | Surabaya Selatan
+                </div>
+                <img
+                loading="lazy"
+                srcset="img/komsel2.png"
+                class="awal2-img"
+                />
+                <div class="awal2-7">
+                Discover our cell group, enhance your spiritual journey with us.
+                </div>
+            </div>
+            </div>
+            <div class="column-2">
+            <div class="awal2-8">
+                <img
+                loading="lazy"
+                srcset="img/komsel1.png"
+                class="awal2-img-2"
+                />
+                <img
+                loading="lazy"
+                srcset="img/komsel3.png"
+                class="awal2-img-3"
+                />
+            </div>
+            </div>
+        </div>
         </div>
 
         <!-- Footer -->
@@ -191,8 +187,12 @@
                 </div>
             </div>
         </div>
-  </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="js/komsel.js"></script> 
+
+    </div>
+    </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="js/komsel.js"></script> 
+
 </body>
 </html>
