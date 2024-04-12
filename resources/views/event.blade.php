@@ -9,6 +9,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@700&display=swap" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400&display=swap');
+
     body {
         background-color: white; /* Set the background color to white */
         color: #000000; /* Set text color to black */
@@ -105,18 +107,28 @@
         background-color: #FFCC00;
     }
 
-    .modal-event-title {
-        font-weight: bold;
-        font-size: 2em;
-        color: black;
-        font-family: 'Kanit', sans-serif;
+    .modal-header {
+        background-color: #F4F4F4;
+        padding: 20px; /* Add padding to create space */
     }
 
-    .modal-event-date {
+    .modal-event-title {
         font-weight: bold;
-        font-size: 1.11em;
-        color: #646464;
-        font-family: 'Roboto', sans-serif;
+        font-size: 1.5em;
+        color: black;
+        font-family: 'Kanit', sans-serif;
+        word-wrap: break-word; /* Allow long words to break and wrap */
+    }
+
+    .modal-body {
+        background-color: #f2f2f2;
+        padding: 0 60px; /* Add 60px padding on the left and right sides */
+    }
+
+    /* Form */
+    .modal-custom-width {
+        max-width: 982px;
+        width: 100%;
     }
 
     .form-label-daftar {
@@ -131,16 +143,90 @@
         font-weight: medium;
     }
 
-    .form small {
+    .modal-body small {
         font-family: 'Montserrat', sans-serif;
         font-size: 1.11em;
         font-weight: medium;
         color: #6D6D6D;
     }
     
-    .form img {
-        width: auto;
-        height: 207px;
+    .modal-body img {
+        max-width: 100%; /* Ensure the image does not exceed the modal's width */
+        height: auto; /* Maintain the aspect ratio of the image */
+    }
+
+    .image-container {
+        position: relative; /* Set position to relative */
+    }
+
+    .image-text-container {
+        position: absolute; /* Set position to absolute */
+        top: 50%; /* Align to the vertical center */
+        left: 50%; /* Align to the horizontal center */
+        transform: translate(-50%, -50%); /* Center the text */
+        text-align: center; /* Center align the text */
+        width: 90%; /* Set the width to 80% of its container */
+    }
+
+    .image-text-1 {
+        font-family: 'Roboto Slab', serif; /* Use Roboto Slab font */
+        font-weight: bold;
+        font-size: 1.77em;
+        color: white;
+        width: 100%; /* Set the width to 100% */
+        margin: 0 auto; /* Center the element horizontally */
+        text-align: center; /* Center the text horizontally */
+        display: flex; /* Use flexbox */
+        justify-content: center; /* Center the content horizontally */
+        align-items: center; /* Center the content vertically */
+        padding: 20px; /* Increase padding to provide more space around the text */
+        box-sizing: border-box; /* Include padding in the width calculation */
+    }
+
+    .image-text-2 {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.83em;
+        color: white;
+    }
+
+    .image-container img {
+        width: 100%; /* Ensure the image fills its container */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+
+    .modal-footer {
+        background-color: #a2a2a2;
+    }
+
+    /* CSS for cancel button */
+    .btn-cancel {
+        background-color: #ffffff; /* White background */
+        color: #000000; /* Black text color */
+        font-family: 'DM Sans', sans-serif;
+        font-size: 1.11em;
+        font-weight: bold; /* Bold weight */
+        width: 150px; /* Set width to 150px */
+    }
+
+    /* Hover effect for cancel button */
+    .btn-cancel:hover {
+        background-color: #eeeeee; /* Light gray background on hover */
+    }
+
+    /* CSS for submit button */
+    .btn-submit {
+        background-color: #000000; /* Black background */
+        color: #ffffff; /* White text color */
+        font-family: 'DM Sans', sans-serif;
+        font-size: 1.11em;
+        font-weight: bold; /* Bold weight */
+        width: 150px; /* Set width to 150px */
+    }
+
+    /* Hover effect for submit button */
+    .btn-submit:hover {
+        background-color: #333333; /* Darker gray background on hover */
     }
 
     /* Responsive adjustments */
@@ -248,8 +334,8 @@
 $events = [
     [
         'id' => 1,
-        'title' => 'Event Title 1 Event Title 1 Event Title 1 Event Title 1 Event Title 1 Event Title 1',
-        'date' => 'Event Date 1 Event Date 1 Event Date 1 Event Date 1 Event Date 1 Event Date 1',
+        'title' => 'Event Title 1 Event Title 1',
+        'date' => 'Event Date 1 Event Date 1',
         'description' => 'Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1Event Description 1', 
         'image' => 'img/event-photo1.jpg'
     ],
@@ -280,13 +366,13 @@ $events = [
 <!-- Pinned Events Heading -->
 <div class="pinned-events-heading">Pinned Events</div>
 
+<!-- Modal -->
 <?php foreach ($events as $event): ?>
 <div class="modal fade" id="formModal<?php echo $event['id']; ?>" tabindex="-1" aria-labelledby="formModalLabel<?php echo $event['id']; ?>" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-dialog-centered modal-custom-width">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title modal-event-title" id="formModalLabel<?php echo $event['id']; ?>"><?php echo $event['title']; ?></h5>
-                <h6 class="modal-title modal-event-location" id="formModalLabel<?php echo $event['id']; ?>"><?php echo $event['date']; ?></h6>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -303,12 +389,17 @@ $events = [
                     <textarea class="form-control" id="informasi<?php echo $event['id']; ?>" rows="3" placeholder="Masukkan nama dan nomor telepon keluarga yang dapat dihubungi"></textarea>
                     <small>*sertakan nama dan nomor telepon aktif</small>
                 </div>
-                <!-- Image -->
-                <img src="img/form.jpg" alt="Image">
+                <div class="image-container">
+                    <div class="image-text-container">
+                        <p class="image-text-1">Cari circle rohani yang sehat dan bikin semangat?</p>
+                        <p class="image-text-2">YUK SINI MERAPAT!</p>
+                    </div>
+                    <img src="img/form.jpg" alt="Image">
+                </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-primary">Submit</button>
+            <button type="button" class="btn btn-cancel" data-bs-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-submit">Submit</button>
                 <!-- You can include additional buttons or actions here -->
             </div>
         </div>
@@ -326,7 +417,7 @@ $events = [
             <div class="event-date"><?php echo $events[0]['date']; ?></div>
             <div class="event-description"><?php echo $events[0]['description']; ?></div>
         </div>
-        <button class="daftar-button" data-bs-toggle="modal" data-bs-target="#formModal1" onclick="openFormModal(<?php echo $events[0]['id']; ?>)">Daftar -></button>
+        <button class="daftar-button" data-bs-toggle="modal" data-bs-target="#formModal<?php echo $events[0]['id']; ?>" onclick="openFormModal(<?php echo $events[0]['id']; ?>)">Daftar -></button>
     </div>
 
     <!-- Event 2 -->
@@ -337,7 +428,7 @@ $events = [
             <div class="event-date"><?php echo $events[1]['date']; ?></div>
             <div class="event-description"><?php echo $events[1]['description']; ?></div>
         </div>
-        <button class="daftar-button" data-bs-toggle="modal" data-bs-target="#formModal2" onclick="openFormModal(<?php echo $events[1]['id']; ?>)">Daftar -></button>
+        <button class="daftar-button" data-bs-toggle="modal" data-bs-target="#formModal<?php echo $events[1]['id']; ?>" onclick="openFormModal(<?php echo $events[1]['id']; ?>)">Daftar -></button>
     </div>
 </div>
 
@@ -351,7 +442,7 @@ $events = [
             <div class="event-date"><?php echo $events[2]['date']; ?></div>
             <div class="event-description"><?php echo $events[2]['description']; ?></div>
         </div>
-        <button class="daftar-button" data-bs-toggle="modal" data-bs-target="#formModal3" onclick="openFormModal(<?php echo $events[2]['id']; ?>)">Daftar -></button>
+        <button class="daftar-button" data-bs-toggle="modal" data-bs-target="#formModal<?php echo $events[2]['id']; ?>" onclick="openFormModal(<?php echo $events[2]['id']; ?>)">Daftar -></button>
     </div>
 
     <!-- Event 4 -->
@@ -362,7 +453,7 @@ $events = [
             <div class="event-date"><?php echo $events[3]['date']; ?></div>
             <div class="event-description"><?php echo $events[3]['description']; ?></div>
         </div>
-        <button class="daftar-button" data-bs-toggle="modal" data-bs-target="#formModal4" onclick="openFormModal(<?php echo $events[3]['id']; ?>)">Daftar -></button>
+        <button class="daftar-button" data-bs-toggle="modal" data-bs-target="#formModal<?php echo $events[3]['id']; ?>" onclick="openFormModal(<?php echo $events[3]['id']; ?>)">Daftar -></button>
     </div>
 </div>
 
