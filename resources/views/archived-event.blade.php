@@ -19,7 +19,7 @@
         font-family: 'Kanit', sans-serif; /* Set font family */
         text-align: left; /* Align text to left */
         font-size: 3em; /* Set font size to 3em */
-        margin-top: 50px; /* Add some top margin for spacing */
+        margin-top: 20px; /* Add some top margin for spacing */
         color: black; /* Set color to black */
         font-weight: bold; /* Set font weight to bold */
     }
@@ -29,7 +29,6 @@
         text-align: left; /* Align text to left */
         font-size: 2em; /* Set font size to 2em */
         margin-top: 20px; /* Add some top margin for spacing */
-        margin-bottom: 20px; /* Add margin-bottom to create space between subheading and events */
         color: black; /* Set color to black */
         font-weight: lighter; /* Set font weight to lighter */
     }
@@ -106,8 +105,22 @@
         }
     }
 
+    .archived-events-heading {
+        font-size: 2em; /* Set font size */
+        font-weight: bold; /* Set font weight */
+        color: #EEB120; /* Set color to EEB120 */
+        margin-bottom: 20px; /* Add some bottom margin for spacing */
+    }
+
     .archived-events-container {
-        margin-bottom: 50px; /* Add bottom margin to separate archived events from other content */
+        margin-top: 20px;
+        margin-bottom: 50px; /* Add bottom margin to separate pinned events from others */
+    }
+
+    /* Container for button */
+    .button-container {
+        margin-top: 90px;
+        margin-bottom: 20px;
     }
 
     .back-to-events-button {
@@ -124,119 +137,129 @@
     .back-to-events-button:hover {
         background-color: #CCCCCC;
     }
-
-    /* Container for button */
-    .button-container {
-        margin-bottom: 20px;
-    }
 </style>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="z-index: 1000;">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <div class="brand-text">
-          <img src="img/logo_putih.png" alt="" style="width: 20%; margin-left: 10px;">
-          <!-- download logo YESS PUTIH -->
-          <div class="lora-font">BEST CHURCH</div>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="z-index: 1000;">
+        <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <div class="brand-text">
+            <img src="img/logo_putih.png" alt="" style="width: 20%; margin-left: 10px;">
+            <div class="lora-font">BEST CHURCH</div>
+            </div>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between" style="text-align:center;" id="navbarNav">
+            <ul class="navbar-nav" style="margin-bottom:10px;">
+            <li class="nav-item">
+                <a class="nav-link active" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/pelayanan">Pelayanan</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/komsel">KomSel</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/bareng">Bareng</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/event">Event</a>
+            </li>
+            </ul>
+            <ul class="navbar-nav login-link">
+            <li class="nav-item">
+                <a class="nav-link login-link-border" href="/login">Login</a>
+            </li>
+            </ul>
         </div>
-      </a>
-
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link " href="/">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="/pelayanan">Pelayanan</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/komsel">KomSel</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/bareng">Bareng</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/event">Event</a>
-          </li>
-        </ul>
-        <ul class="navbar-nav login-link">
-          <li class="nav-item">
-            <a class="nav-link login-link-border" href="/login">Login</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-<!-- "Kembali ke Events" button -->
-<div class="button-container">
-    <button class="back-to-events-button" onclick="goBackToEvents()">Kembali ke Events</button>
-</div>
-
-<div class="event-header">Archived Events</div>
-<div class="event-subheader">Explore past events at YESS Surabaya >>> </div>
-
-<!-- Pinned Events -->
-<div class="archived-events-container">
-    <div class="event" event-id="5">
-        <img src="img/event-photo1.jpg" alt="Event Photo">
-        <div class="event-details">
-            <div class="event-title">Putus atau Terus</div>
-            <div class="event-date">Ciputra World Mall 2nd floor | 30 Maret 2024 | 16.30 WIB</div>
-            <div class="event-description">YESS Surabaya Valentine's Day Celebration “Putus atau Terus”<br>
-Ini adalah kesempatan untuk terinspirasi sebagai pasangan! juga merupakan PENGALAMAN YANG HEBAT bagi kamu ya...</div>
         </div>
+    </nav>
+
+    <!-- "Kembali ke Events" button -->
+    <div class="button-container">
+        <button class="back-to-events-button" onclick="goBackToEvents()">Kembali ke Events</button>
     </div>
 
-    <div class="event" event-id="6">
-        <img src="img/event-photo2.jpg" alt="Event Photo">
-        <div class="event-details">
-            <div class="event-title">YESS Leardership Mission Training VII</div>
-            <div class="event-date">Desa Birkium, Soe, Nusa Tenggara Timur | 19-21 April 2024</div>
-            <div class="event-description">Biarlah semangat misi terus menyala dalam hidup kita.<br>
-Uis Neno nokan kit, Immanuel!<br>
-Sampe ketemu di YLMT, basodara dong!</div>
+    <div class="event-header">Archived Events</div>
+    <div class="event-subheader">Explore past events at YESS Surabaya >>> </div>
+
+    <!-- Archived Events -->
+    <div class="archived-events-container">
+        <div class="event" event-id="5">
+            <img src="img/event-photo1.jpg" alt="Event Photo">
+            <div class="event-details">
+                <div class="event-title">Putus atau Terus</div>
+                <div class="event-date">Ciputra World Mall 2nd floor | 30 Maret 2024 | 16.30 WIB</div>
+                <div class="event-description">YESS Surabaya Valentine's Day Celebration “Putus atau Terus”<br>
+    Ini adalah kesempatan untuk terinspirasi sebagai pasangan! juga merupakan PENGALAMAN YANG HEBAT bagi kamu ya...</div>
+            </div>
+        </div>
+
+        <div class="event" event-id="6">
+            <img src="img/event-photo2.jpg" alt="Event Photo">
+            <div class="event-details">
+                <div class="event-title">YESS Leardership Mission Training VII</div>
+                <div class="event-date">Desa Birkium, Soe, Nusa Tenggara Timur | 19-21 April 2024</div>
+                <div class="event-description">Biarlah semangat misi terus menyala dalam hidup kita.<br>
+    Uis Neno nokan kit, Immanuel!<br>
+    Sampe ketemu di YLMT, basodara dong!</div>
+            </div>
         </div>
     </div>
-</div>
 
-<script>
-    // Function to redirect to the event detail page
-    function redirectToEventDetail(eventId) {
-        // Construct the URL for the event detail page using the eventId
-        var eventDetailURL = "event-detail.blade.php?id=" + eventId;
-        
-        // Redirect the user to the event detail page
-        window.location.href = eventDetailURL;
-    }
+    <!-- Footer -->
+    <div class="container-fluid" style="background-color: black; color: white; border-radius: 30px 30px 0 0; margin-top: 20px;">
+        <div class="row">
+            <div class="col-md-6 d-flex justify-content-start">
+                <img src="img/ig.png" alt="Instagram">
+                <img src="img/tiktok.png" alt="TikTok">
+                <img src="img/yt.png" alt="YouTube">
+            </div>
+            <div class="col-md-6 d-flex justify-content-end">
+                <span style="font-family: 'Roboto', sans-serif; font-size: 20px; margin-top: 20px;">Contact Us</span>
+                <img src="img/wa.png" alt="WhatsApp">
+            </div>
+        </div>
+    </div>
 
-    // Function to attach event listeners to event elements
-    function attachEventListeners() {
-        // Add event listener to all elements with class 'event'
-        document.querySelectorAll('.event').forEach(event => {
-            event.addEventListener('click', function() {
-                // Retrieve the event-id from the clicked event element
-                var eventId = this.getAttribute('event-id');
+    <script>
+        // Function to redirect to the event detail page
+        function redirectToEventDetail(eventId) {
+            // Construct the URL for the event detail page using the eventId
+            var eventDetailURL = "event-detail.blade.php?id=" + eventId;
+            
+            // Redirect the user to the event detail page
+            window.location.href = eventDetailURL;
+        }
 
-                // Redirect to the event detail page
-                redirectToEventDetail(eventId);
+        // Function to attach event listeners to event elements
+        function attachEventListeners() {
+            // Add event listener to all elements with class 'event'
+            document.querySelectorAll('.event').forEach(event => {
+                event.addEventListener('click', function() {
+                    // Retrieve the event-id from the clicked event element
+                    var eventId = this.getAttribute('event-id');
+
+                    // Redirect to the event detail page
+                    redirectToEventDetail(eventId);
+                });
             });
-        });
-    }
+        }
 
-    // Call attachEventListeners initially
-    attachEventListeners();
+        // Call attachEventListeners initially
+        attachEventListeners();
 
-    // Function to go back to the events page
-    function goBackToEvents() {
-        window.location.href = "/event"; // Redirect to event.blade.php
-    }
-</script>
+        // Function to go back to the events page
+        function goBackToEvents() {
+            window.location.href = "event.blade.php"; // Redirect to event.blade.php
+        }
+    </script>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
