@@ -7,10 +7,7 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@700&display=swap" rel="stylesheet">
-<link href="css/style.css" rel="stylesheet">
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400&display=swap');
-
     body {
         background-color: white; /* Set the background color to white */
         color: #000000; /* Set text color to black */
@@ -107,128 +104,6 @@
         background-color: #FFCC00;
     }
 
-    .modal-header {
-        background-color: #F4F4F4;
-        padding: 20px; /* Add padding to create space */
-    }
-
-    .modal-event-title {
-        font-weight: bold;
-        font-size: 1.5em;
-        color: black;
-        font-family: 'Kanit', sans-serif;
-        word-wrap: break-word; /* Allow long words to break and wrap */
-    }
-
-    .modal-body {
-        background-color: #f2f2f2;
-        padding: 0 60px; /* Add 60px padding on the left and right sides */
-    }
-
-    /* Form */
-    .modal-custom-width {
-        max-width: 982px;
-        width: 100%;
-    }
-
-    .form-label-daftar {
-        font-family: 'Montserrat', sans-serif;
-        font-size: 1.11em;
-        font-weight: normal; /* Regular weight */
-    }
-
-    .form-label-alergi, .form-label-informasi {
-        font-family: 'Montserrat', sans-serif;
-        font-size: 1.33em;
-        font-weight: medium;
-    }
-
-    .modal-body small {
-        font-family: 'Montserrat', sans-serif;
-        font-size: 1.11em;
-        font-weight: medium;
-        color: #6D6D6D;
-    }
-    
-    .modal-body img {
-        max-width: 100%; /* Ensure the image does not exceed the modal's width */
-        height: auto; /* Maintain the aspect ratio of the image */
-    }
-
-    .image-container {
-        position: relative; /* Set position to relative */
-    }
-
-    .image-text-container {
-        position: absolute; /* Set position to absolute */
-        top: 50%; /* Align to the vertical center */
-        left: 50%; /* Align to the horizontal center */
-        transform: translate(-50%, -50%); /* Center the text */
-        text-align: center; /* Center align the text */
-        width: 90%; /* Set the width to 80% of its container */
-    }
-
-    .image-text-1 {
-        font-family: 'Roboto Slab', serif; /* Use Roboto Slab font */
-        font-weight: bold;
-        font-size: 1.77em;
-        color: white;
-        width: 100%; /* Set the width to 100% */
-        margin: 0 auto; /* Center the element horizontally */
-        text-align: center; /* Center the text horizontally */
-        display: flex; /* Use flexbox */
-        justify-content: center; /* Center the content horizontally */
-        align-items: center; /* Center the content vertically */
-        padding: 20px; /* Increase padding to provide more space around the text */
-        box-sizing: border-box; /* Include padding in the width calculation */
-    }
-
-    .image-text-2 {
-        font-family: 'Inter', sans-serif;
-        font-size: 0.83em;
-        color: white;
-    }
-
-    .image-container img {
-        width: 100%; /* Ensure the image fills its container */
-        height: auto; /* Maintain aspect ratio */
-    }
-
-
-    .modal-footer {
-        background-color: #a2a2a2;
-    }
-
-    /* CSS for cancel button */
-    .btn-cancel {
-        background-color: #ffffff; /* White background */
-        color: #000000; /* Black text color */
-        font-family: 'DM Sans', sans-serif;
-        font-size: 1.11em;
-        font-weight: bold; /* Bold weight */
-        width: 150px; /* Set width to 150px */
-    }
-
-    /* Hover effect for cancel button */
-    .btn-cancel:hover {
-        background-color: #eeeeee; /* Light gray background on hover */
-    }
-
-    /* CSS for submit button */
-    .btn-submit {
-        background-color: #000000; /* Black background */
-        color: #ffffff; /* White text color */
-        font-family: 'DM Sans', sans-serif;
-        font-size: 1.11em;
-        font-weight: bold; /* Bold weight */
-        width: 150px; /* Set width to 150px */
-    }
-
-    /* Hover effect for submit button */
-    .btn-submit:hover {
-        background-color: #333333; /* Darker gray background on hover */
-    }
-
     /* Responsive adjustments */
     @media (max-width: 1205px) {
         .event {
@@ -286,45 +161,46 @@
 </style>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="z-index: 1000;">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">
+<nav class="navbar navbar-expand-lg">
+    <div class="container">
+    <!-- YESS, BEST CHURCH, and Profile Picture -->
+    <a class="navbar-brand" href="#">
+        <img src="img/profile.jpg" class="profile-picture" alt="Profile Picture">
         <div class="brand-text">
-          <img src="img/logo_putih.png" alt="" style="width: 20%; margin-left: 10px;">
-          <!-- download logo YESS PUTIH -->
-          <div class="lora-font">BEST CHURCH</div>
+        <div>YESS</div>
+        <span class="lora-font">BEST CHURCH</span>
         </div>
-      </a>
+    </a>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link " href="/">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/pelayanan">Pelayanan</a>
-          </li>
-          <li class="nav-item">
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto text-center"> <!-- Use text-center to center the nav items -->
+        <li class="nav-item">
+            <a class="nav-link" href="/">Home</a> <!-- Added 'active' class here -->
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/pelayanan">Pelayanan</a> <!-- Removed 'active' class here -->
+        </li>
+        <li class="nav-item">
             <a class="nav-link" href="/komsel">KomSel</a>
-          </li>
-          <li class="nav-item">
+        </li>
+        <li class="nav-item">
             <a class="nav-link" href="/bareng">Bareng</a>
-          </li>
-          <li class="nav-item">
+        </li>
+        <li class="nav-item">
             <a class="nav-link active" href="/event">Event</a>
-          </li>
+        </li>
         </ul>
         <ul class="navbar-nav login-link">
-          <li class="nav-item">
+        <li class="nav-item">
             <a class="nav-link login-link-border" href="/login">Login</a>
-          </li>
+        </li>
         </ul>
-      </div>
     </div>
-  </nav>
+    </div>
+</nav>
 
 <div class="event-header">Upcoming Events</div>
 <div class="event-subheader">What's coming up at YESS Surabaya >>> </div>
@@ -334,30 +210,30 @@
 $events = [
     [
         'id' => 1,
-        'title' => 'Event Title 1 Event Title 1',
-        'date' => 'Event Date 1 Event Date 1',
-        'description' => 'Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1Event Description 1', 
+        'title' => 'Event Title 1 Event Title 1 Event Title 1 Event Title 1 Event Title 1 Event Title 1',
+        'date' => 'Event Date 1 Event Date 1 Event Date 1 Event Date 1 Event Date 1 Event Date 1',
+        'description' => 'Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1',
         'image' => 'img/event-photo1.jpg'
     ],
     [
         'id' => 2,
         'title' => 'Event Title 2 Event Title 2 Event Title 2 Event Title 2 Event Title 2 Event Title 2',
         'date' => 'Event Date 2 Event Date 2 Event Date 2 Event Date 2 Event Date 2 Event Date 2',
-        'description' => 'Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2',
+        'description' => 'Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2',
         'image' => 'img/event-photo2.jpg'
     ],
     [
         'id' => 3,
         'title' => 'Event Title 3 Event Title 3 Event Title 3 Event Title 3 Event Title 3 Event Title 3',
         'date' => 'Event Date 3 Event Date 3 Event Date 3 Event Date 3 Event Date 3 Event Date 3',
-        'description' => 'Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3',
+        'description' => 'Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3',
         'image' => 'img/event-photo3.jpg'
     ],
     [
         'id' => 4,
         'title' => 'Event Title 4 Event Title 4 Event Title 4 Event Title 4 Event Title 4 Event Title 4',
         'date' => 'Event Date 4 Event Date 4 Event Date 4 Event Date 4 Event Date 4 Event Date 4',
-        'description' => 'Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4',
+        'description' => 'Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4',
         'image' => 'img/event-photo4.jpg'
     ]
 ];
@@ -369,39 +245,22 @@ $events = [
 <!-- Modal -->
 <?php foreach ($events as $event): ?>
 <div class="modal fade" id="formModal<?php echo $event['id']; ?>" tabindex="-1" aria-labelledby="formModalLabel<?php echo $event['id']; ?>" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-custom-width">
+    <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title modal-event-title" id="formModalLabel<?php echo $event['id']; ?>"><?php echo $event['title']; ?></h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <!-- Your form content goes here -->
-                <label for="daftar<?php echo $event['id']; ?>" class="form-label form-label-daftar">Bagi jemaat yang ingin mendaftar dalam event YESS Surabaya silahkan mengisi form pendaftaran event dibawah ini.</label>
-                <!-- Alergi Anda -->
-                <div class="mb-3">
-                    <label for="alergi<?php echo $event['id']; ?>" class="form-label form-label-alergi">Alergi Anda (jika tidak punya, isi "-")</label>
-                    <textarea class="form-control" id="alergi<?php echo $event['id']; ?>" rows="3" placeholder="Masukkan alergi Anda jika ada"></textarea>
-                </div>
-                <!-- Informasi keluarga yang dapat dihubungi -->
-                <div class="mb-3">
-                    <label for="informasi<?php echo $event['id']; ?>" class="form-label form-label-informasi">Informasi keluarga yang dapat dihubungi</label>
-                    <textarea class="form-control" id="informasi<?php echo $event['id']; ?>" rows="3" placeholder="Masukkan nama dan nomor telepon keluarga yang dapat dihubungi"></textarea>
-                    <small>*sertakan nama dan nomor telepon aktif</small>
-                </div>
-                <div class="image-container">
-                    <div class="image-text-container">
-                        <p class="image-text-1">Cari circle rohani yang sehat dan bikin semangat?</p>
-                        <p class="image-text-2">YUK SINI MERAPAT!</p>
-                    </div>
-                    <img src="img/form.jpg" alt="Image">
-                </div>
-            </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-cancel" data-bs-dismiss="modal">Cancel</button>
-            <button type="button" class="btn btn-submit">Submit</button>
-                <!-- You can include additional buttons or actions here -->
-            </div>
+        <div class="modal-header">
+            <h5 class="modal-title" id="formModalLabel<?php echo $event['id']; ?>">Daftar Event</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <!-- Your form content goes here -->
+            <!-- You can include the form for event registration or any other relevant content -->
+            <!-- For demonstration, let's assume there's a simple message -->
+            <p>Registration form goes here...</p>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <!-- You can include additional buttons or actions here -->
+        </div>
         </div>
     </div>
 </div>
@@ -417,7 +276,7 @@ $events = [
             <div class="event-date"><?php echo $events[0]['date']; ?></div>
             <div class="event-description"><?php echo $events[0]['description']; ?></div>
         </div>
-        <button class="daftar-button" data-bs-toggle="modal" data-bs-target="#formModal<?php echo $events[0]['id']; ?>" onclick="openFormModal(<?php echo $events[0]['id']; ?>)">Daftar -></button>
+        <button class="daftar-button" data-bs-toggle="modal" data-bs-target="#formModal1" onclick="openFormModal(<?php echo $events[0]['id']; ?>)">Daftar -></button>
     </div>
 
     <!-- Event 2 -->
@@ -428,7 +287,7 @@ $events = [
             <div class="event-date"><?php echo $events[1]['date']; ?></div>
             <div class="event-description"><?php echo $events[1]['description']; ?></div>
         </div>
-        <button class="daftar-button" data-bs-toggle="modal" data-bs-target="#formModal<?php echo $events[1]['id']; ?>" onclick="openFormModal(<?php echo $events[1]['id']; ?>)">Daftar -></button>
+        <button class="daftar-button" data-bs-toggle="modal" data-bs-target="#formModal2" onclick="openFormModal(<?php echo $events[1]['id']; ?>)">Daftar -></button>
     </div>
 </div>
 
@@ -442,7 +301,7 @@ $events = [
             <div class="event-date"><?php echo $events[2]['date']; ?></div>
             <div class="event-description"><?php echo $events[2]['description']; ?></div>
         </div>
-        <button class="daftar-button" data-bs-toggle="modal" data-bs-target="#formModal<?php echo $events[2]['id']; ?>" onclick="openFormModal(<?php echo $events[2]['id']; ?>)">Daftar -></button>
+        <button class="daftar-button" data-bs-toggle="modal" data-bs-target="#formModal3" onclick="openFormModal(<?php echo $events[2]['id']; ?>)">Daftar -></button>
     </div>
 
     <!-- Event 4 -->
@@ -453,27 +312,12 @@ $events = [
             <div class="event-date"><?php echo $events[3]['date']; ?></div>
             <div class="event-description"><?php echo $events[3]['description']; ?></div>
         </div>
-        <button class="daftar-button" data-bs-toggle="modal" data-bs-target="#formModal<?php echo $events[3]['id']; ?>" onclick="openFormModal(<?php echo $events[3]['id']; ?>)">Daftar -></button>
+        <button class="daftar-button" data-bs-toggle="modal" data-bs-target="#formModal4" onclick="openFormModal(<?php echo $events[3]['id']; ?>)">Daftar -></button>
     </div>
 </div>
 
 <!-- Button to show archived events -->
 <button class="show-archived-button" onclick="showArchivedEvents()">Show Archived Events</button>
-
-<!-- Footer -->
-<div class="container-fluid" style="background-color: black; color: white; border-radius: 30px 30px 0 0;">
-        <div class="row">
-            <div class="col-md-6 d-flex justify-content-start">
-                <img src="img/ig.png" alt="Instagram">
-                <img src="img/tiktok.png" alt="TikTok">
-                <img src="img/yt.png" alt="YouTube">
-            </div>
-            <div class="col-md-6 d-flex justify-content-end">
-                <span style="font-family: 'Roboto', sans-serif; font-size: 20px; margin-top: 20px;">Contact Us</span>
-                <img src="img/wa.png" alt="WhatsApp">
-            </div>
-        </div>
-    </div>
 
 <script>
         // Function to redirect to the event detail page
@@ -510,7 +354,7 @@ $events = [
 
     // Function to redirect to the archived events page
     function showArchivedEvents() {
-        window.location.href = "/archived"; // Redirect to archived-event.blade.php
+        window.location.href = "archived-event.blade.php"; // Redirect to archived-event.blade.php
     }
 </script>
 
