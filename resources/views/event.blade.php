@@ -341,40 +341,41 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="z-index: 1000;">
         <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-            <div class="brand-text">
-            <img src="img/logo_putih.png" alt="" style="width: 20%; margin-left: 10px;">
-            <div class="lora-font">BEST CHURCH</div>
-            </div>
-        </a>
+            <a class="navbar-brand" href="#">
+                <div class="brand-text">
+                    <img src="img/logo_putih.png" alt="" style="width: 20%; margin-left: 10px;">
+                    <!-- download logo YESS PUTIH -->
+                    <div class="lora-font">BEST CHURCH</div>
+                </div>
+            </a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-between" style="text-align:center;" id="navbarNav">
-            <ul class="navbar-nav" style="margin-bottom:10px;">
-            <li class="nav-item">
-                <a class="nav-link active" href="/">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/pelayanan">Pelayanan</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/komsel">KomSel</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/bareng">Bareng</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/event">Event</a>
-            </li>
-            </ul>
-            <ul class="navbar-nav login-link">
-            <li class="nav-item">
-                <a class="nav-link login-link-border" href="/login">Login</a>
-            </li>
-            </ul>
-        </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+                <ul class="navbar-nav" style="margin-bottom:10px;">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/pelayanan">Pelayanan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/komsel">KomSel</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/bareng">Bareng</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/event">Event</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav login-link">
+                    <li class="nav-item">
+                        <a class="nav-link login-link-border" href="/login">Login</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
 
@@ -561,7 +562,7 @@
 
         // Function to redirect to the archived events page
         function showArchivedEvents() {
-            window.location.href = "archived-event.blade.php"; // Redirect to archived-event.blade.php
+            window.location.href = "event-archived.blade.php"; // Redirect to archived-event.blade.php
         }
     </script>
 

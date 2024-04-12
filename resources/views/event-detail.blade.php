@@ -7,6 +7,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400&display=swap" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
     <style>
         body {
             background-color: #F5F5F5; /* Set the overall background color */
@@ -253,93 +256,42 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="z-index: 1000;">
         <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-            <div class="brand-text">
-            <img src="img/logo_putih.png" alt="" style="width: 20%; margin-left: 10px;">
-            <div class="lora-font">BEST CHURCH</div>
-            </div>
-        </a>
+            <a class="navbar-brand" href="#">
+                <div class="brand-text">
+                <img src="img/logo_putih.png" alt="" style="width: 20%; margin-left: 10px;">
+                <div class="lora-font">BEST CHURCH</div>
+                </div>
+            </a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-between" style="text-align:center;" id="navbarNav">
-            <ul class="navbar-nav" style="margin-bottom:10px;">
-            <li class="nav-item">
-                <a class="nav-link active" href="/">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/pelayanan">Pelayanan</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/komsel">KomSel</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/bareng">Bareng</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/event">Event</a>
-            </li>
-            </ul>
-            <ul class="navbar-nav login-link">
-            <li class="nav-item">
-                <a class="nav-link login-link-border" href="/login">Login</a>
-            </li>
-            </ul>
-        </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" style="text-align:center;" id="navbarNav">
+                <ul class="navbar-nav" style="margin-bottom:10px;">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/pelayanan">Pelayanan</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/komsel">KomSel</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/bareng">Bareng</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/event">Event</a>
+                </li>
+                </ul>
+                <ul class="navbar-nav login-link">
+                <li class="nav-item">
+                    <a class="nav-link login-link-border" href="/login">Login</a>
+                </li>
+                </ul>
+            </div>
         </div>
     </nav>
-
-    <?php
-    // Initialize $events array with test data
-    $event = [
-        'id' => 1,
-        'title' => 'Event Title 1 Event Title 1',
-        'date' => 'Event Date 1 Event Date 1',
-        'location' => 'Event Location 1 Event Location 1',
-        'description' => 'Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1', 
-        'image' => 'img/event-photo1.jpg'
-    ];
-    ?>
-
-    <!-- Modal -->
-    <div class="modal fade" id="formModal<?php echo $event['id']; ?>" tabindex="-1" aria-labelledby="formModalLabel<?php echo $event['id']; ?>" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-custom-width">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title modal-event-title" id="formModalLabel<?php echo $event['id']; ?>"><?php echo $event['title']; ?></h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <!-- Your form content goes here -->
-                    <label for="daftar<?php echo $event['id']; ?>" class="form-label form-label-daftar">Bagi jemaat yang ingin mendaftar dalam event YESS Surabaya silahkan mengisi form pendaftaran event dibawah ini.</label>
-                    <!-- Alergi Anda -->
-                    <div class="mb-3">
-                        <label for="alergi<?php echo $event['id']; ?>" class="form-label form-label-alergi">Alergi Anda (jika tidak punya, isi "-")</label>
-                        <textarea class="form-control" id="alergi<?php echo $event['id']; ?>" rows="3" placeholder="Masukkan alergi Anda jika ada"></textarea>
-                    </div>
-                    <!-- Informasi keluarga yang dapat dihubungi -->
-                    <div class="mb-3">
-                        <label for="informasi<?php echo $event['id']; ?>" class="form-label form-label-informasi">Informasi keluarga yang dapat dihubungi</label>
-                        <textarea class="form-control" id="informasi<?php echo $event['id']; ?>" rows="3" placeholder="Masukkan nama dan nomor telepon keluarga yang dapat dihubungi"></textarea>
-                        <small>*sertakan nama dan nomor telepon aktif</small>
-                    </div>
-                    <div class="image-container">
-                        <div class="image-text-container">
-                            <p class="image-text-1">Cari circle rohani yang sehat dan bikin semangat?</p>
-                            <p class="image-text-2">YUK SINI MERAPAT!</p>
-                        </div>
-                        <img src="img/form.jpg" alt="Image">
-                    </div>
-                </div>
-                <div class="modal-footer">
-                <button type="button" class="btn btn-cancel" data-bs-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-submit">Submit</button>
-                    <!-- You can include additional buttons or actions here -->
-                </div>
-            </div>
-        </div>
-    </div>
 
     <div class="event-detail-container">
         <!-- "Kembali ke Events" button -->
