@@ -6,6 +6,9 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
   <link href="css/pelayanan.css" rel="stylesheet">
 
@@ -51,28 +54,80 @@
     </div>
   </nav>
 
-  <!-- start pelayanan -->
-<div class="content">
-    <div class="container-fluid p-0">
-        <div style="position: relative; display: flex; justify-content: center; align-items: center; height: 100vh;">
-            <img src="img/backgoundptop.png" alt="" class="w-100" style="position: absolute; top: 0; left: 0; height: 410px; object-fit: cover; left: 0; top: 0;">
-            <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; font-size: 50px;">
-            <div class="text-pyess">PELAYANAN YESS</div>
-            <div class="text-rindu">Rindu untuk melayani ?</div>
-                   <button class="button-5", data-toggle="modal" data-target="#popupForm">
-                    <div class="button-advanced-animations">
-                      <div class="base">
-                        <div class="curtain"></div>
-                        <span class="text">Daftar disini </span>                 
-                      </div>
-                    </div></button>
-                  </a>
-                </div>
+  <div class="awal" style="margin-top: 20px;">
+        <div class="awal-2">
+            <img
+                loading="lazy"
+                srcset="img/backgoundptop.png"
+                class="img"
+            />
+            <div class="awal-3" style="margin-top: 20px;">
+                <div class="awal-4">PELAYANAN YESS</div>
+                <div class="awal-5">Rindu untuk melayani ?</div>
             </div>
         </div>
-    </div>
-
-    <span class="where-can-i-serve">Where can I serve?</span
+        <button class="button button1" id = "butt1" onclick="myFunction()" >Daftar Disini</button>
+        
+        <div id="myForm">
+                <div class = "awalForm">
+                    <div class = "form1">PENDAFTARAN EVENT</div>
+                    <div class = "form2">Bagi jemaat yang ingin mendaftar dalam event YESS Surabaya silahkan mengisi form pendaftaran event dibawah ini</div>
+                </div>
+                <div class="awal-2-Form">
+                    <form action="#">
+                    <div class="main-user-info">
+                        <div class="user-input-box">
+                        <label for="nama">Nama</label>
+                        <input type="text"
+                            id="nama"
+                            name="nama"
+                            placeholder="Nama"/>
+                        </div>
+                        <div class="user-input-box">
+                        <label for="umur">Umur</label>
+                        <input type="umur"
+                            id="umur"
+                            name="umur"
+                            placeholder="Umur"/>
+                        </div>
+                        <div class="user-input-box">
+                        <label for="nomor">No. HP (Whatapp)</label>
+                        <input type="text"
+                            id="nomor"
+                            name="nomor"
+                            placeholder="No. HP (Whatapp)"/>
+                        </div>
+                        <div class="user-input-box">
+                        <label for="kecamatan">Kecamatan</label>
+                        <input type="text"
+                            id="kecamatan"
+                            name="kecamatan"
+                            placeholder="Kecamatan"/>
+                        </div>
+                        
+                    </div>
+                    <div class="kegiatan-details-box">
+                        <span class="kegiatan-title">Kegiatan saat ini : </span>
+                        <div class="kegiatan-category">
+                            <input type="radio" name="kegiatan" id="male">
+                            <label for="sekolah">Sekolah</label>
+                            <input type="radio" name="kegiatan" id="female">
+                            <label for="kuliah">Kuliah</label>
+                            <input type="radio" name="kegiatan" id="other">
+                            <label for="bekerja">Bekerja</label>
+                            </div>
+                        </div>
+                        <div class="form-submit-btn">
+                            <input type="submit" value="Register">
+                        </div>
+                    </form>
+                    </div>
+                </div>
+        </div> 
+    
+  <!-- start pelayanan -->
+<div class="content">
+    <span class="where-can-i-serve" style="margin-top: 100px;">Where can I serve?</span
         ><span class="at-yess-community"
           >At YESS Community, we make it easy to use your gifts and talents
           here.</span
@@ -195,6 +250,6 @@
 </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-<script src="js/home.js"></script>
+<script src="js/komsel.js"></script>
 </body>
 </html>
