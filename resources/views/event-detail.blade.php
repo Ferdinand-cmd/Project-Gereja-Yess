@@ -34,6 +34,7 @@
 
         /* Container for button */
         .button-container {
+            margin-top: 70px;
             margin-bottom: 20px;
             display: flex;
             justify-content: space-between;
@@ -95,6 +96,145 @@
             background-color:#FFCC00;
         }
 
+        /* Modal */
+        .modal-dialog {
+            max-width: 90%; /* Set max-width to 90% of the viewport width */
+            width: auto; /* Allow modal to expand based on content */
+        }
+
+        /* Modal Content */
+        .modal-content {
+            width: 100%; /* Set width to 100% */
+        }
+
+        .modal-header {
+            background-color: #F4F4F4;
+            padding: 20px; /* Add padding to create space */
+        }
+
+        .modal-event-title {
+            font-weight: bold;
+            font-size: 1.5em;
+            color: black;
+            font-family: 'Kanit', sans-serif;
+            word-wrap: break-word; /* Allow long words to break and wrap */
+        }
+
+        .modal-body {
+            background-color: #f2f2f2;
+            padding: 0 60px; /* Add 60px padding on the left and right sides */
+        }
+
+        /* Modal */
+        .modal-dialog {
+            max-width: 90%; /* Set initial max-width to 90% of the viewport width */
+            width: auto; /* Allow modal to expand based on content */
+        }
+
+        /* Set max-width for larger screens */
+        @media (min-width: 1200px) {
+            .modal-dialog {
+                max-width: 982px; /* Set max-width to 982px for screens wider than 1200px */
+            }
+        }
+
+        .form-label-daftar {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.11em;
+            font-weight: normal; /* Regular weight */
+        }
+
+        .form-label-alergi, .form-label-informasi {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.33em;
+            font-weight: medium;
+        }
+
+        .modal-body small {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.11em;
+            font-weight: medium;
+            color: #6D6D6D;
+        }
+        
+        .modal-body img {
+            max-width: 100%; /* Ensure the image does not exceed the modal's width */
+            height: auto; /* Maintain the aspect ratio of the image */
+        }
+
+        .image-container {
+            position: relative; /* Set position to relative */
+        }
+
+        .image-text-container {
+            position: absolute; /* Set position to absolute */
+            top: 50%; /* Align to the vertical center */
+            left: 50%; /* Align to the horizontal center */
+            transform: translate(-50%, -50%); /* Center the text */
+            text-align: center; /* Center align the text */
+            width: 90%; /* Set the width to 80% of its container */
+        }
+
+        .image-text-1 {
+            font-family: 'Roboto Slab', serif; /* Use Roboto Slab font */
+            font-weight: bold;
+            font-size: 1.77em;
+            color: white;
+            width: 100%; /* Set the width to 100% */
+            margin: 0 auto; /* Center the element horizontally */
+            text-align: center; /* Center the text horizontally */
+            display: flex; /* Use flexbox */
+            justify-content: center; /* Center the content horizontally */
+            align-items: center; /* Center the content vertically */
+            padding: 20px; /* Increase padding to provide more space around the text */
+            box-sizing: border-box; /* Include padding in the width calculation */
+        }
+
+        .image-text-2 {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.83em;
+            color: white;
+        }
+
+        .image-container img {
+            width: 100%; /* Ensure the image fills its container */
+            height: auto; /* Maintain aspect ratio */
+        }
+
+        .modal-footer {
+            background-color: #a2a2a2;
+        }
+
+        /* CSS for cancel button */
+        .btn-cancel {
+            background-color: #ffffff; /* White background */
+            color: #000000; /* Black text color */
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1.11em;
+            font-weight: bold; /* Bold weight */
+            width: 150px; /* Set width to 150px */
+        }
+
+        /* Hover effect for cancel button */
+        .btn-cancel:hover {
+            background-color: #eeeeee; /* Light gray background on hover */
+        }
+
+        /* CSS for submit button */
+        .btn-submit {
+            background-color: #000000; /* Black background */
+            color: #ffffff; /* White text color */
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1.11em;
+            font-weight: bold; /* Bold weight */
+            width: 150px; /* Set width to 150px */
+        }
+
+        /* Hover effect for submit button */
+        .btn-submit:hover {
+            background-color: #333333; /* Darker gray background on hover */
+        }
+
         @media screen and (max-width: 768px) {
             .button-container {
                 flex-direction: column;
@@ -114,44 +254,45 @@
 </head>
 <body>
     <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="z-index: 1000;">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <div class="brand-text">
-          <img src="img/logo_putih.png" alt="" style="width: 20%; margin-left: 10px;">
-          <div class="lora-font">BEST CHURCH</div>
-        </div>
-      </a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="z-index: 1000;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <div class="brand-text">
+                <img src="img/logo_putih.png" alt="" style="width: 20%; margin-left: 10px;">
+                <div class="lora-font">BEST CHURCH</div>
+                </div>
+            </a>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-between" style="text-align:center;" id="navbarNav">
-        <ul class="navbar-nav" style="margin-bottom:10px;">
-          <li class="nav-item">
-            <a class="nav-link active" href="/">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/pelayanan">Pelayanan</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/komsel">KomSel</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/bareng">Bareng</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/event">Event</a>
-          </li>
-        </ul>
-        <ul class="navbar-nav login-link">
-          <li class="nav-item">
-            <a class="nav-link login-link-border" href="/login">Login</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" style="text-align:center;" id="navbarNav">
+                <ul class="navbar-nav" style="margin-bottom:10px;">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/pelayanan">Pelayanan</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/komsel">KomSel</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/bareng">Bareng</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/event">Event</a>
+                </li>
+                </ul>
+                <ul class="navbar-nav login-link">
+                <li class="nav-item">
+                    <a class="nav-link login-link-border" href="/login">Login</a>
+                </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
     <div class="event-detail-container">
         <!-- "Kembali ke Events" button -->
         <div class="button-container">
@@ -162,22 +303,35 @@
         <img src="img/event-photo5.jpg" alt="Event Image" class="event-image">
 
         <div class="button-container">
-            <div class="event-title">YESS Leardership Mission Training VII</div>
+            <div class="event-title"><?php echo $event['title']; ?></div>
             <!-- Daftar Button -->
-            <button class="daftar-button" onclick="redirectToForm()">Daftar -></button>
+            <button class="daftar-button" data-bs-toggle="modal" data-bs-target="#formModal<?php echo $event['id']; ?>">Daftar -></button>
         </div>
 
         <!-- Event Date -->
-        <div class="event-date">19-21 April 2024</div>
+        <div class="event-date"><?php echo $event['date']; ?></div>
 
         <!-- Event Location -->
-        <div class="event-location">Desa Bikium, Soe, Nusa Tenggara Timur</div>
+        <div class="event-location"><?php echo $event['location']; ?></div>
 
         <!-- Event Description -->
         <div class="event-description">
-            Biarlah semangat misi terus menyala dalam hidup kita.<br>
-            Uis Neno nokan kit, Immanuel!<br>
-            Sampe ketemu di YLMT, basodara dong!
+            <?php echo $event['description']; ?>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="container-fluid" style="background-color: black; color: white; border-radius: 30px 30px 0 0; margin-top: 20px;">
+        <div class="row">
+            <div class="col-md-6 d-flex justify-content-start">
+                <img src="img/ig.png" alt="Instagram">
+                <img src="img/tiktok.png" alt="TikTok">
+                <img src="img/yt.png" alt="YouTube">
+            </div>
+            <div class="col-md-6 d-flex justify-content-end">
+                <span style="font-family: 'Roboto', sans-serif; font-size: 20px; margin-top: 20px;">Contact Us</span>
+                <img src="img/wa.png" alt="WhatsApp">
+            </div>
         </div>
     </div>
 

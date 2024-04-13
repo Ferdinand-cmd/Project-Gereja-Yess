@@ -107,6 +107,17 @@
         background-color: #FFCC00;
     }
 
+    /* Modal */
+    .modal-dialog {
+        max-width: 90%; /* Set max-width to 90% of the viewport width */
+        width: auto; /* Allow modal to expand based on content */
+    }
+
+    /* Modal Content */
+    .modal-content {
+        width: 100%; /* Set width to 100% */
+    }
+
     .modal-header {
         background-color: #F4F4F4;
         padding: 20px; /* Add padding to create space */
@@ -125,10 +136,17 @@
         padding: 0 60px; /* Add 60px padding on the left and right sides */
     }
 
-    /* Form */
-    .modal-custom-width {
-        max-width: 982px;
-        width: 100%;
+    /* Modal */
+    .modal-dialog {
+        max-width: 90%; /* Set initial max-width to 90% of the viewport width */
+        width: auto; /* Allow modal to expand based on content */
+    }
+
+    /* Set max-width for larger screens */
+    @media (min-width: 1200px) {
+        .modal-dialog {
+            max-width: 982px; /* Set max-width to 982px for screens wider than 1200px */
+        }
     }
 
     .form-label-daftar {
@@ -194,9 +212,42 @@
         height: auto; /* Maintain aspect ratio */
     }
 
-
     .modal-footer {
         background-color: #a2a2a2;
+    }
+
+    /* For smaller screens */
+    @media (max-width: 576px) {
+        .image-text-container {
+            width: 80%; /* Adjust the width for smaller screens */
+            max-width: 300px; /* Limit the maximum width */
+        }
+
+        .image-text-1 {
+            font-size: 1.3em; /* Decrease the font size for smaller screens */
+            padding: 10px; /* Adjust padding for smaller screens */
+        }
+
+        .image-text-2 {
+            font-size: 0.7em; /* Decrease the font size for smaller screens */
+        }
+    }
+
+    /* For larger screens */
+    @media (min-width: 992px) {
+        .image-text-container {
+            width: 70%; /* Adjust the width for larger screens */
+            max-width: 400px; /* Limit the maximum width */
+        }
+
+        .image-text-1 {
+            font-size: 1.5em; /* Increase the font size for larger screens */
+            padding: 20px; /* Adjust padding for larger screens */
+        }
+
+        .image-text-2 {
+            font-size: 1em; /* Increase the font size for larger screens */
+        }
     }
 
     /* CSS for cancel button */
@@ -270,6 +321,7 @@
     /* CSS for the "Show Archived Events" button */
     .show-archived-button {
         margin-top: 20px;
+        margin-bottom: 20px;
         padding: 10px 20px;
         background-color: #FFCC00; /* Yellow background color */
         color: #ffffff; /* White text color */
@@ -286,182 +338,183 @@
 </style>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="z-index: 1000;">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <div class="brand-text">
-          <img src="img/logo_putih.png" alt="" style="width: 20%; margin-left: 10px;">
-          <!-- download logo YESS PUTIH -->
-          <div class="lora-font">BEST CHURCH</div>
-        </div>
-      </a>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="z-index: 1000;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <div class="brand-text">
+                    <img src="img/logo_putih.png" alt="" style="width: 20%; margin-left: 10px;">
+                    <!-- download logo YESS PUTIH -->
+                    <div class="lora-font">BEST CHURCH</div>
+                </div>
+            </a>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link " href="/">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/pelayanan">Pelayanan</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/komsel">KomSel</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/bareng">Bareng</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="/event">Event</a>
-          </li>
-        </ul>
-        <ul class="navbar-nav login-link">
-          <li class="nav-item">
-            <a class="nav-link login-link-border" href="/login">Login</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-<div class="event-header">Upcoming Events</div>
-<div class="event-subheader">What's coming up at YESS Surabaya >>> </div>
-
-<?php
-// Initialize $events array with test data
-$events = [
-    [
-        'id' => 1,
-        'title' => 'Event Title 1 Event Title 1',
-        'date' => 'Event Date 1 Event Date 1',
-        'description' => 'Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1Event Description 1', 
-        'image' => 'img/event-photo1.jpg'
-    ],
-    [
-        'id' => 2,
-        'title' => 'Event Title 2 Event Title 2 Event Title 2 Event Title 2 Event Title 2 Event Title 2',
-        'date' => 'Event Date 2 Event Date 2 Event Date 2 Event Date 2 Event Date 2 Event Date 2',
-        'description' => 'Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2',
-        'image' => 'img/event-photo2.jpg'
-    ],
-    [
-        'id' => 3,
-        'title' => 'Event Title 3 Event Title 3 Event Title 3 Event Title 3 Event Title 3 Event Title 3',
-        'date' => 'Event Date 3 Event Date 3 Event Date 3 Event Date 3 Event Date 3 Event Date 3',
-        'description' => 'Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3',
-        'image' => 'img/event-photo3.jpg'
-    ],
-    [
-        'id' => 4,
-        'title' => 'Event Title 4 Event Title 4 Event Title 4 Event Title 4 Event Title 4 Event Title 4',
-        'date' => 'Event Date 4 Event Date 4 Event Date 4 Event Date 4 Event Date 4 Event Date 4',
-        'description' => 'Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4',
-        'image' => 'img/event-photo4.jpg'
-    ]
-];
-?>
-
-<!-- Pinned Events Heading -->
-<div class="pinned-events-heading">Pinned Events</div>
-
-<!-- Modal -->
-<?php foreach ($events as $event): ?>
-<div class="modal fade" id="formModal<?php echo $event['id']; ?>" tabindex="-1" aria-labelledby="formModalLabel<?php echo $event['id']; ?>" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-custom-width">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title modal-event-title" id="formModalLabel<?php echo $event['id']; ?>"><?php echo $event['title']; ?></h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+                <ul class="navbar-nav" style="margin-bottom:10px;">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/pelayanan">Pelayanan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/komsel">KomSel</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/bareng">Bareng</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/event">Event</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav login-link">
+                    <li class="nav-item">
+                        <a class="nav-link login-link-border" href="/login">Login</a>
+                    </li>
+                </ul>
             </div>
-            <div class="modal-body">
-                <!-- Your form content goes here -->
-                <label for="daftar<?php echo $event['id']; ?>" class="form-label form-label-daftar">Bagi jemaat yang ingin mendaftar dalam event YESS Surabaya silahkan mengisi form pendaftaran event dibawah ini.</label>
-                <!-- Alergi Anda -->
-                <div class="mb-3">
-                    <label for="alergi<?php echo $event['id']; ?>" class="form-label form-label-alergi">Alergi Anda (jika tidak punya, isi "-")</label>
-                    <textarea class="form-control" id="alergi<?php echo $event['id']; ?>" rows="3" placeholder="Masukkan alergi Anda jika ada"></textarea>
+        </div>
+    </nav>
+
+    <div class="event-header">Upcoming Events</div>
+    <div class="event-subheader">What's coming up at YESS Surabaya >>> </div>
+
+    <?php
+    // Initialize $events array with test data
+    $events = [
+        [
+            'id' => 1,
+            'title' => 'Event Title 1 Event Title 1',
+            'date' => 'Event Date 1 Event Date 1',
+            'description' => 'Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1Event Description 1', 
+            'image' => 'img/event-photo1.jpg'
+        ],
+        [
+            'id' => 2,
+            'title' => 'Event Title 2 Event Title 2 Event Title 2 Event Title 2 Event Title 2 Event Title 2',
+            'date' => 'Event Date 2 Event Date 2 Event Date 2 Event Date 2 Event Date 2 Event Date 2',
+            'description' => 'Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2',
+            'image' => 'img/event-photo2.jpg'
+        ],
+        [
+            'id' => 3,
+            'title' => 'Event Title 3 Event Title 3 Event Title 3 Event Title 3 Event Title 3 Event Title 3',
+            'date' => 'Event Date 3 Event Date 3 Event Date 3 Event Date 3 Event Date 3 Event Date 3',
+            'description' => 'Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3',
+            'image' => 'img/event-photo3.jpg'
+        ],
+        [
+            'id' => 4,
+            'title' => 'Event Title 4 Event Title 4 Event Title 4 Event Title 4 Event Title 4 Event Title 4',
+            'date' => 'Event Date 4 Event Date 4 Event Date 4 Event Date 4 Event Date 4 Event Date 4',
+            'description' => 'Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4',
+            'image' => 'img/event-photo4.jpg'
+        ]
+    ];
+    ?>
+
+    <!-- Pinned Events Heading -->
+    <div class="pinned-events-heading">Pinned Events</div>
+
+    <!-- Modal -->
+    <?php foreach ($events as $event): ?>
+    <div class="modal fade" id="formModal<?php echo $event['id']; ?>" tabindex="-1" aria-labelledby="formModalLabel<?php echo $event['id']; ?>" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-custom-width">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title modal-event-title" id="formModalLabel<?php echo $event['id']; ?>"><?php echo $event['title']; ?></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <!-- Informasi keluarga yang dapat dihubungi -->
-                <div class="mb-3">
-                    <label for="informasi<?php echo $event['id']; ?>" class="form-label form-label-informasi">Informasi keluarga yang dapat dihubungi</label>
-                    <textarea class="form-control" id="informasi<?php echo $event['id']; ?>" rows="3" placeholder="Masukkan nama dan nomor telepon keluarga yang dapat dihubungi"></textarea>
-                    <small>*sertakan nama dan nomor telepon aktif</small>
-                </div>
-                <div class="image-container">
-                    <div class="image-text-container">
-                        <p class="image-text-1">Cari circle rohani yang sehat dan bikin semangat?</p>
-                        <p class="image-text-2">YUK SINI MERAPAT!</p>
+                <div class="modal-body">
+                    <!-- Your form content goes here -->
+                    <label for="daftar<?php echo $event['id']; ?>" class="form-label form-label-daftar">Bagi jemaat yang ingin mendaftar dalam event YESS Surabaya silahkan mengisi form pendaftaran event dibawah ini.</label>
+                    <!-- Alergi Anda -->
+                    <div class="mb-3">
+                        <label for="alergi<?php echo $event['id']; ?>" class="form-label form-label-alergi">Alergi Anda (jika tidak punya, isi "-")</label>
+                        <textarea class="form-control" id="alergi<?php echo $event['id']; ?>" rows="3" placeholder="Masukkan alergi Anda jika ada"></textarea>
                     </div>
-                    <img src="img/form.jpg" alt="Image">
+                    <!-- Informasi keluarga yang dapat dihubungi -->
+                    <div class="mb-3">
+                        <label for="informasi<?php echo $event['id']; ?>" class="form-label form-label-informasi">Informasi keluarga yang dapat dihubungi</label>
+                        <textarea class="form-control" id="informasi<?php echo $event['id']; ?>" rows="3" placeholder="Masukkan nama dan nomor telepon keluarga yang dapat dihubungi"></textarea>
+                        <small>*sertakan nama dan nomor telepon aktif</small>
+                    </div>
+                    <div class="image-container">
+                        <div class="image-text-container">
+                            <p class="image-text-1">Cari circle rohani yang sehat dan bikin semangat?</p>
+                            <p class="image-text-2">YUK SINI MERAPAT!</p>
+                        </div>
+                        <img src="img/form.jpg" alt="Image">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-cancel" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-submit">Submit</button>
+                    <!-- You can include additional buttons or actions here -->
                 </div>
             </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-cancel" data-bs-dismiss="modal">Cancel</button>
-            <button type="button" class="btn btn-submit">Submit</button>
-                <!-- You can include additional buttons or actions here -->
+        </div>
+    </div>
+    <?php endforeach; ?>
+
+    <!-- Pinned Events -->
+    <div class="pinned-events-container">
+        <!-- Event 1 -->
+        <div class="event" event-id="<?php echo $events[0]['id']; ?>">
+            <img src="<?php echo $events[0]['image']; ?>" alt="Event Photo">
+            <div class="event-details">
+                <div class="event-title"><?php echo $events[0]['title']; ?></div>
+                <div class="event-date"><?php echo $events[0]['date']; ?></div>
+                <div class="event-description"><?php echo $events[0]['description']; ?></div>
             </div>
+            <button class="daftar-button" data-bs-toggle="modal" data-bs-target="#formModal<?php echo $events[0]['id']; ?>" onclick="openFormModal(<?php echo $events[0]['id']; ?>)">Daftar -></button>
+        </div>
+
+        <!-- Event 2 -->
+        <div class="event" event-id="<?php echo $events[1]['id']; ?>">
+            <img src="<?php echo $events[1]['image']; ?>" alt="Event Photo">
+            <div class="event-details">
+                <div class="event-title"><?php echo $events[1]['title']; ?></div>
+                <div class="event-date"><?php echo $events[1]['date']; ?></div>
+                <div class="event-description"><?php echo $events[1]['description']; ?></div>
+            </div>
+            <button class="daftar-button" data-bs-toggle="modal" data-bs-target="#formModal<?php echo $events[1]['id']; ?>" onclick="openFormModal(<?php echo $events[1]['id']; ?>)">Daftar -></button>
         </div>
     </div>
-</div>
-<?php endforeach; ?>
 
-<!-- Pinned Events -->
-<div class="pinned-events-container">
-    <!-- Event 1 -->
-    <div class="event" event-id="<?php echo $events[0]['id']; ?>">
-        <img src="<?php echo $events[0]['image']; ?>" alt="Event Photo">
-        <div class="event-details">
-            <div class="event-title"><?php echo $events[0]['title']; ?></div>
-            <div class="event-date"><?php echo $events[0]['date']; ?></div>
-            <div class="event-description"><?php echo $events[0]['description']; ?></div>
+    <!-- Other Events -->
+    <div class="other-events-container">
+        <!-- Event 3 -->
+        <div class="event" event-id="<?php echo $events[2]['id']; ?>">
+            <img src="<?php echo $events[2]['image'] ?>" alt="Event Photo">
+            <div class="event-details">
+                <div class="event-title"><?php echo $events[2]['title']; ?></div>
+                <div class="event-date"><?php echo $events[2]['date']; ?></div>
+                <div class="event-description"><?php echo $events[2]['description']; ?></div>
+            </div>
+            <button class="daftar-button" data-bs-toggle="modal" data-bs-target="#formModal<?php echo $events[2]['id']; ?>" onclick="openFormModal(<?php echo $events[2]['id']; ?>)">Daftar -></button>
         </div>
-        <button class="daftar-button" data-bs-toggle="modal" data-bs-target="#formModal<?php echo $events[0]['id']; ?>" onclick="openFormModal(<?php echo $events[0]['id']; ?>)">Daftar -></button>
+
+        <!-- Event 4 -->
+        <div class="event" event-id="<?php echo $events[3]['id']; ?>">
+            <img src="<?php echo $events[3]['image']; ?>" alt="Event Photo">
+            <div class="event-details">
+                <div class="event-title"><?php echo $events[3]['title']; ?></div>
+                <div class="event-date"><?php echo $events[3]['date']; ?></div>
+                <div class="event-description"><?php echo $events[3]['description']; ?></div>
+            </div>
+            <button class="daftar-button" data-bs-toggle="modal" data-bs-target="#formModal<?php echo $events[3]['id']; ?>" onclick="openFormModal(<?php echo $events[3]['id']; ?>)">Daftar -></button>
+        </div>
     </div>
 
-    <!-- Event 2 -->
-    <div class="event" event-id="<?php echo $events[1]['id']; ?>">
-        <img src="<?php echo $events[1]['image']; ?>" alt="Event Photo">
-        <div class="event-details">
-            <div class="event-title"><?php echo $events[1]['title']; ?></div>
-            <div class="event-date"><?php echo $events[1]['date']; ?></div>
-            <div class="event-description"><?php echo $events[1]['description']; ?></div>
-        </div>
-        <button class="daftar-button" data-bs-toggle="modal" data-bs-target="#formModal<?php echo $events[1]['id']; ?>" onclick="openFormModal(<?php echo $events[1]['id']; ?>)">Daftar -></button>
-    </div>
-</div>
+    <!-- Button to show archived events -->
+    <button class="show-archived-button" onclick="showArchivedEvents()">Show Archived Events</button>
 
-<!-- Other Events -->
-<div class="other-events-container">
-    <!-- Event 3 -->
-    <div class="event" event-id="<?php echo $events[2]['id']; ?>">
-        <img src="<?php echo $events[2]['image'] ?>" alt="Event Photo">
-        <div class="event-details">
-            <div class="event-title"><?php echo $events[2]['title']; ?></div>
-            <div class="event-date"><?php echo $events[2]['date']; ?></div>
-            <div class="event-description"><?php echo $events[2]['description']; ?></div>
-        </div>
-        <button class="daftar-button" data-bs-toggle="modal" data-bs-target="#formModal<?php echo $events[2]['id']; ?>" onclick="openFormModal(<?php echo $events[2]['id']; ?>)">Daftar -></button>
-    </div>
-
-    <!-- Event 4 -->
-    <div class="event" event-id="<?php echo $events[3]['id']; ?>">
-        <img src="<?php echo $events[3]['image']; ?>" alt="Event Photo">
-        <div class="event-details">
-            <div class="event-title"><?php echo $events[3]['title']; ?></div>
-            <div class="event-date"><?php echo $events[3]['date']; ?></div>
-            <div class="event-description"><?php echo $events[3]['description']; ?></div>
-        </div>
-        <button class="daftar-button" data-bs-toggle="modal" data-bs-target="#formModal<?php echo $events[3]['id']; ?>" onclick="openFormModal(<?php echo $events[3]['id']; ?>)">Daftar -></button>
-    </div>
-</div>
-
-<!-- Button to show archived events -->
-<button class="show-archived-button" onclick="showArchivedEvents()">Show Archived Events</button>
-
-<!-- Footer -->
-<div class="container-fluid" style="background-color: black; color: white; border-radius: 30px 30px 0 0;">
+    <!-- Footer -->
+    <div class="container-fluid" style="background-color: black; color: white; border-radius: 30px 30px 0 0; margin-top: 20px;">
         <div class="row">
             <div class="col-md-6 d-flex justify-content-start">
                 <img src="img/ig.png" alt="Instagram">
@@ -475,46 +528,45 @@ $events = [
         </div>
     </div>
 
-<script>
+    <script>
         // Function to redirect to the event detail page
         function redirectToEventDetail(eventId) {
-        // Construct the URL for the event detail page using the eventId
-        var eventDetailURL = "event-detail.blade.php?id=" + eventId;
-        
-        // Redirect the user to the event detail page
-        window.location.href = eventDetailURL;
-    }
+            // Construct the URL for the event detail page using the eventId
+            var eventDetailURL = "event-detail.blade.php?id=" + eventId;
+            
+            // Redirect the user to the event detail page
+            window.location.href = eventDetailURL;
+        }
 
-    // Function to handle button click and redirect to the corresponding form event page
-    function openFormModal(eventId) {
-        event.stopPropagation(); // Stop event propagation to prevent opening detail events
-        // $('#formModal' + eventId).modal('show'); // Show the modal corresponding to the event ID
-    }
+        // Function to handle button click and redirect to the corresponding form event page
+        function openFormModal(eventId) {
+            event.stopPropagation(); // Stop event propagation to prevent opening detail events
+        }
 
-    // Function to attach event listeners to event elements
-    function attachEventListeners() {
-        // Add event listener to all elements with class 'event'
-        document.querySelectorAll('.event').forEach(event => {
-            event.addEventListener('click', function() {
-                // Retrieve the event-id from the clicked event element
-                var eventId = this.getAttribute('event-id');
+        // Function to attach event listeners to event elements
+        function attachEventListeners() {
+            // Add event listener to all elements with class 'event'
+            document.querySelectorAll('.event').forEach(event => {
+                event.addEventListener('click', function() {
+                    // Retrieve the event-id from the clicked event element
+                    var eventId = this.getAttribute('event-id');
 
-                // Redirect to the event detail page
-                redirectToEventDetail(eventId);
+                    // Redirect to the event detail page
+                    redirectToEventDetail(eventId);
+                });
             });
-        });
-    }
+        }
 
-    // Call attachEventListeners initially
-    attachEventListeners();
+        // Call attachEventListeners initially
+        attachEventListeners();
 
-    // Function to redirect to the archived events page
-    function showArchivedEvents() {
-        window.location.href = "/archived"; // Redirect to archived-event.blade.php
-    }
-</script>
+        // Function to redirect to the archived events page
+        function showArchivedEvents() {
+            window.location.href = "event-archived.blade.php"; // Redirect to archived-event.blade.php
+        }
+    </script>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
