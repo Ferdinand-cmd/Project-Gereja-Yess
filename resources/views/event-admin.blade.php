@@ -197,6 +197,34 @@
             margin-bottom: 10px; /* Adjust margin as needed */
         }
 
+        /* Modal body text */
+        .delete-confirmation-modal .modal-body {
+            font-family: 'Roboto', sans-serif;
+            font-weight: bold;
+            text-align: center; /* Center align the text */
+        }
+
+        /* Cancel button */
+        .delete-confirmation-modal .modal-footer .btn-secondary {
+            background-color: #E5E5E5;
+            color: black;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: bold;
+        }
+
+        /* Delete button */
+        .delete-confirmation-modal .modal-footer .btn-danger {
+            background-color: black;
+            color: white;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: bold;
+        }
+
+        /* Center align the buttons */
+        .delete-confirmation-modal .modal-footer {
+            justify-content: center;
+        }
+
         .event-details {
             margin-right: 20px; /* Add margin to create space between the text and the side of the event */
         }
@@ -365,7 +393,7 @@
                     </div>
                     <div class="event-buttons-right">
                         <!-- Delete button -->
-                        <button type="button" class="btn btn-danger black-button"><i class="fas fa-trash"></i>Delete</button>
+                        <button type="button" class="btn btn-danger black-button" data-bs-toggle="modal" data-bs-target="#deleteConfirmationModal<?php echo $events[0]['id']; ?>"><i class="fas fa-trash"></i>Delete</button>
                         <!-- Edit button -->
                         <button type="button" class="btn btn-primary black-button"><i class="fas fa-pencil-alt"></i> Edit</button>
                         <!-- Jemaat mendaftar button -->
@@ -407,7 +435,7 @@
                     </div>
                     <div class="event-buttons-right">
                         <!-- Delete button -->
-                        <button type="button" class="btn btn-danger black-button"><i class="fas fa-trash"></i>Delete</button>
+                        <button type="button" class="btn btn-danger black-button" data-bs-toggle="modal" data-bs-target="#deleteConfirmationModal<?php echo $events[1]['id']; ?>"><i class="fas fa-trash"></i>Delete</button>
                         <!-- Edit button -->
                         <button type="button" class="btn btn-primary black-button"><i class="fas fa-pencil-alt"></i> Edit</button>
                         <!-- Jemaat mendaftar button -->
@@ -433,6 +461,28 @@
                 </div>
             </div>
     </div>
+
+    <!-- Modal for delete confirmation -->
+    <?php foreach ($events as $event): ?>
+        <div class="modal fade delete-confirmation-modal" id="deleteConfirmationModal<?php echo $event['id']; ?>" tabindex="-1" aria-labelledby="deleteConfirmationModalLabel<?php echo $event['id']; ?>" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="deleteConfirmationModalLabel<?php echo $event['id']; ?>">Konfirmasi</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Anda yakin akan menghapus Event<br>
+                        "<?php echo $event['title']; ?>"
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-danger" id="confirmDeleteButton">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <?php endforeach; ?>
 
     <!-- Footer -->
 
