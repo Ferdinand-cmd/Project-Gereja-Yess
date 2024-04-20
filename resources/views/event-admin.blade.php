@@ -164,7 +164,7 @@
             box-shadow: 0 0 0 0.25rem rgba(238, 177, 32, 0.5); /* Add focus style */
         }
 
-        .counter-box {
+        .event-counter-box {
             width: 30px;
             height: 30px;
             background-color: white;
@@ -175,7 +175,7 @@
             margin-right: 5px;
         }
 
-        .button-text {
+        .event-button-text {
             display: flex;
             flex-direction: column;
             margin-right: 5px;
@@ -196,6 +196,8 @@
             margin-top: 10px; /* Adjust margin as needed */
             margin-bottom: 10px; /* Adjust margin as needed */
         }
+
+        /* Delete Confirmation Modal */
 
         /* Modal body text */
         .delete-confirmation-modal .modal-body {
@@ -224,6 +226,76 @@
         .delete-confirmation-modal .modal-footer {
             justify-content: center;
         }
+
+        /* Jemaat mendaftar modal */
+
+        .jemaat-mendaftar-modal .modal-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500; /* Medium */
+        }
+
+        .jemaat-mendaftar-modal .modal-body {
+            padding: 10px; /* Add padding to the modal body */
+            /* Top row */
+            font-family: 'Kanit', sans-serif;
+            font-weight: normal; /* Regular */
+        }
+
+        .jemaat-mendaftar-modal table {
+            width: calc(100% - 20px); /* Set table width to 100% minus twice the padding (left and right) */
+            border-collapse: collapse; /* Collapse table borders */
+            margin: 10px; /* Add margin to the table */
+        }
+
+        .jemaat-mendaftar-modal table td {
+            padding: 10px; /* Add padding to table cells */
+        }
+
+        .jemaat-mendaftar-modal .modal-counter-box {
+            display: flex;
+            justify-content: flex-end;
+        }
+        
+        /* Text "Jumlah" */
+        .jemaat-mendaftar-modal .modal-counter-text {
+            background-color: white; /* Set background color to white */
+            color: black; /* Set text color to black */
+            display: inline-block; /* Make the text inline-block */
+            padding: 5px 10px; /* Add padding around the text */
+        }
+        
+        /* Counter */
+        .jemaat-mendaftar-modal .modal-counter {
+            background-color: #EEB120; /* Set background color to EEB120 */
+            color: black; /* Set text color to black */
+            display: inline-block; /* Make the counter inline-block */
+            padding: 5px 10px; /* Add padding around the counter */
+            font-size: 1.15em; /* Set the font size to 16px or any other desired value */
+        }
+
+        .jemaat-mendaftar-modal .top-row {
+            background-color: black;
+            color: white;
+        }
+
+        /* Names */
+        .jemaat-mendaftar-modal .odd-row,
+        .jemaat-mendaftar-modal .even-row {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: normal; /* Regular */
+        }
+
+        .jemaat-mendaftar-modal .odd-row {
+            background-color: white;
+            color: black;
+        }
+
+        .jemaat-mendaftar-modal .even-row {
+            background-color: #EFEFEF;
+            color: black;
+        }
+
+        /* Event details */
 
         .event-details {
             margin-right: 20px; /* Add margin to create space between the text and the side of the event */
@@ -350,28 +422,32 @@
             'title' => 'Event Title 1 Event Title 1',
             'date' => 'Event Date 1 Event Date 1',
             'description' => 'Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1Event Description 1', 
-            'image' => 'img/event-photo1.jpg'
+            'image' => 'img/event-photo1.jpg',
+            'registered_people' => ['Andi', 'Bagus', 'Cahyono']
         ],
         [
             'id' => 2,
             'title' => 'Event Title 2 Event Title 2 Event Title 2 Event Title 2 Event Title 2 Event Title 2',
             'date' => 'Event Date 2 Event Date 2 Event Date 2 Event Date 2 Event Date 2 Event Date 2',
             'description' => 'Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2',
-            'image' => 'img/event-photo2.jpg'
+            'image' => 'img/event-photo2.jpg',
+            'registered_people' => ['Desi', 'Endah', 'Marwoto', 'SBC Ganteng']
         ],
         [
             'id' => 3,
             'title' => 'Event Title 3 Event Title 3 Event Title 3 Event Title 3 Event Title 3 Event Title 3',
             'date' => 'Event Date 3 Event Date 3 Event Date 3 Event Date 3 Event Date 3 Event Date 3',
             'description' => 'Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3',
-            'image' => 'img/event-photo3.jpg'
+            'image' => 'img/event-photo3.jpg',
+            'registered_people' => []
         ],
         [
             'id' => 4,
             'title' => 'Event Title 4 Event Title 4 Event Title 4 Event Title 4 Event Title 4 Event Title 4',
             'date' => 'Event Date 4 Event Date 4 Event Date 4 Event Date 4 Event Date 4 Event Date 4',
             'description' => 'Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4',
-            'image' => 'img/event-photo4.jpg'
+            'image' => 'img/event-photo4.jpg',
+            'registered_people' => []
         ]
     ];
     ?>
@@ -397,9 +473,9 @@
                         <!-- Edit button -->
                         <button type="button" class="btn btn-primary black-button"><i class="fas fa-pencil-alt"></i> Edit</button>
                         <!-- Jemaat mendaftar button -->
-                        <button type="button" class="btn btn-primary white-button">
-                            <div class="counter-box">0</div>
-                            <div class="button-text">
+                        <button type="button" class="btn btn-primary white-button" data-bs-toggle="modal" data-bs-target="#jemaatMendaftarModal<?php echo $events[0]['id']; ?>">
+                            <div class="event-counter-box"><?php echo count($events[0]['registered_people']); ?></div>
+                            <div class="event-button-text">
                                 <div class="jemaat-text">Jemaat</div>
                                 <div class="mendaftar-text">Mendaftar</div>
                             </div>
@@ -439,9 +515,9 @@
                         <!-- Edit button -->
                         <button type="button" class="btn btn-primary black-button"><i class="fas fa-pencil-alt"></i> Edit</button>
                         <!-- Jemaat mendaftar button -->
-                        <button type="button" class="btn btn-primary white-button">
-                        <div class="counter-box">0</div>
-                            <div class="button-text">
+                        <button type="button" class="btn btn-primary white-button" data-bs-toggle="modal" data-bs-target="#jemaatMendaftarModal<?php echo $events[1]['id']; ?>">
+                            <div class="event-counter-box"><?php echo count($events[1]['registered_people']); ?></div>
+                            <div class="event-button-text">
                                 <div class="jemaat-text">Jemaat</div>
                                 <div class="mendaftar-text">Mendaftar</div>
                             </div>
@@ -462,6 +538,8 @@
             </div>
     </div>
 
+    <!-- Modals -->
+
     <!-- Modal for delete confirmation -->
     <?php foreach ($events as $event): ?>
         <div class="modal fade delete-confirmation-modal" id="deleteConfirmationModal<?php echo $event['id']; ?>" tabindex="-1" aria-labelledby="deleteConfirmationModalLabel<?php echo $event['id']; ?>" aria-hidden="true">
@@ -478,6 +556,40 @@
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
                         <button type="button" class="btn btn-danger" id="confirmDeleteButton">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <?php endforeach; ?>
+
+    <!-- Modal for Jemaat Mendaftar -->
+    <?php foreach ($events as $event): ?>
+        <div class="modal fade jemaat-mendaftar-modal" id="jemaatMendaftarModal<?php echo $event['id']; ?>" tabindex="-1" aria-labelledby="jemaatMendaftarModalLabel<?php echo $event['id']; ?>" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">PENDAFTARAN EVENT > <?php echo $event['title']; ?></h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <table>
+                            <tr class="top-row">
+                                <td>Daftar nama jemaat yang sudah mendaftar</td>
+                                <td>
+                                    <div class="modal-counter-box">
+                                        <div class="modal-counter-text">Jumlah</div>
+                                        <div class="modal-counter"><?php echo count($event['registered_people']); ?></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <?php $count = 0; ?>
+                            <?php foreach ($event['registered_people'] as $person): ?>
+                                <?php $count++; ?>
+                                <tr class="<?php echo $count % 2 == 0 ? 'even-row' : 'odd-row'; ?>">
+                                    <td colspan="2"><?php echo $person; ?></td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </table>
                     </div>
                 </div>
             </div>
