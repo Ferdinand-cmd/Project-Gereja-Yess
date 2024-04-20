@@ -209,6 +209,7 @@
         /* Cancel button */
         .delete-confirmation-modal .modal-footer .btn-secondary {
             background-color: #E5E5E5;
+            border-color: #E5E5E5;
             color: black;
             font-family: 'DM Sans', sans-serif;
             font-weight: bold;
@@ -217,6 +218,7 @@
         /* Delete button */
         .delete-confirmation-modal .modal-footer .btn-danger {
             background-color: black;
+            border-color: black;
             color: white;
             font-family: 'DM Sans', sans-serif;
             font-weight: bold;
@@ -555,7 +557,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                        <button type="button" class="btn btn-danger" id="confirmDeleteButton">Delete</button>
+                        <button type="button" class="btn btn-danger" id="confirmDeleteButton" onclick="deleteEvent(<?php echo $event['id']; ?>)">Delete</button>
                     </div>
                 </div>
             </div>
@@ -623,6 +625,12 @@
                 document.getElementById("dropdownMenuButton").innerText = event.target.innerText;
             });
         });
+
+        // Function to handle the click event of delete buttons
+        function deleteEvent(eventId) {
+            // Display an alert to indicate that the event is deleted
+            alert("Event with ID " + eventId + " is deleted!");
+        }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="js/home.js"></script>
