@@ -103,25 +103,25 @@
             font-weight: 500;
         }
 
-/* Switch Off Color */
-.form-check-input {
-    background-color: #8e8e8e;
-}
+        /* Switch Off Color */
+        .form-check-input {
+            background-color: #8e8e8e;
+        }
 
-/* Switch On Color */
-.form-check-input:checked {
-    background-color: #eeb120;
-}
+        /* Switch On Color */
+        .form-check-input:checked {
+            background-color: #eeb120;
+        }
 
-/* Switch On Color */
-.form-check-input + .form-check-label::before {
-    border-color: #eeb120;
-}
+        /* Switch On Color */
+        .form-check-input + .form-check-label::before {
+            border-color: #eeb120;
+        }
 
-/* Circle Inside Switch Color */
-.form-check-input + .form-check-label::after {
-    background-color: #f4f4f4; /* This ensures the circle color */
-}
+        /* Circle Inside Switch Color */
+        .form-check-input + .form-check-label::after {
+            background-color: #f4f4f4; /* This ensures the circle color */
+        }
 
         #addEventModal .form-check-label {
             font-family: Inter, sans-serif;
