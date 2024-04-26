@@ -35,6 +35,8 @@
             align-items: center; /* Align items vertically */
         }
 
+        /* Dropdown */
+
         .dropdown{
             display: inline-block;
             margin-left: 10px;
@@ -58,6 +60,8 @@
             box-shadow: 0 0 0 0.25rem rgba(238, 177, 32, 0.5); /* Add focus style */
         }
 
+        /* Add event button */
+
         .add-event-button {
             font-family: 'Kanit', sans-serif;
             font-weight: normal;
@@ -77,6 +81,18 @@
         .add-event-button:focus {
             box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5); /* Add focus style */
         }
+
+        /* CSS for adjusting modal layout */
+        .add-event-modal .modal-body .row {
+            display: flex;
+        }
+
+        .add-event-modal .modal-body .col {
+            flex: 1;
+            margin-right: 10px; /* Add margin between date and time inputs */
+        }
+
+        /* Events */
        
         .event {
             position: relative;
@@ -413,7 +429,7 @@
         </div>
 
         <!-- Add Event button -->
-        <button class="btn btn-primary add-event-button">Add Event</button>
+        <button type="button" class="btn btn-primary add-event-button" data-bs-toggle="modal" data-bs-target="#addEventModal">Add Event</button>
     </div>
 
     <?php
@@ -598,6 +614,66 @@
         </div>
     <?php endforeach; ?>
 
+    <!-- Modal for Add Event -->
+    <div class="modal fade add-event-modal" id="addEventModal" tabindex="-1" aria-labelledby="addEventModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addEventModalLabel">Add Event</h5>
+                    <!-- Replace close button with switch -->
+                    <div class="form-check form-switch">
+                        <label class="form-check-label" for="registrationSwitch">Aktifkan Form Pendaftaran</label>
+                        <input class="form-check-input" type="checkbox" id="registrationSwitch">
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <form id="eventForm" action="" method="POST" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <label for="namaEvent" class="form-label">Nama event</label>
+                            <input type="text" class="form-control" id="namaEvent" name="namaEvent" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="tempat" class="form-label">Tempat</label>
+                            <input type="text" class="form-control" id="tempat" name="tempat" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Tanggal dan Waktu Mulai</label>
+                            <div class="row">
+                                <div class="col">
+                                    <input type="date" class="form-control" id="tanggalMulai" name="tanggalMulai" required>
+                                </div>
+                                <div class="col">
+                                    <input type="time" class="form-control" id="waktuMulai" name="waktuMulai">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Tanggal dan Waktu Akhir</label>
+                            <div class="row">
+                                <div class="col">
+                                    <input type="date" class="form-control" id="tanggalAkhir" name="tanggalAkhir" required>
+                                </div>
+                                <div class="col">
+                                    <input type="time" class="form-control" id="waktuAkhir" name="waktuAkhir">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="deskripsiEvent" class="form-label">Deskripsi event</label>
+                            <textarea class="form-control" id="deskripsiEvent" name="deskripsiEvent" rows="4" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="gambar" class="form-label">Gambar</label>
+                            <input type="file" class="form-control" id="gambar" name="gambar" accept="image/*" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Save</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
 
     <!-- Script -->
@@ -623,6 +699,27 @@
                 
                 // Update the button text to the selected option
                 document.getElementById("dropdownMenuButton").innerText = event.target.innerText;
+            });
+        });
+
+        // JavaScript code for handling the switch state and text change
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get the switch element
+            var registrationSwitch = document.getElementById('registrationSwitch');
+
+            // Add event listener for switch change
+            registrationSwitch.addEventListener('change', function () {
+                // Get the label element
+                var switchLabel = document.querySelector('label[for="registrationSwitch"]');
+
+                // Check the switch state
+                if (registrationSwitch.checked) {
+                    // If switch is on, change label text to "Form Pendaftaran Aktif"
+                    switchLabel.textContent = 'Form Pendaftaran Aktif';
+                } else {
+                    // If switch is off, change label text to "Aktifkan Form Pendaftaran"
+                    switchLabel.textContent = 'Aktifkan Form Pendaftaran';
+                }
             });
         });
 
