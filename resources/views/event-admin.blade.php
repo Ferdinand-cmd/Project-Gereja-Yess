@@ -60,7 +60,7 @@
             box-shadow: 0 0 0 0.25rem rgba(238, 177, 32, 0.5); /* Add focus style */
         }
 
-        /* Add event button */
+        /* Add & edit event buttons */
 
         .add-event-button {
             font-family: 'Kanit', sans-serif;
@@ -82,23 +82,16 @@
             box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5); /* Add focus style */
         }
 
-        /* CSS for adjusting modal body layout */
-        .add-event-modal .modal-body .row {
-            display: flex;
-        }
-
-        .add-event-modal .modal-body .col {
-            flex: 1;
-            margin-right: 10px; /* Add margin between date and time inputs */
-        }
-
         /* Modal Header */
-        #addEventModal .modal-header {
+        .add-event-modal .modal-header,
+        .edit-event-modal .modal-header {
             background-color: #FDFDFD;
         }
 
-        #addEventModal .modal-title,
-        #addEventModal .modal-body {
+        .add-event-modal .modal-title,
+        .add-event-modal .modal-body,
+        .edit-event-modal .modal-title,
+        .edit-event-modal .modal-body {
             font-family: Montserrat, sans-serif;
             font-weight: 500;
         }
@@ -123,31 +116,48 @@
             background-color: #f4f4f4; /* This ensures the circle color */
         }
 
-        #addEventModal .form-check-label {
+        .add-event-modal .form-check-label
+        .edit-event-modal .form-check-label {
             font-family: Inter, sans-serif;
             font-weight: 600;
         }
 
         /* Modal Body */
-        #addEventModal .modal-body {
+        .add-event-modal .modal-body,
+        .edit-event-modal .modal-body {
             background-color: #F2F2F2;
         }
 
+        /* CSS for adjusting modal body layout */
+        .add-event-modal .modal-body .row,
+        .edit-event-modal .modal-body .row {
+            display: flex;
+        }
+
+        .add-event-modal .modal-body .col,
+        .edit-event-modal .modal-body .col {
+            flex: 1;
+            margin-right: 10px; /* Add margin between date and time inputs */
+        }
+
         /* Modal footer */
-        #addEventModal .modal-footer {
+        .add-event-modal .modal-footer,
+        .edit-event-modal .modal-footer {
             background-color: #a2a2a2;
             font-family: DM Sans, sans-serif;
             font-weight: bold;
         }
 
         /* Cancel Button */
-        #addEventModal .btn-cancel {
+        .add-event-modal .btn-cancel,
+        .edit-event-modal .btn-cancel {
             background-color: #e5e5e5;
             color: black;
         }
 
         /* Save Button */
-        #addEventModal .btn-save {
+        .add-event-modal .btn-save,
+        .edit-event-modal .btn-save {
             background-color: black;
             color: white;
         }
@@ -500,126 +510,237 @@
             'id' => 1,
             'title' => 'Event Title 1 Event Title 1',
             'date' => 'Event Date 1 Event Date 1',
+            'location' => 'Event Location 1 Event Location 1',
             'description' => 'Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1Event Description 1', 
+            'start_date' => '2024-07-01',
+            'start_time' => '07:00',
+            'end_date' => '2024-07-04',
+            'end_time' => '11:00',
             'image' => 'img/event-photo1.jpg',
-            'registered_people' => ['Andi', 'Bagus', 'Cahyono']
+            'registered_people' => ['Andi', 'Bagus', 'Cahyono'],
+            'archived' => false
         ],
         [
             'id' => 2,
             'title' => 'Event Title 2 Event Title 2 Event Title 2 Event Title 2 Event Title 2 Event Title 2',
-            'date' => 'Event Date 2 Event Date 2 Event Date 2 Event Date 2 Event Date 2 Event Date 2',
+            'date' => 'Event Date 2 Event Date 2',
+            'location' => 'Event Location 2 Event Location 2',
             'description' => 'Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2',
+            'start_date' => '2024-08-01',
+            'start_time' => null,
+            'end_date' => '2024-08-04',
+            'end_time' => null,
             'image' => 'img/event-photo2.jpg',
-            'registered_people' => ['Desi', 'Endah', 'Marwoto', 'SBC Ganteng']
+            'registered_people' => ['Desi', 'Endah', 'Marwoto', 'SBC Ganteng'],
+            'archived' => false
         ],
         [
             'id' => 3,
             'title' => 'Event Title 3 Event Title 3 Event Title 3 Event Title 3 Event Title 3 Event Title 3',
-            'date' => 'Event Date 3 Event Date 3 Event Date 3 Event Date 3 Event Date 3 Event Date 3',
+            'date' => 'Event Date 3 Event Date 3',
+            'location' => 'Event Location 3 Event Location 3',
             'description' => 'Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3',
+            'start_date' => '2024-04-01',
+            'start_time' => '07:00',
+            'end_date' => '2024-04-04',
+            'end_time' => '11:00',
             'image' => 'img/event-photo3.jpg',
-            'registered_people' => []
+            'registered_people' => [],
+            'archived' => true
         ],
         [
             'id' => 4,
             'title' => 'Event Title 4 Event Title 4 Event Title 4 Event Title 4 Event Title 4 Event Title 4',
-            'date' => 'Event Date 4 Event Date 4 Event Date 4 Event Date 4 Event Date 4 Event Date 4',
+            'date' => 'Event Date 4 Event Date 4',
+            'location' => 'Event Location 4 Event Location 4',
             'description' => 'Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4',
+            'start_date' => '2024-05-01',
+            'start_time' => null,
+            'end_date' => '2024-05-04',
+            'end_time' => null,
             'image' => 'img/event-photo4.jpg',
-            'registered_people' => []
+            'registered_people' => [],
+            'archived' => true
         ]
     ];
     ?>
 
     <!-- Events -->
     <div class="events-container">
-        <!-- Event 1 -->
-        <div class="event" event-id="<?php echo $events[0]['id']; ?>">
-            <img src="<?php echo $events[0]['image']; ?>" alt="Event Photo">
+        <?php foreach ($events as $event): ?>
+            <div class="event" event-id="<?php echo $event['id']; ?>">
+                <img src="<?php echo $event['image']; ?>" alt="Event Photo">
 
-            <!-- Content (buttons and details) -->
-            <div class="event-content">
-                <!-- Buttons for event actions -->
-                <div class="event-buttons">
+                <!-- Content (buttons and details) -->
+                <div class="event-content">
                     <!-- Buttons for event actions -->
-                    <div class="event-buttons-left">
-                        <!-- Archived button -->
-                        <button type="button" class="btn btn-danger black-button"><i class="fas fa-archive"></i> Archived</button>
+                    <div class="event-buttons">
+                        <!-- Buttons for event actions -->
+                        <div class="event-buttons-left">
+                            <!-- Archived button -->
+                            <button type="button" class="btn btn-danger black-button"><i class="fas fa-archive"></i> Archived</button>
+                        </div>
+                        <div class="event-buttons-right">
+                            <!-- Delete button -->
+                            <button type="button" class="btn btn-danger black-button" data-bs-toggle="modal" data-bs-target="#deleteConfirmationModal<?php echo $event['id']; ?>"><i class="fas fa-trash"></i>Delete</button>
+                            <!-- Edit button -->
+                            <button type="button" class="btn btn-primary black-button" data-bs-toggle="modal" data-bs-target="#editEventModal<?php echo $event['id']; ?>"><i class="fas fa-pencil-alt"></i> Edit</button>
+                            <!-- Jemaat mendaftar button -->
+                            <button type="button" class="btn btn-primary white-button" data-bs-toggle="modal" data-bs-target="#jemaatMendaftarModal<?php echo $event['id']; ?>">
+                                <div class="event-counter-box"><?php echo count($event['registered_people']); ?></div>
+                                <div class="event-button-text">
+                                    <div class="jemaat-text">Jemaat</div>
+                                    <div class="mendaftar-text">Mendaftar</div>
+                                </div>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
                     </div>
-                    <div class="event-buttons-right">
-                        <!-- Delete button -->
-                        <button type="button" class="btn btn-danger black-button" data-bs-toggle="modal" data-bs-target="#deleteConfirmationModal<?php echo $events[0]['id']; ?>"><i class="fas fa-trash"></i>Delete</button>
-                        <!-- Edit button -->
-                        <button type="button" class="btn btn-primary black-button"><i class="fas fa-pencil-alt"></i> Edit</button>
-                        <!-- Jemaat mendaftar button -->
-                        <button type="button" class="btn btn-primary white-button" data-bs-toggle="modal" data-bs-target="#jemaatMendaftarModal<?php echo $events[0]['id']; ?>">
-                            <div class="event-counter-box"><?php echo count($events[0]['registered_people']); ?></div>
-                            <div class="event-button-text">
-                                <div class="jemaat-text">Jemaat</div>
-                                <div class="mendaftar-text">Mendaftar</div>
-                            </div>
-                            <i class="fas fa-arrow-right"></i>
-                        </button>
-                    </div>
-                </div>
 
-                <!-- Line between buttons and details -->
-                <div class="line"></div>
-                
-                <!-- Event details -->
-                <div class="event-details">
-                    <div class="event-title"><?php echo $events[0]['title']; ?></div>
-                    <div class="event-date"><?php echo $events[0]['date']; ?></div>
-                    <div class="event-description"><?php echo $events[0]['description']; ?></div>
+                    <!-- Line between buttons and details -->
+                    <div class="line"></div>
+                    
+                    <!-- Event details -->
+                    <div class="event-details">
+                        <div class="event-title"><?php echo $event['title']; ?></div>
+                        <div class="event-date">
+                            <?php
+                                // Fill the event location and date/time (time is optional)
+                                echo $event['location'].' | '.$event['start_date'].(empty($event['start_time']) ? '' : ' '.$event['start_time']).' - '.$event['end_date'].(empty($event['end_time']) ? '' : ' '.$event['end_time']);
+                            ?>
+                        </div>
+                        <div class="event-description"><?php echo $event['description']; ?></div>
+                    </div>
                 </div>
             </div>
-        </div>
-
-        <!-- Event 2 -->
-        <div class="event" event-id="<?php echo $events[1]['id']; ?>">
-            <img src="<?php echo $events[1]['image']; ?>" alt="Event Photo">
-
-            <!-- Content (buttons and details) -->
-            <div class="event-content">
-                <!-- Buttons for event actions -->
-                <div class="event-buttons">
-                    <!-- Buttons for event actions -->
-                    <div class="event-buttons-left">
-                        <!-- Archived button -->
-                        <button type="button" class="btn btn-danger black-button"><i class="fas fa-archive"></i> Archived</button>
-                    </div>
-                    <div class="event-buttons-right">
-                        <!-- Delete button -->
-                        <button type="button" class="btn btn-danger black-button" data-bs-toggle="modal" data-bs-target="#deleteConfirmationModal<?php echo $events[1]['id']; ?>"><i class="fas fa-trash"></i>Delete</button>
-                        <!-- Edit button -->
-                        <button type="button" class="btn btn-primary black-button"><i class="fas fa-pencil-alt"></i> Edit</button>
-                        <!-- Jemaat mendaftar button -->
-                        <button type="button" class="btn btn-primary white-button" data-bs-toggle="modal" data-bs-target="#jemaatMendaftarModal<?php echo $events[1]['id']; ?>">
-                            <div class="event-counter-box"><?php echo count($events[1]['registered_people']); ?></div>
-                            <div class="event-button-text">
-                                <div class="jemaat-text">Jemaat</div>
-                                <div class="mendaftar-text">Mendaftar</div>
-                            </div>
-                            <i class="fas fa-arrow-right"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Line between buttons and details -->
-                <div class="line"></div>
-                
-                <!-- Event details -->
-                <div class="event-details">
-                    <div class="event-title"><?php echo $events[1]['title']; ?></div>
-                    <div class="event-date"><?php echo $events[1]['date']; ?></div>
-                    <div class="event-description"><?php echo $events[1]['description']; ?></div>
-                </div>
-            </div>
+        <?php endforeach; ?>
     </div>
 
     <!-- Modals -->
 
-    <!-- Modal for delete confirmation -->
+    <!-- Modal for Add Event -->
+    <div class="modal fade add-event-modal" id="addEventModal" tabindex="-1" aria-labelledby="addEventModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header d-flex justify-content-between align-items-center">
+                    <h5 class="modal-title" id="addEventModalLabel">Add Event</h5>
+                    <!-- Replace close button with switch -->
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="registrationSwitch">
+                        <label class="form-check-label" for="registrationSwitch">Aktifkan Form Pendaftaran</label>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="aNamaEvent" class="form-label">Nama event</label>
+                        <input type="text" class="form-control" id="aNamaEvent" name="aNamaEvent" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="aTempat" class="form-label">Tempat</label>
+                        <input type="text" class="form-control" id="aTempat" name="aTempat" required>
+                    </div>
+                    <div class="mb-3">
+                        <div class="row">
+                            <div class="col">
+                                <label class="aTanggalMulai">Tanggal mulai</label>
+                                <input type="date" class="form-control" id="aTanggalMulai" name="aTanggalMulai" required>
+                            </div>
+                            <div class="col">
+                                <label class="aWaktuMulai">Waktu mulai (opsional)</label>
+                                <input type="time" class="form-control" id="aWaktuMulai" name="aWaktuMulai">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="row">
+                            <div class="col">
+                                <label class="aTanggalAkhir">Tanggal akhir</label>
+                                <input type="date" class="form-control" id="aTanggalAkhir" name="aTanggalAkhir" required>
+                            </div>
+                            <div class="col">
+                                <label class="aWaktuAkhir">Waktu akhir (opsional)</label>
+                                <input type="time" class="form-control" id="aWaktuAkhir" name="aWaktuAkhir">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="aDeskripsiEvent" class="form-label">Deskripsi event</label>
+                        <textarea class="form-control" id="aDeskripsiEvent" name="aDeskripsiEvent" rows="4" required></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="aGambar" class="form-label">Gambar</label>
+                        <input type="file" class="form-control" id="aGambar" name="aGambar" accept="image/*" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-cancel float-start" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-save float-end" onclick="addEvent()">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals for edit -->
+    <?php foreach ($events as $event): ?>
+        <div class="modal fade edit-event-modal" id="editEventModal<?php echo $event['id']; ?>" tabindex="-1" aria-labelledby="editEventModalLabel<?php echo $event['id']; ?>" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header d-flex justify-content-between align-items-center">
+                        <h5 class="modal-title" id="editEventModalLabel<?php echo $event['id']; ?>">Edit Event</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="eNamaEvent<?php echo $event['id']; ?>" class="form-label">Nama event</label>
+                            <input type="text" class="form-control" id="eNamaEvent<?php echo $event['id']; ?>" name="eNamaEvent<?php echo $event['id']; ?>" value="<?php echo $event['title']; ?>" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="eTempat<?php echo $event['id']; ?>" class="form-label">Tempat</label>
+                            <input type="text" class="form-control" id="eTempat<?php echo $event['id']; ?>" name="eTempat<?php echo $event['id']; ?>" value="<?php echo $event['location']; ?>" required>
+                        </div>
+                        <div class="mb-3">
+                            <div class="row">
+                                <div class="col">
+                                    <label class=eTanggalMulai<?php echo $event['id']; ?>">Tanggal mulai</label>
+                                    <input type="date" class="form-control" id="eTanggalMulai<?php echo $event['id']; ?>" name="eTanggalMulai<?php echo $event['id']; ?>" value="<?php echo $event['start_date']; ?>" required>
+                                </div>
+                                <div class="col">
+                                    <label class="eWaktuMulai<?php echo $event['id']; ?>">Waktu mulai (opsional)</label>
+                                    <input type="time" class="form-control" id="eWaktuMulai<?php echo $event['id']; ?>" name="eWaktuMulai<?php echo $event['id']; ?>" value="<?php echo $event['start_time']; ?>">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="row">
+                                <div class="col">
+                                    <label class="eTanggalAkhir<?php echo $event['id']; ?>">Tanggal akhir</label>
+                                    <input type="date" class="form-control" id="eTanggalAkhir<?php echo $event['id']; ?>" name="eTanggalAkhir<?php echo $event['id']; ?>" value="<?php echo $event['end_date']; ?>" required>
+                                </div>
+                                <div class="col">
+                                    <label class="eWaktuAkhir<?php echo $event['id']; ?>">Waktu akhir (opsional)</label>
+                                    <input type="time" class="form-control" id="eWaktuAkhir<?php echo $event['id']; ?>" name="eWaktuAkhir<?php echo $event['id']; ?>" value="<?php echo $event['end_time']; ?>">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="eDeskripsiEvent<?php echo $event['id']; ?>" class="form-label">Deskripsi event</label>
+                            <textarea class="form-control" id="eDeskripsiEvent<?php echo $event['id']; ?>" name="eDeskripsiEvent<?php echo $event['id']; ?>" rows="4" required><?php echo $event['description']; ?></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="eGambar<?php echo $event['id']; ?>" class="form-label">Gambar</label>
+                            <input type="file" class="form-control" id="eGambar<?php echo $event['id']; ?>" name="eGambar<?php echo $event['id']; ?>" accept="image/*" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-cancel float-start" data-bs-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-save float-end" onclick="updateEvent(<?php echo $event['id']; ?>)">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <?php endforeach; ?>
+
+    <!-- Modals for delete confirmation -->
     <?php foreach ($events as $event): ?>
         <div class="modal fade delete-confirmation-modal" id="deleteConfirmationModal<?php echo $event['id']; ?>" tabindex="-1" aria-labelledby="deleteConfirmationModalLabel<?php echo $event['id']; ?>" aria-hidden="true">
             <div class="modal-dialog">
@@ -675,68 +796,6 @@
         </div>
     <?php endforeach; ?>
 
-    <!-- Modal for Add Event -->
-    <div class="modal fade add-event-modal" id="addEventModal" tabindex="-1" aria-labelledby="addEventModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header d-flex justify-content-between align-items-center">
-                    <h5 class="modal-title" id="addEventModalLabel">Add Event</h5>
-                    <!-- Replace close button with switch -->
-                    <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" id="registrationSwitch">
-                        <label class="form-check-label" for="registrationSwitch">Aktifkan Form Pendaftaran</label>
-                    </div>
-                </div>
-                <div class="modal-body" style="background-color: #f2f2f2;">
-                    <div class="mb-3">
-                        <label for="namaEvent" class="form-label">Nama event</label>
-                        <input type="text" class="form-control" id="namaEvent" name="namaEvent" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="tempat" class="form-label">Tempat</label>
-                        <input type="text" class="form-control" id="tempat" name="tempat" required>
-                    </div>
-                    <div class="mb-3">
-                        <div class="row">
-                            <div class="col">
-                                <label class="tanggalMulai">Tanggal mulai</label>
-                                <input type="date" class="form-control" id="tanggalMulai" name="tanggalMulai" required>
-                            </div>
-                            <div class="col">
-                                <label class="waktuMulai">Waktu mulai (opsional)</label>
-                                <input type="time" class="form-control" id="waktuMulai" name="waktuMulai">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <div class="row">
-                            <div class="col">
-                                <label class="tanggalAkhir">Tanggal akhir</label>
-                                <input type="date" class="form-control" id="tanggalAkhir" name="tanggalAkhir" required>
-                            </div>
-                            <div class="col">
-                                <label class="waktuAkhir">Waktu akhir (opsional)</label>
-                                <input type="time" class="form-control" id="waktuAkhir" name="waktuAkhir">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <label for="deskripsiEvent" class="form-label">Deskripsi event</label>
-                        <textarea class="form-control" id="deskripsiEvent" name="deskripsiEvent" rows="4" required></textarea>
-                    </div>
-                    <div class="mb-3">
-                        <label for="gambar" class="form-label">Gambar</label>
-                        <input type="file" class="form-control" id="gambar" name="gambar" accept="image/*" required>
-                    </div>
-                </div>
-                <div class="modal-footer" style="background-color: #a2a2a2;">
-                    <button type="button" class="btn btn-cancel float-start" data-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-save float-end">Save</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Footer -->
 
     <!-- Script -->
@@ -786,11 +845,23 @@
             });
         });
 
-        // Function to handle the click event of delete buttons
+        // Function to handle the click of save button on the add modal
+        function addEvent() {
+            // Display an alert to indicate that the event is added
+            alert("Event is added!");
+        }
+
+        // Function to handle the click of save button on the add modal
+        function updateEvent(eventId) {
+            // Display an alert to indicate that the event is added
+            alert("Event is added!");
+        }
+
+        // Function to handle the click event of the delete buttons
         function deleteEvent(eventId) {
             // Display an alert to indicate that the event is deleted
             alert("Event with ID " + eventId + " is deleted!");
-        }
+        } 
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="js/home.js"></script>
