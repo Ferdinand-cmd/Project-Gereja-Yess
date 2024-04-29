@@ -1,3 +1,16 @@
+<?php
+    // Initialize $selectedDropdown with "upcoming" by default
+    $selectedDropdown = "upcoming";
+
+    // Check if the selectedDropdown value is received
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['selectedDropdown'])) {
+        // Update the value of $selectedDropdown
+        $selectedDropdown = $_POST['selectedDropdown'];
+
+        // Now you can use $selectedDropdown as needed in event-admin.blade.php
+        // For example, you can use it to filter the events accordingly
+    }
+?>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -437,6 +450,13 @@
                 align-self: center; /* Center button horizontally */
             }
         }
+
+        /* Adjust modal size for smaller screens */
+        @media (max-width: 768px) {
+            .modal-content {
+                max-width: 90%; /* Adjust maximum width for smaller screens */
+            }
+        }
     </style>
 </head>
 <body>
@@ -504,115 +524,165 @@
     </div>
 
     <?php
-    // Initialize $events array with test data
-    $events = [
-        [
-            'id' => 1,
-            'title' => 'Event Title 1 Event Title 1',
-            'date' => 'Event Date 1 Event Date 1',
-            'location' => 'Event Location 1 Event Location 1',
-            'description' => 'Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1Event Description 1', 
-            'start_date' => '2024-07-01',
-            'start_time' => '07:00',
-            'end_date' => '2024-07-04',
-            'end_time' => '11:00',
-            'image' => 'img/event-photo1.jpg',
-            'registered_people' => ['Andi', 'Bagus', 'Cahyono'],
-            'archived' => false
-        ],
-        [
-            'id' => 2,
-            'title' => 'Event Title 2 Event Title 2 Event Title 2 Event Title 2 Event Title 2 Event Title 2',
-            'date' => 'Event Date 2 Event Date 2',
-            'location' => 'Event Location 2 Event Location 2',
-            'description' => 'Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2',
-            'start_date' => '2024-08-01',
-            'start_time' => null,
-            'end_date' => '2024-08-04',
-            'end_time' => null,
-            'image' => 'img/event-photo2.jpg',
-            'registered_people' => ['Desi', 'Endah', 'Marwoto', 'SBC Ganteng'],
-            'archived' => false
-        ],
-        [
-            'id' => 3,
-            'title' => 'Event Title 3 Event Title 3 Event Title 3 Event Title 3 Event Title 3 Event Title 3',
-            'date' => 'Event Date 3 Event Date 3',
-            'location' => 'Event Location 3 Event Location 3',
-            'description' => 'Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3',
-            'start_date' => '2024-04-01',
-            'start_time' => '07:00',
-            'end_date' => '2024-04-04',
-            'end_time' => '11:00',
-            'image' => 'img/event-photo3.jpg',
-            'registered_people' => [],
-            'archived' => true
-        ],
-        [
-            'id' => 4,
-            'title' => 'Event Title 4 Event Title 4 Event Title 4 Event Title 4 Event Title 4 Event Title 4',
-            'date' => 'Event Date 4 Event Date 4',
-            'location' => 'Event Location 4 Event Location 4',
-            'description' => 'Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4',
-            'start_date' => '2024-05-01',
-            'start_time' => null,
-            'end_date' => '2024-05-04',
-            'end_time' => null,
-            'image' => 'img/event-photo4.jpg',
-            'registered_people' => [],
-            'archived' => true
-        ]
-    ];
+        // Initialize $events array with test data
+        $events = [
+            [
+                'id' => 1,
+                'title' => 'Event Title 1 Event Title 1',
+                'date' => 'Event Date 1 Event Date 1',
+                'location' => 'Event Location 1 Event Location 1',
+                'description' => 'Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1Event Description 1', 
+                'start_date' => '2024-07-01',
+                'start_time' => '07:00',
+                'end_date' => '2024-07-04',
+                'end_time' => '11:00',
+                'image' => 'img/event-photo1.jpg',
+                'registered_people' => ['Andi', 'Bagus', 'Cahyono'],
+                'archived' => false
+            ],
+            [
+                'id' => 2,
+                'title' => 'Event Title 2 Event Title 2 Event Title 2 Event Title 2 Event Title 2 Event Title 2',
+                'date' => 'Event Date 2 Event Date 2',
+                'location' => 'Event Location 2 Event Location 2',
+                'description' => 'Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2',
+                'start_date' => '2024-08-01',
+                'start_time' => null,
+                'end_date' => '2024-08-04',
+                'end_time' => null,
+                'image' => 'img/event-photo2.jpg',
+                'registered_people' => ['Desi', 'Endah', 'Marwoto', 'SBC Ganteng'],
+                'archived' => false
+            ],
+            [
+                'id' => 3,
+                'title' => 'Event Title 3 Event Title 3 Event Title 3 Event Title 3 Event Title 3 Event Title 3',
+                'date' => 'Event Date 3 Event Date 3',
+                'location' => 'Event Location 3 Event Location 3',
+                'description' => 'Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3',
+                'start_date' => '2024-04-01',
+                'start_time' => '07:00',
+                'end_date' => '2024-04-04',
+                'end_time' => '11:00',
+                'image' => 'img/event-photo3.jpg',
+                'registered_people' => [],
+                'archived' => true
+            ],
+            [
+                'id' => 4,
+                'title' => 'Event Title 4 Event Title 4 Event Title 4 Event Title 4 Event Title 4 Event Title 4',
+                'date' => 'Event Date 4 Event Date 4',
+                'location' => 'Event Location 4 Event Location 4',
+                'description' => 'Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4',
+                'start_date' => '2024-05-01',
+                'start_time' => null,
+                'end_date' => '2024-05-04',
+                'end_time' => null,
+                'image' => 'img/event-photo4.jpg',
+                'registered_people' => [],
+                'archived' => true
+            ]
+        ];
     ?>
 
     <!-- Events -->
     <div class="events-container">
         <?php foreach ($events as $event): ?>
-            <div class="event" event-id="<?php echo $event['id']; ?>">
-                <img src="<?php echo $event['image']; ?>" alt="Event Photo">
+            <?php if ($selectedDropdown === 'upcoming' && !$event['archived']): ?>
+                <!-- Display upcoming events -->
+                <div class="event" event-id="<?php echo $event['id']; ?>">
+                    <img src="<?php echo $event['image']; ?>" alt="Event Photo">
 
-                <!-- Content (buttons and details) -->
-                <div class="event-content">
-                    <!-- Buttons for event actions -->
-                    <div class="event-buttons">
+                    <!-- Content (buttons and details) -->
+                    <div class="event-content">
                         <!-- Buttons for event actions -->
-                        <div class="event-buttons-left">
-                            <!-- Archived button -->
-                            <button type="button" class="btn btn-danger black-button"><i class="fas fa-archive"></i> Archived</button>
+                        <div class="event-buttons">
+                            <!-- Buttons for event actions -->
+                            <div class="event-buttons-left">
+                                <!-- Archive button -->
+                                <button type="button" class="btn btn-danger black-button"><i class="fas fa-archive"></i> Archive</button>
+                            </div>
+                            <div class="event-buttons-right">
+                                <!-- Delete button -->
+                                <button type="button" class="btn btn-danger black-button" data-bs-toggle="modal" data-bs-target="#deleteConfirmationModal<?php echo $event['id']; ?>"><i class="fas fa-trash"></i>Delete</button>
+                                <!-- Edit button -->
+                                <button type="button" class="btn btn-primary black-button" data-bs-toggle="modal" data-bs-target="#editEventModal<?php echo $event['id']; ?>"><i class="fas fa-pencil-alt"></i> Edit</button>
+                                <!-- Jemaat mendaftar button -->
+                                <button type="button" class="btn btn-primary white-button" data-bs-toggle="modal" data-bs-target="#jemaatMendaftarModal<?php echo $event['id']; ?>">
+                                    <div class="event-counter-box"><?php echo count($event['registered_people']); ?></div>
+                                    <div class="event-button-text">
+                                        <div class="jemaat-text">Jemaat</div>
+                                        <div class="mendaftar-text">Mendaftar</div>
+                                    </div>
+                                    <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
                         </div>
-                        <div class="event-buttons-right">
-                            <!-- Delete button -->
-                            <button type="button" class="btn btn-danger black-button" data-bs-toggle="modal" data-bs-target="#deleteConfirmationModal<?php echo $event['id']; ?>"><i class="fas fa-trash"></i>Delete</button>
-                            <!-- Edit button -->
-                            <button type="button" class="btn btn-primary black-button" data-bs-toggle="modal" data-bs-target="#editEventModal<?php echo $event['id']; ?>"><i class="fas fa-pencil-alt"></i> Edit</button>
-                            <!-- Jemaat mendaftar button -->
-                            <button type="button" class="btn btn-primary white-button" data-bs-toggle="modal" data-bs-target="#jemaatMendaftarModal<?php echo $event['id']; ?>">
-                                <div class="event-counter-box"><?php echo count($event['registered_people']); ?></div>
-                                <div class="event-button-text">
-                                    <div class="jemaat-text">Jemaat</div>
-                                    <div class="mendaftar-text">Mendaftar</div>
-                                </div>
-                                <i class="fas fa-arrow-right"></i>
-                            </button>
-                        </div>
-                    </div>
 
-                    <!-- Line between buttons and details -->
-                    <div class="line"></div>
-                    
-                    <!-- Event details -->
-                    <div class="event-details">
-                        <div class="event-title"><?php echo $event['title']; ?></div>
-                        <div class="event-date">
-                            <?php
-                                // Fill the event location and date/time (time is optional)
-                                echo $event['location'].' | '.$event['start_date'].(empty($event['start_time']) ? '' : ' '.$event['start_time']).' - '.$event['end_date'].(empty($event['end_time']) ? '' : ' '.$event['end_time']);
-                            ?>
+                        <!-- Line between buttons and details -->
+                        <div class="line"></div>
+                        
+                        <!-- Event details -->
+                        <div class="event-details">
+                            <div class="event-title"><?php echo $event['title']; ?></div>
+                            <div class="event-date">
+                                <?php
+                                    // Fill the event location and date/time (time is optional)
+                                    echo $event['location'].' | '.$event['start_date'].(empty($event['start_time']) ? '' : ' '.$event['start_time']).' - '.$event['end_date'].(empty($event['end_time']) ? '' : ' '.$event['end_time']);
+                                ?>
+                            </div>
+                            <div class="event-description"><?php echo $event['description']; ?></div>
                         </div>
-                        <div class="event-description"><?php echo $event['description']; ?></div>
                     </div>
                 </div>
-            </div>
+            <?php elseif ($selectedDropdown === 'archived' && $event['archived']): ?>
+                <!-- Display archived events -->
+                <div class="event" event-id="<?php echo $event['id']; ?>">
+                    <img src="<?php echo $event['image']; ?>" alt="Event Photo">
+
+                    <!-- Content (buttons and details) -->
+                    <div class="event-content">
+                        <!-- Buttons for event actions -->
+                        <div class="event-buttons">
+                            <!-- Buttons for event actions -->
+                            <div class="event-buttons-left">
+                                <!-- Restore button -->
+                                <button type="button" class="btn btn-danger black-button"><i class="fas fa-archive"></i> Restore</button>
+                            </div>
+                            <div class="event-buttons-right">
+                                <!-- Delete button -->
+                                <button type="button" class="btn btn-danger black-button" data-bs-toggle="modal" data-bs-target="#deleteConfirmationModal<?php echo $event['id']; ?>"><i class="fas fa-trash"></i>Delete</button>
+                                <!-- Edit button -->
+                                <button type="button" class="btn btn-primary black-button" data-bs-toggle="modal" data-bs-target="#editEventModal<?php echo $event['id']; ?>"><i class="fas fa-pencil-alt"></i> Edit</button>
+                                <!-- Jemaat mendaftar button -->
+                                <button type="button" class="btn btn-primary white-button" data-bs-toggle="modal" data-bs-target="#jemaatMendaftarModal<?php echo $event['id']; ?>">
+                                    <div class="event-counter-box"><?php echo count($event['registered_people']); ?></div>
+                                    <div class="event-button-text">
+                                        <div class="jemaat-text">Jemaat</div>
+                                        <div class="mendaftar-text">Mendaftar</div>
+                                    </div>
+                                    <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Line between buttons and details -->
+                        <div class="line"></div>
+                        
+                        <!-- Event details -->
+                        <div class="event-details">
+                            <div class="event-title"><?php echo $event['title']; ?></div>
+                            <div class="event-date">
+                                <?php
+                                    // Fill the event location and date/time (time is optional)
+                                    echo $event['location'].' | '.$event['start_date'].(isset($event['start_time']) ? ' '.$event['start_time'] : '').' - '.$event['end_date'].(isset($event['end_time']) ? ' '.$event['end_time'] : '');
+                                ?>
+                            </div>
+                            <div class="event-description"><?php echo $event['description']; ?></div>
+                        </div>
+                    </div>
+                </div>
+            <?php endif; ?>
         <?php endforeach; ?>
     </div>
 
@@ -806,6 +876,9 @@
         // Set the "Upcoming" option as selected by default when the page loads
         window.onload = function() {
             document.getElementById("upcoming").classList.add("active");
+            // Set the initial selectedDropdown value to "upcoming"
+            var selectedDropdown = "upcoming";
+            updateEvents(selectedDropdown); // Call the function to update events with the initial value
         };
 
         // Update the button text and apply the active class when an option is clicked
@@ -818,11 +891,30 @@
 
                 // Add the active class to the clicked option
                 event.target.classList.add('active');
-                
+
                 // Update the button text to the selected option
                 document.getElementById("dropdownMenuButton").innerText = event.target.innerText;
+
+                // Get the selected dropdown value
+                var selectedDropdown = event.target.id;
+                // Call the function to update events with the selected value
+                updateEvents(selectedDropdown);
             });
         });
+
+        // JavaScript function to handle dropdown change
+        function updateEvents(selectedDropdown) {
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'event-admin.blade.php', true); // This line specifies the target PHP file
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    // Handle the response from the PHP script if needed
+                    console.log(xhr.responseText); // Output the response
+                }
+            };
+            xhr.send('selectedDropdown=' + selectedDropdown);
+        }
 
         // JavaScript code for handling the switch state and text change
         document.addEventListener('DOMContentLoaded', function () {
@@ -861,7 +953,7 @@
         function deleteEvent(eventId) {
             // Display an alert to indicate that the event is deleted
             alert("Event with ID " + eventId + " is deleted!");
-        } 
+        }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="js/home.js"></script>
