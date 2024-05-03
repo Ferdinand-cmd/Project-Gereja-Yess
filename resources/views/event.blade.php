@@ -21,7 +21,7 @@
         font-family: 'Kanit', sans-serif; /* Set font family */
         text-align: left; /* Align text to left */
         font-size: 3em; /* Set font size to 3em */
-        margin-top: 50px; /* Add some top margin for spacing */
+        margin-top: 100px; /* Add some top margin for spacing */
         color: black; /* Set color to black */
         font-weight: bold; /* Set font weight to bold */
     }
@@ -303,19 +303,9 @@
         }
     }
 
-    .pinned-events-heading {
-        font-size: 2em; /* Set font size */
-        font-weight: bold; /* Set font weight */
-        color: #EEB120; /* Set color to EEB120 */
-        margin-bottom: 20px; /* Add some bottom margin for spacing */
-    }
-
-    .pinned-events-container {
+    .events-container {
+        margin-top: 20px; /* Add top margin to separate the subheader from the first event */
         margin-bottom: 50px; /* Add bottom margin to separate pinned events from others */
-    }
-
-    .other-events-container {
-        margin-top: 100px; /* Add top margin to separate other events from pinned events */
     }
 
     /* CSS for the "Show Archived Events" button */
@@ -382,131 +372,138 @@
     <div class="event-subheader">What's coming up at YESS Surabaya >>> </div>
 
     <?php
-    // Initialize $events array with test data
-    $events = [
-        [
-            'id' => 1,
-            'title' => 'Event Title 1 Event Title 1',
-            'date' => 'Event Date 1 Event Date 1',
-            'description' => 'Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1Event Description 1', 
-            'image' => 'img/event-photo1.jpg'
-        ],
-        [
-            'id' => 2,
-            'title' => 'Event Title 2 Event Title 2 Event Title 2 Event Title 2 Event Title 2 Event Title 2',
-            'date' => 'Event Date 2 Event Date 2 Event Date 2 Event Date 2 Event Date 2 Event Date 2',
-            'description' => 'Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2',
-            'image' => 'img/event-photo2.jpg'
-        ],
-        [
-            'id' => 3,
-            'title' => 'Event Title 3 Event Title 3 Event Title 3 Event Title 3 Event Title 3 Event Title 3',
-            'date' => 'Event Date 3 Event Date 3 Event Date 3 Event Date 3 Event Date 3 Event Date 3',
-            'description' => 'Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3',
-            'image' => 'img/event-photo3.jpg'
-        ],
-        [
-            'id' => 4,
-            'title' => 'Event Title 4 Event Title 4 Event Title 4 Event Title 4 Event Title 4 Event Title 4',
-            'date' => 'Event Date 4 Event Date 4 Event Date 4 Event Date 4 Event Date 4 Event Date 4',
-            'description' => 'Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4',
-            'image' => 'img/event-photo4.jpg'
-        ]
-    ];
+        $events = [
+            [
+                'id' => 1,
+                'title' => 'Event Title 1 Event Title 1',
+                'date' => 'Event Date 1 Event Date 1',
+                'location' => 'Event Location 1 Event Location 1',
+                'description' => 'Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1Event Description 1', 
+                'start_date' => '2024-07-01',
+                'start_time' => '07:00',
+                'end_date' => '2024-07-04',
+                'end_time' => '11:00',
+                'image' => 'img/event-photo1.jpg',
+                'registered_people' => ['Andi', 'Bagus', 'Cahyono'],
+                'archived' => false
+            ],
+            [
+                'id' => 2,
+                'title' => 'Event Title 2 Event Title 2 Event Title 2 Event Title 2 Event Title 2 Event Title 2',
+                'date' => 'Event Date 2 Event Date 2',
+                'location' => 'Event Location 2 Event Location 2',
+                'description' => 'Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2',
+                'start_date' => '2024-08-01',
+                'start_time' => null,
+                'end_date' => '2024-08-04',
+                'end_time' => null,
+                'image' => 'img/event-photo2.jpg',
+                'registered_people' => ['Desi', 'Endah', 'Marwoto', 'SBC Ganteng'],
+                'archived' => false
+            ],
+            [
+                'id' => 3,
+                'title' => 'Event Title 3 Event Title 3 Event Title 3 Event Title 3 Event Title 3 Event Title 3',
+                'date' => 'Event Date 3 Event Date 3',
+                'location' => 'Event Location 3 Event Location 3',
+                'description' => 'Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3',
+                'start_date' => '2024-04-01',
+                'start_time' => '07:00',
+                'end_date' => '2024-04-04',
+                'end_time' => '11:00',
+                'image' => 'img/event-photo3.jpg',
+                'registered_people' => [],
+                'archived' => true
+            ],
+            [
+                'id' => 4,
+                'title' => 'Event Title 4 Event Title 4 Event Title 4 Event Title 4 Event Title 4 Event Title 4',
+                'date' => 'Event Date 4 Event Date 4',
+                'location' => 'Event Location 4 Event Location 4',
+                'description' => 'Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4',
+                'start_date' => '2024-05-01',
+                'start_time' => null,
+                'end_date' => '2024-05-04',
+                'end_time' => null,
+                'image' => 'img/event-photo4.jpg',
+                'registered_people' => [],
+                'archived' => true
+            ]
+        ];
     ?>
-
-    <!-- Pinned Events Heading -->
-    <div class="pinned-events-heading">Pinned Events</div>
 
     <!-- Modal -->
     <?php foreach ($events as $event): ?>
-    <div class="modal fade" id="formModal<?php echo $event['id']; ?>" tabindex="-1" aria-labelledby="formModalLabel<?php echo $event['id']; ?>" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-custom-width">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title modal-event-title" id="formModalLabel<?php echo $event['id']; ?>"><?php echo $event['title']; ?></h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <!-- Your form content goes here -->
-                    <label for="daftar<?php echo $event['id']; ?>" class="form-label form-label-daftar">Bagi jemaat yang ingin mendaftar dalam event YESS Surabaya silahkan mengisi form pendaftaran event dibawah ini.</label>
-                    <!-- Alergi Anda -->
-                    <div class="mb-3">
-                        <label for="alergi<?php echo $event['id']; ?>" class="form-label form-label-alergi">Alergi Anda (jika tidak punya, isi "-")</label>
-                        <textarea class="form-control" id="alergi<?php echo $event['id']; ?>" rows="3" placeholder="Masukkan alergi Anda jika ada"></textarea>
+        <div class="modal fade" id="formModal<?php echo $event['id']; ?>" tabindex="-1" aria-labelledby="formModalLabel<?php echo $event['id']; ?>" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-custom-width">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title modal-event-title" id="formModalLabel<?php echo $event['id']; ?>"><?php echo $event['title']; ?></h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <!-- Informasi keluarga yang dapat dihubungi -->
-                    <div class="mb-3">
-                        <label for="informasi<?php echo $event['id']; ?>" class="form-label form-label-informasi">Informasi keluarga yang dapat dihubungi</label>
-                        <textarea class="form-control" id="informasi<?php echo $event['id']; ?>" rows="3" placeholder="Masukkan nama dan nomor telepon keluarga yang dapat dihubungi"></textarea>
-                        <small>*sertakan nama dan nomor telepon aktif</small>
-                    </div>
-                    <div class="image-container">
-                        <div class="image-text-container">
-                            <p class="image-text-1">Cari circle rohani yang sehat dan bikin semangat?</p>
-                            <p class="image-text-2">YUK SINI MERAPAT!</p>
+                    <div class="modal-body">
+                        <!-- Your form content goes here -->
+                        <label for="daftar<?php echo $event['id']; ?>" class="form-label form-label-daftar">Bagi jemaat yang ingin mendaftar dalam event YESS Surabaya silahkan mengisi form pendaftaran event dibawah ini.</label>
+                        <!-- Alergi Anda -->
+                        <div class="mb-3">
+                            <label for="alergi<?php echo $event['id']; ?>" class="form-label form-label-alergi">Alergi Anda (jika tidak punya, isi "-")</label>
+                            <textarea class="form-control" id="alergi<?php echo $event['id']; ?>" rows="3" placeholder="Masukkan alergi Anda jika ada"></textarea>
                         </div>
-                        <img src="img/form.jpg" alt="Image">
+                        <!-- Informasi keluarga yang dapat dihubungi -->
+                        <div class="mb-3">
+                            <label for="informasi<?php echo $event['id']; ?>" class="form-label form-label-informasi">Informasi keluarga yang dapat dihubungi</label>
+                            <textarea class="form-control" id="informasi<?php echo $event['id']; ?>" rows="3" placeholder="Masukkan nama dan nomor telepon keluarga yang dapat dihubungi"></textarea>
+                            <small>*sertakan nama dan nomor telepon aktif</small>
+                        </div>
+                        <div class="image-container">
+                            <div class="image-text-container">
+                                <p class="image-text-1">Cari circle rohani yang sehat dan bikin semangat?</p>
+                                <p class="image-text-2">YUK SINI MERAPAT!</p>
+                            </div>
+                            <img src="img/form.jpg" alt="Image">
+                        </div>
                     </div>
-                </div>
-                <div class="modal-footer">
-                <button type="button" class="btn btn-cancel" data-bs-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-submit">Submit</button>
-                    <!-- You can include additional buttons or actions here -->
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-cancel" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-submit">Submit</button>
+                        <!-- You can include additional buttons or actions here -->
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
     <?php endforeach; ?>
 
-    <!-- Pinned Events -->
-    <div class="pinned-events-container">
-        <!-- Event 1 -->
-        <div class="event" event-id="<?php echo $events[0]['id']; ?>">
-            <img src="<?php echo $events[0]['image']; ?>" alt="Event Photo">
-            <div class="event-details">
-                <div class="event-title"><?php echo $events[0]['title']; ?></div>
-                <div class="event-date"><?php echo $events[0]['date']; ?></div>
-                <div class="event-description"><?php echo $events[0]['description']; ?></div>
-            </div>
-            <button class="daftar-button" data-bs-toggle="modal" data-bs-target="#formModal<?php echo $events[0]['id']; ?>" onclick="openFormModal(<?php echo $events[0]['id']; ?>)">Daftar -></button>
-        </div>
-
-        <!-- Event 2 -->
-        <div class="event" event-id="<?php echo $events[1]['id']; ?>">
-            <img src="<?php echo $events[1]['image']; ?>" alt="Event Photo">
-            <div class="event-details">
-                <div class="event-title"><?php echo $events[1]['title']; ?></div>
-                <div class="event-date"><?php echo $events[1]['date']; ?></div>
-                <div class="event-description"><?php echo $events[1]['description']; ?></div>
-            </div>
-            <button class="daftar-button" data-bs-toggle="modal" data-bs-target="#formModal<?php echo $events[1]['id']; ?>" onclick="openFormModal(<?php echo $events[1]['id']; ?>)">Daftar -></button>
-        </div>
-    </div>
-
-    <!-- Other Events -->
-    <div class="other-events-container">
-        <!-- Event 3 -->
-        <div class="event" event-id="<?php echo $events[2]['id']; ?>">
-            <img src="<?php echo $events[2]['image'] ?>" alt="Event Photo">
-            <div class="event-details">
-                <div class="event-title"><?php echo $events[2]['title']; ?></div>
-                <div class="event-date"><?php echo $events[2]['date']; ?></div>
-                <div class="event-description"><?php echo $events[2]['description']; ?></div>
-            </div>
-            <button class="daftar-button" data-bs-toggle="modal" data-bs-target="#formModal<?php echo $events[2]['id']; ?>" onclick="openFormModal(<?php echo $events[2]['id']; ?>)">Daftar -></button>
-        </div>
-
-        <!-- Event 4 -->
-        <div class="event" event-id="<?php echo $events[3]['id']; ?>">
-            <img src="<?php echo $events[3]['image']; ?>" alt="Event Photo">
-            <div class="event-details">
-                <div class="event-title"><?php echo $events[3]['title']; ?></div>
-                <div class="event-date"><?php echo $events[3]['date']; ?></div>
-                <div class="event-description"><?php echo $events[3]['description']; ?></div>
-            </div>
-            <button class="daftar-button" data-bs-toggle="modal" data-bs-target="#formModal<?php echo $events[3]['id']; ?>" onclick="openFormModal(<?php echo $events[3]['id']; ?>)">Daftar -></button>
-        </div>
+    <!-- Events -->
+    <div class="events-container">
+        <?php foreach ($events as $event): ?>
+            <?php if ($selectedDropdown === 'upcoming' && !$event['archived']): ?>
+                <!-- Display upcoming events -->
+                <div class="event" event-id="<?php echo $event['id']; ?>">
+                    <img src="<?php echo $event['image']; ?>" alt="Event Photo">
+                    <div class="event-details">
+                        <div class="event-title"><?php echo $event['title']; ?></div>
+                        <div class="event-date"><?php echo $event['date']; ?></div>
+                        <div class="event-description"><?php echo $event['description']; ?></div>
+                    </div>
+                    <button class="daftar-button" data-bs-toggle="modal" data-bs-target="#formModal<?php echo $event['id']; ?>" onclick="openFormModal(<?php echo $event['id']; ?>)">Daftar -></button>
+                </div>
+            <?php elseif ($selectedDropdown === 'archived' && $event['archived']): ?>
+                <!-- Display archived events -->
+                <div class="event" event-id="<?php echo $event['id']; ?>">
+                    <img src="<?php echo $event['image']; ?>" alt="Event Photo">
+                    <div class="event-details">
+                        <div class="event-title"><?php echo $event['title']; ?></div>
+                        <div class="event-date">
+                            <?php
+                                // Fill the event location and date/time (time is optional)
+                                echo $event['location'].' | '.$event['start_date'].(isset($event['start_time']) ? ' '.$event['start_time'] : '').' - '.$event['end_date'].(isset($event['end_time']) ? ' '.$event['end_time'] : '');
+                            ?>
+                        </div>
+                        <div class="event-description"><?php echo $event['description']; ?></div>
+                    </div>
+                </div>
+            <?php endif; ?>
+        <?php endforeach; ?>
     </div>
 
     <!-- Button to show archived events -->
