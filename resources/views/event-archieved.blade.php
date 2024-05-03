@@ -155,32 +155,32 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/pelayanan">Pelayanan</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/komsel">KomSel</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/bareng">Bareng</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="/event">Event</a>
-                    </li>
+            <div class="collapse navbar-collapse justify-content-between" style="text-align:center;" id="navbarNav">
+                <ul class="navbar-nav" style="margin-bottom:10px;">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/pelayanan">Pelayanan</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/komsel">KomSel</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/bareng">Bareng</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/event">Event</a>
+                </li>
                 </ul>
                 <ul class="navbar-nav login-link">
-                    <li class="nav-item">
-                        <a class="nav-link login-link-border" href="/login">Login</a>
-                    </li>
+                <li class="nav-item">
+                    <a class="nav-link login-link-border" href="/login">Login</a>
+                </li>
                 </ul>
             </div>
         </div>
-    </nav>
+  </nav>
 
     <!-- "Kembali ke Events" button -->
     <div class="button-container">

@@ -464,10 +464,10 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="z-index: 1000;">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-            <div class="brand-text">
+                <div class="brand-text">
                 <img src="img/logo_putih.png" alt="" style="width: 20%; margin-left: 10px;">
                 <div class="lora-font">BEST CHURCH</div>
-            </div>
+                </div>
             </a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -475,36 +475,36 @@
             </button>
             <div class="collapse navbar-collapse justify-content-between" style="text-align:center;" id="navbarNav">
                 <ul class="navbar-nav" style="margin-bottom:10px;">
-                    <li class="nav-item">
+                <li class="nav-item">
                     <a class="nav-link active" href="/">Home</a>
-                    </li>
-                    <li class="nav-item">
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="/pelayanan">Pelayanan</a>
-                    </li>
-                    <li class="nav-item">
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="/komsel">KomSel</a>
-                    </li>
-                    <li class="nav-item">
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="/bareng">Bareng</a>
-                    </li>
-                    <li class="nav-item">
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="/event">Event</a>
-                    </li>
-                    <li class="nav-item">
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="/event">Penjadwalan</a>
-                    </li>
-                    <li class="nav-item">
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="/event">Analisis</a>
-                    </li>
+                </li>
                 </ul>
                 <ul class="navbar-nav login-link">
-                    <li class="nav-item">
+                <li class="nav-item">
                     <a class="nav-link login-link-border" href="/login">Edit</a>
-                    </li>
+                </li>
                 </ul>
             </div>
         </div>
-    </nav>
+  </nav>
 
     <!-- Content -->
     <div class="event-header">Event

@@ -291,7 +291,7 @@
                 </ul>
             </div>
         </div>
-    </nav>
+  </nav>
 
     <div class="event-detail-container">
         <!-- "Kembali ke Events" button -->
@@ -321,7 +321,7 @@
     </div>
 
     <!-- Footer -->
-    <div class="container-fluid" style="background-color: black; color: white; border-radius: 30px 30px 0 0; margin-top: 20px;">
+    <div class="container-fluid" style="background-color: black; color: white; border-radius: 30px 30px 0 0;">
         <div class="row">
             <div class="col-md-6 d-flex justify-content-start">
                 <img src="img/ig.png" alt="Instagram">
