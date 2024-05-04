@@ -1,3 +1,16 @@
+<?php
+    // Initialize $selectedDropdown with "upcoming" by default
+    $selectedDropdown = "upcoming";
+
+    // Check if the selectedDropdown value is received
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['selectedDropdown'])) {
+        // Update the value of $selectedDropdown
+        $selectedDropdown = $_POST['selectedDropdown'];
+
+        // Now you can use $selectedDropdown as needed in event-admin.blade.php
+        // For example, you can use it to filter the events accordingly
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,13 +30,49 @@
         padding: 20px; /* Add some padding for better readability */
     }
 
+    .event-header-container {
+        display: flex; /* Enable flexbox layout */
+        align-items: center; /* Align items vertically */
+        margin-top: 70px; /* Adjust the top margin to match the height of the navbar */
+    }
+
     .event-header {
         font-family: 'Kanit', sans-serif; /* Set font family */
         text-align: left; /* Align text to left */
         font-size: 3em; /* Set font size to 3em */
-        margin-top: 100px; /* Add some top margin for spacing */
         color: black; /* Set color to black */
         font-weight: bold; /* Set font weight to bold */
+        margin-right: 20px; /* Add right margin to create some distance */
+    }
+
+    .header-text {
+        flex: 1; /* Take up remaining space */
+    }
+
+    /* Dropdown */
+
+    .dropdown {
+        margin-left: 10px; /* Add some left margin */
+    }
+
+    .custom-dropdown-button {
+        font-family: 'DM Sans', sans-serif;
+        font-weight: 500;
+        font-size: 1em;
+        background-color: #EEB120; /* Set background color to EEB120 */
+        border-color: #EEB120; /* Set border color to match background color */
+        color: black;
+        padding: 10px 20px; /* Adjust padding for more space around the text */
+        min-width: 120px; /* Set a minimum width to ensure button visibility */
+    }
+
+    .custom-dropdown-button:hover {
+        background-color: #d4a100; /* Change background color on hover */
+        border-color: #d4a100; /* Change border color on hover */
+    }
+
+    .custom-dropdown-button:focus {
+        box-shadow: 0 0 0 0.25rem rgba(238, 177, 32, 0.5); /* Add focus style */
     }
 
     .event-subheader {
@@ -368,8 +417,25 @@
         </div>
   </nav>
 
-    <div class="event-header">Upcoming Events</div>
-    <div class="event-subheader">What's coming up at YESS Surabaya >>> </div>
+    <!-- Content -->
+    <div class="event-header-container">
+        <div class="event-header">
+            <div class="header-text">Upcoming Events</div>
+        </div>
+        <!-- Dropdown for event filtering -->
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle custom-dropdown-button" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                Filter
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <li><a class="dropdown-item" href="#" id="upcoming">Upcoming</a></li>
+                <li><a class="dropdown-item" href="#" id="archived">Archived</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="event-subheader">
+        <?php echo $selectedDropdown === 'upcoming' ? 'What\'s coming up at YESS Surabaya >>>' : 'Explore past events at YESS Surabaya >>>'; ?>
+    </div>
 
     <?php
         $events = [
@@ -506,9 +572,6 @@
         <?php endforeach; ?>
     </div>
 
-    <!-- Button to show archived events -->
-    <button class="show-archived-button" onclick="showArchivedEvents()">Show Archived Events</button>
-
     <!-- Footer -->
     <div class="container-fluid" style="background-color: black; color: white; border-radius: 30px 30px 0 0;">
         <div class="row">
@@ -556,9 +619,50 @@
         // Call attachEventListeners initially
         attachEventListeners();
 
-        // Function to redirect to the archived events page
-        function showArchivedEvents() {
-            window.location.href = "event-archived.blade.php"; // Redirect to archived-event.blade.php
+        // Set the initial button text to "Upcoming"
+        document.getElementById("dropdownMenuButton").innerText = "Upcoming";
+
+        // Set the "Upcoming" option as selected by default when the page loads
+        window.onload = function() {
+            document.getElementById("upcoming").classList.add("active");
+            // Set the initial selectedDropdown value to "upcoming"
+            var selectedDropdown = "upcoming";
+            updateEvents(selectedDropdown); // Call the function to update events with the initial value
+        };
+
+        // Update the button text and apply the active class when an option is clicked
+        document.querySelectorAll('.dropdown-item').forEach(item => {
+            item.addEventListener('click', event => {
+                // Remove the active class from all options
+                document.querySelectorAll('.dropdown-item').forEach(option => {
+                    option.classList.remove('active');
+                });
+
+                // Add the active class to the clicked option
+                event.target.classList.add('active');
+
+                // Update the button text to the selected option
+                document.getElementById("dropdownMenuButton").innerText = event.target.innerText;
+
+                // Get the selected dropdown value
+                var selectedDropdown = event.target.id;
+                // Call the function to update events with the selected value
+                updateEvents(selectedDropdown);
+            });
+        });
+
+        // JavaScript function to handle dropdown change
+        function updateEvents(selectedDropdown) {
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'event-admin.blade.php', true); // This line specifies the target PHP file
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    // Handle the response from the PHP script if needed
+                    console.log(xhr.responseText); // Output the response
+                }
+            };
+            xhr.send('selectedDropdown=' + selectedDropdown);
         }
     </script>
 
