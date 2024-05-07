@@ -476,7 +476,7 @@
             <div class="collapse navbar-collapse justify-content-between" style="text-align:center;" id="navbarNav">
                 <ul class="navbar-nav" style="margin-bottom:10px;">
                 <li class="nav-item">
-                    <a class="nav-link active" href="/">Home</a>
+                    <a class="nav-link" href="/">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/pelayanan">Pelayanan</a>
@@ -488,7 +488,7 @@
                     <a class="nav-link" href="/bareng">Bareng</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/event">Event</a>
+                    <a class="nav-link active" href="/event">Event</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/event">Penjadwalan</a>
