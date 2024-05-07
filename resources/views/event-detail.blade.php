@@ -352,7 +352,7 @@
         'title' => 'Putus atau Terus 1',
         'location' => 'Ciputra World Mall 2nd floor',
         'description' => 'YESS Surabaya Valentine\'s Day Celebration "Putus atau Terus"<div class=""></div>Ini adalah kesempatan untuk terinspirasi sebagai pasangan!
-                juga merupakan PENGALAMAN YANG HEBAT bagi kamu ya...',
+                    juga merupakan PENGALAMAN YANG HEBAT bagi kamu ya...',
         'start_date' => '2024-03-30',
         'start_time' => '16:30',
         'end_date' => '2024-03-30',
@@ -465,7 +465,7 @@
         function redirectToForm() {
             var eventId = <?php echo $_GET['id']; ?>; // Get the event ID from the query string
             window.location.href = "form-event.blade.php?id=" +
-            eventId; // Redirect to the form event page with the event ID
+                eventId; // Redirect to the form event page with the event ID
         }
     </script>
 

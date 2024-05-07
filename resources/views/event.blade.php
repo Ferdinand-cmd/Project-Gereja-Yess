@@ -582,7 +582,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['selectedDropdown'])) 
             'title' => 'Putus atau Terus 1',
             'location' => 'Ciputra World Mall 2nd floor',
             'description' => 'YESS Surabaya Valentine\'s Day Celebration "Putus atau Terus"<div class=""></div>Ini adalah kesempatan untuk terinspirasi sebagai pasangan!
-                            juga merupakan PENGALAMAN YANG HEBAT bagi kamu ya...',
+                                juga merupakan PENGALAMAN YANG HEBAT bagi kamu ya...',
             'start_date' => '2024-03-30',
             'start_time' => '16:30',
             'end_date' => '2024-03-30',
@@ -609,7 +609,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['selectedDropdown'])) 
             'title' => 'Putus atau Terus 2',
             'location' => 'Ciputra World Mall 2nd floor',
             'description' => 'YESS Surabaya Valentine\'s Day Celebration "Putus atau Terus"<div class=""></div>Ini adalah kesempatan untuk terinspirasi sebagai pasangan!
-                            juga merupakan PENGALAMAN YANG HEBAT bagi kamu ya...',
+                                juga merupakan PENGALAMAN YANG HEBAT bagi kamu ya...',
             'start_date' => '2024-03-30',
             'start_time' => '16:30',
             'end_date' => '2024-03-30',

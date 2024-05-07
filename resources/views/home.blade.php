@@ -240,10 +240,15 @@
                     <h2 style="text-align: right;">Stay up to date with weekly content</h2>
                 </div>
                 <div class="col-md-6 text-right">
-                    <img src="img/youtube.png" alt="YouTube Logo"
-                        style="width: 80px; margin-bottom: 20px; float: right;">
-                    <img src="img/channel.png" alt="Channel Image"
-                        style="max-width: 100%; border-radius: 50px; box-shadow: 0px 10px 8px rgba(0, 0, 0, 0.4);">
+                    <a href="https://www.youtube.com/channel/UCMgeyZoGQMWNAy_DdkC26eg">
+                        <img src="img/youtube.png" alt="YouTube Logo"
+                            style="width: 80px; margin-bottom: 20px; float: right;">
+                    </a>
+                    <iframe width="1114" height="448" src="https://www.youtube.com/embed/WWPg-qThoms"
+                        title="Hari Terbaik - LOJ Worship | Adoration Night Vol. 4" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen
+                        style="max-width: 100%; border-radius: 50px; box-shadow: 0px 10px 8px rgba(0, 0, 0, 0.4);"></iframe>
                 </div>
             </div>
         </div>
