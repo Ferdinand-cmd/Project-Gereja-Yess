@@ -782,7 +782,7 @@
             const eventSubheader = document.querySelector('.event-subheader');
             eventSubheader.innerHTML = selectedDropdown === 'upcoming' ? 'What\'s coming up at YESS Surabaya >>>' : 'Explore past events at YESS Surabaya >>>';
         }
-
+        
         // JavaScript function to handle dropdown change
         function updateEvents(selectedDropdown) {
             // Loop through all events and hide/show them based on the selected dropdown value
@@ -791,11 +791,19 @@
                 const eventInfo = <?php echo json_encode($events); ?>;
                 const eventData = eventInfo.find(e => e.id === parseInt(eventId));
 
-                if ((selectedDropdown === 'upcoming' && !eventData.archived) ||
-                    (selectedDropdown === 'archived' && eventData.archived)) {
+                if (selectedDropdown === 'upcoming' && !eventData.archived) {
+                    event.style.display = 'block'; // Show the event
+                } else if (selectedDropdown === 'archived' && eventData.archived) {
                     event.style.display = 'block'; // Show the event
                 } else {
                     event.style.display = 'none'; // Hide the event
+                }
+
+                // Check if the "Daftar" button exists in the event
+                const daftarButton = event.querySelector('.daftar-button');
+                if (daftarButton) {
+                    // If the button exists, hide it when the "Archived" option is selected
+                    daftarButton.style.display = selectedDropdown === 'archived' ? 'none' : 'block';
                 }
             });
         }

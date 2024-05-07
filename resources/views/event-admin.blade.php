@@ -686,7 +686,7 @@
                         <!-- Buttons for event actions -->
                         <div class="event-buttons-left">
                             <!-- Archive button -->
-                            <button type="button" class="btn btn-danger black-button"><i class="fas fa-archive"></i> Archive</button>
+                            <button type="button" class="btn btn-danger black-button archive-button"><i class="fas fa-archive"></i> Archive</button>
                         </div>
                         <div class="event-buttons-right">
                             <!-- Delete button -->
@@ -964,10 +964,20 @@
                 const eventId = event.getAttribute('event-id');
                 const eventInfo = <?php echo json_encode($events); ?>;
                 const eventData = eventInfo.find(e => e.id === parseInt(eventId));
+                const archiveButton = event.querySelector('.archive-button');
 
-                if ((selectedDropdown === 'upcoming' && !eventData.archived) ||
-                    (selectedDropdown === 'archived' && eventData.archived)) {
+                if (selectedDropdown === 'upcoming' && !eventData.archived) {
                     event.style.display = 'block'; // Show the event
+                    // Change text on archive button to "Archive"
+                    if (archiveButton) {
+                        archiveButton.innerHTML = '<i class="fas fa-archive"></i> Archive';
+                    }
+                } else if (selectedDropdown === 'archived' && eventData.archived) {
+                    event.style.display = 'block'; // Show the event
+                    // Change text on archive button to "Restore"
+                    if (archiveButton) {
+                        archiveButton.innerHTML = '<i class="fas fa-undo"></i> Restore';
+                    }
                 } else {
                     event.style.display = 'none'; // Hide the event
                 }
