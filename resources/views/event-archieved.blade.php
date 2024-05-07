@@ -193,7 +193,7 @@
     <!-- Archived Events -->
     <div class="archived-events-container">
         <div class="event" event-id="5">
-            <img src="img/event-photo1.jpg" alt="Event Photo">
+            <img src="img/event-photo1.png" alt="Event Photo">
             <div class="event-details">
                 <div class="event-title">Putus atau Terus</div>
                 <div class="event-date">Ciputra World Mall 2nd floor | 30 Maret 2024 | 16.30 WIB</div>
@@ -203,7 +203,7 @@
         </div>
 
         <div class="event" event-id="6">
-            <img src="img/event-photo2.jpg" alt="Event Photo">
+            <img src="img/event-photo2.png" alt="Event Photo">
             <div class="event-details">
                 <div class="event-title">YESS Leardership Mission Training VII</div>
                 <div class="event-date">Desa Birkium, Soe, Nusa Tenggara Timur | 19-21 April 2024</div>

@@ -17,6 +17,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>YESS.SUB | Event</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@700&display=swap" rel="stylesheet">
@@ -441,57 +442,55 @@
         $events = [
             [
                 'id' => 1,
-                'title' => 'Event Title 1 Event Title 1',
-                'date' => 'Event Date 1 Event Date 1',
-                'location' => 'Event Location 1 Event Location 1',
-                'description' => 'Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1 Event Description 1Event Description 1', 
-                'start_date' => '2024-07-01',
-                'start_time' => '07:00',
-                'end_date' => '2024-07-04',
-                'end_time' => '11:00',
-                'image' => 'img/event-photo1.jpg',
+                'title' => 'Putus atau Terus 1',
+                'location' => 'Ciputra World Mall 2nd floor',
+                'description' => 'YESS Surabaya Valentine\'s Day Celebration "Putus atau Terus"<div class=""></div>Ini adalah kesempatan untuk terinspirasi sebagai pasangan!
+                juga merupakan PENGALAMAN YANG HEBAT bagi kamu ya...', 
+                'start_date' => '2024-03-30',
+                'start_time' => '16:30',
+                'end_date' => '2024-03-30',
+                'end_time' => '19:30',
+                'image' => 'img/event-photo1.png',
                 'registered_people' => ['Andi', 'Bagus', 'Cahyono'],
                 'archived' => false
             ],
             [
                 'id' => 2,
-                'title' => 'Event Title 2 Event Title 2 Event Title 2 Event Title 2 Event Title 2 Event Title 2',
-                'date' => 'Event Date 2 Event Date 2',
-                'location' => 'Event Location 2 Event Location 2',
+                'title' => 'YESS Leardership Mission Training VII',
+                'location' => 'Desa Birkium, Soe, Nusa Tenggara Timur',
                 'description' => 'Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2',
-                'start_date' => '2024-08-01',
+                'start_date' => '2024-04-19',
                 'start_time' => null,
-                'end_date' => '2024-08-04',
+                'end_date' => '2024-04-21',
                 'end_time' => null,
-                'image' => 'img/event-photo2.jpg',
+                'image' => 'img/event-photo2.png',
                 'registered_people' => ['Desi', 'Endah', 'Marwoto', 'SBC Ganteng'],
                 'archived' => false
             ],
             [
                 'id' => 3,
-                'title' => 'Event Title 3 Event Title 3 Event Title 3 Event Title 3 Event Title 3 Event Title 3',
-                'date' => 'Event Date 3 Event Date 3',
-                'location' => 'Event Location 3 Event Location 3',
-                'description' => 'Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3 Event Description 3',
-                'start_date' => '2024-04-01',
-                'start_time' => '07:00',
-                'end_date' => '2024-04-04',
-                'end_time' => '11:00',
-                'image' => 'img/event-photo3.jpg',
+                'title' => 'Putus atau Terus 2',
+                'location' => 'Ciputra World Mall 2nd floor',
+                'description' => 'YESS Surabaya Valentine\'s Day Celebration "Putus atau Terus"<div class=""></div>Ini adalah kesempatan untuk terinspirasi sebagai pasangan!
+                juga merupakan PENGALAMAN YANG HEBAT bagi kamu ya...', 
+                'start_date' => '2024-03-30',
+                'start_time' => '16:30',
+                'end_date' => '2024-03-30',
+                'end_time' => '19:30',
+                'image' => 'img/event-photo3.png',
                 'registered_people' => [],
                 'archived' => true
             ],
             [
                 'id' => 4,
-                'title' => 'Event Title 4 Event Title 4 Event Title 4 Event Title 4 Event Title 4 Event Title 4',
-                'date' => 'Event Date 4 Event Date 4',
-                'location' => 'Event Location 4 Event Location 4',
-                'description' => 'Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4 Event Description 4',
-                'start_date' => '2024-05-01',
+                'title' => 'YESS Leardership Mission Training VIII',
+                'location' => 'Desa Birkium, Soe, Nusa Tenggara Timur',
+                'description' => 'Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2',
+                'start_date' => '2024-04-19',
                 'start_time' => null,
-                'end_date' => '2024-05-04',
+                'end_date' => '2024-04-21',
                 'end_time' => null,
-                'image' => 'img/event-photo4.jpg',
+                'image' => 'img/event-photo4.png',
                 'registered_people' => [],
                 'archived' => true
             ]
@@ -548,10 +547,15 @@
                     <img src="<?php echo $event['image']; ?>" alt="Event Photo">
                     <div class="event-details">
                         <div class="event-title"><?php echo $event['title']; ?></div>
-                        <div class="event-date"><?php echo $event['date']; ?></div>
+                        <div class="event-date">
+                            <?php
+                                // Fill the event location and date/time (time is optional)
+                                echo $event['location'].' | '.$event['start_date'].(isset($event['start_time']) ? ' '.$event['start_time'] : '').' - '.$event['end_date'].(isset($event['end_time']) ? ' '.$event['end_time'] : '');
+                            ?>
+                        </div>
                         <div class="event-description"><?php echo $event['description']; ?></div>
                     </div>
-                    <button class="daftar-button" data-bs-toggle="modal" data-bs-target="#formModal<?php echo $event['id']; ?>" onclick="openFormModal(<?php echo $event['id']; ?>)">Daftar -></button>
+                    <button class="daftar-button" data-bs-toggle="modal" data-bs-target="#formModal<?php echo $event['id']; ?>" onclick="openFormModal(<?php echo $event['id']; ?>)">Daftar <i class="fas fa-chevron-right"></i></button>
                 </div>
             <?php elseif ($selectedDropdown === 'archived' && $event['archived']): ?>
                 <!-- Display archived events -->

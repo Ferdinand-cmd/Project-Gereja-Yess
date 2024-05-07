@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YESS.SUB | Event Detail</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@700&display=swap" rel="stylesheet">
@@ -254,7 +255,7 @@
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="z-index: 1000;">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="z-index: 1000;">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <div class="brand-text">
@@ -292,6 +293,62 @@
             </div>
         </div>
   </nav>
+  
+  <?php
+        $event = [
+            'id' => 1,
+            'title' => 'Putus atau Terus 1',
+            'location' => 'Ciputra World Mall 2nd floor',
+            'description' => 'YESS Surabaya Valentine\'s Day Celebration "Putus atau Terus"<div class=""></div>Ini adalah kesempatan untuk terinspirasi sebagai pasangan!
+            juga merupakan PENGALAMAN YANG HEBAT bagi kamu ya...', 
+            'start_date' => '2024-03-30',
+            'start_time' => '16:30',
+            'end_date' => '2024-03-30',
+            'end_time' => '19:30',
+            'image' => 'img/event-photo1.png',
+            'registered_people' => ['Andi', 'Bagus', 'Cahyono'],
+            'archived' => false
+        ];
+  ?>
+
+    <!-- Modal -->
+    <div class="modal fade" id="formModal<?php echo $event['id']; ?>" tabindex="-1" aria-labelledby="formModalLabel<?php echo $event['id']; ?>" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-custom-width">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title modal-event-title" id="formModalLabel<?php echo $event['id']; ?>"><?php echo $event['title']; ?></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Your form content goes here -->
+                    <label for="daftar<?php echo $event['id']; ?>" class="form-label form-label-daftar">Bagi jemaat yang ingin mendaftar dalam event YESS Surabaya silahkan mengisi form pendaftaran event dibawah ini.</label>
+                    <!-- Alergi Anda -->
+                    <div class="mb-3">
+                        <label for="alergi<?php echo $event['id']; ?>" class="form-label form-label-alergi">Alergi Anda (jika tidak punya, isi "-")</label>
+                        <textarea class="form-control" id="alergi<?php echo $event['id']; ?>" rows="3" placeholder="Masukkan alergi Anda jika ada"></textarea>
+                    </div>
+                    <!-- Informasi keluarga yang dapat dihubungi -->
+                    <div class="mb-3">
+                        <label for="informasi<?php echo $event['id']; ?>" class="form-label form-label-informasi">Informasi keluarga yang dapat dihubungi</label>
+                        <textarea class="form-control" id="informasi<?php echo $event['id']; ?>" rows="3" placeholder="Masukkan nama dan nomor telepon keluarga yang dapat dihubungi"></textarea>
+                        <small>*sertakan nama dan nomor telepon aktif</small>
+                    </div>
+                    <div class="image-container">
+                        <div class="image-text-container">
+                            <p class="image-text-1">Cari circle rohani yang sehat dan bikin semangat?</p>
+                            <p class="image-text-2">YUK SINI MERAPAT!</p>
+                        </div>
+                        <img src="img/form.jpg" alt="Image">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-cancel" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-submit">Submit</button>
+                    <!-- You can include additional buttons or actions here -->
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="event-detail-container">
         <!-- "Kembali ke Events" button -->
@@ -300,16 +357,19 @@
         </div>
 
         <!-- Event Image -->
-        <img src="img/event-photo5.jpg" alt="Event Image" class="event-image">
+        <img src="<?php echo $event['image']; ?>" alt="Event Image" class="event-image">
 
         <div class="button-container">
             <div class="event-title"><?php echo $event['title']; ?></div>
             <!-- Daftar Button -->
-            <button class="daftar-button" data-bs-toggle="modal" data-bs-target="#formModal<?php echo $event['id']; ?>">Daftar -></button>
+            <button class="daftar-button" data-bs-toggle="modal" data-bs-target="#formModal<?php echo $event['id']; ?>">Daftar<i class="fas fa-chevron-right"></i></button>
         </div>
 
         <!-- Event Date -->
-        <div class="event-date"><?php echo $event['date']; ?></div>
+        <div class="event-date">
+            <!-- Fill the event date/time (time is optional) -->
+            <?php echo $event['start_date'].(isset($event['start_time']) ? ' '.$event['start_time'] : '').' - '.$event['end_date'].(isset($event['end_time']) ? ' '.$event['end_time'] : ''); ?>
+        </div>
 
         <!-- Event Location -->
         <div class="event-location"><?php echo $event['location']; ?></div>
