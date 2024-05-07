@@ -530,7 +530,8 @@
                 'id' => 1,
                 'title' => 'Putus atau Terus 1',
                 'location' => 'Ciputra World Mall 2nd floor',
-                'description' => 'YESS Surabaya Valentine\'s Day Celebration "Putus atau Terus"<div class=""></div>Ini adalah kesempatan untuk terinspirasi sebagai pasangan!
+                'description' => 'YESS Surabaya Valentine\'s Day Celebration "Putus atau Terus"
+                Ini adalah kesempatan untuk terinspirasi sebagai pasangan!
                 juga merupakan PENGALAMAN YANG HEBAT bagi kamu ya...', 
                 'start_date' => '2024-03-30',
                 'start_time' => '16:30',
@@ -544,7 +545,9 @@
                 'id' => 2,
                 'title' => 'YESS Leardership Mission Training VII',
                 'location' => 'Desa Birkium, Soe, Nusa Tenggara Timur',
-                'description' => 'Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2',
+                'description' => 'Biarlah semangat misi terus menyala dalam hidup kita.
+                Uis Neno nokan kit, Immanuel!
+                Sampe ketemu di YLMT, basodara dong!',
                 'start_date' => '2024-04-19',
                 'start_time' => null,
                 'end_date' => '2024-04-21',
@@ -571,7 +574,9 @@
                 'id' => 4,
                 'title' => 'YESS Leardership Mission Training VIII',
                 'location' => 'Desa Birkium, Soe, Nusa Tenggara Timur',
-                'description' => 'Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2',
+                'description' => 'Biarlah semangat misi terus menyala dalam hidup kita.
+                Uis Neno nokan kit, Immanuel!
+                Sampe ketemu di YLMT, basodara dong!',
                 'start_date' => '2024-04-19',
                 'start_time' => null,
                 'end_date' => '2024-04-21',
