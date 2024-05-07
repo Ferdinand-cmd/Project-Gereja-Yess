@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="/css/login.css">
     <title>YESS.SUB | Login</title>
 </head>
 
@@ -13,37 +13,65 @@
 
     <div class="container" id="container">
         <div class="form-container sign-up">
-            <form>
+            <!-- Registration Form -->
+            <form action="/register" method="POST">
+                @csrf
                 <h1>Create Account</h1>
                 <br>
-                <input type="text" placeholder="Name">
-                <input type="email" placeholder="Email">
-                <input type="password" placeholder="Password">
-                <select name="domisili" id="domisili">
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <select name="domicile" id="domisili" required>
                     <option value="">Pilih Domisili</option>
                     <option value="Surabaya Timur">Surabaya Timur</option>
                     <option value="Surabaya Selatan">Surabaya Selatan</option>
                     <option value="Surabaya Barat">Surabaya Barat</option>
                     <option value="Surabaya Utara">Surabaya Utara</option>
                 </select>
-                <select name="jemaat" id="jemaat">
+                <select name="category" id="jemaat" required>
                     <option value="">Pilih Kategori Jemaat</option>
                     <option value="Jemaat YESS">Jemaat YESS</option>
                     <option value="Guest">Guest</option>
                 </select>
 
-                <button>Sign Up</button>
+                <!-- Consolidated Error Message Block -->
+                @if ($errors->any())
+                    <div class="error">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
+                <button type="submit">Sign Up</button>
             </form>
+
         </div>
         <div class="form-container sign-in">
-            <form>
+            <!-- Login Form -->
+            <form action="/login" method="POST">
+                @csrf
                 <h1>Login</h1>
                 <br>
-                <input type="email" placeholder="Email">
-                <input type="password" placeholder="Password">
-                <a href="#">Forget Your Password?</a>
-                <button>Login</button>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="password" name="password" placeholder="Password" required>
+
+                <!-- Consolidated Error Message Block -->
+                @if ($errors->any())
+                    <div class="error">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
+                <button type="submit">Login</button>
             </form>
+
         </div>
         <div class="toggle-container">
             <div class="toggle">

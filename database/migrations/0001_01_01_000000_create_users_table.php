@@ -17,6 +17,9 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('domicile'); // Adding domicile field
+            $table->string('category'); // Adding category field
+            $table->boolean('is_admin')->default(false); // Adding is_admin field
             $table->rememberToken();
             $table->timestamps();
         });

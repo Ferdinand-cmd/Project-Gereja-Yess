@@ -1,0 +1,9 @@
+
+.navbar-profile-picture {
+    height: 40px; /* Adjust based on your navbar's height */
+    width: 40px; /* Maintaining aspect ratio */
+    border-radius: 50%; /* Circular profile pictures */
+    object-fit: cover; /* Ensures the image covers the space without being distorted */
+    border: 2px solid white; /* Optional: adds a white border around the picture */
+}
+
