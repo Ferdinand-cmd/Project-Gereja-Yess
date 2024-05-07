@@ -1,16 +1,3 @@
-<?php
-// Initialize $selectedDropdown with "upcoming" by default
-$selectedDropdown = 'upcoming';
-
-// Check if the selectedDropdown value is received
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['selectedDropdown'])) {
-    // Update the value of $selectedDropdown
-    $selectedDropdown = $_POST['selectedDropdown'];
-
-    // Now you can use $selectedDropdown as needed in event-admin.blade.php
-    // For example, you can use it to filter the events accordingly
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -561,9 +548,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['selectedDropdown'])) 
         </div>
         <!-- Dropdown for event filtering -->
         <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle custom-dropdown-button" type="button"
-                id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                Filter
+            <button class="btn btn-secondary dropdown-toggle custom-dropdown-button" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                Button for the dropdown text that will be replaced by the js method
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <li><a class="dropdown-item" href="#" id="upcoming">Upcoming</a></li>
@@ -572,66 +558,72 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['selectedDropdown'])) 
         </div>
     </div>
     <div class="event-subheader">
-        <?php echo $selectedDropdown === 'upcoming' ? 'What\'s coming up at YESS Surabaya >>>' : 'Explore past events at YESS Surabaya >>>'; ?>
+        Event subheader content that will be replaced by the js method
     </div>
 
     <?php
-    $events = [
-        [
-            'id' => 1,
-            'title' => 'Putus atau Terus 1',
-            'location' => 'Ciputra World Mall 2nd floor',
-            'description' => 'YESS Surabaya Valentine\'s Day Celebration "Putus atau Terus"<div class=""></div>Ini adalah kesempatan untuk terinspirasi sebagai pasangan!
-                                juga merupakan PENGALAMAN YANG HEBAT bagi kamu ya...',
-            'start_date' => '2024-03-30',
-            'start_time' => '16:30',
-            'end_date' => '2024-03-30',
-            'end_time' => '19:30',
-            'image' => 'img/event-photo1.png',
-            'registered_people' => ['Andi', 'Bagus', 'Cahyono'],
-            'archived' => false,
-        ],
-        [
-            'id' => 2,
-            'title' => 'YESS Leardership Mission Training VII',
-            'location' => 'Desa Birkium, Soe, Nusa Tenggara Timur',
-            'description' => 'Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2',
-            'start_date' => '2024-04-19',
-            'start_time' => null,
-            'end_date' => '2024-04-21',
-            'end_time' => null,
-            'image' => 'img/event-photo2.png',
-            'registered_people' => ['Desi', 'Endah', 'Marwoto', 'SBC Ganteng'],
-            'archived' => false,
-        ],
-        [
-            'id' => 3,
-            'title' => 'Putus atau Terus 2',
-            'location' => 'Ciputra World Mall 2nd floor',
-            'description' => 'YESS Surabaya Valentine\'s Day Celebration "Putus atau Terus"<div class=""></div>Ini adalah kesempatan untuk terinspirasi sebagai pasangan!
-                                juga merupakan PENGALAMAN YANG HEBAT bagi kamu ya...',
-            'start_date' => '2024-03-30',
-            'start_time' => '16:30',
-            'end_date' => '2024-03-30',
-            'end_time' => '19:30',
-            'image' => 'img/event-photo3.png',
-            'registered_people' => [],
-            'archived' => true,
-        ],
-        [
-            'id' => 4,
-            'title' => 'YESS Leardership Mission Training VIII',
-            'location' => 'Desa Birkium, Soe, Nusa Tenggara Timur',
-            'description' => 'Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2 Event Description 2',
-            'start_date' => '2024-04-19',
-            'start_time' => null,
-            'end_date' => '2024-04-21',
-            'end_time' => null,
-            'image' => 'img/event-photo4.png',
-            'registered_people' => [],
-            'archived' => true,
-        ],
-    ];
+        $events = [
+            [
+                'id' => 1,
+                'title' => 'Putus atau Terus 1',
+                'location' => 'Ciputra World Mall 2nd floor',
+                'description' => 'YESS Surabaya Valentine\'s Day Celebration "Putus atau Terus"
+                Ini adalah kesempatan untuk terinspirasi sebagai pasangan!
+                juga merupakan PENGALAMAN YANG HEBAT bagi kamu ya...', 
+                'start_date' => '2024-03-30',
+                'start_time' => '16:30',
+                'end_date' => '2024-03-30',
+                'end_time' => '19:30',
+                'image' => 'img/event-photo1.png',
+                'registered_people' => ['Andi', 'Bagus', 'Cahyono'],
+                'archived' => false
+            ],
+            [
+                'id' => 2,
+                'title' => 'YESS Leardership Mission Training VII',
+                'location' => 'Desa Birkium, Soe, Nusa Tenggara Timur',
+                'description' => 'Biarlah semangat misi terus menyala dalam hidup kita.
+                Uis Neno nokan kit, Immanuel!
+                Sampe ketemu di YLMT, basodara dong!',
+                'start_date' => '2024-04-19',
+                'start_time' => null,
+                'end_date' => '2024-04-21',
+                'end_time' => null,
+                'image' => 'img/event-photo2.png',
+                'registered_people' => ['Desi', 'Endah', 'Marwoto', 'SBC Ganteng'],
+                'archived' => false
+            ],
+            [
+                'id' => 3,
+                'title' => 'Putus atau Terus 2',
+                'location' => 'Ciputra World Mall 2nd floor',
+                'description' => 'YESS Surabaya Valentine\'s Day Celebration "Putus atau Terus"
+                Ini adalah kesempatan untuk terinspirasi sebagai pasangan!
+                juga merupakan PENGALAMAN YANG HEBAT bagi kamu ya...', 
+                'start_date' => '2024-03-30',
+                'start_time' => '16:30',
+                'end_date' => '2024-03-30',
+                'end_time' => '19:30',
+                'image' => 'img/event-photo3.png',
+                'registered_people' => [],
+                'archived' => true
+            ],
+            [
+                'id' => 4,
+                'title' => 'YESS Leardership Mission Training VIII',
+                'location' => 'Desa Birkium, Soe, Nusa Tenggara Timur',
+                'description' => 'Biarlah semangat misi terus menyala dalam hidup kita.
+                Uis Neno nokan kit, Immanuel!
+                Sampe ketemu di YLMT, basodara dong!',
+                'start_date' => '2024-04-19',
+                'start_time' => null,
+                'end_date' => '2024-04-21',
+                'end_time' => null,
+                'image' => 'img/event-photo4.png',
+                'registered_people' => [],
+                'archived' => true
+            ]
+        ];
     ?>
 
     <!-- Modal -->
@@ -686,39 +678,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['selectedDropdown'])) 
     <!-- Events -->
     <div class="events-container">
         <?php foreach ($events as $event): ?>
-        <?php if ($selectedDropdown === 'upcoming' && !$event['archived']): ?>
-        <!-- Display upcoming events -->
-        <div class="event" event-id="<?php echo $event['id']; ?>">
-            <img src="<?php echo $event['image']; ?>" alt="Event Photo">
-            <div class="event-details">
-                <div class="event-title"><?php echo $event['title']; ?></div>
-                <div class="event-date">
-                    <?php
-                    // Fill the event location and date/time (time is optional)
-                    echo $event['location'] . ' | ' . $event['start_date'] . (isset($event['start_time']) ? ' ' . $event['start_time'] : '') . ' - ' . $event['end_date'] . (isset($event['end_time']) ? ' ' . $event['end_time'] : '');
-                    ?>
+            <!-- Display all events initially with a class 'event' -->
+            <div class="event" event-id="<?php echo $event['id']; ?>" <?php echo $event['archived'] ? 'data-archived="true"' : 'data-archived="false"'; ?>>
+                <img src="<?php echo $event['image']; ?>" alt="Event Photo">
+                <div class="event-details">
+                    <div class="event-title"><?php echo $event['title']; ?></div>
+                    <div class="event-date">
+                        <?php
+                            // Fill the event location and date/time (time is optional)
+                            echo $event['location'].' | '.$event['start_date'].(isset($event['start_time']) ? ' '.$event['start_time'] : '').' - '.$event['end_date'].(isset($event['end_time']) ? ' '.$event['end_time'] : '');
+                        ?>
+                    </div>
+                    <div class="event-description"><?php echo $event['description']; ?></div>
                 </div>
-                <div class="event-description"><?php echo $event['description']; ?></div>
+                <button class="daftar-button" data-bs-toggle="modal" data-bs-target="#formModal<?php echo $event['id']; ?>" onclick="openFormModal(<?php echo $event['id']; ?>)">Daftar <i class="fas fa-chevron-right"></i></button>
             </div>
-            <button class="daftar-button" data-bs-toggle="modal" data-bs-target="#formModal<?php echo $event['id']; ?>"
-                onclick="openFormModal(<?php echo $event['id']; ?>)">Daftar <i class="fas fa-chevron-right"></i></button>
-        </div>
-        <?php elseif ($selectedDropdown === 'archived' && $event['archived']): ?>
-        <!-- Display archived events -->
-        <div class="event" event-id="<?php echo $event['id']; ?>">
-            <img src="<?php echo $event['image']; ?>" alt="Event Photo">
-            <div class="event-details">
-                <div class="event-title"><?php echo $event['title']; ?></div>
-                <div class="event-date">
-                    <?php
-                    // Fill the event location and date/time (time is optional)
-                    echo $event['location'] . ' | ' . $event['start_date'] . (isset($event['start_time']) ? ' ' . $event['start_time'] : '') . ' - ' . $event['end_date'] . (isset($event['end_time']) ? ' ' . $event['end_time'] : '');
-                    ?>
-                </div>
-                <div class="event-description"><?php echo $event['description']; ?></div>
-            </div>
-        </div>
-        <?php endif; ?>
         <?php endforeach; ?>
     </div>
 
@@ -778,6 +752,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['selectedDropdown'])) 
             // Set the initial selectedDropdown value to "upcoming"
             var selectedDropdown = "upcoming";
             updateEvents(selectedDropdown); // Call the function to update events with the initial value
+            updateEventSubheader(selectedDropdown); // Call the function to update the event subheader with the initial value
         };
 
         // Update the button text and apply the active class when an option is clicked
@@ -798,21 +773,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['selectedDropdown'])) 
                 var selectedDropdown = event.target.id;
                 // Call the function to update events with the selected value
                 updateEvents(selectedDropdown);
+                updateEventSubheader(selectedDropdown); // Call the function to update the event subheader with the selected value
             });
         });
 
+        // Function to update the content of the event subheader
+        function updateEventSubheader(selectedDropdown) {
+            const eventSubheader = document.querySelector('.event-subheader');
+            eventSubheader.innerHTML = selectedDropdown === 'upcoming' ? 'What\'s coming up at YESS Surabaya >>>' : 'Explore past events at YESS Surabaya >>>';
+        }
+
         // JavaScript function to handle dropdown change
         function updateEvents(selectedDropdown) {
-            var xhr = new XMLHttpRequest();
-            xhr.open('POST', 'event-admin.blade.php', true); // This line specifies the target PHP file
-            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState === 4 && xhr.status === 200) {
-                    // Handle the response from the PHP script if needed
-                    console.log(xhr.responseText); // Output the response
+            // Loop through all events and hide/show them based on the selected dropdown value
+            document.querySelectorAll('.event').forEach(event => {
+                const eventId = event.getAttribute('event-id');
+                const eventInfo = <?php echo json_encode($events); ?>;
+                const eventData = eventInfo.find(e => e.id === parseInt(eventId));
+
+                if ((selectedDropdown === 'upcoming' && !eventData.archived) ||
+                    (selectedDropdown === 'archived' && eventData.archived)) {
+                    event.style.display = 'block'; // Show the event
+                } else {
+                    event.style.display = 'none'; // Hide the event
                 }
-            };
-            xhr.send('selectedDropdown=' + selectedDropdown);
+            });
         }
     </script>
 

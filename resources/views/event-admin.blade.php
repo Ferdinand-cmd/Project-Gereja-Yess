@@ -608,7 +608,6 @@
     </div>
 
     <?php
-        // Initialize $events array with test data
         $events = [
             [
                 'id' => 1,
@@ -644,7 +643,8 @@
                 'id' => 3,
                 'title' => 'Putus atau Terus 2',
                 'location' => 'Ciputra World Mall 2nd floor',
-                'description' => 'YESS Surabaya Valentine\'s Day Celebration "Putus atau Terus"<div class=""></div>Ini adalah kesempatan untuk terinspirasi sebagai pasangan!
+                'description' => 'YESS Surabaya Valentine\'s Day Celebration "Putus atau Terus"
+                Ini adalah kesempatan untuk terinspirasi sebagai pasangan!
                 juga merupakan PENGALAMAN YANG HEBAT bagi kamu ya...', 
                 'start_date' => '2024-03-30',
                 'start_time' => '16:30',
@@ -927,7 +927,7 @@
     <script>
         // Set the initial button text to "Upcoming"
         document.getElementById("dropdownMenuButton").innerText = "Upcoming";
-
+        
         // Set the "Upcoming" option as selected by default when the page loads
         window.onload = function() {
             document.getElementById("upcoming").classList.add("active");
