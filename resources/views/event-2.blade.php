@@ -247,68 +247,6 @@
             background-size: 100% 100%;
             z-index: 38;
         }
-
-        .footer {
-            background-color: #000000;
-            color: #ffffff;
-            padding: 20px;
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .rectangle-b {
-            position: relative;
-            width: 100%; /* Ubah menjadi 100% agar melebar sesuai lebar layar */
-            height: 142px;
-            background: #000000;
-            z-index: 48;
-            border-radius: 40px 40px 0 0;
-        }
-
-        /* Sesuaikan properti-posisi dan dimensi untuk setiap gambar */
-        .image, .image-c, .image-d, .image-e {
-            width: 70px;
-            height: 70px;
-            position: absolute;
-            top: 38px;
-            z-index: 51; /* Sesuaikan z-index sesuai kebutuhan */
-        }
-
-        .image {
-            left: 50px;
-            background: url(./assets/images/9901ff329f073d0704c58e121a346740de16b8e8.png) no-repeat center;
-            background-size: cover;
-        }
-
-        .image-c {
-            left: 150px;
-            background: url(./assets/images/73aef9e0ed5ef1ed108a123e9a54cf2e52e4a4d9.png) no-repeat center;
-            background-size: cover;
-        }
-
-        .image-d {
-            left: 250px;
-            background: url(./assets/images/76f9b2354c0e31cc1f2dea6fc755bc26d8c1bc54.png) no-repeat center;
-            background-size: cover;
-        }
-
-        .image-e {
-            left: calc(100% - 70px - 50px); /* Hitung posisi dari kanan */
-            background: url(./assets/images/ddc96dc25eb3a571eb74851b4f9a9f3062acd5b4.png) no-repeat center;
-            background-size: cover;
-        }
-
-        .contact-us {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            right: 20px; /* Ubah left menjadi right */
-            color: #ffffff;
-            font-family: Roboto, var(--default-font-family);
-            font-size: 32px;
-            font-weight: 500;
-            line-height: 45px;
-        }
     </style>
 </head>
 <body>
@@ -427,13 +365,18 @@
             </div>
         </div>
 
-        <div class="footer">
-            <div class="rectangle-b">
-                <div class="image"></div>
-                <div class="image-c"></div>
-                <div class="image-d"></div>
-                <div class="image-e"></div>
-                <span class="contact-us">Contact Us</span>
+        <!-- Footer -->
+        <div class="container-fluid" style="background-color: black; color: white; border-radius: 30px 30px 0 0;">
+            <div class="row">
+                <div class="col-md-6 d-flex justify-content-start">
+                    <img src="img/ig.png" alt="Instagram">
+                    <img src="img/tiktok.png" alt="TikTok">
+                    <img src="img/yt.png" alt="YouTube">
+                </div>
+                <div class="col-md-6 d-flex justify-content-end">
+                    <span style="font-family: 'Roboto', sans-serif; font-size: 20px; margin-top: 20px;">Contact Us</span>
+                    <img src="img/wa.png" alt="WhatsApp">
+                </div>
             </div>
         </div>
     </div>
