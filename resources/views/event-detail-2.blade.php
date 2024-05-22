@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>YESS.SUB | Event Detail</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Icons:wght@400&display=swap" />
@@ -24,77 +27,11 @@
             margin: 0 auto;
             background-color: #f4f4f4;
         }
-        .header {
-            width: 100%;
-            background-color: #000;
-            box-shadow: 0 6px 4px 0 rgba(0, 0, 0, 0.25);
-            padding: 20px 30px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .logo {
-            width: 103px;
-            height: 40px;
-            background: url(./assets/images/ba1b8b2f-d581-4939-9b62-ac1d3a2c785c.png) no-repeat center;
-            background-size: cover;
-        }
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-        .nav-link {
-            color: #f4f4f4;
-            font-family: Montserrat, var(--default-font-family);
-            font-size: 18px;
-            font-weight: 500;
-            text-decoration: none;
-        }
-        .nav-link.home {
-            color: #eeb120;
-            font-weight: 800;
-        }
-        .login-button {
-            position: relative;
-            display: flex;
-            align-items: center;
-            padding: 16px 24px;
-            border: 1px solid #404040;
-            border-radius: 40px;
-            background: transparent;
-            cursor: pointer;
-            color: #ffffff;
-            font-family: Montserrat, var(--default-font-family);
-            font-size: 20px;
-            font-weight: 700;
-            overflow: hidden;
-        }
-        .login-button .glow, .login-button .glow-2 {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 150%;
-            height: 150%;
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            filter: blur(7.5px);
-            z-index: -1;
-        }
-        .login-button .glow {
-            background: #46fff3;
-        }
-        .login-button .glow-2 {
-            background: #1400ff;
-        }
-        .login-button .icon {
-            margin-left: 8px;
-        }
         .content {
             width: calc(100% - 100px);
             max-width: 1337px;
             background-color: #ffffff;
-            margin: 35px auto;
+            margin: 95px auto 35px auto;
             padding: 35px;
             box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
             border-radius: 10px;
@@ -164,46 +101,74 @@
             letter-spacing: 0.48px;
             margin-bottom: 40px;
         }
-        .footer {
-            width: 100%;
-            background-color: #000;
-            padding: 40px 30px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border-radius: 40px 40px 0 0;
-        }
-        .footer .icon {
-            width: 70px;
-            height: 70px;
-            background-size: cover;
-        }
-        .footer .contact-us {
-            color: #ffffff;
-            font-family: Roboto, var(--default-font-family);
-            font-size: 32px;
-            font-weight: 500;
-        }
     </style>
 </head>
 <body>
     <div class="main-container">
-        <header class="header">
-            <div class="logo"></div>
-            <nav class="nav-links">
-                <a href="#" class="nav-link home">Home</a>
-                <a href="#" class="nav-link">Pelayanan</a>
-                <a href="#" class="nav-link">KomSel</a>
-                <a href="#" class="nav-link">Bareng</a>
-                <a href="#" class="nav-link">Event</a>
-            </nav>
-            <button class="login-button">
-                <div class="glow"></div>
-                <div class="glow-2"></div>
-                <span>LOGIN</span>
-                <span class="icon material-icons">arrow_forward</span>
-            </button>
-        </header>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="z-index: 1000;">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <div class="brand-text">
+                        <img src="img/logo_putih.png" alt="" style="width: 20%; margin-left: 10px;">
+                        <div class="lora-font">BEST CHURCH</div>
+                    </div>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-between" style="text-align:center;" id="navbarNav">
+                    <ul class="navbar-nav" style="margin-bottom:10px;">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/pelayanan">Pelayanan</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/komsel">KomSel</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/bareng">Bareng</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/event">Event</a>
+                        </li>
+                    </ul>
+                    @auth
+                        <ul class="navbar-nav">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Welcome, {{ auth()->user()->name }}
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    @if (auth()->user()->is_admin)
+                                        <!-- Assuming there's an 'is_admin' attribute -->
+                                        <li><a class="dropdown-item" href="/admin">Admin Dashboard</a></li>
+                                    @endif
+                                    <li>
+                                        <form action="/logout" method="POST">
+                                            @csrf
+                                            <button type="submit" class="dropdown-item">Logout</button>
+                                        </form>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    @else
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link login-link-border" href="/login">Login</a>
+                            </li>
+                        </ul>
+                    @endauth
+
+                </div>
+            </div>
+        </nav>
         <div class="content">
             <button class="back-button">
                 <span class="material-icons">arrow_back</span>
@@ -231,12 +196,25 @@
                 Sampe ketemu di YLMT, basodara dong!
             </p>
         </div>
-        <footer class="footer">
-            <div class="icon" style="background: url(./assets/images/9901ff329f073d0704c58cd4696cf7dc3cf8814095d.png) no-repeat center;"></div>
-            <div class="icon" style="background: url(./assets/images/8fe303d7ab95c1bc4441e314410ac276b93183f4.png) no-repeat center;"></div>
-            <div class="icon" style="background: url(./assets/images/99f27d54e24427e0c0099be2599780cda3022a73.png) no-repeat center;"></div>
-            <div class="contact-us">Contact Us</div>
-        </footer>
+        <!-- Footer -->
+        <div class="container-fluid" style="background-color: black; color: white; border-radius: 30px 30px 0 0;">
+            <div class="row">
+                <div class="col-md-6 d-flex justify-content-start">
+                    <img src="img/ig.png" alt="Instagram">
+                    <img src="img/tiktok.png" alt="TikTok">
+                    <img src="img/yt.png" alt="YouTube">
+                </div>
+                <div class="col-md-6 d-flex justify-content-end">
+                    <span style="font-family: 'Roboto', sans-serif; font-size: 20px; margin-top: 20px;">Contact Us</span>
+                    <img src="img/wa.png" alt="WhatsApp">
+                </div>
+            </div>
+        </div>
     </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    </script>
 </body>
 </html>
