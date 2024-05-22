@@ -18,7 +18,8 @@
         }
 
         .main-container {
-        overflow: hidden;
+        /* overflow: hidden; */
+        overflow: auto;
         }
 
         .main-container,
@@ -38,7 +39,7 @@
         width: 1440px;
         height: 1024px;
         margin: 0 auto;
-        overflow: hidden auto;
+        /* overflow: hidden auto; */
         }
         .rectangle {
         position: absolute;
@@ -375,7 +376,7 @@
         right: 0;
         bottom: 0;
         left: 0;
-        background: #6b46ff;
+        /* background: #6b46ff; */
         z-index: 41;
         border-radius: 40px;
         }

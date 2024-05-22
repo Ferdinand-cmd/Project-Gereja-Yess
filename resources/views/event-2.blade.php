@@ -18,7 +18,8 @@
         }
 
         .main-container {
-        overflow: hidden;
+        /* overflow: hidden; */
+        overflow: auto;
         }
 
         .main-container,
