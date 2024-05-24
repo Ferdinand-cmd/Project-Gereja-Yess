@@ -1108,7 +1108,7 @@
           <span class="ciputra-world-mall"
             >Ciputra World Mall 2nd floor | 30 Maret 2024 | 16.30 WIB</span
           ><span class="yess-surabaya-valentines-day"
-            >YESS Surabaya Valentine’s Day Celebration “Putus atau Terus”<br />Ini
+            >YESS Surabaya Valentine's Day Celebration “Putus atau Terus”<br />Ini
             adalah kesempatan untuk terinspirasi sebagai pasangan! juga
             merupakan PENGALAMAN YANG HEBAT bagi kamu ya...</span
           >

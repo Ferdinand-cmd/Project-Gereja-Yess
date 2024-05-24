@@ -247,6 +247,108 @@
             background-size: 100% 100%;
             z-index: 38;
         }
+        .modal-event-title {
+            font-weight: bold;
+            font-size: 1.5em;
+            color: black;
+            font-family: 'Kanit', sans-serif;
+        }
+        .form-label-daftar {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.11em;
+            font-weight: normal;
+        }
+        .form label {
+            font-size: 1em;
+            color: var(--text-color);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.33em;
+            font-weight: medium;
+        }
+        .modal-body small {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.11em;
+            font-weight: medium;
+            color: #6D6D6D;
+        }
+        .form textarea {
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            width: 100%;
+        }
+        .image-container {
+            position: relative;
+            /* Set position to relative */
+        }
+        .image-text-container {
+            position: absolute;
+            /* Set position to absolute */
+            top: 50%;
+            /* Align to the vertical center */
+            left: 50%;
+            /* Align to the horizontal center */
+            transform: translate(-50%, -50%);
+            /* Center the text */
+            text-align: center;
+            /* Center align the text */
+            width: 90%;
+            /* Set the width to 80% of its container */
+        }
+        .image-text-1 {
+            font-family: 'Roboto Slab', serif;
+            /* Use Roboto Slab font */
+            font-weight: bold;
+            font-size: 1.77em;
+            color: white;
+            width: 100%;
+            /* Set the width to 100% */
+            margin: 0 auto;
+            /* Center the element horizontally */
+            text-align: center;
+            /* Center the text horizontally */
+            display: flex;
+            /* Use flexbox */
+            justify-content: center;
+            /* Center the content horizontally */
+            align-items: center;
+            /* Center the content vertically */
+            padding: 20px;
+            /* Increase padding to provide more space around the text */
+            box-sizing: border-box;
+            /* Include padding in the width calculation */
+        }
+        .image-text-2 {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.83em;
+            color: white;
+        }
+        .image-container img {
+            width: 100%;
+            /* Ensure the image fills its container */
+            height: auto;
+            /* Maintain aspect ratio */
+        }
+        .form .modal-footer {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .form-container .modal-footer button {
+            padding: 10px 20px;
+            font-size: 1em;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+        .form-container .modal-footer .cancel-button {
+            background: #ccc;
+        }
+        .form-container .modal-footer .submit-button {
+            background: var(--button-background);
+            color: var(--button-text-color);
+        }
     </style>
 </head>
 <body>
@@ -350,7 +452,7 @@
                     <p class="event-location">Desa Birkium, Soe, Nusa Tenggara Timur | 19-21 April 2024</p>
                     <p class="event-message">Biarlah semangat misi terus menyala dalam hidup kita.<br />Uis Neno nokan kit, Immanuel!<br />Sampe ketemu di YLMT, basodara dong!</p>
                     <div class="event-action">
-                        <div class="button-8">
+                        <div class="button-8" data-bs-toggle="modal" data-bs-target="#daftarModal">
                             <button class="button-background"></button>
                             <div class="button-shadow"></div>
                             <span class="button-text">Daftar</span>
@@ -360,6 +462,45 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="daftarModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title modal-event-title" id="exampleModalLabel">PENDAFTARAN EVENT</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Your form content goes here -->
+                        <label for="daftar" class="form-label form-label-daftar">Bagi jemaat yang ingin
+                            mendaftar dalam event YESS Surabaya silahkan mengisi form pendaftaran event dibawah ini.</label>
+                        <form>
+                            <div class="mb-3">
+                                <label for="allergies" class="form-label">Alergi Anda (jika tidak punya, isi "-")</label>
+                                <textarea class="form-control" id="allergies"></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="familyInfo" class="form-label">Informasi keluarga yang dapat dihubungi</label>
+                                <textarea class="form-control" id="familyInfo"></textarea>
+                                <small class="form-text text-muted">*Sertakan nama dan nomor telepon aktif</small>
+                            </div>
+                        </form>
+                        <div class="image-container">
+                            <div class="image-text-container">
+                                <p class="image-text-1">Cari circle rohani yang sehat dan bikin semangat?</p>
+                                <p class="image-text-2">YUK SINI MERAPAT!</p>
+                            </div>
+                            <img src="img/form.jpg" alt="Image">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">CANCEL</button>
+                        <button type="button" class="btn btn-primary">SUBMIT</button>
                     </div>
                 </div>
             </div>

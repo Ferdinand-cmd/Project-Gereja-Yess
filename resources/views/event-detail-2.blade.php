@@ -214,7 +214,6 @@
             background: var(--button-background);
             color: var(--button-text-color);
         }
-
         /* Set max-width for larger screens */
         @media (min-width: 1200px) {
             .modal-dialog {
@@ -290,12 +289,16 @@
                 </div>
             </div>
         </nav>
+        <!-- Content -->
         <div class="content">
+            <!-- Tombol kembali ke events -->
             <button class="back-button">
                 <span class="material-icons">arrow_back</span>
                 Kembali ke events
             </button>
             <div class="event-image"></div>
+
+            <!-- Header -->
             <div class="event-header">
                 <h1 class="event-title">YESS Leardership Mission Training VII</h1>
                 <button class="register-button" data-bs-toggle="modal" data-bs-target="#daftarModal">
@@ -303,6 +306,7 @@
                     <span class="material-icons">arrow_forward</span>
                 </button>
             </div>
+            <!-- Event details -->
             <div class="event-info">
                 <span class="material-icons">date_range</span>
                 <span>19-21 April 2024</span>
@@ -317,40 +321,41 @@
                 Sampe ketemu di YLMT, basodara dong!
             </p>
 
-        <!-- Modal -->
-        <div class="modal fade" id="daftarModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title modal-event-title" id="exampleModalLabel">PENDAFTARAN EVENT</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <!-- Your form content goes here -->
-                        <label for="daftar" class="form-label form-label-daftar">Bagi jemaat yang ingin
-                            mendaftar dalam event YESS Surabaya silahkan mengisi form pendaftaran event dibawah ini.</label>
-                        <form>
-                            <div class="mb-3">
-                                <label for="allergies" class="form-label">Alergi Anda (jika tidak punya, isi "-")</label>
-                                <textarea class="form-control" id="allergies"></textarea>
-                            </div>
-                            <div class="mb-3">
-                                <label for="familyInfo" class="form-label">Informasi keluarga yang dapat dihubungi</label>
-                                <textarea class="form-control" id="familyInfo"></textarea>
-                                <small class="form-text text-muted">*Sertakan nama dan nomor telepon aktif</small>
-                            </div>
-                        </form>
-                        <div class="image-container">
-                            <div class="image-text-container">
-                                <p class="image-text-1">Cari circle rohani yang sehat dan bikin semangat?</p>
-                                <p class="image-text-2">YUK SINI MERAPAT!</p>
-                            </div>
-                            <img src="img/form.jpg" alt="Image">
+            <!-- Modal -->
+            <div class="modal fade" id="daftarModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title modal-event-title" id="exampleModalLabel">PENDAFTARAN EVENT</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">CANCEL</button>
-                        <button type="button" class="btn btn-primary">SUBMIT</button>
+                        <div class="modal-body">
+                            <!-- Your form content goes here -->
+                            <label for="daftar" class="form-label form-label-daftar">Bagi jemaat yang ingin
+                                mendaftar dalam event YESS Surabaya silahkan mengisi form pendaftaran event dibawah ini.</label>
+                            <form>
+                                <div class="mb-3">
+                                    <label for="allergies" class="form-label">Alergi Anda (jika tidak punya, isi "-")</label>
+                                    <textarea class="form-control" id="allergies"></textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="familyInfo" class="form-label">Informasi keluarga yang dapat dihubungi</label>
+                                    <textarea class="form-control" id="familyInfo"></textarea>
+                                    <small class="form-text text-muted">*Sertakan nama dan nomor telepon aktif</small>
+                                </div>
+                            </form>
+                            <div class="image-container">
+                                <div class="image-text-container">
+                                    <p class="image-text-1">Cari circle rohani yang sehat dan bikin semangat?</p>
+                                    <p class="image-text-2">YUK SINI MERAPAT!</p>
+                                </div>
+                                <img src="img/form.jpg" alt="Image">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">CANCEL</button>
+                            <button type="button" class="btn btn-primary">SUBMIT</button>
+                        </div>
                     </div>
                 </div>
             </div>
