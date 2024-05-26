@@ -303,7 +303,7 @@
         }
 
         .event-counter-box {
-            width: 30px;
+            width: 80px;
             height: 30px;
             background-color: white;
             color: black;
@@ -430,6 +430,8 @@
             /* Add padding around the counter */
             font-size: 1.15em;
             /* Set the font size to 16px or any other desired value */
+            width: 100px;
+            text-align: center;
         }
 
         .jemaat-mendaftar-modal .top-row {
@@ -627,7 +629,8 @@
                 'end_time' => '19:30',
                 'image' => 'img/event-photo1.png',
                 'registered_people' => ['Andi', 'Bagus', 'Cahyono'],
-                'archived' => false
+                'archived' => false,
+                'quota' => 10
             ],
             [
                 'id' => 2,
@@ -700,7 +703,11 @@
                             <button type="button" class="btn btn-primary black-button" data-bs-toggle="modal" data-bs-target="#editEventModal<?php echo $event['id']; ?>"><i class="fas fa-pencil-alt"></i> Edit</button>
                             <!-- Jemaat mendaftar button -->
                             <button type="button" class="btn btn-primary white-button" data-bs-toggle="modal" data-bs-target="#jemaatMendaftarModal<?php echo $event['id']; ?>">
-                                <div class="event-counter-box"><?php echo count($event['registered_people']); ?></div>
+                                <div class="event-counter-box">
+                                    <?php
+                                        echo count($event['registered_people']).(isset($event['quota']) ? '/'.$event['quota'] : '');
+                                    ?>
+                                </div>
                                 <div class="event-button-text">
                                     <div class="jemaat-text">Jemaat</div>
                                     <div class="mendaftar-text">Mendaftar</div>
@@ -748,6 +755,10 @@
                     <div class="mb-3">
                         <label for="aNamaEvent" class="form-label">Nama event</label>
                         <input type="text" class="form-control" id="aNamaEvent" name="aNamaEvent" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="aQuota" class="form-label">Kuota (opsional)</label>
+                        <input type="number" class="form-control" id="aQuota" name="aQuota" min="1">
                     </div>
                     <div class="mb-3">
                         <label for="aTempat" class="form-label">Tempat</label>
@@ -812,6 +823,10 @@
                         <label for="eNamaEvent<?php echo $event['id']; ?>" class="form-label">Nama event</label>
                         <input type="text" class="form-control" id="eNamaEvent<?php echo $event['id']; ?>"
                             name="eNamaEvent<?php echo $event['id']; ?>" value="<?php echo $event['title']; ?>" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="eQuota<?php echo $event['id']; ?>" class="form-label">Kuota (opsional)</label>
+                        <input type="number" class="form-control" id="eQuota<?php echo $event['id']; ?>" name="eQuota<?php echo $event['id']; ?>" value="<?php echo isset($event['quota']) ? $event['quota'] : ''; ?>" min="1">
                     </div>
                     <div class="mb-3">
                         <label for="eTempat<?php echo $event['id']; ?>" class="form-label">Tempat</label>
@@ -908,7 +923,7 @@
                             <td>
                                 <div class="modal-counter-box">
                                     <div class="modal-counter-text">Jumlah</div>
-                                    <div class="modal-counter"><?php echo count($event['registered_people']); ?></div>
+                                    <div class="modal-counter"><?php echo count($event['registered_people']).(isset($event['quota']) ? '/'.$event['quota'] : ''); ?></div>
                                 </div>
                             </td>
                         </tr>

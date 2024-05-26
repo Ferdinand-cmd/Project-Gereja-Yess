@@ -654,7 +654,7 @@
         // Function to update the content of the event subheader
         function updateEventSubheader(selectedDropdown) {
             const eventSubheader = document.querySelector('.event-subheader');
-            eventSubheader.innerHTML = selectedDropdown === 'upcoming' ? 'What\'s coming up at YESS Surabaya >>>' : 'Explore past events at YESS Surabaya >>>';
+            eventSubheader.innerHTML = selectedDropdown === 'upcoming' ? 'What\'s coming up at YESS Surabaya' : 'Explore past events at YESS Surabaya';
         }
         
         /*
