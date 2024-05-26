@@ -344,7 +344,7 @@
     margin-top: 44px;
     width: 1205px;
     max-width: 100%;
-    padding: 27px 39px 14px;
+    padding: 27px 65px;
   }
 
   @media (max-width: 991px) {
@@ -418,7 +418,7 @@
     display: flex;
     margin-top: 102px;
     flex-direction: column;
-    padding: 10px 13px 10px 6px;
+    padding: 10px 31px;
   }
 
   @media (max-width: 991px) {
@@ -650,7 +650,7 @@
         </div>
       </div>
     </div>
-    <section class="more-events-section">
+    <div class="more-events-section">
       <div class="more-events-container">
         <div class="more-events-date-section">
           <div class="more-events-wrapper">
@@ -687,6 +687,6 @@
           </div>
         </div>
       </div>
-    </section>
+    </div>
   </main>
 </div>

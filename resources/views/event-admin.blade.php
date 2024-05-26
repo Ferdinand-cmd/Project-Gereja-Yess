@@ -298,6 +298,10 @@
             /* Add focus style */
         }
 
+        i {
+            margin-right: 8px; /* Atur jarak sesuai kebutuhan */
+        }
+
         .event-counter-box {
             width: 30px;
             height: 30px;
@@ -469,7 +473,7 @@
             /* Add right margin */
         }
 
-        .event-date {
+        .event-info {
             font-weight: bold;
             font-size: 1.11em;
             color: #646464;
@@ -545,7 +549,7 @@
             <div class="collapse navbar-collapse justify-content-between" style="text-align:center;" id="navbarNav">
                 <ul class="navbar-nav" style="margin-bottom:10px;">
                     <li class="nav-item">
-                        <a class="nav-link " href="/admin">Home</a>
+                        <a class="nav-link" href="/admin">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/pelayanan-admin">Pelayanan</a>
@@ -588,6 +592,7 @@
             </div>
         </div>
     </nav>
+
     <!-- Content -->
     <div class="event-header">Event
         <!-- Dropdown for event filtering -->
@@ -711,7 +716,7 @@
                     <!-- Event details -->
                     <div class="event-details">
                         <div class="event-title"><?php echo $event['title']; ?></div>
-                        <div class="event-date">
+                        <div class="event-info">
                             <?php
                                 // Fill the event location and date/time (time is optional)
                                 echo $event['location'].' | '.$event['start_date'].(empty($event['start_time']) ? '' : ' '.$event['start_time']).' - '.$event['end_date'].(empty($event['end_time']) ? '' : ' '.$event['end_time']);

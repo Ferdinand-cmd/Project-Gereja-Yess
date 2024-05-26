@@ -280,112 +280,112 @@
     </head>
     <body>
         <div class="header-container">
-          <div class="header-gap">
-              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/ea70bf3cf3b7e9699c799d874034d07d6142067effe5e2fe8d61eed42517eff5?apiKey=f9ed83d6b13f4286938197498a891b31&" class="header-logo" alt="Best Church Logo" />
-              <div class="header-text">BEST CHURCH</div>
-          </div>
-          <nav class="nav-container">
-              <div class="nav-item nav-highlight">Home</div>
-              <div class="nav-item">Daftar Pelayanan</div>
-              <div class="nav-item">KomSel</div>
-              <div class="nav-item">Bareng</div>
-              <div class="nav-item">Event</div>
-              <div class="nav-item nav-item center">Penjadwalan Pelayanan</div>
-              <div class="nav-item nav-item center">List Jemaat</div>
-              <div class="nav-item">Analisis</div>
-          </nav>
+        <div class="header-gap">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/ea70bf3cf3b7e9699c799d874034d07d6142067effe5e2fe8d61eed42517eff5?apiKey=f9ed83d6b13f4286938197498a891b31&" class="header-logo" alt="Best Church Logo" />
+            <div class="header-text">BEST CHURCH</div>
+        </div>
+        <nav class="nav-container">
+            <div class="nav-item nav-highlight">Home</div>
+            <div class="nav-item">Daftar Pelayanan</div>
+            <div class="nav-item">KomSel</div>
+            <div class="nav-item">Bareng</div>
+            <div class="nav-item">Event</div>
+            <div class="nav-item nav-item center">Penjadwalan Pelayanan</div>
+            <div class="nav-item nav-item center">List Jemaat</div>
+            <div class="nav-item">Analisis</div>
+        </nav>
         </div>
 
         <section class="main-container">
-          <header class="main-header">
-              <h1 class="main-title">Event</h1>
-              <button class="main-button-container">
-              <span class="main-button">add_circle_outline</span>
-              <span>Add Event</span>
-              </button>
-          </header>
+        <header class="main-header">
+            <h1 class="main-title">Event</h1>
+            <button class="main-button-container">
+            <span class="main-button">add_circle_outline</span>
+            <span>Add Event</span>
+            </button>
+        </header>
 
-          <article class="event-section">
-              <div class="event-row">
-              <div class="event-item">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/822aeb911358eaa71c142746dc40e2caece2dca05e0077f1ca59a46b32605bde?apiKey=f9ed83d6b13f4286938197498a891b31&" alt="Event Image" />
-                  <div class="event-date">30</div>
-                  <div class="event-month">MAR</div>
-              </div>
-              <div class="event-details">
-                  <div class="event-meta">
-                  <div>Archieved</div>
-                  <div class="event-actions">
-                      <div class="event-action">
-                      <span class="material-icons">mode_edit</span>
-                      Edit
-                      </div>
-                      <div class="event-action">
-                      <div>15</div>
-                      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/35218d5028e8888eca6a59d0ce7493720050d929768e54d75a33479ae7235b25?apiKey=f9ed83d6b13f4286938197498a891b31&" alt="Event Icon" />
-                      </div>
-                  </div>
-                  </div>
-                  <h2 class="event-description">Putus atau Terus</h2>
-                  <div class="event-location">
-                  Ciputra World Mall 2nd floor | 30 Maret 2024 | 16.30 WIB
-                  </div>
-                  <div class="event-description">
-                  YESS Surabaya Valentine’s Day Celebration "Putus atau Terus"
-                  <br />
-                  Ini adalah kesempatan untuk terinspirasi sebagai pasangan! juga merupakan
-                  PENGALAMAN YANG HEBAT bagi kamu ya...
-                  </div>
-              </div>
-              </div>
-          </article>
-          <article class="event-section">
-              <div class="event-row">
-              <div class="event-item">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/9eee4a4433c5aa9edd3838b6b293dcf4f77d334c5c2ae416679cc83373b1feed?apiKey=f9ed83d6b13f4286938197498a891b31&" alt="Event Image" />
-                  <div class="event-date">19-21</div>
-                  <div class="event-month">APR</div>
-              </div>
-              <div class="event-details">
-                  <div class="event-meta">
-                  <div>Archieved</div>
-                  <div class="event-actions">
-                      <div class="event-action">
-                      <span class="material-icons">mode_edit</span>
-                      Edit
-                      </div>
-                      <div class="event-action">
-                      <div>20</div>
-                      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/35218d5028e8888eca6a59d0ce7493720050d929768e54d75a33479ae7235b25?apiKey=f9ed83d6b13f4286938197498a891b31&" alt="Event Icon" />
-                      </div>
-                  </div>
-                  </div>
-                  <h2 class="event-description">
-                  YESS Leardership Mission Training VII
-                  </h2>
-                  <div class="event-location">
-                  Desa Birkium, Soe, Nusa Tenggara Timur | 19-21 April 2024
-                  </div>
-                  <div class="event-description">
-                  Biarlah semangat misi terus menyala dalam hidup kita. <br />
-                  Uis Neno nokan kit, Immanuel! <br />
-                  Sampe ketemu di YLMT, basodara dong!
-                  </div>
-              </div>
-              </div>
-          </article>
+        <article class="event-section">
+            <div class="event-row">
+            <div class="event-item">
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/822aeb911358eaa71c142746dc40e2caece2dca05e0077f1ca59a46b32605bde?apiKey=f9ed83d6b13f4286938197498a891b31&" alt="Event Image" />
+                <div class="event-date">30</div>
+                <div class="event-month">MAR</div>
+            </div>
+            <div class="event-details">
+                <div class="event-meta">
+                <div>Archieved</div>
+                <div class="event-actions">
+                    <div class="event-action">
+                    <span class="material-icons">mode_edit</span>
+                    Edit
+                    </div>
+                    <div class="event-action">
+                    <div>15</div>
+                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/35218d5028e8888eca6a59d0ce7493720050d929768e54d75a33479ae7235b25?apiKey=f9ed83d6b13f4286938197498a891b31&" alt="Event Icon" />
+                    </div>
+                </div>
+                </div>
+                <h2 class="event-description">Putus atau Terus</h2>
+                <div class="event-location">
+                Ciputra World Mall 2nd floor | 30 Maret 2024 | 16.30 WIB
+                </div>
+                <div class="event-description">
+                YESS Surabaya Valentine’s Day Celebration "Putus atau Terus"
+                <br />
+                Ini adalah kesempatan untuk terinspirasi sebagai pasangan! juga merupakan
+                PENGALAMAN YANG HEBAT bagi kamu ya...
+                </div>
+            </div>
+            </div>
+        </article>
+        <article class="event-section">
+            <div class="event-row">
+            <div class="event-item">
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/9eee4a4433c5aa9edd3838b6b293dcf4f77d334c5c2ae416679cc83373b1feed?apiKey=f9ed83d6b13f4286938197498a891b31&" alt="Event Image" />
+                <div class="event-date">19-21</div>
+                <div class="event-month">APR</div>
+            </div>
+            <div class="event-details">
+                <div class="event-meta">
+                <div>Archieved</div>
+                <div class="event-actions">
+                    <div class="event-action">
+                    <span class="material-icons">mode_edit</span>
+                    Edit
+                    </div>
+                    <div class="event-action">
+                    <div>20</div>
+                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/35218d5028e8888eca6a59d0ce7493720050d929768e54d75a33479ae7235b25?apiKey=f9ed83d6b13f4286938197498a891b31&" alt="Event Icon" />
+                    </div>
+                </div>
+                </div>
+                <h2 class="event-description">
+                YESS Leardership Mission Training VII
+                </h2>
+                <div class="event-location">
+                Desa Birkium, Soe, Nusa Tenggara Timur | 19-21 April 2024
+                </div>
+                <div class="event-description">
+                Biarlah semangat misi terus menyala dalam hidup kita. <br />
+                Uis Neno nokan kit, Immanuel! <br />
+                Sampe ketemu di YLMT, basodara dong!
+                </div>
+            </div>
+            </div>
+        </article>
 
-          <footer class="footer-container">
-              <div class="footer-item footer-icons">
-              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/f732184bd734eb35049aa0e9c1bf3f8cb79833eb3067fa0aaa796f2d96ec2626?apiKey=f9ed83d6b13f4286938197498a891b31&" alt="Footer Icon" class="footer-icon" />
-              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/c6e4410b564300efc0d0b12750c0b4b42a143e976fe2a9c476bdf5bcdd4492e0?apiKey=f9ed83d6b13f4286938197498a891b31&" alt="Footer Icon" class="footer-icon" />
-              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/7f7622def80581d4724ca49d227a2f2377c9a28876652bf2a6cfa3d4cd99612a?apiKey=f9ed83d6b13f4286938197498a891b31&" alt="Footer Icon" class="footer-icon" />
-              </div>
-              <div class="footer-item">
-              <h2>Contact Us</h2>
-              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/1ce370710d874bbe9158f06d19ab3959c3cadf880a62ee33aec4977717cf00f6?apiKey=f9ed83d6b13f4286938197498a891b31&" alt="Contact Us Icon" class="footer-icon" />
-              </div>
-          </footer>
+        <footer class="footer-container">
+            <div class="footer-item footer-icons">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/f732184bd734eb35049aa0e9c1bf3f8cb79833eb3067fa0aaa796f2d96ec2626?apiKey=f9ed83d6b13f4286938197498a891b31&" alt="Footer Icon" class="footer-icon" />
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/c6e4410b564300efc0d0b12750c0b4b42a143e976fe2a9c476bdf5bcdd4492e0?apiKey=f9ed83d6b13f4286938197498a891b31&" alt="Footer Icon" class="footer-icon" />
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/7f7622def80581d4724ca49d227a2f2377c9a28876652bf2a6cfa3d4cd99612a?apiKey=f9ed83d6b13f4286938197498a891b31&" alt="Footer Icon" class="footer-icon" />
+            </div>
+            <div class="footer-item">
+            <h2>Contact Us</h2>
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/1ce370710d874bbe9158f06d19ab3959c3cadf880a62ee33aec4977717cf00f6?apiKey=f9ed83d6b13f4286938197498a891b31&" alt="Contact Us Icon" class="footer-icon" />
+            </div>
+        </footer>
         </section>
     </body>
 </html>
