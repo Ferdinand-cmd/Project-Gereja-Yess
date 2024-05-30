@@ -110,7 +110,7 @@
             }
         }
 
-        .location-column {
+        .info-box .location-column {
             display: flex;
             flex-direction: column;
             line-height: normal;
@@ -119,8 +119,8 @@
         }
 
         @media (max-width: 991px) {
-            .location-column {
-            width: 100%;
+            .info-box .location-column {
+                width: 100%;
             }
         }
 
@@ -136,6 +136,7 @@
             width: 100%;
             padding: 22px 60px;
             font: 800 26px/154% Montserrat, sans-serif;
+            cursor: pointer; /* Add cursor pointer to indicate clickable */
         }
 
         @media (max-width: 991px) {
@@ -145,7 +146,7 @@
             }
         }
 
-        .location-alt {
+        .info-box .location-alt {
             background-color: #dedede;
             position: relative;
             flex-grow: 1;
@@ -158,13 +159,14 @@
             width: 100%;
             padding: 24px 60px;
             font: 500 26px/154% Montserrat, sans-serif;
+            cursor: pointer; /* Add cursor pointer to indicate clickable */
         }
 
         @media (max-width: 991px) {
-            .location-alt {
-            margin-top: 40px;
-            white-space: initial;
-            padding: 0 20px;
+            .info-box .location-alt {
+                margin-top: 40px;
+                white-space: initial;
+                padding: 0 20px;
             }
         }
 
@@ -266,6 +268,10 @@
                 padding-left: 20px;
                 margin-bottom: 40px;
             }
+        }
+
+        .point-section {
+            display: none; /* Initially hide all point sections */
         }
 
         .point-info {
@@ -850,16 +856,16 @@
             <div class="info-box">
                 <div class="info-columns">
                     <div class="location-column">
-                        <div class="location">Timur</div>
+                        <div class="location" region="timur">Timur</div>
                     </div>
                     <div class="location-column">
-                        <div class="location-alt">Barat</div>
+                        <div class="location-alt" region="barat">Barat</div>
                     </div>
                     <div class="location-column">
-                        <div class="location-alt">Selatan</div>
+                        <div class="location-alt" region="selatan">Selatan</div>
                     </div>
                     <div class="location-column">
-                        <div class="location-alt">Pusat</div>
+                        <div class="location-alt" region="pusat">Pusat</div>
                     </div>
                 </div>
             </div>
@@ -867,7 +873,7 @@
 
         <section class="main-content">
             <?php foreach ($points as $point): ?>
-                <div class="point-section">
+                <div class="point-section" point-id="<?php echo $point['id']; ?>" region="<?php echo $point['region']; ?>">
                     <div class="point-info">
                         <div class="point-img-column">
                             <img src="<?php echo $point['image']; ?>" alt="Point location" class="point-img">
@@ -906,6 +912,56 @@
             <?php endforeach; ?>
         </section>
     </main>
+
+    <script>
+        // "timur" menjadi nilai bawaan dari info-box saat halaman dimuat
+        window.onload = function() {
+            // "timur" menjadi nilai bawaan dari info-box
+            const selectedRegion = "timur";
+            updatePoints(selectedRegion);
+        };
+
+        // Tampilkan sections dari suatu region saat klik region tersebut
+        document.querySelectorAll('.info-box .location, .info-box .location-alt').forEach(item => {
+            item.addEventListener('click', event => {
+                // Dapatkan nilai info-box yang dipilih
+                const selectedRegion = event.target.getAttribute('region');
+
+                // Reset all location styles to inactive
+                document.querySelectorAll('.info-box .location, .info-box .location-alt').forEach(location => {
+                    location.classList.remove('location');
+                    location.classList.add('location-alt');
+                });
+
+                // Set the clicked location to active
+                event.target.classList.remove('location-alt');
+                event.target.classList.add('location');
+
+                updatePoints(selectedRegion);
+            });
+        });
+
+        // tampilkan sections dari region tertentu
+        function updatePoints(selectedRegion) {
+            // Tampilkan/sembunyikan points berdasarkan regionnya
+            document.querySelectorAll('.point-section').forEach(event => {
+                const pointId = event.getAttribute('point-id');
+                const pointInfo = <?php echo json_encode($points); ?>;
+                const pointData = pointInfo.find(p => p.id === parseInt(pointId));
+
+                // Untuk point yang bersesuaian
+                if ((selectedRegion === 'timur' && pointData.region === 'timur') ||
+                (selectedRegion === 'barat' && pointData.region === 'barat') ||
+                (selectedRegion === 'selatan' && pointData.region === 'selatan') ||
+                (selectedRegion === 'pusat' && pointData.region === 'pusat')) {
+                    event.style.display = 'block'; // Tampilkan point
+                }
+                else {
+                    event.style.display = 'none'; // sembunyikan eventnya
+                }
+            });
+        }
+    </script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
