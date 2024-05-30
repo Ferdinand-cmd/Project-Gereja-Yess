@@ -106,6 +106,9 @@ resources\views\bareng.blade.php
             width: 100%;
             max-width: 1082px;
             padding: 25px 46px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
         }
 
         @media (max-width: 991px) {
@@ -119,6 +122,9 @@ resources\views\bareng.blade.php
         .info-columns {
             gap: 20px;
             display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 100%;
         }
 
         @media (max-width: 991px) {
@@ -134,7 +140,8 @@ resources\views\bareng.blade.php
             flex-direction: column;
             line-height: normal;
             width: 25%;
-            margin-left: 0px;
+            margin: 10px;
+            min-width: 200px;
         }
 
         @media (max-width: 991px) {
@@ -171,12 +178,11 @@ resources\views\bareng.blade.php
             flex-grow: 1;
             align-items: center;
             color: #000;
-            white-space: nowrap;
             text-align: center;
             letter-spacing: 1.3px;
             justify-content: center;
             width: 100%;
-            padding: 24px 60px;
+            padding: 22px 60px;
             font: 500 26px/154% Montserrat, sans-serif;
             cursor: pointer; /* Add cursor pointer to indicate clickable */
         }
@@ -274,7 +280,9 @@ resources\views\bareng.blade.php
 
         @media (max-width: 991px) {
             .main-content {
-            max-width: 100%;
+                max-width: 100%;
+                padding: 10px;
+                margin-top: -20px;
             }
         }
 
@@ -282,13 +290,14 @@ resources\views\bareng.blade.php
             box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
             background-color: #fff;
             margin-bottom: 47px;
-            padding: 28px 0 28px 80px;
+            padding: 28px 80px;
+            display: none;
+            flex-direction: column;
         }
 
         @media (max-width: 991px) {
             .point-section {
-                max-width: 100%;
-                padding-left: 20px;
+                padding: 20px;
                 margin-bottom: 40px;
             }
         }
@@ -300,6 +309,8 @@ resources\views\bareng.blade.php
         .point-info {
             gap: 20px;
             display: flex;
+            display: none;
+            flex-direction: column;
         }
 
         @media (max-width: 991px) {
@@ -314,19 +325,21 @@ resources\views\bareng.blade.php
             display: flex;
             flex-direction: column;
             line-height: normal;
-            width: 28%;
-            margin-left: 0px;
+            width: 100%;
+            max-width: 40%;
         }
 
         @media (max-width: 991px) {
             .point-img-column {
                 width: 100%;
+                max-width: 100%;
+                margin-bottom: 20px;
             }
         }
 
         .point-img {
             aspect-ratio: 1.41;
-            object-fit: auto;
+            object-fit: cover;
             object-position: center;
             width: 100%;
             flex-grow: 1;
@@ -342,13 +355,14 @@ resources\views\bareng.blade.php
             display: flex;
             flex-direction: column;
             line-height: normal;
-            width: 72%;
-            margin-left: 20px;
+            width: 100%;
+            max-width: 55%;;
         }
 
         @media (max-width: 991px) {
             .point-details-column {
                 width: 100%;
+                max-width: 100%;
             }
         }
 
@@ -368,13 +382,13 @@ resources\views\bareng.blade.php
         .point-title-box {
             display: flex;
             flex-direction: column;
-            padding: 0 53px;
+            padding: 0 20px;
         }
 
         @media (max-width: 991px) {
             .point-title-box {
                 max-width: 100%;
-                padding: 0 20px;
+                font-size: 32px;
             }
         }
 
@@ -398,6 +412,7 @@ resources\views\bareng.blade.php
         @media (max-width: 991px) {
             .point-description {
                 max-width: 100%;
+                font-size: 18px;
             }
         }
 
@@ -413,10 +428,8 @@ resources\views\bareng.blade.php
 
         .booking-info {
             display: flex;
-            width: 452px;
-            max-width: 100%;
             flex-direction: column;
-            margin: 12px 0 0 41px;
+            margin: 12px 0 0 20px;
         }
 
         .booking-details {

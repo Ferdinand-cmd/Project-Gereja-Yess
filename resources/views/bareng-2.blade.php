@@ -1,7 +1,3 @@
-user bareng before responsive
-7419e8a
-resources\views\bareng.blade.php
-@@ -1,973 +1,1002 @@
 <!doctype html>
 <html lang="en">
 
@@ -42,13 +38,6 @@ resources\views\bareng.blade.php
             align-items: start;
             padding: 76px 80px;
         }
-
-
-
-
-
-
-
 
         .banner img {
             position: absolute;
@@ -93,7 +82,7 @@ resources\views\bareng.blade.php
 
         @media (max-width: 991px) {
             .banner-subheading {
-            max-width: 100%;
+                max-width: 100%;
             }
         }
 
@@ -106,19 +95,25 @@ resources\views\bareng.blade.php
             width: 100%;
             max-width: 1082px;
             padding: 25px 46px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
         }
 
         @media (max-width: 991px) {
             .info-box {
-            max-width: 100%;
-            margin-top: 40px;
-            padding: 0 20px;
+                max-width: 100%;
+                margin-top: 40px;
+                padding: 0 20px;
             }
         }
 
         .info-columns {
             gap: 20px;
             display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 100%;
         }
 
         @media (max-width: 991px) {
@@ -130,11 +125,13 @@ resources\views\bareng.blade.php
         }
 
         .info-box .location-column {
+            flex: 1 1 22%;
             display: flex;
             flex-direction: column;
             line-height: normal;
             width: 25%;
-            margin-left: 0px;
+            margin: 10px;
+            min-width: 200px;
         }
 
         @media (max-width: 991px) {
@@ -171,13 +168,12 @@ resources\views\bareng.blade.php
             flex-grow: 1;
             align-items: center;
             color: #000;
-            white-space: nowrap;
             text-align: center;
             letter-spacing: 1.3px;
             justify-content: center;
             width: 100%;
-            padding: 24px 60px;
-            font: 500 26px/154% Montserrat, sans-serif;
+            padding: 22px 60px;
+            font: 800 26px/154% Montserrat, sans-serif;
             cursor: pointer; /* Add cursor pointer to indicate clickable */
         }
 
@@ -233,7 +229,7 @@ resources\views\bareng.blade.php
 
         @media (max-width: 991px) {
             .info-columns-alt {
-            width: 100%;
+                width: 100%;
             }
         }
 
@@ -274,32 +270,32 @@ resources\views\bareng.blade.php
 
         @media (max-width: 991px) {
             .main-content {
-            max-width: 100%;
+                max-width: 100%;
+                padding: 10px;
+                margin-top: -20px;
             }
         }
 
         .point-section {
             box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-            background-color: #fff;
             margin-bottom: 47px;
-            padding: 28px 0 28px 80px;
+            padding: 28px 20px;
+            display: none; /* Initially hide all point sections */
+            flex-direction: column;
         }
 
         @media (max-width: 991px) {
             .point-section {
-                max-width: 100%;
-                padding-left: 20px;
+                padding: 20px;
                 margin-bottom: 40px;
             }
-        }
-
-        .point-section {
-            display: none; /* Initially hide all point sections */
         }
 
         .point-info {
             gap: 20px;
             display: flex;
+            flex-direction: row;
+            justify-content: space-between;
         }
 
         @media (max-width: 991px) {
