@@ -1,32 +1,33 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\EventRegistration;
-use App\Models\ArchivedEvent;
-use App\Models\Event;
 
 use Illuminate\Http\Request;
+use App\Models\Event;
+use Illuminate\Support\Facades\Storage;
 
 class EventController extends Controller
 {
-    public function index() {
+    public function index()
+    {
         // Fetch all events
         $events = Event::all();
-    
+
         // Pass to the view
         return view('event-admin', compact('events'));
     }
+
     public function store(Request $request)
     {
         $request->validate([
             'title' => 'required|string|max:255',
-        'location' => 'required|string|max:255',
-        'start_date' => 'required|date',
-        'end_date' => 'required|date',
-        'start_time' => 'nullable|date_format:H:i',
-        'end_time' => 'nullable|date_format:H:i',
-        'description' => 'required|string',
-        'image' => 'required|image'
+            'location' => 'required|string|max:255',
+            'start_date' => 'required|date',
+            'end_date' => 'required|date',
+            'start_time' => 'nullable|date_format:H:i',
+            'end_time' => 'nullable|date_format:H:i',
+            'description' => 'required|string',
+            'image' => 'required|image'
         ]);
 
         $imagePath = $request->file('image')->store('event_images', 'public');
@@ -56,5 +57,45 @@ class EventController extends Controller
         $request->validate(['registrant_email' => 'required|string']);
         EventRegistration::create(['event_id' => $eventId, 'registrant_email' => $request->registrant_email]);
         return redirect()->back();
+    }
+
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'location' => 'required|string|max:255',
+            'start_date' => 'required|date',
+            'end_date' => 'required|date',
+            'start_time' => 'nullable|date_format:H:i',
+            'end_time' => 'nullable|date_format:H:i',
+            'description' => 'required|string',
+            'image' => 'nullable|image'
+        ]);
+
+        $event = Event::find($id);
+
+        if (!$event) {
+            return response()->json(['success' => false, 'message' => 'Event not found.'], 404);
+        }
+
+        // Update the event details
+        $event->title = $request->title;
+        $event->location = $request->location;
+        $event->start_date = $request->start_date;
+        $event->start_time = $request->start_time;
+        $event->end_date = $request->end_date;
+        $event->end_time = $request->end_time;
+        $event->description = $request->description;
+
+        // Handle file upload if an image is provided
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('event_images', 'public');
+            $event->image_path = $imagePath;
+        }
+
+        // Save the updated event
+        $event->save();
+
+        return redirect()->back()->with('success', 'Event updated successfully.');
     }
 }
