@@ -104,9 +104,9 @@
 
         @media (max-width: 991px) {
             .info-columns {
-            flex-direction: column;
-            align-items: stretch;
-            gap: 0px;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0px;
             }
         }
 
@@ -124,7 +124,7 @@
             }
         }
 
-        .location {
+        .info-box .location {
             background-color: #000;
             position: relative;
             flex-grow: 1;
@@ -139,9 +139,9 @@
         }
 
         @media (max-width: 991px) {
-            .location {
-            margin-top: 40px;
-            padding: 0 20px;
+            .info-box .location {
+                margin-top: 40px;
+                padding: 0 20px;
             }
         }
 
@@ -415,12 +415,12 @@
             font: 700 22px Roboto, sans-serif;
         }
 
-        .time-info {
+        .point-section .time-info {
             display: flex;
             gap: 16px;
         }
 
-        .time {
+        .point-section .time {
             flex-grow: 1;
             flex-basis: auto;
             margin: auto 0;
@@ -433,7 +433,7 @@
             gap: 20px;
         }
 
-        .booking-button {
+        .point-section .booking-button {
             border-radius: 40px;
             background-color: #eeb120;
             color: #fff;
@@ -442,6 +442,19 @@
             width: fit-content;
             padding: 22px 50px;
             font: 500 18px/133% DM Sans, sans-serif;
+            transition: background-color 0.3s ease;
+        }
+
+        .point-section .booking-button-disable {
+            border-radius: 40px;
+            background-color: #797979;
+            color: #fff;
+            justify-content: center;
+            flex-grow: 1;
+            width: fit-content;
+            padding: 22px 50px;
+            font: 500 18px/133% DM Sans, sans-serif;
+            transition: background-color 0.3s ease;
         }
 
         .seats-remaining {
@@ -454,6 +467,202 @@
             justify-content: center;
             padding: 18px 25px;
             font: 700 26px Roboto, sans-serif;
+        }
+        .modal-header {
+            font: 500 24px/167% Montserrat, sans-serif;
+        }
+        .modal .date-label {
+            display: flex;
+            align-self: start;
+            text-align: center;
+        }
+        .modal .date-label span {
+            border-radius: 20px;
+            background-color: #eeb120;
+            color: #fff;
+            padding: 4px 23px;
+            font: 700 20px Montserrat, sans-serif;
+        }
+        .modal .content-row {
+            display: flex;
+            margin-top: 24px;
+            gap: 18px;
+        }
+        .modal .stick-wrapper {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            margin-top: 25px;
+            margin-bottom: auto;
+            width: 10px;
+            height: 340px; /* Sesuaikan dengan ketinggian yang diperlukan */
+        }
+
+        .modal .line {
+            position: absolute;
+            left: 50%; /* Atur posisi horizontal ke tengah */
+            height: 100%;
+            transform: translateX(-50%);
+            height: 100%;
+            width: 2px; /* Lebar garis */
+            background-color: #000; /* Warna garis */
+        }
+
+        .modal .circle-1, .modal .circle-2 {
+            position: absolute;
+            background-color: #eeb120; /* Warna lingkaran */
+            border-radius: 50%;
+            width: 20px; /* Diameter lingkaran */
+            height: 20px; /* Diameter lingkaran */
+            left: 50%; /* Atur posisi horizontal ke tengah */
+            transform: translateX(-50%);
+        }
+
+        .modal .circle-1 {
+            top: 0; /* Atur lingkaran pertama di bagian atas */
+            z-index: 1;
+        }
+
+        .modal .circle-2 {
+            bottom: 0; /* Atur lingkaran kedua di bagian bawah */
+        }
+        .modal .text-content {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            flex-basis: 0;
+            width: fit-content;
+        }
+        @media (max-width: 991px) {
+            .modal .text-content {
+                max-width: 100%;
+            }
+        }
+
+        .modal .time-info {
+            width: 160px;
+            display: flex;
+            gap: 12px;
+            white-space: nowrap;
+        }
+
+        @media (max-width: 991px) {
+        .modal .time-info {
+            white-space: initial;
+        }
+        }
+
+        .modal .time {
+            color: #000;
+            letter-spacing: 2.16px;
+            flex-grow: 1;
+            font: 800 36px Montserrat, sans-serif;
+        }
+
+        .modal .time-zone {
+            color: #646464;
+            align-self: start;
+            margin-top: 15px;
+            font: 400 16px Montserrat, sans-serif;
+        }
+
+        .modal .location {
+            color: #000;
+            font: 700 32px Montserrat, sans-serif;
+        }
+
+        @media (max-width: 991px) {
+            .modal .location {
+                max-width: 100%;
+            }
+        }
+
+        .modal .address {
+            color: #646464;
+            margin-top: 13px;
+            font: 700 16px Montserrat, sans-serif;
+        }
+
+        @media (max-width: 991px) {
+            .modal .address {
+                max-width: 100%;
+            }
+        }
+
+        .modal .plate-number {
+            display: flex;
+            margin-top: 9px;
+            gap: 10px;
+            font-size: 16px;
+            color: #fff;
+            font-weight: 700;
+            text-align: center;
+            padding: 0 1px;
+        }
+
+        .modal .plate {
+            background-color: #000;
+            justify-content: center;
+            padding: 9px 15px;
+        }
+
+        .modal .plate-separator {
+            background-color: #000;
+            width: 106px;
+            /* height: 28px; */
+        }
+
+        .modal .mall-name {
+            color: #000;
+            margin-top: 86px;
+            font: 700 32px Montserrat, sans-serif;
+        }
+
+        @media (max-width: 991px) {
+            .modal .mall-name {
+                max-width: 100%;
+                margin-top: 40px;
+            }
+        }
+
+        /* CSS for cancel button */
+        .modal .btn-cancel {
+            background-color: #ffffff;
+            /* White background */
+            color: #000000;
+            /* Black text color */
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1.11em;
+            font-weight: bold;
+            /* Bold weight */
+            width: 150px;
+            /* Set width to 150px */
+        }
+
+        /* Hover effect for cancel button */
+        .modal .btn-cancel:hover {
+            background-color: #eeeeee;
+            /* Light gray background on hover */
+        }
+
+        /* CSS for book button */
+        .modal .btn-book {
+            background-color: #000000;
+            /* Black background */
+            color: #ffffff;
+            /* White text color */
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1.11em;
+            font-weight: bold;
+            /* Bold weight */
+            width: 150px;
+            /* Set width to 150px */
+        }
+
+        /* Hover effect for book button */
+        .btn-book:hover {
+            background-color: #333333;
+            /* Darker gray background on hover */
         }
     </style>
 </head>
@@ -512,7 +721,7 @@
                         </li>
                     @else
                         <li class="nav-item">
-                            <a class="nav-link login-link-border" href="/login">Login</a>
+                            <a class="nav-link" href="/login">Login</a>
                         </li>
                     @endauth
                 </ul>
@@ -528,7 +737,7 @@
                 'title' => 'Hotel Dafam Pacific Caesar T1',
                 'description' => 'Jl. Dr. Ir. H. Soekarno No.45c, Kalijudan, Kec. Mulyorejo, Surabaya, Jawa Timur.', 
                 'date' => '2024-03-30',
-                'time' => '16.00',
+                'time' => '20.00',
                 'image' => 'https://cdn.builder.io/api/v1/image/assets/TEMP/52c6608380b375ed3bae2c5bba943d966a1aca55d824170efc6ec4445e95651e?apiKey=f9ed83d6b13f4286938197498a891b31&',
                 'seats_o' => 0,
                 'seats_t' => 8
@@ -591,6 +800,48 @@
         ];
     ?>
 
+    <!-- Bareng Modal -->
+    <?php foreach ($points as $point): ?>
+        <div class="modal fade" id="barengModal<?php echo $point['id']; ?>" tabindex="-1" aria-labelledby="barengModalLabel<?php echo $point['id']; ?>" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="barengModalLabel<?php echo $point['id']; ?>">PESAN BERANGKAT BARENG</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Your content here -->
+                    <div class="date-label"><span><?php echo $point['date']; ?></span></div>
+                    <div class="content-row">
+                        <div class="stick-wrapper">
+                            <div class="circle-1"></div>
+                            <div class="line"></div>
+                            <div class="circle-2"></div>
+                        </div>
+                        <div class="text-content">
+                            <div class="time-info">
+                                <div class="time"><?php echo $point['time']; ?></div>
+                                <span class="time-zone">WIB</span>
+                            </div>
+                            <h2 class="location"><?php echo $point['title']; ?></h2>
+                            <p class="address"><?php echo $point['description']; ?></p>
+                            <div class="plate-number">
+                                <div class="plate">L 123 ABC</div>
+                                <div class="plate-separator"></div>
+                            </div>
+                            <h2 class="mall-name">Ciputra World Mall</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary btn-cancel" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary btn-book">Book</button>
+                </div>
+                </div>
+            </div>
+        </div>
+    <?php endforeach; ?>
+
     <main class="container">
         <section class="banner">
             <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/6a625017315edd3df1ced9adbd4876287d53705099e254e0127107ea08037277?apiKey=f9ed83d6b13f4286938197498a891b31&" alt="Church gathering">
@@ -640,8 +891,12 @@
                                         </div>
                                     </div>
                                     <div class="booking-stats">
-                                        <button class="booking-button">BOOK A SEAT</button>
-                                        <div class="seats-remaining">0 / 8</div>
+                                    <?php
+                                            echo $point['seats_o'] < $point['seats_t'] ?
+                                            '<button class="booking-button" data-bs-toggle="modal" data-bs-target="#barengModal'.$point['id'].'">BOOK A SEAT</button>' :
+                                            '<button class="booking-button-disable">BOOK A SEAT</button>';
+                                        ?>
+                                        <div class="seats-remaining"><?php echo $point['seats_o']; ?> / <?php echo $point['seats_t']; ?></div>
                                     </div>
                                 </div>
                             </div>
@@ -649,12 +904,9 @@
                     </div>
                 </div>
             <?php endforeach; ?>
-
         </section>
     </main>
 
-    <!-- Bareng Modal -->
-    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
