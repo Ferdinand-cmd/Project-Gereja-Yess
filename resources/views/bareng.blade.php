@@ -43,13 +43,6 @@ resources\views\bareng.blade.php
             padding: 76px 80px;
         }
 
-
-
-
-
-
-
-
         .banner img {
             position: absolute;
             inset: 0;
@@ -110,9 +103,9 @@ resources\views\bareng.blade.php
 
         @media (max-width: 991px) {
             .info-box {
-            max-width: 100%;
-            margin-top: 40px;
-            padding: 0 20px;
+                max-width: 100%;
+                margin-top: 40px;
+                padding: 0 20px;
             }
         }
 
@@ -233,7 +226,7 @@ resources\views\bareng.blade.php
 
         @media (max-width: 991px) {
             .info-columns-alt {
-            width: 100%;
+                width: 100%;
             }
         }
 
@@ -263,9 +256,9 @@ resources\views\bareng.blade.php
         .main-content {
             background-color: #f5f5f5;
             align-self: center;
-            z-index: 10;
+            /* z-index: 10; */
             display: flex;
-            margin-top: -54px;
+            /* margin-top: -54px; */
             width: 100%;
             max-width: 1376px;
             flex-direction: column;

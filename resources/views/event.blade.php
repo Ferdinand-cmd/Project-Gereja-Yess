@@ -418,33 +418,36 @@
                 <div class="collapse navbar-collapse justify-content-between" style="text-align:center;" id="navbarNav">
                     <ul class="navbar-nav" style="margin-bottom:10px;">
                         <li class="nav-item">
-                            <a class="nav-link" href="/">Home</a>
+                            <a class="nav-link active" href="/admin">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/pelayanan">Pelayanan</a>
+                            <a class="nav-link" href="/pelayanan-admin">Pelayanan</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/komsel">KomSel</a>
+                            <a class="nav-link" href="/admin">KomSel</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/bareng">Bareng</a>
+                            <a class="nav-link" href="/admin">Bareng</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="/event">Event</a>
+                            <a class="nav-link" href="/event-admin">Event</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/admin">Penjadwalan</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/admin">Analisis</a>
                         </li>
                     </ul>
-                    @auth
-                        <ul class="navbar-nav">
+                    <ul class="navbar-nav">
+                        @auth
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
                                     data-bs-toggle="dropdown" aria-expanded="false">
-                                    Welcome, {{ auth()->user()->name }}
+                                    Admin, {{ auth()->user()->name }}
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    @if (auth()->user()->is_admin)
-                                        <!-- Assuming there's an 'is_admin' attribute -->
-                                        <li><a class="dropdown-item" href="/admin">Admin Dashboard</a></li>
-                                    @endif
+                                    <li><a class="dropdown-item" href="/">Switch to User View</a></li>
                                     <li>
                                         <form action="/logout" method="POST">
                                             @csrf
@@ -453,15 +456,8 @@
                                     </li>
                                 </ul>
                             </li>
-                        </ul>
-                    @else
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link login-link-border" href="/login">Login</a>
-                            </li>
-                        </ul>
-                    @endauth
-
+                        @endauth
+                    </ul>
                 </div>
             </div>
         </nav>
