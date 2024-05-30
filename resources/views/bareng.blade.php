@@ -11,6 +11,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Icons:wght@400&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit:wght@600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans+Hebrew:wght@300&display=swap">
     <link href="css/style.css" rel="stylesheet">
     <link href="css/bareng.css" rel="stylesheet">
     <style>
@@ -22,6 +24,8 @@
             background-color: #fff;
             display: flex;
             flex-direction: column;
+            padding: 10px;
+            margin: auto;
         }
 
         .banner {
@@ -33,13 +37,6 @@
             width: 100%;
             align-items: start;
             padding: 76px 80px;
-        }
-
-        @media (max-width: 991px) {
-            .banner {
-                max-width: 100%;
-                padding: 0 20px;
-            }
         }
 
         .banner img {
@@ -58,9 +55,20 @@
         }
 
         @media (max-width: 991px) {
+            .banner {
+                padding: 20px;
+            }
             .banner-heading {
-                max-width: 100%;
-                font-size: 40px;
+                font-size: 50px;
+            }
+        }
+
+        @media (max-width: 575px) {
+            .banner {
+                padding: 10px;
+            }
+            .banner-heading {
+                font-size: 30px;
             }
         }
 
@@ -160,6 +168,10 @@
             padding: 24px 60px;
             font: 500 26px/154% Montserrat, sans-serif;
             cursor: pointer; /* Add cursor pointer to indicate clickable */
+        }
+
+        .info-box .location-alt:hover {
+            background-color: #aaaaaa;
         }
 
         @media (max-width: 991px) {
@@ -442,6 +454,7 @@
         .point-section .booking-button {
             border-radius: 40px;
             background-color: #eeb120;
+            border-color: #eeb120;
             color: #fff;
             justify-content: center;
             flex-grow: 1;
@@ -451,16 +464,24 @@
             transition: background-color 0.3s ease;
         }
 
+        .point-section .booking-button:hover {
+            background-color: #d4a100;
+            /* Change background color on hover */
+            border-color: #d4a100;
+            /* Change border color on hover */
+        }
+
         .point-section .booking-button-disable {
             border-radius: 40px;
             background-color: #797979;
+            border-color: #797979;
             color: #fff;
             justify-content: center;
             flex-grow: 1;
             width: fit-content;
             padding: 22px 50px;
             font: 500 18px/133% DM Sans, sans-serif;
-            transition: background-color 0.3s ease;
+            cursor: context-menu; /* menandakan tidak bisa diklik */
         }
 
         .seats-remaining {
@@ -476,6 +497,9 @@
         }
         .modal-header {
             font: 500 24px/167% Montserrat, sans-serif;
+        }
+        .modal-body {
+            background-color: #f4f4f4;
         }
         .modal .date-label {
             display: flex;
@@ -631,6 +655,10 @@
             }
         }
 
+        .modal-footer {
+            background-color: #a2a2a2;
+        }
+
         /* CSS for cancel button */
         .modal .btn-cancel {
             background-color: #ffffff;
@@ -663,6 +691,7 @@
             /* Bold weight */
             width: 150px;
             /* Set width to 150px */
+            border-color: #000;
         }
 
         /* Hover effect for book button */
@@ -957,7 +986,7 @@
                     event.style.display = 'block'; // Tampilkan point
                 }
                 else {
-                    event.style.display = 'none'; // sembunyikan eventnya
+                    event.style.display = 'none'; // sembunyikan pointnya
                 }
             });
         }
