@@ -974,7 +974,7 @@
         //     // Loop through all events and hide/show them based on the selected dropdown value
         //     document.querySelectorAll('.event').forEach(event => {
         //         const eventId = event.getAttribute('event-id');
-        //         const eventInfo = <?php echo json_encode($events); ?>;
+        //         const eventInfo = <?php // echo json_encode($events); ?>;
         //         const eventData = eventInfo.find(e => e.id === parseInt(eventId));
         //         const archiveButton = event.querySelector('.archive-button');
 
