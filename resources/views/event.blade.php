@@ -1,34 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YESS.SUB | Event</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Icons:wght@400&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit:wght@600;700&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans+Hebrew:wght@300&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;700&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Share&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ropa+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
     <style>
-        :root {
-            --default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei", "Source Han Sans CN", sans-serif;
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400&display=swap');
 
         body {
-            margin: 0;
-            padding: 0;
-            font-family: var(--default-font-family);
-        }
-
-        .main-container {
+            background-color: white;
+            /* Set the background color to white */
+            color: #000000;
+            /* Set text color to black */
             padding: 20px;
-            max-width: 1440px;
-            margin: 0 auto;
-            box-sizing: border-box;
+            /* Add some padding for better readability */
         }
 
         .event-header-container {
@@ -38,7 +35,6 @@
             /* Align items vertically */
             margin-top: 70px;
             /* Adjust the top margin to match the height of the navbar */
-            flex-wrap: wrap;
         }
 
         .event-header {
@@ -54,7 +50,6 @@
             /* Set font weight to bold */
             margin-right: 20px;
             /* Add right margin to create some distance */
-            min-width: 250px;
         }
 
         .header-text {
@@ -96,151 +91,141 @@
             /* Add focus style */
         }
 
-        .event-subheader-container {
+        .event-subheader {
+            font-family: 'Open Sans Hebrew', sans-serif;
+            /* Set font family */
+            text-align: left;
+            /* Align text to left */
+            font-size: 2em;
+            /* Set font size to 2em */
+            margin-top: 20px;
+            /* Add some top margin for spacing */
+            color: black;
+            /* Set color to black */
+            font-weight: lighter;
+            /* Set font weight to lighter */
+        }
+
+        .event {
             position: relative;
-            width: max-content; /* Changed width to 'max-content' for better responsiveness */
-            font-family: Open Sans Hebrew, var(--default-font-family);
-            font-size: 24px; /* Adjusted font size for better readability */
-            font-weight: 300;
-            line-height: 50px; /* Adjusted line height for better spacing */
-            text-align: left;
-            white-space: nowrap;
-            letter-spacing: 1.8px;
-            margin-top: 10px; /* Adjusted margin for better spacing */
-        }
-
-        .event-subheader,
-        .text-a {
-            color: #000000;
-            font-family: Open Sans Hebrew, var(--default-font-family);
-            font-size: 24px; /* Adjusted font size for better readability */
-            font-weight: 300;
-            line-height: 50px; /* Adjusted line height for better spacing */
-            text-align: left;
-            letter-spacing: 1.8px; /* Adjusted letter spacing for better readability */
-        }
-
-        .text-a {
-            margin-left: 10px; /* Adjusted margin-left for better spacing between text and arrow */
-        }
-
-        .event-container {
             display: flex;
-            flex-direction: column;
-            gap: 30px; /* Jarak antara event */
-            position: relative; /* Tambahkan position relative untuk event card */
-        }
-
-        .event-card {
-            display: flex;
-            gap: 20px; /* Jarak antara gambar dan detail event */
-            background-color: #f3f3f3;
-            box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+            align-items: center;
+            width: 100%;
+            max-width: 1205px;
+            /* Set max-width to maintain responsiveness */
+            height: auto;
+            /* Change height to auto for responsiveness */
+            margin: 0 auto;
+            /* Center align by setting left and right margin to auto */
+            margin-bottom: 20px;
+            border: 1px solid #F4F4F4;
+            background-color: #F4F4F4;
             cursor: pointer;
-            margin: 20px;
+            padding: 20px;
+            /* Add padding to create space between the event and its content */
         }
 
-        .event-card:hover:not(.event-card:hover .register-button) {
+        .event img {
+            width: 340px;
+            /* Set width to 340px */
+            height: auto;
+            margin-right: 20px;
+        }
+
+        .event:hover:not(.event:hover .daftar-button) {
             background-color: #e1e1e1;
             /* Change background color on hover */
         }
 
-        .event-image-container {
-            text-align: center;
-            position: relative;
-            width: 340px;
-            height: 242px;
-            margin: 20px;
-        }
-
-        .date-container {
-            display: flex;
-            justify-content: flex-end;
-            align-items: flex-end;
-            position: absolute;
-            bottom: 0;
-            right: 0;
-        }
-
-        .event-date {
-            width: 100px;
-            height: 60px;
-            background: rgba(0, 0, 0, 0.25);
-            font-size: 0px;
-        }
-
-        .month, .day {
-            display: block;
-            color: #f4f4f4;
-            font-family: Roboto, var(--default-font-family);
-            font-weight: 900;
-            text-align: left;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            z-index: 2;
-        }
-
-        .month {
-            font-size: 16px;
-            line-height: 18.75px;
-            margin: 7px 0 0 32px;
-            letter-spacing: 1.6px;
-        }
-
-        .day {
-            font-size: 32px;
-            line-height: 37.5px;
-            margin: -5px 0 0 6px;
-            z-index: 1;
-            text-align: center;
-        }
-
         .event-details {
-            flex: 1; /* Agar detail event mengambil sisa ruang */
-            padding: 20px; /* Atur padding untuk memberikan ruang di sekitar detail event */
-            position: relative; /* Needed to position the button absolutely within this container */
+            flex: 1;
+            /* Take remaining space */
+            margin-right: 20px;
+            /* Add margin to create space between the text and the side of the event */
         }
 
         .event-title {
-            font-family: Kanit, var(--default-font-family);
-            font-weight: 600;
-            font-size: 36px;
-            line-height: 53.82px;
+            font-weight: bold;
+            font-size: 2em;
+            color: black;
+            font-family: 'Kanit', sans-serif;
+            margin-bottom: 10px;
+            margin-right: 20px;
+            /* Add right margin */
         }
 
-        .event-info {
-            font-family: Roboto, var(--default-font-family);
-            font-weight: 700;
-            font-size: 20px;
-            line-height: 23px;
-        }
-        .event-description {
-            font-family: Roboto, var(--default-font-family);
-            font-weight: 400;
-            font-size: 20px;
-            line-height: 23.438px;
-            letter-spacing: 0.4px;
+        .event-date {
+            font-weight: bold;
+            font-size: 1.11em;
             color: #646464;
-            margin-bottom: 50px; /* Add some margin to the bottom to ensure space */
+            font-family: 'Roboto', sans-serif;
+            margin-bottom: 10px;
+            margin-right: 20px;
+            /* Add right margin */
         }
-        .register-button {
+
+        .event-description {
+            font-size: 1.11em;
+            color: #646464;
+            font-family: 'Roboto', sans-serif;
+            margin-bottom: 10px;
+        }
+
+        .daftar-button {
             position: absolute;
+            /* Set absolute positioning */
             bottom: 10px;
+            /* Adjust bottom spacing */
             right: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 16px 24px;
-            background: #eeb120;
+            /* Adjust right spacing */
+            background-color: #FFD700;
+            color: #FFFFFF;
             border: none;
-            border-radius: 40px;
-            font-family: 'DM Sans', sans-serif;
-            font-size: 1em;
-            font-weight: 500;
-            color: #fff;
+            border-radius: 10px;
+            padding: 10px 20px;
             cursor: pointer;
+            transition: background-color 0.3s ease;
         }
+
+        .daftar-button:hover {
+            background-color: #FFCC00;
+        }
+
+        /* Modal */
+        .modal-dialog {
+            max-width: 90%;
+            /* Set max-width to 90% of the viewport width */
+            width: auto;
+            /* Allow modal to expand based on content */
+        }
+
+        /* Modal Content */
+        .modal-content {
+            width: 100%;
+            /* Set width to 100% */
+        }
+
+        .modal-header {
+            background-color: #F4F4F4;
+            padding: 20px;
+            /* Add padding to create space */
+        }
+
+        .modal-event-title {
+            font-weight: bold;
+            font-size: 1.5em;
+            color: black;
+            font-family: 'Kanit', sans-serif;
+            word-wrap: break-word;
+            /* Allow long words to break and wrap */
+        }
+
+        .modal-body {
+            background-color: #f2f2f2;
+            padding: 0 60px;
+            /* Add 60px padding on the left and right sides */
+        }
+
         /* Modal */
         .modal-dialog {
             max-width: 90%;
@@ -346,6 +331,50 @@
             background-color: #a2a2a2;
         }
 
+        /* For smaller screens */
+        @media (max-width: 576px) {
+            .image-text-container {
+                width: 80%;
+                /* Adjust the width for smaller screens */
+                max-width: 300px;
+                /* Limit the maximum width */
+            }
+
+            .image-text-1 {
+                font-size: 1.3em;
+                /* Decrease the font size for smaller screens */
+                padding: 10px;
+                /* Adjust padding for smaller screens */
+            }
+
+            .image-text-2 {
+                font-size: 0.7em;
+                /* Decrease the font size for smaller screens */
+            }
+        }
+
+        /* For larger screens */
+        @media (min-width: 992px) {
+            .image-text-container {
+                width: 70%;
+                /* Adjust the width for larger screens */
+                max-width: 400px;
+                /* Limit the maximum width */
+            }
+
+            .image-text-1 {
+                font-size: 1.5em;
+                /* Increase the font size for larger screens */
+                padding: 20px;
+                /* Adjust padding for larger screens */
+            }
+
+            .image-text-2 {
+                font-size: 1em;
+                /* Increase the font size for larger screens */
+            }
+        }
+
         /* CSS for cancel button */
         .btn-cancel {
             background-color: #ffffff;
@@ -386,201 +415,307 @@
             /* Darker gray background on hover */
         }
 
-        @media (max-width: 768px) {
-            .event-header-container {
+        /* Responsive adjustments */
+        @media (max-width: 1205px) {
+            .event {
                 flex-direction: column;
-                text-align: center;
+                /* Change flex direction to stack content vertically */
+                align-items: flex-start;
+                /* Align items to the start */
             }
 
-            .event-header {
-                text-align: center;
-                margin-top: 20px;
+            .event img {
+                margin-right: 0;
+                /* Remove right margin for image */
+                margin-bottom: 20px;
+                /* Add bottom margin for image */
             }
+
+            .event-details {
+                margin-right: 0;
+                /* Remove right margin for event details */
+            }
+
+            .daftar-button {
+                position: static;
+                /* Change position to static for button */
+                margin-top: 20px;
+                /* Add top margin for button */
+                align-self: center;
+                /* Center button horizontally */
+            }
+        }
+
+        .events-container {
+            margin-top: 20px;
+            /* Add top margin to separate the subheader from the first event */
+            margin-bottom: 50px;
+            /* Add bottom margin to separate pinned events from others */
+        }
+
+        /* CSS for the "Show Archived Events" button */
+        .show-archived-button {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background-color: #FFCC00;
+            /* Yellow background color */
+            color: #ffffff;
+            /* White text color */
+            border: none;
+            /* Remove border */
+            border-radius: 10px;
+            /* Add rounded corners */
+            cursor: pointer;
+            /* Change cursor to pointer on hover */
+            transition: background-color 0.3s ease;
+            /* Smooth transition for background color change */
+        }
+
+        /* Change button background color on hover */
+        .show-archived-button:hover {
+            background-color: #eeb120;
+            /* Darker yellow on hover */
         }
     </style>
 </head>
+
 <body>
-    <div class="main-container">
-        <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="z-index: 1000;">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">
-                    <div class="brand-text">
-                        <img src="img/logo_putih.png" alt="" style="width: 20%; margin-left: 10px;">
-                        <div class="lora-font">BEST CHURCH</div>
-                    </div>
-                </a>
-
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-between" style="text-align:center;" id="navbarNav">
-                    <ul class="navbar-nav" style="margin-bottom:10px;">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="/admin">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/pelayanan-admin">Pelayanan</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/admin">KomSel</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/admin">Bareng</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/event-admin">Event</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/admin">Penjadwalan</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/admin">Analisis</a>
-                        </li>
-                    </ul>
-                    <ul class="navbar-nav">
-                        @auth
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                    Admin, {{ auth()->user()->name }}
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <li><a class="dropdown-item" href="/">Switch to User View</a></li>
-                                    <li>
-                                        <form action="/logout" method="POST">
-                                            @csrf
-                                            <button type="submit" class="dropdown-item">Logout</button>
-                                        </form>
-                                    </li>
-                                </ul>
-                            </li>
-                        @endauth
-                    </ul>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="z-index: 1000;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <div class="brand-text">
+                    <img src="img/logo_putih.png" alt="" style="width: 20%; margin-left: 10px;">
+                    <div class="lora-font">BEST CHURCH</div>
                 </div>
-            </div>
-        </nav>
+            </a>
 
-        <!-- Content -->
-        <div class="event-header-container">
-            <div class="event-header">
-                <div class="header-text">Upcoming Events</div>
-            </div>
-            <!-- Dropdown for event filtering -->
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle custom-dropdown-button" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                    Button for the dropdown text that will be replaced by the js method
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <li><a class="dropdown-item" href="#" id="upcoming">Upcoming</a></li>
-                    <li><a class="dropdown-item" href="#" id="archived">Archived</a></li>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" style="text-align:center;" id="navbarNav">
+                <ul class="navbar-nav" style="margin-bottom:10px;">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/pelayanan">Pelayanan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/komsel">KomSel</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/bareng">Bareng</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/event">Event</a>
+                    </li>
                 </ul>
-            </div>
-        </div>
-        <div class="event-subheader-container">
-            <span class="event-subheader">What's coming up at YESS Surabaya </span>
-            <span class="text-a">>>></span>
-        </div>
+                @auth
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Welcome, {{ auth()->user()->name }}
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                @if (auth()->user()->is_admin)
+                                    <!-- Assuming there's an 'is_admin' attribute -->
+                                    <li><a class="dropdown-item" href="/admin">Admin Dashboard</a></li>
+                                @endif
+                                <li>
+                                    <form action="/logout" method="POST">
+                                        @csrf
+                                        <button type="submit" class="dropdown-item">Logout</button>
+                                    </form>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                @else
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link login-link-border" href="/login">Login</a>
+                        </li>
+                    </ul>
+                @endauth
 
-        <div class="event-container">
-            <div class="event-card" event-id="1">
-                <div class="event-image-container">
-                    <img src="img/event-photo1.png" alt="Event Photo 1">
-                    <div class="date-container">
-                        <div class="event-date">
-                            <span class="month">MAR</span><span class="day">30</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="event-details">
-                    <h2 class="event-title">Putus atau Terus</h2>
-                    <p class="event-info">Ciputra World Mall 2nd floor | 30 Maret 2024 | 16.30 WIB</p>
-                    <p class="event-description">YESS Surabaya Valentine's Day Celebration “Putus atau Terus”<br />Ini adalah kesempatan untuk terinspirasi sebagai pasangan! juga merupakan PENGALAMAN YANG HEBAT bagi kamu ya...</p>
-                </div>
-            </div>
-            <div class="event-card" event-id="2">
-                <div class="event-image-container">
-                    <img src="img/event-photo2.png" alt="Event Photo 2">
-                    <div class="date-container">
-                        <div class="event-date">
-                            <span class="month">APR</span><span class="day">19-21</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="event-details">
-                    <h2 class="event-title">YESS Leadership Mission Training VII</h2>
-                    <p class="event-info">Desa Birkium, Soe, Nusa Tenggara Timur | 19-21 April 2024</p>
-                    <p class="event-description">Biarlah semangat misi terus menyala dalam hidup kita.<br />Uis Neno nokan kit, Immanuel!<br />Sampe ketemu di YLMT, basodara dong!</p>
-                    <button class="register-button" data-bs-toggle="modal" data-bs-target="#daftarModal" onclick="openFormModal()">
-                        Daftar
-                        <span class="material-icons">arrow_forward</span>
-                    </button>
-                </div>
             </div>
         </div>
+    </nav>
 
-        <!-- Modal -->
-        <div class="modal fade" id="daftarModal" tabindex="-1"
-            aria-labelledby="formModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-custom-width">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title modal-event-title" id="formModalLabel">YESS Leardership Mission Training VII
-                        </h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <!-- Your form content goes here -->
-                        <label for="daftar" class="form-label form-label-daftar">Bagi jemaat yang ingin
-                            mendaftar dalam event YESS Surabaya silahkan mengisi form pendaftaran event dibawah ini.</label>
-                        <!-- Alergi Anda -->
-                        <div class="mb-3">
-                            <label for="alergi" class="form-label form-label-alergi">Alergi Anda (jika
-                                tidak punya, isi "-")</label>
-                            <textarea class="form-control" id="alergi" rows="3"
-                                placeholder="Masukkan alergi Anda jika ada"></textarea>
-                        </div>
-                        <!-- Informasi keluarga yang dapat dihubungi -->
-                        <div class="mb-3">
-                            <label for="informasi" class="form-label form-label-informasi">Informasi
-                                keluarga yang dapat dihubungi</label>
-                            <textarea class="form-control" id="informasi" rows="3"
-                                placeholder="Masukkan nama dan nomor telepon keluarga yang dapat dihubungi"></textarea>
-                            <small>*sertakan nama dan nomor telepon aktif</small>
-                        </div>
-                        <div class="image-container">
-                            <div class="image-text-container">
-                                <p class="image-text-1">Cari circle rohani yang sehat dan bikin semangat?</p>
-                                <p class="image-text-2">YUK SINI MERAPAT!</p>
-                            </div>
-                            <img src="img/form.jpg" alt="Image">
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-cancel" data-bs-dismiss="modal">Cancel</button>
-                        <button type="button" class="btn btn-submit">Submit</button>
-                        <!-- You can include additional buttons or actions here -->
-                    </div>
-                </div>
-            </div>
+    <!-- Content -->
+    <div class="event-header-container">
+        <div class="event-header">
+            <div class="header-text">Upcoming Events</div>
         </div>
+        <!-- Dropdown for event filtering -->
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle custom-dropdown-button" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                Button for the dropdown text that will be replaced by the js method
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <li><a class="dropdown-item" href="#" id="upcoming">Upcoming</a></li>
+                <li><a class="dropdown-item" href="#" id="archived">Archived</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="event-subheader">
+        Event subheader content that will be replaced by the js method
+    </div>
 
-        <!-- Footer -->
-        <div class="container-fluid" style="background-color: black; color: white; border-radius: 30px 30px 0 0;">
-            <div class="row">
-                <div class="col-md-6 d-flex justify-content-start">
-                    <img src="img/ig.png" alt="Instagram">
-                    <img src="img/tiktok.png" alt="TikTok">
-                    <img src="img/yt.png" alt="YouTube">
+    <?php
+        $events = [
+            [
+                'id' => 1,
+                'title' => 'Putus atau Terus 1',
+                'location' => 'Ciputra World Mall 2nd floor',
+                'description' => 'YESS Surabaya Valentine\'s Day Celebration "Putus atau Terus"
+                Ini adalah kesempatan untuk terinspirasi sebagai pasangan!
+                juga merupakan PENGALAMAN YANG HEBAT bagi kamu ya...', 
+                'start_date' => '2024-03-30',
+                'start_time' => '16:30',
+                'end_date' => '2024-03-30',
+                'end_time' => '19:30',
+                'image' => 'img/event-photo1.png',
+                'registered_people' => ['Andi', 'Bagus', 'Cahyono'],
+                'archived' => false
+            ],
+            [
+                'id' => 2,
+                'title' => 'YESS Leardership Mission Training VII',
+                'location' => 'Desa Birkium, Soe, Nusa Tenggara Timur',
+                'description' => 'Biarlah semangat misi terus menyala dalam hidup kita.
+                Uis Neno nokan kit, Immanuel!
+                Sampe ketemu di YLMT, basodara dong!',
+                'start_date' => '2024-04-19',
+                'start_time' => null,
+                'end_date' => '2024-04-21',
+                'end_time' => null,
+                'image' => 'img/event-photo2.png',
+                'registered_people' => ['Desi', 'Endah', 'Marwoto', 'SBC Ganteng'],
+                'archived' => false
+            ],
+            [
+                'id' => 3,
+                'title' => 'Putus atau Terus 2',
+                'location' => 'Ciputra World Mall 2nd floor',
+                'description' => 'YESS Surabaya Valentine\'s Day Celebration "Putus atau Terus"
+                Ini adalah kesempatan untuk terinspirasi sebagai pasangan!
+                juga merupakan PENGALAMAN YANG HEBAT bagi kamu ya...', 
+                'start_date' => '2024-03-30',
+                'start_time' => '16:30',
+                'end_date' => '2024-03-30',
+                'end_time' => '19:30',
+                'image' => 'img/event-photo3.png',
+                'registered_people' => [],
+                'archived' => true
+            ],
+            [
+                'id' => 4,
+                'title' => 'YESS Leardership Mission Training VIII',
+                'location' => 'Desa Birkium, Soe, Nusa Tenggara Timur',
+                'description' => 'Biarlah semangat misi terus menyala dalam hidup kita.
+                Uis Neno nokan kit, Immanuel!
+                Sampe ketemu di YLMT, basodara dong!',
+                'start_date' => '2024-04-19',
+                'start_time' => null,
+                'end_date' => '2024-04-21',
+                'end_time' => null,
+                'image' => 'img/event-photo4.png',
+                'registered_people' => [],
+                'archived' => true
+            ]
+        ];
+    ?>
+
+    <!-- Modal -->
+    <?php foreach ($events as $event): ?>
+    <div class="modal fade" id="formModal<?php echo $event['id']; ?>" tabindex="-1"
+        aria-labelledby="formModalLabel<?php echo $event['id']; ?>" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-custom-width">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title modal-event-title" id="formModalLabel<?php echo $event['id']; ?>">
+                        <?php echo $event['title']; ?>
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="col-md-6 d-flex justify-content-end">
-                    <span style="font-family: 'Roboto', sans-serif; font-size: 20px; margin-top: 20px;">Contact Us</span>
-                    <img src="img/wa.png" alt="WhatsApp">
+                <div class="modal-body">
+                    <!-- Your form content goes here -->
+                    <label for="daftar<?php echo $event['id']; ?>" class="form-label form-label-daftar">Bagi jemaat yang ingin
+                        mendaftar dalam event YESS Surabaya silahkan mengisi form pendaftaran event dibawah ini.</label>
+                    <!-- Alergi Anda -->
+                    <div class="mb-3">
+                        <label for="alergi<?php echo $event['id']; ?>" class="form-label form-label-alergi">Alergi Anda (jika
+                            tidak punya, isi "-")</label>
+                        <textarea class="form-control" id="alergi<?php echo $event['id']; ?>" rows="3"
+                            placeholder="Masukkan alergi Anda jika ada"></textarea>
+                    </div>
+                    <!-- Informasi keluarga yang dapat dihubungi -->
+                    <div class="mb-3">
+                        <label for="informasi<?php echo $event['id']; ?>" class="form-label form-label-informasi">Informasi
+                            keluarga yang dapat dihubungi</label>
+                        <textarea class="form-control" id="informasi<?php echo $event['id']; ?>" rows="3"
+                            placeholder="Masukkan nama dan nomor telepon keluarga yang dapat dihubungi"></textarea>
+                        <small>*sertakan nama dan nomor telepon aktif</small>
+                    </div>
+                    <div class="image-container">
+                        <div class="image-text-container">
+                            <p class="image-text-1">Cari circle rohani yang sehat dan bikin semangat?</p>
+                            <p class="image-text-2">YUK SINI MERAPAT!</p>
+                        </div>
+                        <img src="img/form.jpg" alt="Image">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-cancel" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-submit">Submit</button>
+                    <!-- You can include additional buttons or actions here -->
                 </div>
             </div>
         </div>
     </div>
+    <?php endforeach; ?>
+
+    <!-- Events -->
+    <div class="events-container">
+        <?php foreach ($events as $event): ?>
+            <!-- Display all events initially with a class 'event' -->
+            <div class="event" event-id="<?php echo $event['id']; ?>" <?php echo $event['archived'] ? 'data-archived="true"' : 'data-archived="false"'; ?>>
+                <img src="<?php echo $event['image']; ?>" alt="Event Photo">
+                <div class="event-details">
+                    <div class="event-title"><?php echo $event['title']; ?></div>
+                    <div class="event-date">
+                        <?php
+                            // Fill the event location and date/time (time is optional)
+                            echo $event['location'].' | '.$event['start_date'].(isset($event['start_time']) ? ' '.$event['start_time'] : '').' - '.$event['end_date'].(isset($event['end_time']) ? ' '.$event['end_time'] : '');
+                        ?>
+                    </div>
+                    <div class="event-description"><?php echo $event['description']; ?></div>
+                </div>
+                <button class="daftar-button" data-bs-toggle="modal" data-bs-target="#formModal<?php echo $event['id']; ?>" onclick="openFormModal(<?php echo $event['id']; ?>)">Daftar <i class="fas fa-chevron-right"></i></button>
+            </div>
+        <?php endforeach; ?>
+    </div>
+
+    <!-- Footer -->
+    <div class="container-fluid" style="background-color: black; color: white; border-radius: 30px 30px 0 0;">
+        <div class="row">
+            <div class="col-md-6 d-flex justify-content-start">
+                <img src="img/ig.png" alt="Instagram">
+                <img src="img/tiktok.png" alt="TikTok">
+                <img src="img/yt.png" alt="YouTube">
+            </div>
+            <div class="col-md-6 d-flex justify-content-end">
+                <span style="font-family: 'Roboto', sans-serif; font-size: 20px; margin-top: 20px;">Contact Us</span>
+                <img src="img/wa.png" alt="WhatsApp">
+            </div>
+        </div>
+    </div>
+
     <script>
         // Function to redirect to the event detail page
         function redirectToEventDetail(eventId) {
@@ -591,15 +726,15 @@
             window.location.href = eventDetailURL;
         }
 
-        // Function to handle register button click
-        function openFormModal() {
+        // Function to handle button click and redirect to the corresponding form event page
+        function openFormModal(eventId) {
             event.stopPropagation(); // Stop event propagation to prevent opening detail events
         }
 
         // Function to attach event listeners to event elements
         function attachEventListeners() {
             // Add event listener to all elements with class 'event'
-            document.querySelectorAll('.event-card').forEach(event => {
+            document.querySelectorAll('.event').forEach(event => {
                 event.addEventListener('click', function() {
                     // Retrieve the event-id from the clicked event element
                     var eventId = this.getAttribute('event-id');
@@ -621,7 +756,7 @@
             document.getElementById("upcoming").classList.add("active");
             // Set the initial selectedDropdown value to "upcoming"
             var selectedDropdown = "upcoming";
-            /* updateEvents(selectedDropdown); // Call the function to update events with the initial value */
+            updateEvents(selectedDropdown); // Call the function to update events with the initial value
             updateEventSubheader(selectedDropdown); // Call the function to update the event subheader with the initial value
         };
 
@@ -642,7 +777,7 @@
                 // Get the selected dropdown value
                 var selectedDropdown = event.target.id;
                 // Call the function to update events with the selected value
-                /* updateEvents(selectedDropdown); */
+                updateEvents(selectedDropdown);
                 updateEventSubheader(selectedDropdown); // Call the function to update the event subheader with the selected value
             });
         });
@@ -650,14 +785,13 @@
         // Function to update the content of the event subheader
         function updateEventSubheader(selectedDropdown) {
             const eventSubheader = document.querySelector('.event-subheader');
-            eventSubheader.innerHTML = selectedDropdown === 'upcoming' ? 'What\'s coming up at YESS Surabaya' : 'Explore past events at YESS Surabaya';
+            eventSubheader.innerHTML = selectedDropdown === 'upcoming' ? 'What\'s coming up at YESS Surabaya >>>' : 'Explore past events at YESS Surabaya >>>';
         }
         
-        /*
         // JavaScript function to handle dropdown change
         function updateEvents(selectedDropdown) {
             // Loop through all events and hide/show them based on the selected dropdown value
-            document.querySelectorAll('.event-card').forEach(event => {
+            document.querySelectorAll('.event').forEach(event => {
                 const eventId = event.getAttribute('event-id');
                 const eventInfo = <?php echo json_encode($events); ?>;
                 const eventData = eventInfo.find(e => e.id === parseInt(eventId));
@@ -678,11 +812,12 @@
                 }
             });
         }
-        */
     </script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
 </body>
+
 </html>
