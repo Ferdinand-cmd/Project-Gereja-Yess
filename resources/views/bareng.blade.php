@@ -96,7 +96,7 @@ resources\views\bareng.blade.php
             background-color: #fff;
             align-self: center;
             margin-top: 73px;
-            width: 100%;
+            /* width: 100%; */
             max-width: 1082px;
             padding: 25px 46px;
         }
@@ -153,7 +153,8 @@ resources\views\bareng.blade.php
 
         @media (max-width: 991px) {
             .info-box .location {
-                margin-top: 40px;
+                margin-top: 20px;
+                margin-bottom: 20px;
                 padding: 0 20px;
             }
         }
@@ -180,7 +181,8 @@ resources\views\bareng.blade.php
 
         @media (max-width: 991px) {
             .info-box .location-alt {
-                margin-top: 40px;
+                margin-top: 20px;
+                margin-bottom: 20px;
                 white-space: initial;
                 padding: 0 20px;
             }
