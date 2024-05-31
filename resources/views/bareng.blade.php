@@ -96,7 +96,7 @@ resources\views\bareng.blade.php
             background-color: #fff;
             align-self: center;
             margin-top: 73px;
-            width: 100%;
+            /* width: 100%; */
             max-width: 1082px;
             padding: 25px 46px;
         }
@@ -153,7 +153,8 @@ resources\views\bareng.blade.php
 
         @media (max-width: 991px) {
             .info-box .location {
-                margin-top: 40px;
+                margin-top: 20px;
+                margin-bottom: 20px;
                 padding: 0 20px;
             }
         }
@@ -180,7 +181,8 @@ resources\views\bareng.blade.php
 
         @media (max-width: 991px) {
             .info-box .location-alt {
-                margin-top: 40px;
+                margin-top: 20px;
+                margin-bottom: 20px;
                 white-space: initial;
                 padding: 0 20px;
             }
@@ -293,6 +295,7 @@ resources\views\bareng.blade.php
         .point-info {
             gap: 20px;
             display: flex;
+
         }
 
         @media (max-width: 991px) {
@@ -337,11 +340,14 @@ resources\views\bareng.blade.php
             line-height: normal;
             width: 72%;
             margin-left: 20px;
+            margin-right: 20px;
         }
 
         @media (max-width: 991px) {
             .point-details-column {
                 width: 100%;
+                margin-left: 0; /* Hapus margin-left pada layar kecil */
+                margin-right: 0; /* Hapus margin-right pada layar kecil */
             }
         }
 
@@ -410,6 +416,13 @@ resources\views\bareng.blade.php
             max-width: 100%;
             flex-direction: column;
             margin: 12px 0 0 41px;
+        }
+
+        @media (max-width: 991px) {
+            .booking-info {
+                width: 100%;
+                margin: 12px 0 0 0; /* Hapus margin kiri pada layar kecil */
+            }
         }
 
         .booking-details {
