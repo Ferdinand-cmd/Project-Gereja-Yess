@@ -295,6 +295,7 @@ resources\views\bareng.blade.php
         .point-info {
             gap: 20px;
             display: flex;
+
         }
 
         @media (max-width: 991px) {
@@ -339,11 +340,14 @@ resources\views\bareng.blade.php
             line-height: normal;
             width: 72%;
             margin-left: 20px;
+            margin-right: 20px;
         }
 
         @media (max-width: 991px) {
             .point-details-column {
                 width: 100%;
+                margin-left: 0; /* Hapus margin-left pada layar kecil */
+                margin-right: 0; /* Hapus margin-right pada layar kecil */
             }
         }
 
@@ -412,6 +416,13 @@ resources\views\bareng.blade.php
             max-width: 100%;
             flex-direction: column;
             margin: 12px 0 0 41px;
+        }
+
+        @media (max-width: 991px) {
+            .booking-info {
+                width: 100%;
+                margin: 12px 0 0 0; /* Hapus margin kiri pada layar kecil */
+            }
         }
 
         .booking-details {
