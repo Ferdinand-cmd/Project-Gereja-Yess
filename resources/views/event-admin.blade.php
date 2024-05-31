@@ -627,7 +627,7 @@
                 'start_time' => '16:30',
                 'end_date' => '2024-03-30',
                 'end_time' => '19:30',
-                'image' => 'img/event-photo1.png',
+                'image' => 'img/event-photo1.jpg',
                 'registered_people' => ['Andi', 'Bagus', 'Cahyono'],
                 'archived' => false,
                 'quota' => 10
@@ -643,7 +643,7 @@
                 'start_time' => null,
                 'end_date' => '2024-04-21',
                 'end_time' => null,
-                'image' => 'img/event-photo2.png',
+                'image' => 'img/event-photo2.jpg',
                 'registered_people' => ['Desi', 'Endah', 'Marwoto', 'SBC Ganteng'],
                 'archived' => false
             ],
@@ -658,7 +658,7 @@
                 'start_time' => '16:30',
                 'end_date' => '2024-03-30',
                 'end_time' => '19:30',
-                'image' => 'img/event-photo3.png',
+                'image' => 'img/event-photo3.jpg',
                 'registered_people' => [],
                 'archived' => true
             ],
@@ -673,7 +673,7 @@
                 'start_time' => null,
                 'end_date' => '2024-04-21',
                 'end_time' => null,
-                'image' => 'img/event-photo4.png',
+                'image' => 'img/event-photo4.jpg',
                 'registered_people' => [],
                 'archived' => true
             ]
