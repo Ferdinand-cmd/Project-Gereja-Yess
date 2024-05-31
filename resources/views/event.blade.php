@@ -667,7 +667,7 @@
                             <p class="image-text-1">Cari circle rohani yang sehat dan bikin semangat?</p>
                             <p class="image-text-2">YUK SINI MERAPAT!</p>
                         </div>
-                        <img src="img/form.jpg" alt="Image">
+                        <img src="img/form.png" alt="Image">
                     </div>
                 </div>
                 <div class="modal-footer">
