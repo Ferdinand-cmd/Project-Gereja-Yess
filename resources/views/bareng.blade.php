@@ -400,7 +400,7 @@ resources\views\bareng.blade.php
             }
         }
 
-        .separator {
+        .point-section .separator {
             box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
             border-color: rgba(255, 255, 255, 1);
             border-style: solid;
@@ -425,7 +425,7 @@ resources\views\bareng.blade.php
             }
         }
 
-        .booking-details {
+        .booking-info .booking-details {
             display: flex;
             width: 100%;
             align-items: start;
@@ -444,7 +444,7 @@ resources\views\bareng.blade.php
             font: 400 32px Material Icons, sans-serif;
         }
 
-        .date-time {
+        .point-section .date-time {
             flex-grow: 1;
             flex-basis: auto;
             font: 700 22px Roboto, sans-serif;
@@ -716,6 +716,167 @@ resources\views\bareng.blade.php
             background-color: #333333;
             /* Darker gray background on hover */
         }
+
+/* Status container */
+.status-container {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    justify-content: center;
+    padding: 1px 0;
+    height: 120px; /* Fixed height */
+    overflow: hidden;
+}
+
+.status-container .booking-details {
+    background-color: #000;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 20px;
+    justify-content: space-between;
+    padding: 0 34px;
+    height: 100%; /* Ensure it takes the full height of the container */
+}
+
+/* @media (max-width: 991px) {
+    .status-container .booking-details {
+        flex-wrap: wrap;
+        padding: 0 20px;
+    }
+} */
+
+.status-container .date-time {
+    display: flex;
+    gap: 16px;
+    text-align: center;
+    margin: auto 0;
+}
+
+.status-container .icon-date-range {
+    font: 400 40px Material Icons, sans-serif;
+}
+
+.status-container .date {
+    font: 800 24px Nunito, sans-serif;
+}
+
+.status-container .time-location {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-weight: 400;
+    margin: auto 0;
+}
+
+/* @media (max-width: 991px) {
+    .status-container .time-location {
+        flex-wrap: wrap;
+    }
+} */
+
+.status-container .icon-time {
+    text-align: center;
+    margin: auto 0;
+    font: 40px Material Icons, sans-serif;
+}
+
+.status-container .time {
+    text-align: center;
+    letter-spacing: 3.2px;
+    margin: auto 0;
+    font: 800 32px Nunito, sans-serif;
+}
+
+.status-container .separator {
+    background-color: #d9d9d9;
+    width: 3px;
+    height: 96px;
+}
+
+.status-container .icon-location {
+    text-align: center;
+    margin: auto 0;
+    font: 44px Material Icons, sans-serif;
+}
+
+.status-container .location {
+    margin: auto 0;
+    font: 700 24px Montserrat, sans-serif;
+}
+
+.status-container .status-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 24px;
+    font-weight: 700;
+    margin: auto 0;
+}
+
+/* @media (max-width: 991px) {
+    .status-container .status-info {
+        flex-wrap: wrap;
+    }
+} */
+
+.status-container .license-plate {
+    font-family: Montserrat, sans-serif;
+    margin: auto 0;
+}
+
+.status-container .status {
+    color: #eeb120;
+    font-family: Montserrat, sans-serif;
+    margin: auto 0;
+}
+
+.status-container .radio-off {
+    border-radius: 25px;
+    background-color: #ff2929;
+    text-align: center;
+    justify-content: center;
+    padding: 11px 33px;
+    font: 400 50px Material Icons, sans-serif;
+}
+
+.status-container .radio-off::before {
+    content: 'cancel'; /* Or use the Unicode equivalent */
+}
+
+/* @media (max-width: 991px) {
+    .status-container {
+        height: 100px;
+    }
+
+    .status-container .radio-off {
+        font-size: 40px;
+        padding: 0 20px;
+    }
+
+    .status-container .icon-date-range, .status-container .icon-time, .status-container .icon-location {
+        font-size: 30px;
+    }
+
+    .status-container .date, .status-container .time, .status-container .location, .status-container .license-plate, .status-container .status {
+        font-size: 20px;
+    }
+} */
+
+@media (max-width: 991px) {
+    .status-container {
+        height: 150px; /* Ubah tinggi menjadi lebih kecil */
+    }
+
+    .booking-details {
+        gap: 10px; /* Ubah jarak antar elemen menjadi lebih kecil */
+        overflow-x: auto;
+    }
+}
+
     </style>
 </head>
 
@@ -958,6 +1119,29 @@ resources\views\bareng.blade.php
             <?php endforeach; ?>
         </section>
     </main>
+    <section class="status-container">
+            <article class="booking-details">
+                <div class="date-time">
+                    <span class="icon-date-range">date_range</span>
+                    <time class="date" datetime="2024-04-06">6 April 2024</time>
+                </div>
+                <div class="separator"></div>
+                <div class="time-location">
+                    <span class="icon-time">access_time</span>
+                    <time class="time" datetime="16:00">16:00</time>
+                <div class="separator"></div>
+                <span class="icon-location">location_on</span>
+                <address class="location">Hotel Dafam Pacific Caesar</address>
+                <div class="separator"></div>
+                </div>
+                <div class="status-info">
+                <span class="license-plate">L 1234 ABC</span>
+                <div class="separator"></div>
+                <span class="status">Waiting list</span>
+                <span class="radio-off"></span>
+                </div>
+            </article>
+        </section>
 
     <script>
         // "timur" menjadi nilai bawaan dari info-box saat halaman dimuat
