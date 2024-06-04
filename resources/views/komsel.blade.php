@@ -18,9 +18,31 @@
         href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
     <link href="css/komsel.css" rel="stylesheet">
+    <style>
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 80px;
+            height: 80px;
+            background-color: green;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            cursor: pointer;
+        }
+        .whatsapp-button img {
+            width: 50px;
+            height: 50px;
+        }
+    </style>
 </head>
-
-
+<a href="https://api.whatsapp.com/send?phone=6285854526955&text=Halo%20mau%20tanya%20gereja" class="whatsapp-button">
+            <img src="img/wa.png" alt="WhatsApp">
+</a>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="z-index: 1000;">
         <div class="container-fluid">
@@ -190,10 +212,6 @@
                 <img src="img/ig.png" alt="Instagram">
                 <img src="img/tiktok.png" alt="TikTok">
                 <img src="img/yt.png" alt="YouTube">
-            </div>
-            <div class="col-md-6 d-flex justify-content-end">
-                <span style="font-family: 'Roboto', sans-serif; font-size: 20px; margin-top: 20px;">Contact Us</span>
-                <img src="img/wa.png" alt="WhatsApp">
             </div>
         </div>
     </div>

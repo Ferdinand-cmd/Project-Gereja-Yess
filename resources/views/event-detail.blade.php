@@ -362,7 +362,7 @@
                 <span class="material-icons">arrow_back</span>
                 Kembali ke events
             </button>
-            <img src="img/event-photo5.png" alt="Event Image" class="event-image">
+            <img src="img/event-photo5.jpg" alt="Event Image" class="event-image">
 
             <!-- Header -->
             <div class="event-header">
