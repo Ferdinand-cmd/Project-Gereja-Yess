@@ -518,24 +518,24 @@ resources\views\bareng.blade.php
         .modal-body {
             background-color: #f4f4f4;
         }
-        .modal .date-label {
+        .modal-bareng .date-label {
             display: flex;
             align-self: start;
             text-align: center;
         }
-        .modal .date-label span {
+        .modal-bareng .date-label span {
             border-radius: 20px;
             background-color: #eeb120;
             color: #fff;
             padding: 4px 23px;
             font: 700 20px Montserrat, sans-serif;
         }
-        .modal .content-row {
+        .modal-bareng .content-row {
             display: flex;
             margin-top: 24px;
             gap: 18px;
         }
-        .modal .stick-wrapper {
+        .modal-bareng .stick-wrapper {
             display: flex;
             flex-direction: column;
             position: relative;
@@ -545,7 +545,7 @@ resources\views\bareng.blade.php
             height: 340px; /* Sesuaikan dengan ketinggian yang diperlukan */
         }
 
-        .modal .line {
+        .modal-bareng .line {
             position: absolute;
             left: 50%; /* Atur posisi horizontal ke tengah */
             height: 100%;
@@ -555,7 +555,7 @@ resources\views\bareng.blade.php
             background-color: #000; /* Warna garis */
         }
 
-        .modal .circle-1, .modal .circle-2 {
+        .modal-bareng .circle-1, .modal-bareng .circle-2 {
             position: absolute;
             background-color: #eeb120; /* Warna lingkaran */
             border-radius: 50%;
@@ -565,15 +565,15 @@ resources\views\bareng.blade.php
             transform: translateX(-50%);
         }
 
-        .modal .circle-1 {
+        .modal-bareng .circle-1 {
             top: 0; /* Atur lingkaran pertama di bagian atas */
             z-index: 1;
         }
 
-        .modal .circle-2 {
+        .modal-bareng .circle-2 {
             bottom: 0; /* Atur lingkaran kedua di bagian bawah */
         }
-        .modal .text-content {
+        .modal-bareng .text-content {
             display: flex;
             flex-direction: column;
             flex-grow: 1;
@@ -581,12 +581,12 @@ resources\views\bareng.blade.php
             width: fit-content;
         }
         @media (max-width: 991px) {
-            .modal .text-content {
+            .modal-bareng .text-content {
                 max-width: 100%;
             }
         }
 
-        .modal .time-info {
+        .modal-bareng .time-info {
             width: 160px;
             display: flex;
             gap: 12px;
@@ -594,49 +594,49 @@ resources\views\bareng.blade.php
         }
 
         @media (max-width: 991px) {
-        .modal .time-info {
+        .modal-bareng .time-info {
             white-space: initial;
         }
         }
 
-        .modal .time {
+        .modal-bareng .time {
             color: #000;
             letter-spacing: 2.16px;
             flex-grow: 1;
             font: 800 36px Montserrat, sans-serif;
         }
 
-        .modal .time-zone {
+        .modal-bareng .time-zone {
             color: #646464;
             align-self: start;
             margin-top: 15px;
             font: 400 16px Montserrat, sans-serif;
         }
 
-        .modal .location {
+        .modal-bareng .location {
             color: #000;
             font: 700 32px Montserrat, sans-serif;
         }
 
         @media (max-width: 991px) {
-            .modal .location {
+            .modal-bareng .location {
                 max-width: 100%;
             }
         }
 
-        .modal .address {
+        .modal-bareng .address {
             color: #646464;
             margin-top: 13px;
             font: 700 16px Montserrat, sans-serif;
         }
 
         @media (max-width: 991px) {
-            .modal .address {
+            .modal-bareng .address {
                 max-width: 100%;
             }
         }
 
-        .modal .plate-number {
+        .modal-bareng .plate-number {
             display: flex;
             margin-top: 9px;
             gap: 10px;
@@ -647,26 +647,26 @@ resources\views\bareng.blade.php
             padding: 0 1px;
         }
 
-        .modal .plate {
+        .modal-bareng .plate {
             background-color: #000;
             justify-content: center;
             padding: 9px 15px;
         }
 
-        .modal .plate-separator {
+        .modal-bareng .plate-separator {
             background-color: #000;
             width: 106px;
             /* height: 28px; */
         }
 
-        .modal .mall-name {
+        .modal-bareng .mall-name {
             color: #000;
             margin-top: 86px;
             font: 700 32px Montserrat, sans-serif;
         }
 
         @media (max-width: 991px) {
-            .modal .mall-name {
+            .modal-bareng .mall-name {
                 max-width: 100%;
                 margin-top: 40px;
             }
@@ -696,8 +696,8 @@ resources\views\bareng.blade.php
             /* Light gray background on hover */
         }
 
-        /* CSS for book button */
-        .modal .btn-book {
+        /* CSS for book & submit button */
+        .modal .btn-book, .modal .btn-submit {
             background-color: #000000;
             /* Black background */
             color: #ffffff;
@@ -712,7 +712,7 @@ resources\views\bareng.blade.php
         }
 
         /* Hover effect for book button */
-        .btn-book:hover {
+        .btn-book:hover, .btn-submit:hover {
             background-color: #333333;
             /* Darker gray background on hover */
         }
@@ -736,6 +736,12 @@ resources\views\bareng.blade.php
     padding: 40px 0;
     height: 100%; /* Ensure it takes the full height of the container */
     cursor: pointer;
+}
+.modal-penjemput .table {
+    vertical-align: middle;
+}
+.modal-penjemput th {
+    --bs-table-bg: #eeb120;
 }
     </style>
 </head>
@@ -873,9 +879,51 @@ resources\views\bareng.blade.php
         ];
     ?>
 
+    <!-- Penjemput modal -->
+<div class="modal modal-penjemput fade" id="penjemputModal" tabindex="-1" aria-labelledby="penjemputModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="penjemputModalLabel">Ketersediaan Penjemput April 2024</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Your content here -->
+                    Untuk yang bersedia melakukan pelayanan, bisa mencentang sesuai jadwal ibadah mingguan di bawah:
+                    <table class="table table-striped table-bordered border-secondary">
+                        <thead>
+                            <tr>
+                                <th>Hari, tanggal</th>
+                                <th>Bersedia</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Sabtu, 6 April 2024</td>
+                                <td><input type="checkbox" id="dateOpt2024-04-06" name="checkDate" value="2024-04-06"></td>
+                            </tr>
+                            <tr>
+                                <td>Sabtu, 20 April 2024</td>
+                                <td><input type="checkbox" id="dateOpt2024-04-20" name="checkDate" value="2024-04-20"></td>
+                            </tr>
+                            <tr>
+                                <td>Sabtu, 27 April 2024</td>
+                                <td><input type="checkbox" id="dateOpt2024-04-27" name="checkDate" value="2024-04-27"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary btn-cancel" data-bs-dismiss="modal">CANCEL</button>
+                    <button type="button" class="btn btn-primary btn-submit">SUBMIT</button>
+                </div>
+                </div>
+            </div>
+        </div>
+
     <!-- Bareng Modal -->
     <?php foreach ($points as $point): ?>
-        <div class="modal fade" id="barengModal<?php echo $point['id']; ?>" tabindex="-1" aria-labelledby="barengModalLabel<?php echo $point['id']; ?>" aria-hidden="true">
+        <div class="modal modal-bareng fade" id="barengModal<?php echo $point['id']; ?>" tabindex="-1" aria-labelledby="barengModalLabel<?php echo $point['id']; ?>" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                 <div class="modal-header">
@@ -907,8 +955,8 @@ resources\views\bareng.blade.php
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary btn-cancel" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary btn-book">Book</button>
+                    <button type="button" class="btn btn-secondary btn-cancel" data-bs-dismiss="modal">CANCEL</button>
+                    <button type="button" class="btn btn-primary btn-book">BOOK</button>
                 </div>
                 </div>
             </div>
@@ -986,6 +1034,12 @@ resources\views\bareng.blade.php
     </section>
 
     <script>
+  window.addEventListener('DOMContentLoaded', function () {
+    const myModal = new bootstrap.Modal(document.getElementById('penjemputModal'));
+    myModal.show();
+    console.log('apa');
+  });
+
         // "timur" menjadi nilai bawaan dari info-box saat halaman dimuat
         window.onload = function() {
             // "timur" menjadi nilai bawaan dari info-box

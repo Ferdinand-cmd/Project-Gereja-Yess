@@ -203,7 +203,7 @@
     flex-direction: column;
     line-height: normal;
     width: 50%;
-    margin-left: 20px;
+    /* margin-left: 20px; */
   }
   @media (max-width: 991px) {
     .column-2 {
@@ -445,6 +445,17 @@
     </table>
   </section>
 </main>
+
+<!-- Footer -->
+<div class="container-fluid" style="background-color: black; color: white; border-radius: 30px 30px 0 0;">
+            <div class="row">
+                <div class="col-md-6 d-flex justify-content-start">
+                    <img src="img/ig.png" alt="Instagram">
+                    <img src="img/tiktok.png" alt="TikTok">
+                    <img src="img/yt.png" alt="YouTube">
+                </div>
+            </div>
+        </div>
 <script>
   // Function to go back to the bareng page
   function goBackToBareng() {
