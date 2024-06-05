@@ -135,7 +135,7 @@
         }
         }
 
-        .action-card {
+        .penjemput-button {
         border-radius: 25px;
         box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
         background-color: #000;
@@ -148,7 +148,7 @@
         }
 
         @media (max-width: 991px) {
-        .action-card {
+        .penjemput-button {
             margin-top: 40px;
             padding: 0 20px;
         }
@@ -165,7 +165,7 @@
         }
         }
 
-        .action-text {
+        .penjemput-text {
         flex-grow: 1;
         font: 38px Kanit, sans-serif;
         }
@@ -380,7 +380,6 @@
         }
 
         /* Modal */
-        /* Add titik modal */
         .modal-header {
             font: 500 24px/167% Montserrat, sans-serif;
         }
@@ -391,6 +390,47 @@
             background-color: #a2a2a2;
         }
 
+        /* Modal penjemput */
+
+        .sub-header {
+        color: #000;
+        text-align: center;
+        letter-spacing: 2px;
+        /* margin-top: 23px; */
+        font: 500 20px Montserrat, sans-serif;
+    }
+
+    .search-container {
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        background-color: #000;
+        display: flex;
+        gap: 20px;
+        font-weight: 400;
+        white-space: nowrap;
+        padding: 8px 33px;
+        margin: 7px 0;
+        max-width: 100%;
+    }
+
+    .search-icon {
+        color: #fff;
+        text-align: center;
+        /* flex-grow: 1; */
+        margin: auto 0;
+        font: 24px Material Icons, sans-serif;
+    }
+
+    .search-input {
+        background-color: #fff;
+        color: #888;
+        justify-content: center;
+        flex-grow: 1;
+        width: fit-content;
+        /* padding: 26px 31px; */
+        font: 24px Kanit, sans-serif;
+    }
+
+        /* Add & edit titik modal */
   /* .input-wrapper {
     display: flex;
     flex-direction: column;
@@ -553,6 +593,61 @@
         </div>
     </nav>
 
+    <!-- Modal Penjemput -->
+        <!-- Penjemput modal -->
+<div class="modal modal-lg modal-penjemput fade" id="penjemputModal" tabindex="-1" aria-labelledby="penjemputModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="penjemputModalLabel">Detail Penjemput</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Your content here -->
+                    <div class="sub-header">Daftarkan Penjemput Baru</div>
+    <div class="search-container">
+        <span class="search-icon" role="img" aria-label="search">search</span>
+        <input class="search-input" type="search" placeholder="Search" aria-label="Search">
+    </div>
+                    <table class="table table-striped table-bordered border-secondary">
+                        <thead>
+                            <tr class="table-dark">
+                                <th>Nama Penjemput</th>
+                                <th>Plat Nomor</th>
+                                <th>Kapasitas</th>
+                                <th>Titik Jemput</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Asep</td>
+                                <td><input type="text" value="L 1234 ABC" required></td>
+                                <td><input type="number" value="10" required></td>
+                                <td>
+                                    <select class="form-select" required>
+                                        <option value="Hotel Dafam Pacific Caesar" selected>Hotel Dafam Pacific Caesar</option>
+                                        <option value="Pakuwon Trade Center Lobby A&W">Pakuwon Trade Center Lobby A&W</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Steven</td>
+                                <td><input type="text" value="L 5678 ABC" required></td>
+                                <td><input type="number" value="12" required></td>
+                                <td>
+                                    <select class="form-select" required>
+                                        <option value="Hotel Dafam Pacific Caesar">Hotel Dafam Pacific Caesar</option>
+                                        <option value="Pakuwon Trade Center Lobby A&W" selected>Pakuwon Trade Center Lobby A&W</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                </div>
+            </div>
+        </div>
+
     <!-- Modal add titik jemput -->
     <div class="modal modal-add-titik fade" id="addTitikModal" tabindex="-1" aria-labelledby="addTitikModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
@@ -663,10 +758,10 @@
                         </div>
                     </div>
                     <div class="column-secondary">
-                        <div class="action-card">
+                        <button class="penjemput-button" data-bs-toggle="modal" data-bs-target="#penjemputModal">
                             <div class="icon">directions_car</div>
-                            <div class="action-text">Penjemput</div>
-                        </div>
+                            <div class="penjemput-text">Penjemput</div>
+                        </button>
                     </div>
                 </section>
                 <section class="content-card">
