@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>YESS.SUB | Home</title>
+    <title>YESS.SUB | Bareng (Admin)</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -374,6 +374,121 @@
             border-color: #d4a100;
             /* Change border color on hover */
         }
+
+        th, td {
+            vertical-align: middle;
+        }
+
+        /* Modal */
+        /* Add titik modal */
+        .modal-header {
+            font: 500 24px/167% Montserrat, sans-serif;
+        }
+        .modal-body {
+            background-color: #f4f4f4;
+        }
+        .modal-footer {
+            background-color: #a2a2a2;
+        }
+
+  /* .input-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-basis: 0;
+    width: fit-content;
+  }
+  .input-label {
+    color: #fff;
+    font: 24px Kanit, sans-serif;
+  }
+  .input-field {
+    background-color: #fff;
+    margin-top: 9px;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 14px 18px;
+    font: 20px Kanit, sans-serif;
+    color: #888;
+  }
+  @media (max-width: 991px) {
+    .input-field {
+      max-width: 100%;
+      padding-right: 20px;
+    }
+  }
+  .section-heading {
+    color: #fff;
+    margin-top: 40px;
+    font: 24px Kanit, sans-serif;
+  }
+  @media (max-width: 991px) {
+    .section-heading {
+      max-width: 100%;
+    }
+  }
+  .select-field {
+    background-color: #fff;
+    margin-top: 14px;
+    width: 230px;
+    max-width: 100%;
+    align-items: flex-start;
+    padding: 14px 18px;
+    font: 20px Kanit, sans-serif;
+    color: #888;
+  }
+  @media (max-width: 991px) {
+    .select-field {
+      padding-right: 20px;
+    }
+  } */
+  .modal-add-titik .modal-body, .modal-edit-titik .modal-body {
+    background-color: #000;
+  }
+  .modal-add-titik .form-label, .modal-edit-titik .form-label {
+    color: #fff;
+    font: 24px Kanit, sans-serif;
+  }
+          /* CSS for cancel button */
+          .modal .btn-cancel {
+            background-color: #ffffff;
+            /* White background */
+            color: #000000;
+            /* Black text color */
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1.11em;
+            font-weight: bold;
+            /* Bold weight */
+            width: 150px;
+            /* Set width to 150px */
+        }
+
+        /* Hover effect for cancel button */
+        .modal .btn-cancel:hover {
+            background-color: #eeeeee;
+            /* Light gray background on hover */
+        }
+
+        /* CSS for save button */
+        .modal .btn-save {
+            background-color: #000000;
+            /* Black background */
+            color: #ffffff;
+            /* White text color */
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1.11em;
+            font-weight: bold;
+            /* Bold weight */
+            width: 150px;
+            /* Set width to 150px */
+            border-color: #000;
+        }
+
+        /* Hover effect for save button */
+        .btn-save {
+            background-color: #333333;
+            /* Darker gray background on hover */
+        }
     </style>
 </head>
 <body>
@@ -437,6 +552,106 @@
             </div>
         </div>
     </nav>
+
+    <!-- Modal add titik jemput -->
+    <div class="modal modal-add-titik fade" id="addTitikModal" tabindex="-1" aria-labelledby="addTitikModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addTitikModalLabel">ADD JEMPUT</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Your content here -->
+                    <div class="mb-3">
+                        <div class="row">
+                            <div class="col">
+                                <label for="aTTitik" class="form-label">Titik Jemput</label>
+                                <input type="date" class="form-control" id="aTTitik" name="aTTitik"
+                                    required>
+                            </div>
+                            <div class="col">
+                                <label for="aTWaktu" class="form-label">Waktu Jemput</label>
+                                <input type="time" class="form-control" id="aTWaktu" name="aTWaktu" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="aTWilayah" class="form-label">Wilayah</label>
+                        <select class="form-select" id="aTRegion" required>
+                        <option value="" disabled selected>Pilih Wilayah</option>
+        <option value="timur">Timur</option>
+        <option value="barat">Barat</option>
+        <option value="selatan">Selatan</option>
+        <option value="pusat">Pusat</option>
+      </select>
+                    </div>
+                    
+      <!-- <div class="input-wrapper">
+        <label for="pickup-point" class="input-label">Titik Jemput</label>
+        <input type="text" id="pickup-point" class="input-field" placeholder="Titik Jemput">
+      </div>
+      <div class="input-wrapper">
+        <label for="pickup-time" class="input-label">Waktu Jemput</label>
+        <input type="text" id="pickup-time" class="input-field" placeholder="Waktu Jemput">
+      </div>
+    <div class="input-wrapper">
+      <label for="region" class="input-label">Wilayah</label>
+      <select id="region" class="select-field">
+        <option>Pilih Wilayah</option>
+      </select> -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary btn-cancel" data-bs-dismiss="modal">CANCEL</button>
+                    <button type="button" class="btn btn-primary btn-save">SAVE</button>
+                </div>
+                </div>
+            </div>
+        </div>
+
+            <!-- Modal edit titik jemput -->
+    <div class="modal modal-edit-titik fade" id="editTitikModal" tabindex="-1" aria-labelledby="editTitikModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editTitikModalLabel">EDIT JEMPUT</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Your content here -->
+                    <div class="mb-3">
+                        <div class="row">
+                            <div class="col">
+                                <label for="eTTitik" class="form-label">Titik Jemput</label>
+                                <input type="date" class="form-control" id="eTTitik" name="eTTitik"
+                                    required>
+                            </div>
+                            <div class="col">
+                                <label for="eTWaktu" class="form-label">Waktu Jemput</label>
+                                <input type="time" class="form-control" id="eTWaktu" name="eTWaktu" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="eTWilayah" class="form-label">Wilayah</label>
+                        <select class="form-select" id="eTRegion" required>
+                        <option value="" disabled selected>Pilih Wilayah</option>
+        <option value="timur">Timur</option>
+        <option value="barat">Barat</option>
+        <option value="selatan">Selatan</option>
+        <option value="pusat">Pusat</option>
+      </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary btn-cancel" data-bs-dismiss="modal">CANCEL</button>
+                    <button type="button" class="btn btn-primary btn-save">SAVE</button>
+                </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- content -->
     <div class="container">
         <section class="wrapper">
             <main class="main-content">
@@ -487,7 +702,7 @@
                                 <th>Titik Jemput</th>
                                 <th>Wilayah</th>
                                 <th>Waktu</th>
-                                <th><button class="table-main-action">add_circle_outline</button></th>
+                                <th><button class="table-main-action" data-bs-toggle="modal" data-bs-target="#addTitikModal">add_circle_outline</button></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -496,7 +711,7 @@
                                 <td>Timur</td>
                                 <td>12.00</td>
                                 <td>
-                                    <button class="action-icon">mode_edit</button>
+                                    <button class="action-icon" data-bs-toggle="modal" data-bs-target="#editTitikModal">mode_edit</button>
                                     <button class="action-icon">delete</button>
                                 </td>
                             </tr>
@@ -505,7 +720,7 @@
                                 <td>Timur</td>
                                 <td>13.00</td>
                                 <td>
-                                    <button class="action-icon">mode_edit</button>
+                                    <button class="action-icon" data-bs-toggle="modal" data-bs-target="#editTitikModal">mode_edit</button>
                                     <button class="action-icon">delete</button>
                                 </td>
                             </tr>
