@@ -306,7 +306,8 @@
                         we have a place for you!</span>
                 </div>
                 <div class="rectangle-1d">
-                    <div class="screenshot"></div>
+                    <div class="screenshot"
+                    style="background: url(img/multimedia.png) no-repeat center;"></div>
                 </div>
                 <div class="rectangle-1e">
                     <span class="multimedia">Multimedia</span>
@@ -315,7 +316,7 @@
             <div class="rectangle-1f">
                 <div class="rectangle-20">
                     <div class="screenshot-21"
-                        style="background: url(img/c5df6ea5a38488013a1e325e2697ef8cd193853e.png) no-repeat center;">
+                        style="background: url(img/usher.png) no-repeat center;">
                     </div>
                     <div class="group"></div>
                     <div class="rectangle-22"><span class="usher">Usher</span></div>
@@ -357,7 +358,6 @@
                 </div>
             </div>
         </div>
-
     </div>
     </div>
     </div>

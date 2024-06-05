@@ -194,55 +194,44 @@
                 <button class="next">&#10095;</button>
             </div>
         </div>
-        <!-- komsel -->
+        <!-- pelayanan best -->
         <div class="container-fluid" style="margin-top: 20px;">
             <div
-                style="position: relative; display: flex; justify-content: center; align-items: center; height: 50vh;">
-                <img src="img/komsel.png" alt=""
-                    style="position: absolute; top: 0; width: 100vw; height: 50vh;">
+                style="position: relative; display: flex; justify-content: center; align-items: center; height: 70vh;">
+                <img src="img/programbest.png" alt=""
+                    style="position: absolute; top: 0; width: 100vw; height: 70vh; object-fit: cover;">
                 <div
-                    style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; font-size: 20px;">
-                    <h2 style="font-family: 'Share', cursive; font-weight: bold;">Get Connected and Grow with Us</h2>
-                    <h3 style="font-family: 'Ropa Sans', sans-serif;">Dimulai dari Komunitas Sel YESS</h3>
-                    <a href="/komsel"
-                        style="margin-top: 20px; border: 1px solid #fff; padding: 8px 20px; text-decoration: none; color: #fff; font-family: 'Montserrat';">
-                        Komsel
-                    </a>
+                    style="position: absolute; top: 30; left: 0; right: 0; bottom: 0; display: flex; flex-direction: column; justify-content: top; align-items: center; color: white; font-size: 20px; text-align: center;">
+                    <h1 style="font-family: 'DM Sans', sans-serif; font-weight: bold; margin-bottom: 10px;">Program Regenerasi Gereja BEST</h1>
+                    <h2 style="font-family: 'DM Sans', sans-serif;">FIND MORE ABOUT YESS ></h2>
                 </div>
             </div>
         </div>
 
-        <!-- Pelayanan -->
-        <div class="container-fluid" style="margin-top: 20px; overflow-x: hidden;">
-            <div class="row" style="margin-right: -15px; margin-left: -15px;">
-                <div class="col-sm-6" style="padding-right: 7.5px; padding-left: 0; position: relative;">
-                    <div
-                        style="position: absolute; top: 40%; left: 40%; transform: translate(-50%, -50%); text-align: left; color: #fff;">
-                        <h2 style="font-family: 'Share', cursive; font-weight: bold;">Are you ready to make an impact
-                        </h2>
-                        <h3 style="font-family: 'Ropa Sans', sans-serif;">Melayani Tuhan adalah anugerah!</h3>
+        <!-- Ladies devotion + Sunday school -->
+        <div class="container-fluid" style="overflow-x: hidden; padding: 0;">
+            <div class="row no-gutters">
+                <div class="col-sm-6" style="position: relative;">
+                    <img src="img/ladiesdevotion.png" alt="" style="width: 120%; height: 50vh; object-fit: cover; box-shadow: 0 4px 8px -4px rgba(0, 0, 0, 0.3);">
+                    <div style="position: absolute; top: 20%; left: 10%; text-align: left; color: #fff;">
+                        <h2 style="font-family: 'Share', cursive; font-weight: bold;">Ladies Devotion</h2>
+                        <h3 style="font-family: 'DM Sans', sans-serif;">A woman of God</h3>
                         <br>
-                        <a href="/pelayanan"
-                            style="border: 1px solid #fff; padding: 8px 20px; text-decoration: none; color: #fff; font-family: 'Montserrat';">
-                            Pelayanan
+                        <a href="/ladiesdevotion" style="padding: 8px 20px; text-decoration: none; color: #fff; font-family: 'Montserrat';">
+                            Learn More >
                         </a>
                     </div>
-                    <img src="img/pelayanan.png" alt=""
-                        style="width: 100%; height: 50vh; object-fit: cover;">
                 </div>
-                <div class="col-sm-6"
-                    style="padding-right: 0; padding-left: 7.5px; position: relative; text-align: right;">
-                    <div
-                        style="position: absolute; top: 40%; right: 40%; transform: translate(50%, -50%); text-align: right; color: #fff;">
-                        <h2 style="font-family: 'Share', cursive; font-weight: bold;">Give kindness, get blessed</h2>
-                        <h3 style="font-family: 'Ropa Sans', sans-serif;">berangkat bersama dengan dekatmu</h3>
+                <div class="col-sm-6" style="position: relative;">
+                    <img src="img/sundayschool.png" alt="" style="width: 120%; height: 50vh; object-fit: cover; box-shadow: 0 4px 8px -4px rgba(0, 0, 0, 0.3);">
+                    <div style="position: absolute; top: 20%; right: 10%; text-align: right; color: #fff;">
+                        <h2 style="font-family: 'Share', cursive; font-weight: bold;">Sunday School</h2>
+                        <h3 style="font-family: 'DM Sans', sans-serif;">Equipping kids and building families</h3>
                         <br>
-                        <a href="/bareng"
-                            style="border: 1px solid #fff; padding: 8px 20px; text-decoration: none; color: #fff; font-family: 'Montserrat';">
-                            Bareng
+                        <a href="/sundayschool" style="padding: 8px 20px; text-decoration: none; color: #fff; font-family: 'Montserrat';">
+                            Learn More >
                         </a>
                     </div>
-                    <img src="img/bareng.png" alt="" style="width: 100%; height: 50vh; object-fit: cover;">
                 </div>
             </div>
         </div>
