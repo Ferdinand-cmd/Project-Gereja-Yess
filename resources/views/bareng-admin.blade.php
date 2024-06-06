@@ -96,6 +96,12 @@
         color: #000;
         justify-content: center;
         padding: 24px 31px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        }
+
+        .header-detail:hover {
+            background-color: #e0e0e0;
         }
 
         @media (max-width: 991px) {
@@ -112,7 +118,13 @@
         color: #989898;
         white-space: nowrap;
         justify-content: center;
-        padding: 24px 52px;
+        padding: 24px 31px;
+        transition: background-color 0.3s;
+        cursor: pointer;
+        }
+
+        .header-detail-secondary:hover {
+            background-color: #c0c0c0;
         }
 
         @media (max-width: 991px) {
@@ -753,74 +765,18 @@
                 <section class="section">
                     <div class="column">
                         <div class="column-header">
-                            <div class="header-detail">DETAIL JEMPUT</div>
-                            <div class="header-detail-secondary">KEBERANGKATAN</div>
+                            <div class="header-detail" id="detail-jemput">DETAIL JEMPUT</div>
+                            <div class="header-detail-secondary" id="keberangkatan">KEBERANGKATAN</div>
                         </div>
                     </div>
-                    <div class="column-secondary">
+                    <div class="column-secondary" id="column-secondary">
                         <button class="penjemput-button" data-bs-toggle="modal" data-bs-target="#penjemputModal">
                             <div class="icon">directions_car</div>
                             <div class="penjemput-text">Penjemput</div>
                         </button>
                     </div>
                 </section>
-                <section class="content-card">
-                    <div class="card-header">
-                        <div class="card-title">Tujuan</div>
-                        <div class="card-subtitle">Hotel Dafam Pacific Caesar</div>
-                    </div>
-                    <!-- <div class="card-main">
-                        <div class="card-main-header">
-                            <div class="card-item">Titik Jemput</div>
-                            <div class="card-item">Wilayah</div>
-                            <div class="card-item">Waktu</div>
-                            <div class="card-main-action">add_circle_outline</div>
-                        </div>
-                        <div class="list-item">
-                            <div class="list-text">Hotel Dafam Pacific Caesar</div>
-                            <div class="list-actions">
-                            <div class="action-icon">delete</div>
-                            <div class="action-icon">mode_edit</div>
-                            </div>
-                        </div>
-                        <div class="secondary-item">
-                            <div class="secondary-text">Pakuwon Trade Center Lobby A&W</div>
-                            <div class="secondary-actions">
-                                <div class="secondary-action-icon">delete</div>
-                                <div class="secondary-action-icon">mode_edit</div>
-                            </div>
-                        </div>
-                    </div> -->
-                    <table class="table table-striped table-hover table-bordered border-secondary">
-                        <thead>
-                            <tr class="table-dark">
-                                <th>Titik Jemput</th>
-                                <th>Wilayah</th>
-                                <th>Waktu</th>
-                                <th><button class="table-main-action" data-bs-toggle="modal" data-bs-target="#addTitikModal">add_circle_outline</button></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Hotel Dafam Pacific Caesar</td>
-                                <td>Timur</td>
-                                <td>12.00</td>
-                                <td>
-                                    <button class="action-icon" data-bs-toggle="modal" data-bs-target="#editTitikModal">mode_edit</button>
-                                    <button class="action-icon">delete</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Pakuwon Trade Center Lobby A&W</td>
-                                <td>Timur</td>
-                                <td>13.00</td>
-                                <td>
-                                    <button class="action-icon" data-bs-toggle="modal" data-bs-target="#editTitikModal">mode_edit</button>
-                                    <button class="action-icon">delete</button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <section class="content-card" id="content-card">
                 </section>
             </main>
             <footer>
@@ -829,6 +785,84 @@
             </footer>
         </section>
     </div>
+    <script>
+        const detailJemput = document.getElementById('detail-jemput');
+        const keberangkatan = document.getElementById('keberangkatan');
+        const columnSecondary = document.getElementById('column-secondary');
+        const contentCard = document.getElementById('content-card');
+
+        // "detail-jemput" menjadi nilai bawaan dari content-card saat halaman dimuat
+        window.onload = function() {
+            // "detail-jemput" menjadi nilai bawaan dari content-card
+            toggleDetails('detail-jemput');
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            detailJemput.addEventListener('click', () => {
+                toggleDetails('detail-jemput');
+            });
+
+            keberangkatan.addEventListener('click', () => {
+                toggleDetails('keberangkatan');
+            });
+        });
+
+        function toggleDetails(type) {
+            if (type === 'detail-jemput') {
+                detailJemput.classList.add('header-detail');
+                detailJemput.classList.remove('header-detail-secondary');
+                keberangkatan.classList.add('header-detail-secondary');
+                keberangkatan.classList.remove('header-detail');
+
+                columnSecondary.style.display = 'flex';
+
+                contentCard.innerHTML =
+                `<div class="card-header">
+                    <div class="card-title">Tujuan</div>
+                    <div class="card-subtitle">Hotel Dafam Pacific Caesar</div>
+                </div>
+                <table class="table table-striped table-hover table-bordered border-secondary">
+                    <thead>
+                        <tr class="table-dark">
+                            <th>Titik Jemput</th>
+                            <th>Wilayah</th>
+                            <th>Waktu</th>
+                            <th><button class="table-main-action" data-bs-toggle="modal" data-bs-target="#addTitikModal">add_circle_outline</button></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Hotel Dafam Pacific Caesar</td>
+                            <td>Timur</td>
+                            <td>12.00</td>
+                            <td>
+                                <button class="action-icon" data-bs-toggle="modal" data-bs-target="#editTitikModal">mode_edit</button>
+                                <button class="action-icon">delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Pakuwon Trade Center Lobby A&W</td>
+                            <td>Timur</td>
+                            <td>13.00</td>
+                            <td>
+                                <button class="action-icon" data-bs-toggle="modal" data-bs-target="#editTitikModal">mode_edit</button>
+                                <button class="action-icon">delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>`;
+            } else {
+                detailJemput.classList.add('header-detail-secondary');
+                detailJemput.classList.remove('header-detail');
+                keberangkatan.classList.add('header-detail');
+                keberangkatan.classList.remove('header-detail-secondary');
+
+                columnSecondary.style.display = 'none';
+
+                contentCard.innerHTML = '<p>Konten dari KEBERANGKATAN</p>';
+            }
+        }
+    </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
