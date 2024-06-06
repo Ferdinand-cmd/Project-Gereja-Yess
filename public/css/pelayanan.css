@@ -333,8 +333,6 @@
     width: 75.84px;
     height: 79px;
     margin: 18px 0 0 64px;
-    background: url(img/4367064e-f35e-42cd-9555-e8b49597120b.png)
-      no-repeat center;
     background-size: cover;
     z-index: 50;
   }
@@ -391,8 +389,6 @@
     width: 98px;
     height: 83px;
     margin: 11px 0 0 46px;
-    background: url(img/ddfa98d25877cc0f154fb8fc55608ad5292b0c87.png)
-      no-repeat center;
     background-size: cover;
     z-index: 83;
   }
@@ -501,8 +497,6 @@
     width: 132px;
     height: 97px;
     margin: 6px 0 0 35px;
-    background: url(img/aeced016-b937-4423-8492-589228a295a2.png)
-      no-repeat center;
     background-size: cover;
     z-index: 72;
   }
@@ -726,7 +720,7 @@
     width: 77px;
     height: 91px;
     margin: 13px 0 0 58px;
-    background-size: cover;
+    background-size: contain; /* Mengubah properti background-size */
     z-index: 91;
   }
   .group {
