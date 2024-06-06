@@ -541,6 +541,145 @@
             background-color: #333333;
             /* Darker gray background on hover */
         }
+
+        /* Keberangkatan */
+        .content-date {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            font-weight: 700;
+        }
+
+        .content-date span,
+        .content-date .view-button {
+            display: flex;
+            align-items: center;
+        }
+
+        .content-date span {
+            margin-top: 17px;
+            font-size: 36px;
+        }
+
+        .view-button {
+            margin-left: auto;
+            border: 1px solid #000;
+            background-color: #eeb120;
+            text-align: center;
+            padding: 16px 30px;
+            font-size: 24px;
+        }
+
+        .divider {
+            box-shadow: inset 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+            border: 2px solid #fff;
+            background-color: #fff;
+            margin-top: 13px;
+            height: 2px;
+        }
+
+        .details-section {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .details-header {
+            color: #646464;
+            font-size: 24px;
+            font-weight: 700;
+            margin-top: 10px;
+        }
+
+        .details-content {
+            margin-top: 14px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .hotel-info {
+            border: 1px solid #000;
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .hotel-info div {
+            background-color: #000;
+            color: #fff;
+            padding: 14px 60px;
+            font-weight: 500;
+            font-size: 20px;
+        }
+
+        .hotel-info-2 {
+            border: 1px solid #000;
+            background-color: #fff;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        .hotel-info-2 table {
+            vertical-align: middle;
+        }
+        .hotel-info-2 th {
+            --bs-table-bg: #eeb120;
+        }
+        .save-button {
+            border: 1px solid #000;
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 21px 60px;
+            font-size: 24px;
+            font-weight: 600;
+            align-self: center;
+            white-space: nowrap;
+            margin-top: 31px;
+        }
+        .save-button:hover {
+            border: 1px solid #333;
+            background-color: #333;
+            /* Darker gray background on hover */
+        }
+
+        @media (max-width: 991px) {
+            .content-date span {
+                white-space: initial;
+                padding: 0 20px;
+            }
+
+            .view-button {
+                padding: 0 20px;
+            }
+
+            .details-section {
+                max-width: 100%;
+                padding: 0 20px;
+            }
+
+            .details-header {
+                max-width: 100%;
+            }
+
+            .details-content {
+                max-width: 100%;
+            }
+
+            .hotel-info {
+                max-width: 100%;
+                margin-top: 26px;
+            }
+
+            .hotel-info div {
+                padding: 0 20px;
+            }
+
+            .save-button {
+                white-space: initial;
+                padding: 0 20px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -859,7 +998,60 @@
 
                 columnSecondary.style.display = 'none';
 
-                contentCard.innerHTML = '<p>Konten dari KEBERANGKATAN</p>';
+                contentCard.innerHTML = `
+                <div class="content-date">
+                    <span>Sabtu, 6 April 2024</span>
+                    <div class="view-button">Lihat terdaftar bareng</div>
+                </div>
+                <div class="divider"></div>
+                <div class="details-section">
+                    <h3 class="details-header">Lihat Keberangkatan Penjemput ke Tujuan</h3>
+                    <div class="details-content">
+                        <div class="row">
+                            <div class="col">
+                                <div class="hotel-info">
+                                    <div>Hotel Dafam Pacific Caesar</div>
+                                </div>
+                                <div class="hotel-info-2">
+                                <table class="table table-striped table-bordered border-secondary">
+                                    <thead>
+                                        <tr>
+                                            <th>Nama penjemput</th>
+                                            <th>Sudah</th>
+                                            <th>Waktu berangkat</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Asep</td>
+                                            <td><input type="checkbox"></td>
+                                            <td>14.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Steven</td>
+                                            <td><input type="checkbox"></td>
+                                            <td>15.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Ferdinand</td>
+                                            <td><input type="checkbox"></td>
+                                            <td>16.00</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="hotel-info">
+                                    <div>Pakuwon Trade Center Lobby A&W</div>
+                                </div>
+                                <div class="hotel-info-2">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="save-button" tabindex="0">SAVE</button>
+                </div>`;
             }
         }
     </script>
