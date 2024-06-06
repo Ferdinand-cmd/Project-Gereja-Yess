@@ -160,9 +160,7 @@
                     <br>
                     <div style="font-family: 'Montserrat', sans-serif; text-align: center; color: #YourColorCode;">
                         <h2>Blessing in the SpiriT - BEST</h2>
-                        <h1>BEST CHURCH SURABAYA</h1>
-                        <p>EVERY SATURDAY 17:00 WIB</p>
-                        <p>CIPUTRA WORLD MALL 2ND FLOOR</p>
+                        <h1><strong>BEST CHURCH SURABAYA</strong></h1>
                         <p>SURABAYA</p>
                     </div>
 
