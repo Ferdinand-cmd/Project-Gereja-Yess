@@ -153,25 +153,17 @@
         <div class="container-fluid">
             <div
                 style="position: relative; display: flex; justify-content: center; align-items: center; height: 100vh;">
-                <img src="img/home_bg.png" alt=""
+                <img src="img/jadwal_ibadah_bg.png" alt=""
                     style="position: absolute; top: 0; width: 100vw; height: 100vh;">
                 <div
                     style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; font-size: 20px;">
                     <br>
                     <div style="font-family: 'Montserrat', sans-serif; text-align: center; color: #YourColorCode;">
-                        <h2>Blessing in the SpiriT - BEST</h2>
-                        <h1>BEST CHURCH SURABAYA</h1>
-                        <p>EVERY SATURDAY 17:00 WIB</p>
-                        <p>CIPUTRA WORLD MALL 2ND FLOOR</p>
-                        <p>SURABAYA</p>
+                        <h2>We’re 
+                            <br>expecting 
+                            <br>you!</h2>
                     </div>
-
-                    <div style="margin-top: 20px;">
-                        <a href="/jadwal-ibadah"
-                            style="border: 1px solid #fff; padding: 8px 20px; text-decoration: none; color: #fff; font-family: 'Montserrat';">
-                            JADWAL IBADAH
-                        </a>
-                    </div>
+                    <img src="img/garis_tiga.png" alt="">
                 </div>
             </div>
         </div>
@@ -292,6 +284,7 @@
             <br>
             <br>
         </div>
+
 
         <!-- Youtube channel -->
         <div class="container-fluid">

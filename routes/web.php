@@ -38,6 +38,10 @@ Route::get('/event-archived', function () {
     return view('event-archieved');
 });
 
+Route::get('/jadwal-ibadah', function () {
+    return view('jadwal-ibadah');
+});
+
 Route::middleware([\App\Http\Middleware\EnsureUserIsAdmin::class])->group(function () {
     Route::get('/admin', function () {
         return view('home-admin');
