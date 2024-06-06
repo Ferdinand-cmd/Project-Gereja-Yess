@@ -15,6 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Ropa+Sans&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Icons:wght@400&display=swap" />
     <link href="css/style.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400&display=swap');
@@ -206,7 +207,7 @@
             /* Adjust bottom spacing */
             right: 10px;
             /* Adjust right spacing */
-            background-color: #FFD700;
+            background-color: #EEB120;
             color: #FFFFFF;
             border: none;
             border-radius: 10px;
@@ -759,7 +760,7 @@
                     </div>
                     <div class="event-description"><?php echo $event['description']; ?></div>
                 </div>
-                <button class="daftar-button" data-bs-toggle="modal" data-bs-target="#formModal<?php echo $event['id']; ?>" onclick="openFormModal(<?php echo $event['id']; ?>)">Daftar <i class="fas fa-chevron-right"></i></button>
+                <button class="daftar-button" data-bs-toggle="modal" data-bs-target="#formModal<?php echo $event['id']; ?>" onclick="openFormModal(<?php echo $event['id']; ?>)">Daftar <span class="material-icons">arrow_forward</span></button>
             </div>
         <?php endforeach; ?>
     </div>
