@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -12,13 +13,13 @@
         href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap"
         rel="stylesheet">
     <link
-        href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap"
-        rel="stylesheet">
-    <link
         href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
     <link href="css/komsel.css" rel="stylesheet">
     <style>
+        body {
+            overflow-x: hidden;
+        }
         .whatsapp-button {
             position: fixed;
             bottom: 20px;
@@ -38,71 +39,106 @@
             width: 50px;
             height: 50px;
         }
+        /* Styling Navbar */
+        .navbar-nav .nav-item.active .nav-link,
+        .navbar-nav .nav-item:hover .nav-link {
+            color: orange !important;
+            border-bottom: 2px solid orange;
+        }
+        .navbar-nav .dropdown-item:focus,
+        .navbar-nav .dropdown-item:hover {
+            color: orange !important;
+            background-color: transparent !important;
+        }
+        .navbar-nav .dropdown-item.active,
+        .navbar-nav .dropdown-item:active {
+            color: orange !important;
+            background-color: transparent !important;
+        }
+        .navbar-nav .dropdown-menu a.dropdown-item:hover {
+            color: orange !important;
+            background-color: transparent !important;
+        }
     </style>
 </head>
-<a href="https://api.whatsapp.com/send?phone=6285854526955&text=Halo%20mau%20tanya%20gereja" class="whatsapp-button">
-            <img src="img/wa.png" alt="WhatsApp">
-</a>
+
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="z-index: 1000;">
-        <div class="container-fluid">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid justify-content-between">
             <a class="navbar-brand" href="#">
-                <div class="brand-text">
-                    <img src="img/logo_putih.png" alt="" style="width: 20%; margin-left: 10px;">
-                    <div class="lora-font">BEST CHURCH</div>
+                <div class="brand-text" style="display: inline-block; margin-left: 10px; color: #f5f5f5;">
+                    <img src="img/bestchurch.png" alt="" style="width: 60%;">
                 </div>
             </a>
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
-                <ul class="navbar-nav" style="margin-bottom:10px;">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/">Home</a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto" style="text-align: center;">
+                    <li class="nav-item active" style="margin-right: 20px;">
+                        <a class="nav-link" href="/" style="color: #f5f5f5;">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/pelayanan">Pelayanan</a>
+                    <li class="nav-item dropdown" style="margin-right: 20px;">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #f5f5f5;">
+                            YESS
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                            <li><a class="dropdown-item" href="/yess" style="color: #000;">YESS</a></li>
+                            <li><a class="dropdown-item" href="/komsel" style="color: #000;">Komsel</a></li>
+                            <li><a class="dropdown-item" href="/bareng" style="color: #000;">Bareng</a></li>
+                        </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="/komsel">KomSel</a>
+                    <li class="nav-item" style="margin-right: 20px;">
+                        <a class="nav-link" href="/jadwal" style="color: #f5f5f5;">Jadwal</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/bareng">Bareng</a>
+                    <li class="nav-item" style="margin-right: 20px;">
+                        <a class="nav-link" href="/ladies-devotion" style="color: #f5f5f5;">Ladies Devotion</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/event">Event</a>
+                    <li class="nav-item" style="margin-right: 20px;">
+                        <a class="nav-link" href="/sunday-school" style="color: #f5f5f5;">Sunday School</a>
+                    </li>
+                    <li class="nav-item" style="margin-right: 20px;">
+                        <a class="nav-link" href="/event" style="color: #f5f5f5;">Event</a>
+                    </li>
+                    <li class="nav-item" style="margin-right: 20px;">
+                        <a class="nav-link" href="/pelayanan" style="color: #f5f5f5;">Pelayanan</a>
                     </li>
                 </ul>
-                <ul class="navbar-nav">
-                    @auth
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
+                <div class="navbar-nav" style="text-align: right;">
+                    <ul class="navbar-nav">
+                        @auth
+                        <li class="nav-item dropdown" style="margin-right: 20px;">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #f5f5f5;">
                                 Welcome, {{ auth()->user()->name }}
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 @if (auth()->user()->is_admin)
-                                    <li><a class="dropdown-item" href="/admin">Admin Dashboard</a></li>
+                                <li><a class="dropdown-item" href="/admin" style="color: #000;">Admin Dashboard</a></li>
                                 @endif
                                 <li>
                                     <form action="/logout" method="POST">
                                         @csrf
-                                        <button type="submit" class="dropdown-item">Logout</button>
+                                        <button type="submit" class="dropdown-item" style="color: #000;">Logout</button>
                                     </form>
                                 </li>
                             </ul>
                         </li>
-                    @else
+                        @else
                         <li class="nav-item">
-                            <a class="nav-link login-link-border" href="/login">Login</a>
+                            <a class="nav-link login-link-border" href="/login" style="color: #f5f5f5; border: 1px solid #fff; border-radius: 5px; padding: 8px 20px;">Login</a>
                         </li>
-                    @endauth
-                </ul>
+                        @endauth
+                    </ul>
+                </div>
             </div>
         </div>
     </nav>
+
+    <!-- whasap terbang -->
+    <a href="https://api.whatsapp.com/send?phone=6285854526955&text=Halo%20mau%20tanya%20gereja" class="whatsapp-button">
+            <img src="img/wa.png" alt="WhatsApp">
+    </a>
     <div class="awal" style="margin-top: 20px;">
         <div class="awal-2">
             <img loading="lazy" srcset="img/awal.png" class="img" />
@@ -221,7 +257,5 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
     <script src="js/komsel.js"></script>
-
 </body>
-
 </html>

@@ -27,6 +27,7 @@
             /* Set text color to black */
             padding: 20px;
             /* Add some padding for better readability */
+            overflow-x: hidden;
         }
 
         .event-header-container {
@@ -512,76 +513,107 @@
             width: 50px;
             height: 50px;
         }
+        /* Untuk membuat tulisan BEST berwarna orange dan memiliki garis bawah orange saat berada di halaman BEST */
+        .nav-item.active .nav-link,
+        .nav-item:hover .nav-link {
+            color: orange !important;
+            border-bottom: 2px solid orange;
+        }
+
+        /* Untuk mengubah warna teks dan garis bawah saat item dropdown ditekan */
+        .dropdown-item:focus,
+        .dropdown-item:hover {
+            color: orange !important;
+            background-color: transparent !important;
+        }
+
+        /* Untuk mengubah warna teks dan garis bawah saat item dropdown aktif */
+        .dropdown-item.active,
+        .dropdown-item:active {
+            color: orange !important;
+            background-color: transparent !important;
+        }
+
+        /* Untuk mengubah warna teks saat dropdown dihover */
+        .dropdown-menu a.dropdown-item:hover {
+            color: orange !important;
+            background-color: transparent !important;
+        }
     </style>
 </head>
-<a href="https://api.whatsapp.com/send?phone=6285854526955&text=Halo%20mau%20tanya%20gereja" class="whatsapp-button">
-            <img src="img/wa.png" alt="WhatsApp">
-    </a>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="z-index: 1000;">
-        <div class="container-fluid">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="background-color: #000 !important;">
+        <div class="container-fluid justify-content-between">
             <a class="navbar-brand" href="#">
-                <div class="brand-text">
-                    <img src="img/logo_putih.png" alt="" style="width: 20%; margin-left: 10px;">
-                    <div class="lora-font">BEST CHURCH</div>
+                <div class="brand-text" style="display: inline-block; margin-left: 10px; color: #f5f5f5;">
+                    <img src="img/bestchurch.png" alt="" style="width: 60%;">
                 </div>
             </a>
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-between" style="text-align:center;" id="navbarNav">
-                <ul class="navbar-nav" style="margin-bottom:10px;">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/">Home</a>
+            <div class="navbar-nav mx-auto" style="text-align: center;">
+                <ul class="navbar-nav" style="margin-bottom: 10px;">
+                    <li class="nav-item active" style="margin-right: 20px;">
+                        <a class="nav-link" href="/" style="color: #f5f5f5;">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/pelayanan">Pelayanan</a>
+                    <li class="nav-item dropdown" style="margin-right: 20px;">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #f5f5f5;">
+                            YESS
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                            <li><a class="dropdown-item" href="/yess" style="color: #000;">YESS</a></li>
+                            <li><a class="dropdown-item" href="/komsel" style="color: #000;">Komsel</a></li>
+                            <li><a class="dropdown-item" href="/bareng" style="color: #000;">Bareng</a></li>
+                        </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/komsel">KomSel</a>
+                    <li class="nav-item" style="margin-right: 20px;">
+                        <a class="nav-link" href="/jadwal" style="color: #f5f5f5;">Jadwal</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/bareng">Bareng</a>
+                    <li class="nav-item" style="margin-right: 20px;">
+                        <a class="nav-link" href="/ladies-devotion" style="color: #f5f5f5;">Ladies Devotion</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="/event">Event</a>
+                    <li class="nav-item" style="margin-right: 20px;">
+                        <a class="nav-link" href="/sunday-school" style="color: #f5f5f5;">Sunday School</a>
+                    </li>
+                    <li class="nav-item" style="margin-right: 20px;">
+                        <a class="nav-link" href="/event" style="color: #f5f5f5;">Event</a>
+                    </li>
+                    <li class="nav-item" style="margin-right: 20px;">
+                        <a class="nav-link" href="/pelayanan" style="color: #f5f5f5;">Pelayanan</a>
                     </li>
                 </ul>
-                @auth
-                    <ul class="navbar-nav">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Welcome, {{ auth()->user()->name }}
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                @if (auth()->user()->is_admin)
-                                    <!-- Assuming there's an 'is_admin' attribute -->
-                                    <li><a class="dropdown-item" href="/admin">Admin Dashboard</a></li>
-                                @endif
-                                <li>
-                                    <form action="/logout" method="POST">
-                                        @csrf
-                                        <button type="submit" class="dropdown-item">Logout</button>
-                                    </form>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                @else
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link login-link-border" href="/login">Login</a>
-                        </li>
-                    </ul>
-                @endauth
-
+            </div>
+            <div class="navbar-nav" style="text-align: right;">
+                <ul class="navbar-nav">
+                    @auth
+                    <li class="nav-item dropdown" style="margin-right: 20px;">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #f5f5f5;">
+                            Welcome, {{ auth()->user()->name }}
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            @if (auth()->user()->is_admin)
+                            <li><a class="dropdown-item" href="/admin" style="color: #000;">Admin Dashboard</a></li>
+                            @endif
+                            <li>
+                                <form action="/logout" method="POST">
+                                    @csrf
+                                    <button type="submit" class="dropdown-item" style="color: #000;">Logout</button>
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+                    @else
+                    <li class="nav-item">
+                        <a class="nav-link login-link-border" href="/login" style="color: #f5f5f5; border: 1px solid #fff; border-radius: 5px; padding: 8px 20px;">Login</a>
+                    </li>
+                    @endauth
+                </ul>
             </div>
         </div>
-    </nav>
+    </nav>  
+    <a href="https://api.whatsapp.com/send?phone=6285854526955&text=Halo%20mau%20tanya%20gereja" class="whatsapp-button">
+            <img src="img/wa.png" alt="WhatsApp">
+    </a>
 
     <!-- Content -->
     <div class="event-header-container">
@@ -766,7 +798,7 @@
                     <img src="img/yt.png" alt="YouTube">
                 </div>
             </div>
-        </div>
+    </div>
 
     <script>
         const dropdownMenuButton = document.getElementById("dropdownMenuButton");
