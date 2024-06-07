@@ -100,6 +100,15 @@
             font-weight: 500;
             color: #646464;
         }
+        .content .event-type {
+            font-weight: bold;
+            width: fit-content;
+            padding: 0 10px;
+            font-size: 1.11em;
+            color: #fff;
+            font-family: 'Roboto', sans-serif;
+            background-color: #000;
+        }
         .content .event-description {
             font-family: Roboto, var(--default-font-family);
             font-size: 1.2em;
@@ -371,6 +380,9 @@
                     Daftar
                     <span class="material-icons">arrow_forward</span>
                 </button>
+            </div>
+            <div class="event-info">
+                <div class="event-type">umum</div>
             </div>
             <!-- Event details -->
             <div class="event-info">

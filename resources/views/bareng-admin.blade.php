@@ -96,6 +96,12 @@
         color: #000;
         justify-content: center;
         padding: 24px 31px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        }
+
+        .header-detail:hover {
+            background-color: #e0e0e0;
         }
 
         @media (max-width: 991px) {
@@ -112,7 +118,13 @@
         color: #989898;
         white-space: nowrap;
         justify-content: center;
-        padding: 24px 52px;
+        padding: 24px 31px;
+        transition: background-color 0.3s;
+        cursor: pointer;
+        }
+
+        .header-detail-secondary:hover {
+            background-color: #c0c0c0;
         }
 
         @media (max-width: 991px) {
@@ -529,6 +541,173 @@
             background-color: #333333;
             /* Darker gray background on hover */
         }
+
+        /* Keberangkatan */
+        .content-date {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            font-weight: 700;
+        }
+
+        .content-date span,
+        .content-date .view-button,
+        .content-date .jumlah-jemaat {
+            display: flex;
+            align-items: center;
+        }
+
+        .content-date span {
+            margin-top: 17px;
+            font-size: 36px;
+        }
+
+        .view-button {
+            margin-left: auto;
+            border: 1px solid #000;
+            background-color: #eeb120;
+            text-align: center;
+            padding: 16px 30px;
+            font-size: 24px;
+            font-family: Montserrat, sans-serif;
+        }
+        .view-button:hover {
+            background-color: #d4a100;
+            /* Change background color on hover */
+        }
+        .counter-box {
+            width: 80px;
+            height: 30px;
+            background-color: white;
+            color: black;
+            font-weight: bold;
+            text-align: center;
+            line-height: 30px;
+            margin-left: 10px;
+        }
+        .jumlah-jemaat {
+            margin-left: auto;
+            border: 1px solid #000;
+            background-color: #fff;
+            text-align: center;
+            padding: 16px 30px;
+            font-size: 24px 400 Kanit, sans-serif;
+
+        }
+        .divider {
+            box-shadow: inset 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+            border: 2px solid #fff;
+            background-color: #fff;
+            margin-top: 13px;
+            height: 2px;
+        }
+
+        .details-section {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .details-header {
+            color: #646464;
+            font: 700 24px Montserrat, sans-serif;
+            margin-top: 10px;
+            
+        }
+
+        .details-content {
+            margin-top: 14px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .hotel-info {
+            border: 1px solid #000;
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .hotel-info div {
+            background-color: #000;
+            color: #fff;
+            padding: 14px 60px;
+            font-weight: 500 20px Montserrat, sans-serif;
+            font-size: 20px;
+        }
+
+        .hotel-info-2 {
+            border: 1px solid #000;
+            background-color: #fff;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        .hotel-info-2 table {
+            vertical-align: middle;
+        }
+        .hotel-info-2 th {
+            --bs-table-bg: #eeb120;
+        }
+        .save-button, .back-button {
+            border: 1px solid #000;
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 21px 60px;
+            font-size: 24px;
+            font-weight: 600;
+            align-self: center;
+            white-space: nowrap;
+            margin-top: 31px;
+        }
+        .save-button:hover, .back-button:hover {
+            border: 1px solid #333;
+            background-color: #333;
+            /* Darker gray background on hover */
+        }
+
+        @media (max-width: 991px) {
+            .content-date span {
+                white-space: initial;
+                padding: 0 20px;
+            }
+
+            .view-button {
+                padding: 0 20px;
+            }
+
+            .jumlah-jemaat {
+                padding: 0 20px;
+            }
+
+            .details-section {
+                max-width: 100%;
+                padding: 0 20px;
+            }
+
+            .details-header {
+                max-width: 100%;
+            }
+
+            .details-content {
+                max-width: 100%;
+            }
+
+            .hotel-info {
+                max-width: 100%;
+                margin-top: 26px;
+            }
+
+            .hotel-info div {
+                padding: 0 20px;
+            }
+
+            .save-button, .back-button {
+                white-space: initial;
+                padding: 0 20px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -753,74 +932,18 @@
                 <section class="section">
                     <div class="column">
                         <div class="column-header">
-                            <div class="header-detail">DETAIL JEMPUT</div>
-                            <div class="header-detail-secondary">KEBERANGKATAN</div>
+                            <div class="header-detail" id="detail-jemput">DETAIL JEMPUT</div>
+                            <div class="header-detail-secondary" id="keberangkatan">KEBERANGKATAN</div>
                         </div>
                     </div>
-                    <div class="column-secondary">
+                    <div class="column-secondary" id="column-secondary">
                         <button class="penjemput-button" data-bs-toggle="modal" data-bs-target="#penjemputModal">
                             <div class="icon">directions_car</div>
                             <div class="penjemput-text">Penjemput</div>
                         </button>
                     </div>
                 </section>
-                <section class="content-card">
-                    <div class="card-header">
-                        <div class="card-title">Tujuan</div>
-                        <div class="card-subtitle">Hotel Dafam Pacific Caesar</div>
-                    </div>
-                    <!-- <div class="card-main">
-                        <div class="card-main-header">
-                            <div class="card-item">Titik Jemput</div>
-                            <div class="card-item">Wilayah</div>
-                            <div class="card-item">Waktu</div>
-                            <div class="card-main-action">add_circle_outline</div>
-                        </div>
-                        <div class="list-item">
-                            <div class="list-text">Hotel Dafam Pacific Caesar</div>
-                            <div class="list-actions">
-                            <div class="action-icon">delete</div>
-                            <div class="action-icon">mode_edit</div>
-                            </div>
-                        </div>
-                        <div class="secondary-item">
-                            <div class="secondary-text">Pakuwon Trade Center Lobby A&W</div>
-                            <div class="secondary-actions">
-                                <div class="secondary-action-icon">delete</div>
-                                <div class="secondary-action-icon">mode_edit</div>
-                            </div>
-                        </div>
-                    </div> -->
-                    <table class="table table-striped table-hover table-bordered border-secondary">
-                        <thead>
-                            <tr class="table-dark">
-                                <th>Titik Jemput</th>
-                                <th>Wilayah</th>
-                                <th>Waktu</th>
-                                <th><button class="table-main-action" data-bs-toggle="modal" data-bs-target="#addTitikModal">add_circle_outline</button></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Hotel Dafam Pacific Caesar</td>
-                                <td>Timur</td>
-                                <td>12.00</td>
-                                <td>
-                                    <button class="action-icon" data-bs-toggle="modal" data-bs-target="#editTitikModal">mode_edit</button>
-                                    <button class="action-icon">delete</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Pakuwon Trade Center Lobby A&W</td>
-                                <td>Timur</td>
-                                <td>13.00</td>
-                                <td>
-                                    <button class="action-icon" data-bs-toggle="modal" data-bs-target="#editTitikModal">mode_edit</button>
-                                    <button class="action-icon">delete</button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <section class="content-card" id="content-card">
                 </section>
             </main>
             <footer>
@@ -829,6 +952,235 @@
             </footer>
         </section>
     </div>
+    <script>
+        const detailJemput = document.getElementById('detail-jemput');
+        const keberangkatan = document.getElementById('keberangkatan');
+
+        // "detail-jemput" menjadi nilai bawaan dari content-card saat halaman dimuat
+        window.onload = function() {
+            // "detail-jemput" menjadi nilai bawaan dari content-card
+            toggleDetails('detail-jemput');
+        };
+
+        function toggleDetails(type) {
+            const columnSecondary = document.getElementById('column-secondary');
+            const contentCard = document.getElementById('content-card');
+
+            if (type === 'detail-jemput') {
+                detailJemput.classList.add('header-detail');
+                detailJemput.classList.remove('header-detail-secondary');
+                keberangkatan.classList.add('header-detail-secondary');
+                keberangkatan.classList.remove('header-detail');
+
+                columnSecondary.style.display = 'flex';
+
+                contentCard.innerHTML =
+                `<div class="card-header">
+                    <div class="card-title">Tujuan</div>
+                    <div class="card-subtitle">Hotel Dafam Pacific Caesar</div>
+                </div>
+                <table class="table table-striped table-hover table-bordered border-secondary">
+                    <thead>
+                        <tr class="table-dark">
+                            <th>Titik Jemput</th>
+                            <th>Wilayah</th>
+                            <th>Waktu</th>
+                            <th><button class="table-main-action" data-bs-toggle="modal" data-bs-target="#addTitikModal">add_circle_outline</button></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Hotel Dafam Pacific Caesar</td>
+                            <td>Timur</td>
+                            <td>12.00</td>
+                            <td>
+                                <button class="action-icon" data-bs-toggle="modal" data-bs-target="#editTitikModal">mode_edit</button>
+                                <button class="action-icon">delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Pakuwon Trade Center Lobby A&W</td>
+                            <td>Timur</td>
+                            <td>13.00</td>
+                            <td>
+                                <button class="action-icon" data-bs-toggle="modal" data-bs-target="#editTitikModal">mode_edit</button>
+                                <button class="action-icon">delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>`;
+            } else {
+                detailJemput.classList.add('header-detail-secondary');
+                detailJemput.classList.remove('header-detail');
+                keberangkatan.classList.add('header-detail');
+                keberangkatan.classList.remove('header-detail-secondary');
+
+                columnSecondary.style.display = 'none';
+
+                contentCard.innerHTML = `
+                <div class="content-date">
+                    <span>Sabtu, 6 April 2024</span>
+                    <div id="view-button" class="view-button">Lihat terdaftar bareng</div>
+                </div>
+                <div class="divider"></div>
+                <div id="details-section" class="details-section">
+                    <h3 class="details-header">Lihat Keberangkatan Penjemput ke Tujuan</h3>
+                    <div class="details-content">
+                        <div class="row">
+                            <div class="col">
+                                <div class="hotel-info">
+                                    <div>Hotel Dafam Pacific Caesar</div>
+                                </div>
+                                <div class="hotel-info-2">
+                                <table class="table table-striped table-bordered border-secondary">
+                                    <thead>
+                                        <tr>
+                                            <th>Nama penjemput</th>
+                                            <th>Sudah</th>
+                                            <th>Waktu berangkat</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Asep</td>
+                                            <td><input type="checkbox"></td>
+                                            <td>14.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Steven</td>
+                                            <td><input type="checkbox"></td>
+                                            <td>15.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Ferdinand</td>
+                                            <td><input type="checkbox"></td>
+                                            <td>16.00</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="hotel-info">
+                                    <div>Pakuwon Trade Center Lobby A&W</div>
+                                </div>
+                                <div class="hotel-info-2">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="save-button" tabindex="0">SAVE</button>
+                </div>`;
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            detailJemput.addEventListener('click', () => {
+                toggleDetails('detail-jemput');
+            });
+
+            keberangkatan.addEventListener('click', () => {
+                toggleDetails('keberangkatan');
+            });
+
+            document.body.addEventListener('click', (event) => {
+                if (event.target.id === 'view-button') {
+                    const viewButton = event.target;
+                    const detailsSection = document.getElementById('details-section');
+
+                    viewButton.innerHTML =`
+                        <div class="button-text">Jumlah</div>
+                        <div class="counter-box">2 / 5</div>
+                    `;
+
+                    detailsSection.innerHTML = `
+                    <table class="table table-striped table-hover table-bordered border-secondary">
+                        <thead>
+                            <tr class="table-dark">
+                                <th>No</th>
+                                <th>Nama Jemaat</th>
+                                <th>No WA</th>
+                                <th>Titik Jemput</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Steven Bryan Christanto</td>
+                                <td>081259263720</td>
+                                <td>Timur</td>
+                                <td>Merah</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Ferdinand Immanuel</td>
+                                <td>081259263720</td>
+                                <td>Timur</td>
+                                <td>Merah</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button id="back-button" class="back-button" tabindex="0">BACK</button>
+                    `;
+                } else if (event.target.id === 'back-button') {
+                    const viewButton = document.getElementById('view-button');
+                    const detailsSection = document.getElementById('details-section');
+
+                    viewButton.innerHTML = 'Lihat terdaftar bareng';
+
+                    detailsSection.innerHTML = `
+                    <h3 class="details-header">Lihat Keberangkatan Penjemput ke Tujuan</h3>
+                    <div class="details-content">
+                        <div class="row">
+                            <div class="col">
+                                <div class="hotel-info">
+                                    <div>Hotel Dafam Pacific Caesar</div>
+                                </div>
+                                <div class="hotel-info-2">
+                                <table class="table table-striped table-bordered border-secondary">
+                                    <thead>
+                                        <tr>
+                                            <th>Nama penjemput</th>
+                                            <th>Sudah</th>
+                                            <th>Waktu berangkat</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Asep</td>
+                                            <td><input type="checkbox"></td>
+                                            <td>14.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Steven</td>
+                                            <td><input type="checkbox"></td>
+                                            <td>15.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Ferdinand</td>
+                                            <td><input type="checkbox"></td>
+                                            <td>16.00</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="hotel-info">
+                                    <div>Pakuwon Trade Center Lobby A&W</div>
+                                </div>
+                                <div class="hotel-info-2">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button id="save-button" class="save-button" tabindex="0">SAVE</button>
+                    `;
+                }
+            });
+        });
+    </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">

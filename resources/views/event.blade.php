@@ -9,12 +9,14 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Share&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Ropa+Sans&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Icons:wght@400&display=swap" />
+    <link href="css/style.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400&display=swap');
 
@@ -91,6 +93,18 @@
             /* Add focus style */
         }
 
+        .event-subheader,
+        .type-dropdown {
+            display: flex;
+        }
+
+        .subheader-dropdown {
+            display: flex;
+            flex-direction: row;
+            margin-top: 20px;
+            /* Add some top margin for spacing */
+        }
+
         .event-subheader {
             font-family: 'Open Sans Hebrew', sans-serif;
             /* Set font family */
@@ -98,12 +112,18 @@
             /* Align text to left */
             font-size: 2em;
             /* Set font size to 2em */
-            margin-top: 20px;
-            /* Add some top margin for spacing */
             color: black;
             /* Set color to black */
             font-weight: lighter;
             /* Set font weight to lighter */
+        }
+
+        .type-dropdown {
+            margin-left: auto;
+            background-color: #000;
+            color: #fff;
+            padding: 10px 20px;
+            font: 700 20px Roboto, sans-serif;
         }
 
         .event {
@@ -154,6 +174,16 @@
             /* Add right margin */
         }
 
+        .event-type {
+            font-weight: bold;
+            width: fit-content;
+            padding: 0 10px;
+            font-size: 1.11em;
+            color: #fff;
+            font-family: 'Roboto', sans-serif;
+            background-color: #000;
+        }
+
         .event-date {
             font-weight: bold;
             font-size: 1.11em;
@@ -178,7 +208,7 @@
             /* Adjust bottom spacing */
             right: 10px;
             /* Adjust right spacing */
-            background-color: #FFD700;
+            background-color: #EEB120;
             color: #FFFFFF;
             border: none;
             border-radius: 10px;
@@ -614,8 +644,17 @@
             </ul>
         </div>
     </div>
-    <div class="event-subheader">
-        Event subheader content that will be replaced by the js method
+    <div class="subheader-dropdown">
+        <div class="event-subheader">
+            Event subheader content that will be replaced by the js method
+        </div>
+        <select id="type-dropdown" class="type-dropdown">
+            <option value="all" selected>All</option>
+            <option value="umum">Umum</option>
+            <option value="ladies devotion">Ladies Devotion</option>
+            <option value="sunday school">Sunday School</option>
+            <option value="yess">YESS</option>
+        </select>
     </div>
 
     <?php
@@ -633,7 +672,8 @@
                 'end_time' => '19:30',
                 'image' => 'img/event-photo1.jpg',
                 'registered_people' => ['Andi', 'Bagus', 'Cahyono'],
-                'archived' => false
+                'archived' => false,
+                'type' => 'umum'
             ],
             [
                 'id' => 2,
@@ -648,7 +688,8 @@
                 'end_time' => null,
                 'image' => 'img/event-photo2.jpg',
                 'registered_people' => ['Desi', 'Endah', 'Marwoto', 'SBC Ganteng'],
-                'archived' => false
+                'archived' => false,
+                'type' => 'ladies devotion'
             ],
             [
                 'id' => 3,
@@ -663,7 +704,8 @@
                 'end_time' => '19:30',
                 'image' => 'img/event-photo3.jpg',
                 'registered_people' => [],
-                'archived' => true
+                'archived' => true,
+                'type' => 'sunday school'
             ],
             [
                 'id' => 4,
@@ -678,7 +720,8 @@
                 'end_time' => null,
                 'image' => 'img/event-photo4.jpg',
                 'registered_people' => [],
-                'archived' => true
+                'archived' => true,
+                'type' => 'umum'
             ]
         ];
     ?>
@@ -736,10 +779,11 @@
     <div class="events-container">
         <?php foreach ($events as $event): ?>
             <!-- Display all events initially with a class 'event' -->
-            <div class="event" event-id="<?php echo $event['id']; ?>" <?php echo $event['archived'] ? 'data-archived="true"' : 'data-archived="false"'; ?>>
+            <div class="event" event-id="<?php echo $event['id']; ?>" event-type="<?php echo $event['type']; ?>" <?php echo $event['archived'] ? 'data-archived="true"' : 'data-archived="false"'; ?>>
                 <img src="<?php echo $event['image']; ?>" alt="Event Photo">
                 <div class="event-details">
                     <div class="event-title"><?php echo $event['title']; ?></div>
+                    <div class="event-type"><?php echo $event['type']; ?></div>
                     <div class="event-date">
                         <?php
                             // Fill the event location and date/time (time is optional)
@@ -748,7 +792,7 @@
                     </div>
                     <div class="event-description"><?php echo $event['description']; ?></div>
                 </div>
-                <button class="daftar-button" data-bs-toggle="modal" data-bs-target="#formModal<?php echo $event['id']; ?>" onclick="openFormModal(<?php echo $event['id']; ?>)">Daftar <i class="fas fa-chevron-right"></i></button>
+                <button class="daftar-button" data-bs-toggle="modal" data-bs-target="#formModal<?php echo $event['id']; ?>" onclick="openFormModal(<?php echo $event['id']; ?>)">Daftar <span class="material-icons">arrow_forward</span></button>
             </div>
         <?php endforeach; ?>
     </div>
@@ -765,6 +809,9 @@
     </div>
 
     <script>
+        const dropdownMenuButton = document.getElementById("dropdownMenuButton");
+        const typeDropdown = document.getElementById("type-dropdown");
+
         // Function to redirect to the event detail page
         function redirectToEventDetail(eventId) {
             // Construct the URL for the event detail page using the eventId
@@ -797,14 +844,15 @@
         attachEventListeners();
 
         // Set the initial button text to "Upcoming"
-        document.getElementById("dropdownMenuButton").innerText = "Upcoming";
+        dropdownMenuButton.innerText = "Upcoming";
 
         // Set the "Upcoming" option as selected by default when the page loads
         window.onload = function() {
             document.getElementById("upcoming").classList.add("active");
             // Set the initial selectedDropdown value to "upcoming"
-            var selectedDropdown = "upcoming";
-            updateEvents(selectedDropdown); // Call the function to update events with the initial value
+            const selectedDropdown = "upcoming";
+            const selectedType = typeDropdown.value;
+            updateEvents(selectedDropdown, selectedType); // Call the function to update events with the initial value
             updateEventSubheader(selectedDropdown); // Call the function to update the event subheader with the initial value
         };
 
@@ -820,14 +868,23 @@
                 event.target.classList.add('active');
 
                 // Update the button text to the selected option
-                document.getElementById("dropdownMenuButton").innerText = event.target.innerText;
+                dropdownMenuButton.innerText = event.target.innerText;
 
                 // Get the selected dropdown value
-                var selectedDropdown = event.target.id;
+                const selectedDropdown = event.target.id;
+                const selectedType = typeDropdown.value;
+
                 // Call the function to update events with the selected value
-                updateEvents(selectedDropdown);
+                updateEvents(selectedDropdown, selectedType);
                 updateEventSubheader(selectedDropdown); // Call the function to update the event subheader with the selected value
             });
+        });
+
+        // Add event listener for type-dropdown change
+        typeDropdown.addEventListener('change', event => {
+            const selectedDropdown = document.querySelector('.dropdown-item.active').id;
+            const selectedType = event.target.value;
+            updateEvents(selectedDropdown, selectedType);
         });
 
         // Function to update the content of the event subheader
@@ -837,16 +894,21 @@
         }
         
         // JavaScript function to handle dropdown change
-        function updateEvents(selectedDropdown) {
+        function updateEvents(selectedDropdown, selectedType) {
+            console.log(selectedDropdown);
+            console.log(selectedType);
+
             // Loop through all events and hide/show them based on the selected dropdown value
             document.querySelectorAll('.event').forEach(event => {
                 const eventId = event.getAttribute('event-id');
+                const eventType = event.getAttribute('event-type');
                 const eventInfo = <?php echo json_encode($events); ?>;
                 const eventData = eventInfo.find(e => e.id === parseInt(eventId));
 
-                if (selectedDropdown === 'upcoming' && !eventData.archived) {
-                    event.style.display = 'block'; // Show the event
-                } else if (selectedDropdown === 'archived' && eventData.archived) {
+                const isDropdownMatch = (selectedDropdown === 'upcoming' && !eventData.archived) || (selectedDropdown === 'archived' && eventData.archived);
+                const isTypeMatch = selectedType === 'all' || eventType === selectedType;
+
+                if (isDropdownMatch && isTypeMatch) {
                     event.style.display = 'block'; // Show the event
                 } else {
                     event.style.display = 'none'; // Hide the event
