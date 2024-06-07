@@ -15,11 +15,47 @@ resources\views\bareng.blade.php
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Icons:wght@400&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit:wght@600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans+Hebrew:wght@300&display=swap">
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/bareng.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Share&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ropa+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link href="css/film.css" rel="stylesheet">
     <style>
+        /* Navbar & footer */
+        body {
+            overflow-x: hidden;
+        }
+        /* Untuk membuat tulisan BEST berwarna orange dan memiliki garis bawah orange saat berada di halaman BEST */
+        nav .nav-item.active .nav-link,
+        nav .nav-item:hover .nav-link {
+            color: orange !important;
+            border-bottom: 2px solid orange;
+        }
+
+        /* Untuk mengubah warna teks dan garis bawah saat item dropdown ditekan */
+        nav .dropdown-item:focus,
+        nav .dropdown-item:hover {
+            color: orange !important;
+            background-color: transparent !important;
+        }
+
+        /* Untuk mengubah warna teks dan garis bawah saat item dropdown aktif */
+        nav .dropdown-item.active,
+        nav .dropdown-item:active {
+            color: orange !important;
+            background-color: transparent !important;
+        }
+
+        /* Untuk mengubah warna teks saat dropdown dihover */
+        nav .dropdown-menu a.dropdown-item:hover {
+            color: orange !important;
+            background-color: transparent !important;
+        }
+
+        /* Content */
         body {
             margin: 0;
             padding: 0;
@@ -728,7 +764,7 @@ resources\views\bareng.blade.php
 }
 
 .status-container .booking-details {
-    background-color: red;
+    background-color: #ff2929;
     color: #fff;
     font: 700 32px Montserrat, sans-serif;
     width: 100%;
@@ -736,6 +772,9 @@ resources\views\bareng.blade.php
     padding: 40px 0;
     height: 100%; /* Ensure it takes the full height of the container */
     cursor: pointer;
+}
+.status-container .booking-details:hover {
+    background-color: #d92626;
 }
 .modal-penjemput .table {
     vertical-align: middle;
@@ -747,61 +786,69 @@ resources\views\bareng.blade.php
 </head>
 
 <body>
-    <!-- navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="z-index: 1000;">
-        <div class="container-fluid">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="background-color: #000 !important;">
+        <div class="container-fluid justify-content-between">
             <a class="navbar-brand" href="#">
-                <div class="brand-text">
-                    <img src="img/logo_putih.png" alt="" style="width: 20%; margin-left: 10px;">
-                    <div class="lora-font">BEST CHURCH</div>
+                <div class="brand-text" style="display: inline-block; margin-left: 10px; color: #f5f5f5;">
+                    <img src="img/bestchurch.png" alt="" style="width: 60%;">
                 </div>
             </a>
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
-                <ul class="navbar-nav" style="margin-bottom:10px;">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/">Home</a>
+            <div class="navbar-nav mx-auto" style="text-align: center;">
+                <ul class="navbar-nav" style="margin-bottom: 10px;">
+                    <li class="nav-item" style="margin-right: 20px;">
+                        <a class="nav-link" href="/" style="color: #f5f5f5;">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/pelayanan">Pelayanan</a>
+                    <li class="nav-item active dropdown" style="margin-right: 20px;">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #f5f5f5;">
+                            YESS
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                            <li><a class="dropdown-item" href="/yess" style="color: #000;">YESS</a></li>
+                            <li><a class="dropdown-item" href="/komsel" style="color: #000;">Komsel</a></li>
+                            <li><a class="dropdown-item active" href="/bareng" style="color: #000;">Bareng</a></li>
+                        </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/komsel">KomSel</a>
+                    <li class="nav-item" style="margin-right: 20px;">
+                        <a class="nav-link" href="/jadwal" style="color: #f5f5f5;">Jadwal</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="/bareng">Bareng</a>
+                    <li class="nav-item" style="margin-right: 20px;">
+                        <a class="nav-link" href="/ladies-devotion" style="color: #f5f5f5;">Ladies Devotion</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/event">Event</a>
+                    <li class="nav-item" style="margin-right: 20px;">
+                        <a class="nav-link" href="/sunday-school" style="color: #f5f5f5;">Sunday School</a>
+                    </li>
+                    <li class="nav-item" style="margin-right: 20px;">
+                        <a class="nav-link" href="/event" style="color: #f5f5f5;">Event</a>
+                    </li>
+                    <li class="nav-item" style="margin-right: 20px;">
+                        <a class="nav-link" href="/pelayanan" style="color: #f5f5f5;">Pelayanan</a>
                     </li>
                 </ul>
+            </div>
+            <div class="navbar-nav" style="text-align: right;">
                 <ul class="navbar-nav">
                     @auth
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Welcome, {{ auth()->user()->name }}
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                @if (auth()->user()->is_admin)
-                                    <li><a class="dropdown-item" href="/admin">Admin Dashboard</a></li>
-                                @endif
-                                <li>
-                                    <form action="/logout" method="POST">
-                                        @csrf
-                                        <button type="submit" class="dropdown-item">Logout</button>
-                                    </form>
-                                </li>
-                            </ul>
-                        </li>
+                    <li class="nav-item dropdown" style="margin-right: 20px;">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #f5f5f5;">
+                            Welcome, {{ auth()->user()->name }}
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            @if (auth()->user()->is_admin)
+                            <li><a class="dropdown-item" href="/admin" style="color: #000;">Admin Dashboard</a></li>
+                            @endif
+                            <li>
+                                <form action="/logout" method="POST">
+                                    @csrf
+                                    <button type="submit" class="dropdown-item" style="color: #000;">Logout</button>
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
                     @else
-                        <li class="nav-item">
-                            <a class="nav-link" href="/login">Login</a>
-                        </li>
+                    <li class="nav-item">
+                        <a class="nav-link login-link-border" href="/login" style="color: #f5f5f5; border: 1px solid #fff; border-radius: 5px; padding: 8px 20px;">Login</a>
+                    </li>
                     @endauth
                 </ul>
             </div>
@@ -963,81 +1010,81 @@ resources\views\bareng.blade.php
         </div>
     <?php endforeach; ?>
 
-    <main class="container">
-        <section class="banner">
-            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/6a625017315edd3df1ced9adbd4876287d53705099e254e0127107ea08037277?apiKey=f9ed83d6b13f4286938197498a891b31&" alt="Church gathering">
-            <h1 class="banner-heading">Berangkat Bareng</h1>
-            <p class="banner-subheading">Berangkat ke gereja jadi lebih mudah dan hemat &gt;&gt;&gt;</p>
-            <div class="info-box">
-                <div class="info-columns">
-                    <div class="location-column">
-                        <div class="location" region="timur">Timur</div>
-                    </div>
-                    <div class="location-column">
-                        <div class="location-alt" region="barat">Barat</div>
-                    </div>
-                    <div class="location-column">
-                        <div class="location-alt" region="selatan">Selatan</div>
-                    </div>
-                    <div class="location-column">
-                        <div class="location-alt" region="pusat">Pusat</div>
+    <div>
+        <main class="container">
+            <section class="banner">
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/6a625017315edd3df1ced9adbd4876287d53705099e254e0127107ea08037277?apiKey=f9ed83d6b13f4286938197498a891b31&" alt="Church gathering">
+                <h1 class="banner-heading">Berangkat Bareng</h1>
+                <p class="banner-subheading">Berangkat ke gereja jadi lebih mudah dan hemat &gt;&gt;&gt;</p>
+                <div class="info-box">
+                    <div class="info-columns">
+                        <div class="location-column">
+                            <div class="location" region="timur">Timur</div>
+                        </div>
+                        <div class="location-column">
+                            <div class="location-alt" region="barat">Barat</div>
+                        </div>
+                        <div class="location-column">
+                            <div class="location-alt" region="selatan">Selatan</div>
+                        </div>
+                        <div class="location-column">
+                            <div class="location-alt" region="pusat">Pusat</div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section class="main-content">
-            <?php foreach ($points as $point): ?>
-                <div class="point-section" point-id="<?php echo $point['id']; ?>" region="<?php echo $point['region']; ?>">
-                    <div class="point-info">
-                        <div class="point-img-column">
-                            <img src="<?php echo $point['image']; ?>" alt="Point location" class="point-img">
-                        </div>
-                        <div class="point-details-column">
-                            <div class="point-details">
-                                <div class="point-title-box">
-                                    <h2 class="point-title"><?php echo $point['title']; ?></h2>
-                                    <p class="point-description"><?php echo $point['description']; ?></p>
-                                </div>
-                                <div class="separator"></div>
-                                <div class="booking-info">
-                                    <div class="booking-details">
-                                        <div class="booking-details-inner">
-                                            <span class="icon">date_range</span>
-                                            <span class="date-time"><?php echo $point['date']; ?></span>
-                                        </div>
-                                        <div class="time-info">
-                                            <span class="icon">access_time</span>
-                                            <span class="time"><?php echo $point['time']; ?></span>
-                                        </div>
+            <section class="main-content">
+                <?php foreach ($points as $point): ?>
+                    <div class="point-section" point-id="<?php echo $point['id']; ?>" region="<?php echo $point['region']; ?>">
+                        <div class="point-info">
+                            <div class="point-img-column">
+                                <img src="<?php echo $point['image']; ?>" alt="Point location" class="point-img">
+                            </div>
+                            <div class="point-details-column">
+                                <div class="point-details">
+                                    <div class="point-title-box">
+                                        <h2 class="point-title"><?php echo $point['title']; ?></h2>
+                                        <p class="point-description"><?php echo $point['description']; ?></p>
                                     </div>
-                                    <div class="booking-stats">
-                                    <?php
-                                            echo $point['seats_o'] < $point['seats_t'] ?
-                                            '<button class="booking-button" data-bs-toggle="modal" data-bs-target="#barengModal'.$point['id'].'">BOOK A SEAT</button>' :
-                                            '<button class="booking-button-disable">BOOK A SEAT</button>';
-                                        ?>
-                                        <div class="seats-remaining"><?php echo $point['seats_o']; ?> / <?php echo $point['seats_t']; ?></div>
+                                    <div class="separator"></div>
+                                    <div class="booking-info">
+                                        <div class="booking-details">
+                                            <div class="booking-details-inner">
+                                                <span class="icon">date_range</span>
+                                                <span class="date-time"><?php echo $point['date']; ?></span>
+                                            </div>
+                                            <div class="time-info">
+                                                <span class="icon">access_time</span>
+                                                <span class="time"><?php echo $point['time']; ?></span>
+                                            </div>
+                                        </div>
+                                        <div class="booking-stats">
+                                        <?php
+                                                echo $point['seats_o'] < $point['seats_t'] ?
+                                                '<button class="booking-button" data-bs-toggle="modal" data-bs-target="#barengModal'.$point['id'].'">BOOK A SEAT</button>' :
+                                                '<button class="booking-button-disable">BOOK A SEAT</button>';
+                                            ?>
+                                            <div class="seats-remaining"><?php echo $point['seats_o']; ?> / <?php echo $point['seats_t']; ?></div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            <?php endforeach; ?>
+                <?php endforeach; ?>
+            </section>
+        </main>
+        <section class="status-container" onclick="redirectToBarengTerdaftar(1)">
+            <article class="booking-details">
+                Temanmu menunggu! Jemput sekarang! <span class="material-icons">arrow_forward</span>
+            </article>
         </section>
-    </main>
-    <section class="status-container" onclick="redirectToBarengTerdaftar(1)">
-        <article class="booking-details">
-            Temanmu menunggu! Jemput sekarang! <span class="material-icons">arrow_forward</span>
-        </article>
-    </section>
-
+    </div>
     <script>
   window.addEventListener('DOMContentLoaded', function () {
     const myModal = new bootstrap.Modal(document.getElementById('penjemputModal'));
     myModal.show();
-    console.log('apa');
   });
 
         // "timur" menjadi nilai bawaan dari info-box saat halaman dimuat
@@ -1101,6 +1148,7 @@ resources\views\bareng.blade.php
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
+    <script src="js/home.js"></script>
 </body>
 
 </html>

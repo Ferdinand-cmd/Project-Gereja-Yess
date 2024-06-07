@@ -24,7 +24,7 @@ resources\views\bareng.blade.php
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans+Hebrew:wght@300&display=swap">
     <link href="css/film.css" rel="stylesheet">
     <style>
-                /* Navbar & footer */
+        /* Navbar & footer */
         body {
             overflow-x: hidden;
         }
@@ -55,6 +55,7 @@ resources\views\bareng.blade.php
             background-color: transparent !important;
         }
 
+        /* Content */
         body {
             margin: 0;
             padding: 0;
@@ -876,10 +877,15 @@ resources\views\bareng.blade.php
     justify-content: center;
     padding: 11px 33px;
     font: 400 50px Material Icons, sans-serif;
+    cursor: pointer;
 }
 
 .status-container .radio-off::before {
     content: 'cancel'; /* Or use the Unicode equivalent */
+}
+
+.status-container .radio-off:hover {
+    background-color: #d92626;
 }
 
 /* @media (max-width: 991px) {
@@ -1186,17 +1192,6 @@ resources\views\bareng.blade.php
                 </div>
             </article>
         </section>
-
-        <!-- Footer -->
-        <div class="container-fluid" style="background-color: black; color: white; border-radius: 30px 30px 0 0;">
-            <div class="row">
-                <div class="col-md-6 d-flex justify-content-start">
-                    <img src="img/ig.png" alt="Instagram">
-                    <img src="img/tiktok.png" alt="TikTok">
-                    <img src="img/yt.png" alt="YouTube">
-                </div>
-            </div>
-        </div>
     </div>
 
     <script>
