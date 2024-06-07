@@ -524,7 +524,6 @@
 </head>
 <body>
     <!-- Navbar -->
-    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="background-color: #000 !important;">
         <div class="container-fluid justify-content-between">
             <a class="navbar-brand" href="#">
@@ -534,7 +533,7 @@
             </a>
             <div class="navbar-nav mx-auto" style="text-align: center;">
                 <ul class="navbar-nav" style="margin-bottom: 10px;">
-                    <li class="nav-item active" style="margin-right: 20px;">
+                    <li class="nav-item" style="margin-right: 20px;">
                         <a class="nav-link" href="/" style="color: #f5f5f5;">Home</a>
                     </li>
                     <li class="nav-item dropdown" style="margin-right: 20px;">
@@ -556,7 +555,7 @@
                     <li class="nav-item" style="margin-right: 20px;">
                         <a class="nav-link" href="/sunday-school" style="color: #f5f5f5;">Sunday School</a>
                     </li>
-                    <li class="nav-item" style="margin-right: 20px;">
+                    <li class="nav-item active" style="margin-right: 20px;">
                         <a class="nav-link" href="/event" style="color: #f5f5f5;">Event</a>
                     </li>
                     <li class="nav-item" style="margin-right: 20px;">
