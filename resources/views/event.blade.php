@@ -97,13 +97,6 @@
             display: flex;
         }
 
-        .subheader-dropdown {
-            display: flex;
-            flex-direction: row;
-            margin-top: 20px;
-            /* Add some top margin for spacing */
-        }
-
         .event-subheader {
             font-family: 'Open Sans Hebrew', sans-serif;
             /* Set font family */
@@ -115,14 +108,8 @@
             /* Set color to black */
             font-weight: lighter;
             /* Set font weight to lighter */
-        }
-
-        .type-dropdown {
-            margin-left: auto;
-            background-color: #000;
-            color: #fff;
-            padding: 10px 20px;
-            font: 700 20px Roboto, sans-serif;
+            margin-top: 20px;
+            /* Add some top margin for spacing */
         }
 
         .event {
@@ -607,22 +594,27 @@
                 Button for the dropdown text that will be replaced by the js method
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <li><a class="dropdown-item" href="#" id="upcoming">Upcoming</a></li>
-                <li><a class="dropdown-item" href="#" id="archived">Archived</a></li>
+                <li><a class="dropdown-item dropdown-type-1" href="#" id="upcoming">Upcoming</a></li>
+                <li><a class="dropdown-item dropdown-type-1" href="#" id="archived">Archived</a></li>
+            </ul>
+        </div>
+        <!-- Dropdown for event filtering -->
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle custom-dropdown-button" type="button"
+                id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                Button for the dropdown text that will be replaced by the js method
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                <li><a class="dropdown-item dropdown-type-2" href="#" id="all">All</a></li>
+                <li><a class="dropdown-item dropdown-type-2" href="#" id="umum">Umum</a></li>
+                <li><a class="dropdown-item dropdown-type-2" href="#" id="ladies devotion">Ladies Devotion</a></li>
+                <li><a class="dropdown-item dropdown-type-2" href="#" id="sunday school">Sunday School</a></li>
+                <li><a class="dropdown-item dropdown-type-2" href="#" id="yess">YESS</a></li>
             </ul>
         </div>
     </div>
-    <div class="subheader-dropdown">
-        <div class="event-subheader">
-            Event subheader content that will be replaced by the js method
-        </div>
-        <select id="type-dropdown" class="type-dropdown">
-            <option value="all" selected>All</option>
-            <option value="umum">Umum</option>
-            <option value="ladies devotion">Ladies Devotion</option>
-            <option value="sunday school">Sunday School</option>
-            <option value="yess">YESS</option>
-        </select>
+    <div class="event-subheader">
+        Event subheader content that will be replaced by the js method
     </div>
 
     <?php
@@ -778,7 +770,7 @@
 
     <script>
         const dropdownMenuButton = document.getElementById("dropdownMenuButton");
-        const typeDropdown = document.getElementById("type-dropdown");
+        const dropdownMenuButton2 = document.getElementById("dropdownMenuButton2");
 
         // Function to redirect to the event detail page
         function redirectToEventDetail(eventId) {
@@ -811,24 +803,26 @@
         // Call attachEventListeners initially
         attachEventListeners();
 
-        // Set the initial button text to "Upcoming"
+        // Set the initial button text
         dropdownMenuButton.innerText = "Upcoming";
+        dropdownMenuButton2.innerText = "All";
 
-        // Set the "Upcoming" option as selected by default when the page loads
+        // Set the default option when the page loads
         window.onload = function() {
             document.getElementById("upcoming").classList.add("active");
-            // Set the initial selectedDropdown value to "upcoming"
+            document.getElementById("all").classList.add("active");
+            // Set the initial value
             const selectedDropdown = "upcoming";
-            const selectedType = typeDropdown.value;
+            const selectedType = "all";
             updateEvents(selectedDropdown, selectedType); // Call the function to update events with the initial value
             updateEventSubheader(selectedDropdown); // Call the function to update the event subheader with the initial value
         };
 
         // Update the button text and apply the active class when an option is clicked
-        document.querySelectorAll('.dropdown-item').forEach(item => {
+        document.querySelectorAll('.dropdown-type-1').forEach(item => {
             item.addEventListener('click', event => {
                 // Remove the active class from all options
-                document.querySelectorAll('.dropdown-item').forEach(option => {
+                document.querySelectorAll('.dropdown-type-1').forEach(option => {
                     option.classList.remove('active');
                 });
 
@@ -840,19 +834,34 @@
 
                 // Get the selected dropdown value
                 const selectedDropdown = event.target.id;
-                const selectedType = typeDropdown.value;
+                const selectedType = document.querySelector('.dropdown-type-2.active').id;
 
                 // Call the function to update events with the selected value
                 updateEvents(selectedDropdown, selectedType);
-                updateEventSubheader(selectedDropdown); // Call the function to update the event subheader with the selected value
             });
         });
 
-        // Add event listener for type-dropdown change
-        typeDropdown.addEventListener('change', event => {
-            const selectedDropdown = document.querySelector('.dropdown-item.active').id;
-            const selectedType = event.target.value;
-            updateEvents(selectedDropdown, selectedType);
+        // Update the button text and apply the active class when an option is clicked
+        document.querySelectorAll('.dropdown-type-2').forEach(item => {
+            item.addEventListener('click', event => {
+                // Remove the active class from all options
+                document.querySelectorAll('.dropdown-type-2').forEach(option => {
+                    option.classList.remove('active');
+                });
+
+                // Add the active class to the clicked option
+                event.target.classList.add('active');
+
+                // Update the button text to the selected option
+                dropdownMenuButton2.innerText = event.target.innerText;
+
+                // Get the selected dropdown value
+                const selectedDropdown = document.querySelector('.dropdown-type-1.active').id;
+                const selectedType = event.target.id;
+
+                // Call the function to update events with the selected value
+                updateEvents(selectedDropdown, selectedType);
+            });
         });
 
         // Function to update the content of the event subheader
@@ -865,7 +874,6 @@
         function updateEvents(selectedDropdown, selectedType) {
             console.log(selectedDropdown);
             console.log(selectedType);
-
             // Loop through all events and hide/show them based on the selected dropdown value
             document.querySelectorAll('.event').forEach(event => {
                 const eventId = event.getAttribute('event-id');
