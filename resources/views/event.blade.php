@@ -44,28 +44,28 @@
             height: 50px;
         }
         /* Untuk membuat tulisan BEST berwarna orange dan memiliki garis bawah orange saat berada di halaman BEST */
-        .nav-item.active .nav-link,
-        .nav-item:hover .nav-link {
+        nav .nav-item.active .nav-link,
+        nav .nav-item:hover .nav-link {
             color: orange !important;
             border-bottom: 2px solid orange;
         }
 
         /* Untuk mengubah warna teks dan garis bawah saat item dropdown ditekan */
-        .dropdown-item:focus,
-        .dropdown-item:hover {
+        nav .dropdown-item:focus,
+        nav .dropdown-item:hover {
             color: orange !important;
             background-color: transparent !important;
         }
 
         /* Untuk mengubah warna teks dan garis bawah saat item dropdown aktif */
-        .dropdown-item.active,
-        .dropdown-item:active {
+        nav .dropdown-item.active,
+        nav .dropdown-item:active {
             color: orange !important;
             background-color: transparent !important;
         }
 
         /* Untuk mengubah warna teks saat dropdown dihover */
-        .dropdown-menu a.dropdown-item:hover {
+        nav .dropdown-menu a.dropdown-item:hover {
             color: orange !important;
             background-color: transparent !important;
         }
@@ -519,76 +519,6 @@
             /* Add top margin to separate the subheader from the first event */
             margin-bottom: 50px;
             /* Add bottom margin to separate pinned events from others */
-        }
-
-        /* CSS for the "Show Archived Events" button */
-        .show-archived-button {
-            margin-top: 20px;
-            margin-bottom: 20px;
-            padding: 10px 20px;
-            background-color: #FFCC00;
-            /* Yellow background color */
-            color: #ffffff;
-            /* White text color */
-            border: none;
-            /* Remove border */
-            border-radius: 10px;
-            /* Add rounded corners */
-            cursor: pointer;
-            /* Change cursor to pointer on hover */
-            transition: background-color 0.3s ease;
-            /* Smooth transition for background color change */
-        }
-
-        /* Change button background color on hover */
-        .show-archived-button:hover {
-            background-color: #eeb120;
-            /* Darker yellow on hover */
-        }
-        .whatsapp-button {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 80px;
-            height: 80px;
-            background-color: green;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-            z-index: 1000;
-            cursor: pointer;
-        }
-        .whatsapp-button img {
-            width: 50px;
-            height: 50px;
-        }
-        /* Untuk membuat tulisan BEST berwarna orange dan memiliki garis bawah orange saat berada di halaman BEST */
-        .nav-item.active .nav-link,
-        .nav-item:hover .nav-link {
-            color: orange !important;
-            border-bottom: 2px solid orange;
-        }
-
-        /* Untuk mengubah warna teks dan garis bawah saat item dropdown ditekan */
-        .dropdown-item:focus,
-        .dropdown-item:hover {
-            color: orange !important;
-            background-color: transparent !important;
-        }
-
-        /* Untuk mengubah warna teks dan garis bawah saat item dropdown aktif */
-        .dropdown-item.active,
-        .dropdown-item:active {
-            color: orange !important;
-            background-color: transparent !important;
-        }
-
-        /* Untuk mengubah warna teks saat dropdown dihover */
-        .dropdown-menu a.dropdown-item:hover {
-            color: orange !important;
-            background-color: transparent !important;
         }
     </style>
 </head>
