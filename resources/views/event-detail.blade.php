@@ -7,11 +7,66 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" />
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Icons:wght@400&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit:wght@600&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" />
+    <link href="https://fonts.googleapis.com/css2?family=Share&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ropa+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link href="css/film.css" rel="stylesheet">
     <style>
+        /* Navbar & footer */
+        body {
+            overflow-x: hidden;
+        }
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 80px;
+            height: 80px;
+            background-color: green;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            cursor: pointer;
+        }
+        .whatsapp-button img {
+            width: 50px;
+            height: 50px;
+        }
+        /* Untuk membuat tulisan BEST berwarna orange dan memiliki garis bawah orange saat berada di halaman BEST */
+        nav .nav-item.active .nav-link,
+        nav .nav-item:hover .nav-link {
+            color: orange !important;
+            border-bottom: 2px solid orange;
+        }
+
+        /* Untuk mengubah warna teks dan garis bawah saat item dropdown ditekan */
+        nav .dropdown-item:focus,
+        nav .dropdown-item:hover {
+            color: orange !important;
+            background-color: transparent !important;
+        }
+
+        /* Untuk mengubah warna teks dan garis bawah saat item dropdown aktif */
+        nav .dropdown-item.active,
+        nav .dropdown-item:active {
+            color: orange !important;
+            background-color: transparent !important;
+        }
+
+        /* Untuk mengubah warna teks saat dropdown dihover */
+        nav .dropdown-menu a.dropdown-item:hover {
+            color: orange !important;
+            background-color: transparent !important;
+        }
+
         :root {
             --default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei", "Source Han Sans CN", sans-serif;
             --primary-color: #eeb120;
@@ -300,152 +355,162 @@
     </style>
 </head>
 <body>
-    <div class="main-container">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="z-index: 1000;">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">
-                    <div class="brand-text">
-                        <img src="img/logo_putih.png" alt="" style="width: 20%; margin-left: 10px;">
-                        <div class="lora-font">BEST CHURCH</div>
-                    </div>
-                </a>
-
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-between" style="text-align:center;" id="navbarNav">
-                    <ul class="navbar-nav" style="margin-bottom:10px;">
-                        <li class="nav-item">
-                            <a class="nav-link" href="/">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/pelayanan">Pelayanan</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/komsel">KomSel</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/bareng">Bareng</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="/event">Event</a>
-                        </li>
-                    </ul>
-                    @auth
-                        <ul class="navbar-nav">
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                    Welcome, {{ auth()->user()->name }}
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    @if (auth()->user()->is_admin)
-                                        <!-- Assuming there's an 'is_admin' attribute -->
-                                        <li><a class="dropdown-item" href="/admin">Admin Dashboard</a></li>
-                                    @endif
-                                    <li>
-                                        <form action="/logout" method="POST">
-                                            @csrf
-                                            <button type="submit" class="dropdown-item">Logout</button>
-                                        </form>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    @else
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link login-link-border" href="/login">Login</a>
-                            </li>
-                        </ul>
-                    @endauth
-
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="background-color: #000 !important;">
+        <div class="container-fluid justify-content-between">
+            <a class="navbar-brand" href="#">
+                <div class="brand-text" style="display: inline-block; margin-left: 10px; color: #f5f5f5;">
+                    <img src="img/bestchurch.png" alt="" style="width: 60%;">
                 </div>
+            </a>
+            <div class="navbar-nav mx-auto" style="text-align: center;">
+                <ul class="navbar-nav" style="margin-bottom: 10px;">
+                    <li class="nav-item" style="margin-right: 20px;">
+                        <a class="nav-link" href="/" style="color: #f5f5f5;">Home</a>
+                    </li>
+                    <li class="nav-item dropdown" style="margin-right: 20px;">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #f5f5f5;">
+                            YESS
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                            <li><a class="dropdown-item" href="/yess" style="color: #000;">YESS</a></li>
+                            <li><a class="dropdown-item" href="/komsel" style="color: #000;">Komsel</a></li>
+                            <li><a class="dropdown-item" href="/bareng" style="color: #000;">Bareng</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item" style="margin-right: 20px;">
+                        <a class="nav-link" href="/jadwal" style="color: #f5f5f5;">Jadwal</a>
+                    </li>
+                    <li class="nav-item" style="margin-right: 20px;">
+                        <a class="nav-link" href="/ladies-devotion" style="color: #f5f5f5;">Ladies Devotion</a>
+                    </li>
+                    <li class="nav-item" style="margin-right: 20px;">
+                        <a class="nav-link" href="/sunday-school" style="color: #f5f5f5;">Sunday School</a>
+                    </li>
+                    <li class="nav-item active" style="margin-right: 20px;">
+                        <a class="nav-link" href="/event" style="color: #f5f5f5;">Event</a>
+                    </li>
+                    <li class="nav-item" style="margin-right: 20px;">
+                        <a class="nav-link" href="/pelayanan" style="color: #f5f5f5;">Pelayanan</a>
+                    </li>
+                </ul>
             </div>
-        </nav>
-        <!-- Content -->
-        <div class="content">
-            <!-- Tombol kembali ke events -->
-            <button class="back-button" onclick="goBackToEvents()">
-                <span class="material-icons">arrow_back</span>
-                Kembali ke events
-            </button>
-            <img src="img/event-photo5.jpg" alt="Event Image" class="event-image">
+            <div class="navbar-nav" style="text-align: right;">
+                <ul class="navbar-nav">
+                    @auth
+                    <li class="nav-item dropdown" style="margin-right: 20px;">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #f5f5f5;">
+                            Welcome, {{ auth()->user()->name }}
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            @if (auth()->user()->is_admin)
+                            <li><a class="dropdown-item" href="/admin" style="color: #000;">Admin Dashboard</a></li>
+                            @endif
+                            <li>
+                                <form action="/logout" method="POST">
+                                    @csrf
+                                    <button type="submit" class="dropdown-item" style="color: #000;">Logout</button>
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+                    @else
+                    <li class="nav-item">
+                        <a class="nav-link login-link-border" href="/login" style="color: #f5f5f5; border: 1px solid #fff; border-radius: 5px; padding: 8px 20px;">Login</a>
+                    </li>
+                    @endauth
+                </ul>
+            </div>
+        </div>
+    </nav>  
+    <a href="https://api.whatsapp.com/send?phone=6285854526955&text=Halo%20mau%20tanya%20gereja" class="whatsapp-button">
+        <img src="img/wa.png" alt="WhatsApp">
+    </a>
 
-            <!-- Header -->
-            <div class="event-header">
-                <h1 class="event-title">YESS Leardership Mission Training VII</h1>
-                <button class="register-button" data-bs-toggle="modal" data-bs-target="#daftarModal">
-                    Daftar
-                    <span class="material-icons">arrow_forward</span>
+    <div>
+        <div class="main-container">
+            <!-- Content -->
+            <div class="content">
+                <!-- Tombol kembali ke events -->
+                <button class="back-button" onclick="goBackToEvents()">
+                    <span class="material-icons">arrow_back</span>
+                    Kembali ke events
                 </button>
-            </div>
-            <div class="event-info">
-                <div class="event-type">umum</div>
-            </div>
-            <!-- Event details -->
-            <div class="event-info">
-                <span class="material-icons">date_range</span>
-                <span>19-21 April 2024</span>
-            </div>
-            <div class="event-info">
-                <span class="material-icons">location_on</span>
-                <span>Desa Bikium, Soe, Nusa Tenggara Timur</span>
-            </div>
-            <p class="event-description">
-                Biarlah semangat misi terus menyala dalam hidup kita.<br />
-                Uis Neno nokan kit, Immanuel!<br />
-                Sampe ketemu di YLMT, basodara dong!
-            </p>
-        </div> 
-        
-        <!-- Modal -->
-        <div class="modal fade" id="daftarModal" tabindex="-1"
-            aria-labelledby="formModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-custom-width">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title modal-event-title" id="formModalLabel">YESS Leardership Mission Training VII
-                        </h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <!-- Your form content goes here -->
-                        <label for="daftar" class="form-label form-label-daftar">Bagi jemaat yang ingin
-                            mendaftar dalam event YESS Surabaya silahkan mengisi form pendaftaran event dibawah ini.</label>
-                        <!-- Alergi Anda -->
-                        <div class="mb-3">
-                            <label for="alergi" class="form-label form-label-alergi">Alergi Anda (jika
-                                tidak punya, isi "-")</label>
-                            <textarea class="form-control" id="alergi" rows="3"
-                                placeholder="Masukkan alergi Anda jika ada"></textarea>
+                <img src="img/event-photo5.jpg" alt="Event Image" class="event-image">
+
+                <!-- Header -->
+                <div class="event-header">
+                    <h1 class="event-title">YESS Leardership Mission Training VII</h1>
+                    <button class="register-button" data-bs-toggle="modal" data-bs-target="#daftarModal">
+                        Daftar
+                        <span class="material-icons">arrow_forward</span>
+                    </button>
+                </div>
+                <div class="event-info">
+                    <div class="event-type">umum</div>
+                </div>
+                <!-- Event details -->
+                <div class="event-info">
+                    <span class="material-icons">date_range</span>
+                    <span>19-21 April 2024</span>
+                </div>
+                <div class="event-info">
+                    <span class="material-icons">location_on</span>
+                    <span>Desa Bikium, Soe, Nusa Tenggara Timur</span>
+                </div>
+                <p class="event-description">
+                    Biarlah semangat misi terus menyala dalam hidup kita.<br />
+                    Uis Neno nokan kit, Immanuel!<br />
+                    Sampe ketemu di YLMT, basodara dong!
+                </p>
+            </div> 
+            
+            <!-- Modal -->
+            <div class="modal fade" id="daftarModal" tabindex="-1"
+                aria-labelledby="formModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-custom-width">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title modal-event-title" id="formModalLabel">YESS Leardership Mission Training VII
+                            </h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <!-- Informasi keluarga yang dapat dihubungi -->
-                        <div class="mb-3">
-                            <label for="informasi" class="form-label form-label-informasi">Informasi
-                                keluarga yang dapat dihubungi</label>
-                            <textarea class="form-control" id="informasi" rows="3"
-                                placeholder="Masukkan nama dan nomor telepon keluarga yang dapat dihubungi"></textarea>
-                            <small>*sertakan nama dan nomor telepon aktif</small>
-                        </div>
-                        <div class="image-container">
-                            <div class="image-text-container">
-                                <p class="image-text-1">Cari circle rohani yang sehat dan bikin semangat?</p>
-                                <p class="image-text-2">YUK SINI MERAPAT!</p>
+                        <div class="modal-body">
+                            <!-- Your form content goes here -->
+                            <label for="daftar" class="form-label form-label-daftar">Bagi jemaat yang ingin
+                                mendaftar dalam event YESS Surabaya silahkan mengisi form pendaftaran event dibawah ini.</label>
+                            <!-- Alergi Anda -->
+                            <div class="mb-3">
+                                <label for="alergi" class="form-label form-label-alergi">Alergi Anda (jika
+                                    tidak punya, isi "-")</label>
+                                <textarea class="form-control" id="alergi" rows="3"
+                                    placeholder="Masukkan alergi Anda jika ada"></textarea>
                             </div>
-                            <img src="img/form.jpg" alt="Image">
+                            <!-- Informasi keluarga yang dapat dihubungi -->
+                            <div class="mb-3">
+                                <label for="informasi" class="form-label form-label-informasi">Informasi
+                                    keluarga yang dapat dihubungi</label>
+                                <textarea class="form-control" id="informasi" rows="3"
+                                    placeholder="Masukkan nama dan nomor telepon keluarga yang dapat dihubungi"></textarea>
+                                <small>*sertakan nama dan nomor telepon aktif</small>
+                            </div>
+                            <div class="image-container">
+                                <div class="image-text-container">
+                                    <p class="image-text-1">Cari circle rohani yang sehat dan bikin semangat?</p>
+                                    <p class="image-text-2">YUK SINI MERAPAT!</p>
+                                </div>
+                                <img src="img/form.jpg" alt="Image">
+                            </div>
                         </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-cancel" data-bs-dismiss="modal">Cancel</button>
-                        <button type="button" class="btn btn-submit">Submit</button>
-                        <!-- You can include additional buttons or actions here -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-cancel" data-bs-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-submit">Submit</button>
+                            <!-- You can include additional buttons or actions here -->
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-
         <!-- Footer -->
         <div class="container-fluid" style="background-color: black; color: white; border-radius: 30px 30px 0 0;">
             <div class="row">
@@ -453,11 +518,6 @@
                     <img src="img/ig.png" alt="Instagram">
                     <img src="img/tiktok.png" alt="TikTok">
                     <img src="img/yt.png" alt="YouTube">
-                </div>
-                <div class="col-md-6 d-flex justify-content-end">
-                    <span style="font-family: 'Roboto', sans-serif; font-size: 20px; margin-top: 20px;">Contact
-                        Us</span>
-                    <img src="img/wa.png" alt="WhatsApp">
                 </div>
             </div>
         </div>
@@ -474,5 +534,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
+    <script src="js/home.js"></script>
 </body>
 </html>

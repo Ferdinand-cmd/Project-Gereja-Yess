@@ -1,0 +1,6 @@
+Cek title
+Cek font
+Masukkan css
+masukkan header & footer
+ganti active class
+home.js

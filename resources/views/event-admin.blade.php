@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>YESS.SUB | Home</title>
+    <title>YESS.SUB | Event (Admin)</title>
     <!-- Include Font Awesome CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -11,7 +11,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500&display=swap" rel="stylesheet">
-
     <link href="css/style.css" rel="stylesheet">
     <style>
         body {
@@ -80,6 +79,14 @@
             /* Add focus style */
         }
 
+        .type-dropdown {
+            margin-left: auto;
+            background-color: #000;
+            color: #fff;
+            padding: 10px 20px;
+            font: 700 20px Roboto, sans-serif;
+        }
+
         /* Add & edit event buttons */
 
         .add-event-button {
@@ -116,12 +123,25 @@
             background-color: #FDFDFD;
         }
 
+        .add-event-modal .type-dropdown-init,
+        .edit-event-modal .type-dropdown-init {
+            font: 500 16px DM Sans, sans-serif;
+            border-radius: 10px;
+            background-color: #EEB120;
+            color: #000;
+        }
+
         .add-event-modal .modal-title,
         .add-event-modal .modal-body,
         .edit-event-modal .modal-title,
         .edit-event-modal .modal-body {
             font-family: Montserrat, sans-serif;
             font-weight: 500;
+        }
+
+        .add-event-modal .form-switch,
+        .edit-event-modal .form-switch {
+            display: inline-block;
         }
 
         /* Switch Off Color */
@@ -145,10 +165,10 @@
             /* This ensures the circle color */
         }
 
-        .add-event-modal .form-check-label .edit-event-modal .form-check-label {
-            font-family: Inter, sans-serif;
-            font-weight: 600;
-        }
+        /* .add-event-modal .form-check-label,
+        .edit-event-modal .form-check-label {
+            font: 600 16px Inter, sans-serif;
+        } */
 
         /* Modal Body */
         .add-event-modal .modal-body,
@@ -474,6 +494,16 @@
             margin-right: 20px;
             /* Add right margin */
         }
+        
+        .event-type {
+            font-weight: bold;
+            width: fit-content;
+            padding: 0 10px;
+            font-size: 1.11em;
+            color: #fff;
+            font-family: 'Roboto', sans-serif;
+            background-color: #000;
+        }
 
         .event-info {
             font-weight: bold;
@@ -601,11 +631,25 @@
         <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle custom-dropdown-button" type="button"
                 id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                Filter
+                Button for the dropdown text that will be replaced by the js method
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <li><a class="dropdown-item" href="#" id="upcoming">Upcoming</a></li>
-                <li><a class="dropdown-item" href="#" id="archived">Archived</a></li>
+                <li><a class="dropdown-item dropdown-type-1" href="#" id="upcoming">Upcoming</a></li>
+                <li><a class="dropdown-item dropdown-type-1" href="#" id="archived">Archived</a></li>
+            </ul>
+        </div>
+        <!-- Dropdown for event filtering -->
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle custom-dropdown-button" type="button"
+                id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                Button for the dropdown text that will be replaced by the js method
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                <li><a class="dropdown-item dropdown-type-2" href="#" id="all">All</a></li>
+                <li><a class="dropdown-item dropdown-type-2" href="#" id="umum">Umum</a></li>
+                <li><a class="dropdown-item dropdown-type-2" href="#" id="ladies devotion">Ladies Devotion</a></li>
+                <li><a class="dropdown-item dropdown-type-2" href="#" id="sunday school">Sunday School</a></li>
+                <li><a class="dropdown-item dropdown-type-2" href="#" id="yess">YESS</a></li>
             </ul>
         </div>
 
@@ -630,7 +674,7 @@
                 'image' => 'img/event-photo1.jpg',
                 'registered_people' => ['Andi', 'Bagus', 'Cahyono'],
                 'archived' => false,
-                'quota' => 10
+                'type' => 'umum'
             ],
             [
                 'id' => 2,
@@ -645,7 +689,8 @@
                 'end_time' => null,
                 'image' => 'img/event-photo2.jpg',
                 'registered_people' => ['Desi', 'Endah', 'Marwoto', 'SBC Ganteng'],
-                'archived' => false
+                'archived' => false,
+                'type' => 'ladies devotion'
             ],
             [
                 'id' => 3,
@@ -660,7 +705,8 @@
                 'end_time' => '19:30',
                 'image' => 'img/event-photo3.jpg',
                 'registered_people' => [],
-                'archived' => true
+                'archived' => true,
+                'type' => 'sunday school'
             ],
             [
                 'id' => 4,
@@ -675,7 +721,8 @@
                 'end_time' => null,
                 'image' => 'img/event-photo4.jpg',
                 'registered_people' => [],
-                'archived' => true
+                'archived' => true,
+                'type' => 'umum'
             ]
         ];
     ?>
@@ -684,7 +731,7 @@
     <div class="events-container">
         <?php foreach ($events as $event): ?>
             <!-- Display events -->
-            <div class="event" event-id="<?php echo $event['id']; ?>">
+            <div class="event" event-id="<?php echo $event['id']; ?>" event-type="<?php echo $event['type']; ?>">
                 <img src="<?php echo $event['image']; ?>" alt="Event Photo">
 
                 <!-- Content (buttons and details) -->
@@ -723,6 +770,7 @@
                     <!-- Event details -->
                     <div class="event-details">
                         <div class="event-title"><?php echo $event['title']; ?></div>
+                        <div class="event-type"><?php echo $event['type']; ?></div>
                         <div class="event-info">
                             <?php
                                 // Fill the event location and date/time (time is optional)
@@ -739,17 +787,26 @@
     <!-- Modals -->
 
     <!-- Modal for Add Event -->
-    <div class="modal fade add-event-modal" id="addEventModal" tabindex="-1" aria-labelledby="addEventModalLabel"
+    <div class="modal fade modal-lg add-event-modal" id="addEventModal" tabindex="-1" aria-labelledby="addEventModalLabel"
         aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header d-flex justify-content-between align-items-center">
                     <h5 class="modal-title" id="addEventModalLabel">Add Event</h5>
                     <!-- Replace close button with switch -->
-                    <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" id="registrationSwitch">
-                        <label class="form-check-label" for="registrationSwitch">Aktifkan Form Pendaftaran</label>
-                    </div>
+                     <div class="header-selection">
+                        <select id="type-dropdown-init" class="type-dropdown-init" required>
+                            <option value="" selected disable>Pilih</option>
+                            <option value="umum">Umum</option>
+                            <option value="ladies devotion">Ladies Devotion</option>
+                            <option value="sunday school">Sunday School</option>
+                            <option value="yess">YESS</option>
+                        </select>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="registrationSwitch">
+                            <label class="form-check-label" for="registrationSwitch">Aktifkan Form Pendaftaran</label>
+                        </div>
+                     </div>
                 </div>
                 <div class="modal-body">
                     <div class="mb-3">
@@ -808,15 +865,27 @@
         </div>
     </div>
 
-    <!-- Modals for edit -->
+    <!-- Modals for Edit Event -->
     <?php foreach ($events as $event): ?>
-    <div class="modal fade edit-event-modal" id="editEventModal<?php echo $event['id']; ?>" tabindex="-1"
+    <div class="modal fade modal-lg edit-event-modal" id="editEventModal<?php echo $event['id']; ?>" tabindex="-1"
         aria-labelledby="editEventModalLabel<?php echo $event['id']; ?>" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header d-flex justify-content-between align-items-center">
                     <h5 class="modal-title" id="editEventModalLabel<?php echo $event['id']; ?>">Edit Event</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <!-- Replace close button with switch -->
+                    <div class="header-selection">
+                        <select id="type-dropdown-init" class="type-dropdown-init" required>
+                            <option value="umum" <?php echo $event['type'] === 'umum' ? 'selected' : '' ?>>Umum</option>
+                            <option value="ladies devotion" <?php echo $event['type'] === 'ladies devotion' ? 'selected' : '' ?>>Ladies Devotion</option>
+                            <option value="sunday school" <?php echo $event['type'] === 'sunday school' ? 'selected' : '' ?>>Sunday School</option>
+                            <option value="yess" <?php echo $event['type'] === 'yess' ? 'selected' : '' ?>>YESS</option>
+                        </select>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="registrationSwitch">
+                            <label class="form-check-label" for="registrationSwitch">Aktifkan Form Pendaftaran</label>
+                        </div>
+                     </div>
                 </div>
                 <div class="modal-body">
                     <div class="mb-3">
@@ -945,22 +1014,28 @@
 
     <!-- Script -->
     <script>
-        // Set the initial button text to "Upcoming"
-        document.getElementById("dropdownMenuButton").innerText = "Upcoming";
+        const dropdownMenuButton = document.getElementById("dropdownMenuButton");
+        const dropdownMenuButton2 = document.getElementById("dropdownMenuButton2");
+
+        // Set the initial button text
+        dropdownMenuButton.innerText = "Upcoming";
+        dropdownMenuButton2.innerText = "All";
         
-        // Set the "Upcoming" option as selected by default when the page loads
+        // Set the default option when the page loads
         window.onload = function() {
             document.getElementById("upcoming").classList.add("active");
-            // Set the initial selectedDropdown value to "upcoming"
-            var selectedDropdown = "upcoming";
-            updateEvents(selectedDropdown); // Call the function to update events with the initial value
+            document.getElementById("all").classList.add("active");
+            // Set the initial value
+            const selectedDropdown = "upcoming";
+            const selectedType = "all";
+            updateEvents(selectedDropdown, selectedType); // Call the function to update events with the initial value
         };
 
         // Update the button text and apply the active class when an option is clicked
-        document.querySelectorAll('.dropdown-item').forEach(item => {
+        document.querySelectorAll('.dropdown-type-1').forEach(item => {
             item.addEventListener('click', event => {
                 // Remove the active class from all options
-                document.querySelectorAll('.dropdown-item').forEach(option => {
+                document.querySelectorAll('.dropdown-type-1').forEach(option => {
                     option.classList.remove('active');
                 });
 
@@ -968,35 +1043,63 @@
                 event.target.classList.add('active');
 
                 // Update the button text to the selected option
-                document.getElementById("dropdownMenuButton").innerText = event.target.innerText;
+                dropdownMenuButton.innerText = event.target.innerText;
 
                 // Get the selected dropdown value
-                var selectedDropdown = event.target.id;
+                const selectedDropdown = event.target.id;
+                const selectedType = document.querySelector('.dropdown-type-2.active').id;
+
                 // Call the function to update events with the selected value
-                updateEvents(selectedDropdown);
+                updateEvents(selectedDropdown, selectedType);
+            });
+        });
+
+        // Update the button text and apply the active class when an option is clicked
+        document.querySelectorAll('.dropdown-type-2').forEach(item => {
+            item.addEventListener('click', event => {
+                // Remove the active class from all options
+                document.querySelectorAll('.dropdown-type-2').forEach(option => {
+                    option.classList.remove('active');
+                });
+
+                // Add the active class to the clicked option
+                event.target.classList.add('active');
+
+                
+                // Update the button text to the selected option
+                dropdownMenuButton2.innerText = event.target.innerText;
+
+                // Get the selected dropdown value
+                const selectedDropdown = document.querySelector('.dropdown-type-1.active').id;
+                const selectedType = event.target.id;
+
+                // Call the function to update events with the selected value
+                updateEvents(selectedDropdown, selectedType);
             });
         });
 
         // JavaScript function to handle dropdown change
-        function updateEvents(selectedDropdown) {
+        function updateEvents(selectedDropdown, selectedType) {
             // Loop through all events and hide/show them based on the selected dropdown value
             document.querySelectorAll('.event').forEach(event => {
                 const eventId = event.getAttribute('event-id');
+                const eventType = event.getAttribute('event-type');
                 const eventInfo = <?php echo json_encode($events); ?>;
                 const eventData = eventInfo.find(e => e.id === parseInt(eventId));
                 const archiveButton = event.querySelector('.archive-button');
 
-                if (selectedDropdown === 'upcoming' && !eventData.archived) {
+                const isDropdownMatch = (selectedDropdown === 'upcoming' && !eventData.archived) || (selectedDropdown === 'archived' && eventData.archived);
+                const isTypeMatch = selectedType === 'all' || eventType === selectedType;
+
+                if (isDropdownMatch && isTypeMatch) {
                     event.style.display = 'block'; // Show the event
-                    // Change text on archive button to "Archive"
+                    // Update text on archive button based on the selected dropdown value
                     if (archiveButton) {
-                        archiveButton.innerHTML = '<i class="fas fa-archive"></i> Archive';
-                    }
-                } else if (selectedDropdown === 'archived' && eventData.archived) {
-                    event.style.display = 'block'; // Show the event
-                    // Change text on archive button to "Restore"
-                    if (archiveButton) {
-                        archiveButton.innerHTML = '<i class="fas fa-undo"></i> Restore';
+                        if (selectedDropdown === 'upcoming') {
+                            archiveButton.innerHTML = '<i class="fas fa-archive"></i> Archive';
+                        } else if (selectedDropdown === 'archived') {
+                            archiveButton.innerHTML = '<i class="fas fa-undo"></i> Restore';
+                        }
                     }
                 } else {
                     event.style.display = 'none'; // Hide the event

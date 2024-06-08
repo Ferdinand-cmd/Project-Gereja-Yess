@@ -16,10 +16,61 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Icons:wght@400&display=swap" />
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/film.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400&display=swap');
 
+        /* Navbar & footer */
+        body {
+            overflow-x: hidden;
+        }
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 80px;
+            height: 80px;
+            background-color: green;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            cursor: pointer;
+        }
+        .whatsapp-button img {
+            width: 50px;
+            height: 50px;
+        }
+        /* Untuk membuat tulisan BEST berwarna orange dan memiliki garis bawah orange saat berada di halaman BEST */
+        nav .nav-item.active .nav-link,
+        nav .nav-item:hover .nav-link {
+            color: orange !important;
+            border-bottom: 2px solid orange;
+        }
+
+        /* Untuk mengubah warna teks dan garis bawah saat item dropdown ditekan */
+        nav .dropdown-item:focus,
+        nav .dropdown-item:hover {
+            color: orange !important;
+            background-color: transparent !important;
+        }
+
+        /* Untuk mengubah warna teks dan garis bawah saat item dropdown aktif */
+        nav .dropdown-item.active,
+        nav .dropdown-item:active {
+            color: orange !important;
+            background-color: transparent !important;
+        }
+
+        /* Untuk mengubah warna teks saat dropdown dihover */
+        nav .dropdown-menu a.dropdown-item:hover {
+            color: orange !important;
+            background-color: transparent !important;
+        }
+
+        /* Content */
         body {
             background-color: white;
             /* Set the background color to white */
@@ -98,13 +149,6 @@
             display: flex;
         }
 
-        .subheader-dropdown {
-            display: flex;
-            flex-direction: row;
-            margin-top: 20px;
-            /* Add some top margin for spacing */
-        }
-
         .event-subheader {
             font-family: 'Open Sans Hebrew', sans-serif;
             /* Set font family */
@@ -116,14 +160,8 @@
             /* Set color to black */
             font-weight: lighter;
             /* Set font weight to lighter */
-        }
-
-        .type-dropdown {
-            margin-left: auto;
-            background-color: #000;
-            color: #fff;
-            padding: 10px 20px;
-            font: 700 20px Roboto, sans-serif;
+            margin-top: 20px;
+            /* Add some top margin for spacing */
         }
 
         .event {
@@ -482,80 +520,9 @@
             margin-bottom: 50px;
             /* Add bottom margin to separate pinned events from others */
         }
-
-        /* CSS for the "Show Archived Events" button */
-        .show-archived-button {
-            margin-top: 20px;
-            margin-bottom: 20px;
-            padding: 10px 20px;
-            background-color: #FFCC00;
-            /* Yellow background color */
-            color: #ffffff;
-            /* White text color */
-            border: none;
-            /* Remove border */
-            border-radius: 10px;
-            /* Add rounded corners */
-            cursor: pointer;
-            /* Change cursor to pointer on hover */
-            transition: background-color 0.3s ease;
-            /* Smooth transition for background color change */
-        }
-
-        /* Change button background color on hover */
-        .show-archived-button:hover {
-            background-color: #eeb120;
-            /* Darker yellow on hover */
-        }
-        .whatsapp-button {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 80px;
-            height: 80px;
-            background-color: green;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-            z-index: 1000;
-            cursor: pointer;
-        }
-        .whatsapp-button img {
-            width: 50px;
-            height: 50px;
-        }
-        /* Untuk membuat tulisan BEST berwarna orange dan memiliki garis bawah orange saat berada di halaman BEST */
-        .nav-item.active .nav-link,
-        .nav-item:hover .nav-link {
-            color: orange !important;
-            border-bottom: 2px solid orange;
-        }
-
-        /* Untuk mengubah warna teks dan garis bawah saat item dropdown ditekan */
-        .dropdown-item:focus,
-        .dropdown-item:hover {
-            color: orange !important;
-            background-color: transparent !important;
-        }
-
-        /* Untuk mengubah warna teks dan garis bawah saat item dropdown aktif */
-        .dropdown-item.active,
-        .dropdown-item:active {
-            color: orange !important;
-            background-color: transparent !important;
-        }
-
-        /* Untuk mengubah warna teks saat dropdown dihover */
-        .dropdown-menu a.dropdown-item:hover {
-            color: orange !important;
-            background-color: transparent !important;
-        }
     </style>
 </head>
 <body>
-    <!-- Navbar -->
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="background-color: #000 !important;">
         <div class="container-fluid justify-content-between">
@@ -566,7 +533,7 @@
             </a>
             <div class="navbar-nav mx-auto" style="text-align: center;">
                 <ul class="navbar-nav" style="margin-bottom: 10px;">
-                    <li class="nav-item active" style="margin-right: 20px;">
+                    <li class="nav-item" style="margin-right: 20px;">
                         <a class="nav-link" href="/" style="color: #f5f5f5;">Home</a>
                     </li>
                     <li class="nav-item dropdown" style="margin-right: 20px;">
@@ -588,7 +555,7 @@
                     <li class="nav-item" style="margin-right: 20px;">
                         <a class="nav-link" href="/sunday-school" style="color: #f5f5f5;">Sunday School</a>
                     </li>
-                    <li class="nav-item" style="margin-right: 20px;">
+                    <li class="nav-item active" style="margin-right: 20px;">
                         <a class="nav-link" href="/event" style="color: #f5f5f5;">Event</a>
                     </li>
                     <li class="nav-item" style="margin-right: 20px;">
@@ -629,176 +596,181 @@
     </a>
 
     <!-- Content -->
-    <div class="event-header-container">
-        <div class="event-header">
-            <div class="header-text">Upcoming Events</div>
+    <div>
+        <div class="event-header-container">
+            <div class="event-header">
+                <div class="header-text">Upcoming Events</div>
+            </div>
+            <!-- Dropdown for event filtering -->
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle custom-dropdown-button" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                    Button for the dropdown text that will be replaced by the js method
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <li><a class="dropdown-item dropdown-type-1" href="#" id="upcoming">Upcoming</a></li>
+                    <li><a class="dropdown-item dropdown-type-1" href="#" id="archived">Archived</a></li>
+                </ul>
+            </div>
+            <!-- Dropdown for event filtering -->
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle custom-dropdown-button" type="button"
+                    id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                    Button for the dropdown text that will be replaced by the js method
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                    <li><a class="dropdown-item dropdown-type-2" href="#" id="all">All</a></li>
+                    <li><a class="dropdown-item dropdown-type-2" href="#" id="umum">Umum</a></li>
+                    <li><a class="dropdown-item dropdown-type-2" href="#" id="ladies devotion">Ladies Devotion</a></li>
+                    <li><a class="dropdown-item dropdown-type-2" href="#" id="sunday school">Sunday School</a></li>
+                    <li><a class="dropdown-item dropdown-type-2" href="#" id="yess">YESS</a></li>
+                </ul>
+            </div>
         </div>
-        <!-- Dropdown for event filtering -->
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle custom-dropdown-button" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                Button for the dropdown text that will be replaced by the js method
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <li><a class="dropdown-item" href="#" id="upcoming">Upcoming</a></li>
-                <li><a class="dropdown-item" href="#" id="archived">Archived</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="subheader-dropdown">
         <div class="event-subheader">
             Event subheader content that will be replaced by the js method
         </div>
-        <select id="type-dropdown" class="type-dropdown">
-            <option value="all" selected>All</option>
-            <option value="umum">Umum</option>
-            <option value="ladies devotion">Ladies Devotion</option>
-            <option value="sunday school">Sunday School</option>
-            <option value="yess">YESS</option>
-        </select>
-    </div>
 
-    <?php
-        $events = [
-            [
-                'id' => 1,
-                'title' => 'Putus atau Terus 1',
-                'location' => 'Ciputra World Mall 2nd floor',
-                'description' => 'YESS Surabaya Valentine\'s Day Celebration "Putus atau Terus"
-                Ini adalah kesempatan untuk terinspirasi sebagai pasangan!
-                juga merupakan PENGALAMAN YANG HEBAT bagi kamu ya...', 
-                'start_date' => '2024-03-30',
-                'start_time' => '16:30',
-                'end_date' => '2024-03-30',
-                'end_time' => '19:30',
-                'image' => 'img/event-photo1.jpg',
-                'registered_people' => ['Andi', 'Bagus', 'Cahyono'],
-                'archived' => false,
-                'type' => 'umum'
-            ],
-            [
-                'id' => 2,
-                'title' => 'YESS Leardership Mission Training VII',
-                'location' => 'Desa Birkium, Soe, Nusa Tenggara Timur',
-                'description' => 'Biarlah semangat misi terus menyala dalam hidup kita.
-                Uis Neno nokan kit, Immanuel!
-                Sampe ketemu di YLMT, basodara dong!',
-                'start_date' => '2024-04-19',
-                'start_time' => null,
-                'end_date' => '2024-04-21',
-                'end_time' => null,
-                'image' => 'img/event-photo2.jpg',
-                'registered_people' => ['Desi', 'Endah', 'Marwoto', 'SBC Ganteng'],
-                'archived' => false,
-                'type' => 'ladies devotion'
-            ],
-            [
-                'id' => 3,
-                'title' => 'Putus atau Terus 2',
-                'location' => 'Ciputra World Mall 2nd floor',
-                'description' => 'YESS Surabaya Valentine\'s Day Celebration "Putus atau Terus"
-                Ini adalah kesempatan untuk terinspirasi sebagai pasangan!
-                juga merupakan PENGALAMAN YANG HEBAT bagi kamu ya...', 
-                'start_date' => '2024-03-30',
-                'start_time' => '16:30',
-                'end_date' => '2024-03-30',
-                'end_time' => '19:30',
-                'image' => 'img/event-photo3.jpg',
-                'registered_people' => [],
-                'archived' => true,
-                'type' => 'sunday school'
-            ],
-            [
-                'id' => 4,
-                'title' => 'YESS Leardership Mission Training VIII',
-                'location' => 'Desa Birkium, Soe, Nusa Tenggara Timur',
-                'description' => 'Biarlah semangat misi terus menyala dalam hidup kita.
-                Uis Neno nokan kit, Immanuel!
-                Sampe ketemu di YLMT, basodara dong!',
-                'start_date' => '2024-04-19',
-                'start_time' => null,
-                'end_date' => '2024-04-21',
-                'end_time' => null,
-                'image' => 'img/event-photo4.jpg',
-                'registered_people' => [],
-                'archived' => true,
-                'type' => 'umum'
-            ]
-        ];
-    ?>
+        <?php
+            $events = [
+                [
+                    'id' => 1,
+                    'title' => 'Putus atau Terus 1',
+                    'location' => 'Ciputra World Mall 2nd floor',
+                    'description' => 'YESS Surabaya Valentine\'s Day Celebration "Putus atau Terus"
+                    Ini adalah kesempatan untuk terinspirasi sebagai pasangan!
+                    juga merupakan PENGALAMAN YANG HEBAT bagi kamu ya...', 
+                    'start_date' => '2024-03-30',
+                    'start_time' => '16:30',
+                    'end_date' => '2024-03-30',
+                    'end_time' => '19:30',
+                    'image' => 'img/event-photo1.jpg',
+                    'registered_people' => ['Andi', 'Bagus', 'Cahyono'],
+                    'archived' => false,
+                    'type' => 'umum'
+                ],
+                [
+                    'id' => 2,
+                    'title' => 'YESS Leardership Mission Training VII',
+                    'location' => 'Desa Birkium, Soe, Nusa Tenggara Timur',
+                    'description' => 'Biarlah semangat misi terus menyala dalam hidup kita.
+                    Uis Neno nokan kit, Immanuel!
+                    Sampe ketemu di YLMT, basodara dong!',
+                    'start_date' => '2024-04-19',
+                    'start_time' => null,
+                    'end_date' => '2024-04-21',
+                    'end_time' => null,
+                    'image' => 'img/event-photo2.jpg',
+                    'registered_people' => ['Desi', 'Endah', 'Marwoto', 'SBC Ganteng'],
+                    'archived' => false,
+                    'type' => 'ladies devotion'
+                ],
+                [
+                    'id' => 3,
+                    'title' => 'Putus atau Terus 2',
+                    'location' => 'Ciputra World Mall 2nd floor',
+                    'description' => 'YESS Surabaya Valentine\'s Day Celebration "Putus atau Terus"
+                    Ini adalah kesempatan untuk terinspirasi sebagai pasangan!
+                    juga merupakan PENGALAMAN YANG HEBAT bagi kamu ya...', 
+                    'start_date' => '2024-03-30',
+                    'start_time' => '16:30',
+                    'end_date' => '2024-03-30',
+                    'end_time' => '19:30',
+                    'image' => 'img/event-photo3.jpg',
+                    'registered_people' => [],
+                    'archived' => true,
+                    'type' => 'sunday school'
+                ],
+                [
+                    'id' => 4,
+                    'title' => 'YESS Leardership Mission Training VIII',
+                    'location' => 'Desa Birkium, Soe, Nusa Tenggara Timur',
+                    'description' => 'Biarlah semangat misi terus menyala dalam hidup kita.
+                    Uis Neno nokan kit, Immanuel!
+                    Sampe ketemu di YLMT, basodara dong!',
+                    'start_date' => '2024-04-19',
+                    'start_time' => null,
+                    'end_date' => '2024-04-21',
+                    'end_time' => null,
+                    'image' => 'img/event-photo4.jpg',
+                    'registered_people' => [],
+                    'archived' => true,
+                    'type' => 'umum'
+                ]
+            ];
+        ?>
 
-    <!-- Modal -->
-    <?php foreach ($events as $event): ?>
-    <div class="modal fade" id="formModal<?php echo $event['id']; ?>" tabindex="-1"
-        aria-labelledby="formModalLabel<?php echo $event['id']; ?>" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-custom-width">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title modal-event-title" id="formModalLabel<?php echo $event['id']; ?>">
-                        <?php echo $event['title']; ?>
-                    </h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <!-- Your form content goes here -->
-                    <label for="daftar<?php echo $event['id']; ?>" class="form-label form-label-daftar">Bagi jemaat yang ingin
-                        mendaftar dalam event YESS Surabaya silahkan mengisi form pendaftaran event dibawah ini.</label>
-                    <!-- Alergi Anda -->
-                    <div class="mb-3">
-                        <label for="alergi<?php echo $event['id']; ?>" class="form-label form-label-alergi">Alergi Anda (jika
-                            tidak punya, isi "-")</label>
-                        <textarea class="form-control" id="alergi<?php echo $event['id']; ?>" rows="3"
-                            placeholder="Masukkan alergi Anda jika ada"></textarea>
+        <!-- Modal -->
+        <?php foreach ($events as $event): ?>
+        <div class="modal fade" id="formModal<?php echo $event['id']; ?>" tabindex="-1"
+            aria-labelledby="formModalLabel<?php echo $event['id']; ?>" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-custom-width">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title modal-event-title" id="formModalLabel<?php echo $event['id']; ?>">
+                            <?php echo $event['title']; ?>
+                        </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <!-- Informasi keluarga yang dapat dihubungi -->
-                    <div class="mb-3">
-                        <label for="informasi<?php echo $event['id']; ?>" class="form-label form-label-informasi">Informasi
-                            keluarga yang dapat dihubungi</label>
-                        <textarea class="form-control" id="informasi<?php echo $event['id']; ?>" rows="3"
-                            placeholder="Masukkan nama dan nomor telepon keluarga yang dapat dihubungi"></textarea>
-                        <small>*sertakan nama dan nomor telepon aktif</small>
-                    </div>
-                    <div class="image-container">
-                        <div class="image-text-container">
-                            <p class="image-text-1">Cari circle rohani yang sehat dan bikin semangat?</p>
-                            <p class="image-text-2">YUK SINI MERAPAT!</p>
+                    <div class="modal-body">
+                        <!-- Your form content goes here -->
+                        <label for="daftar<?php echo $event['id']; ?>" class="form-label form-label-daftar">Bagi jemaat yang ingin
+                            mendaftar dalam event YESS Surabaya silahkan mengisi form pendaftaran event dibawah ini.</label>
+                        <!-- Alergi Anda -->
+                        <div class="mb-3">
+                            <label for="alergi<?php echo $event['id']; ?>" class="form-label form-label-alergi">Alergi Anda (jika
+                                tidak punya, isi "-")</label>
+                            <textarea class="form-control" id="alergi<?php echo $event['id']; ?>" rows="3"
+                                placeholder="Masukkan alergi Anda jika ada"></textarea>
                         </div>
-                        <img src="img/form.png" alt="Image">
+                        <!-- Informasi keluarga yang dapat dihubungi -->
+                        <div class="mb-3">
+                            <label for="informasi<?php echo $event['id']; ?>" class="form-label form-label-informasi">Informasi
+                                keluarga yang dapat dihubungi</label>
+                            <textarea class="form-control" id="informasi<?php echo $event['id']; ?>" rows="3"
+                                placeholder="Masukkan nama dan nomor telepon keluarga yang dapat dihubungi"></textarea>
+                            <small>*sertakan nama dan nomor telepon aktif</small>
+                        </div>
+                        <div class="image-container">
+                            <div class="image-text-container">
+                                <p class="image-text-1">Cari circle rohani yang sehat dan bikin semangat?</p>
+                                <p class="image-text-2">YUK SINI MERAPAT!</p>
+                            </div>
+                            <img src="img/form.png" alt="Image">
+                        </div>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-cancel" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-submit">Submit</button>
-                    <!-- You can include additional buttons or actions here -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-cancel" data-bs-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-submit">Submit</button>
+                        <!-- You can include additional buttons or actions here -->
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <?php endforeach; ?>
-
-    <!-- Events -->
-    <div class="events-container">
-        <?php foreach ($events as $event): ?>
-            <!-- Display all events initially with a class 'event' -->
-            <div class="event" event-id="<?php echo $event['id']; ?>" event-type="<?php echo $event['type']; ?>" <?php echo $event['archived'] ? 'data-archived="true"' : 'data-archived="false"'; ?>>
-                <img src="<?php echo $event['image']; ?>" alt="Event Photo">
-                <div class="event-details">
-                    <div class="event-title"><?php echo $event['title']; ?></div>
-                    <div class="event-type"><?php echo $event['type']; ?></div>
-                    <div class="event-date">
-                        <?php
-                            // Fill the event location and date/time (time is optional)
-                            echo $event['location'].' | '.$event['start_date'].(isset($event['start_time']) ? ' '.$event['start_time'] : '').' - '.$event['end_date'].(isset($event['end_time']) ? ' '.$event['end_time'] : '');
-                        ?>
-                    </div>
-                    <div class="event-description"><?php echo $event['description']; ?></div>
-                </div>
-                <button class="daftar-button" data-bs-toggle="modal" data-bs-target="#formModal<?php echo $event['id']; ?>" onclick="openFormModal(<?php echo $event['id']; ?>)">Daftar <span class="material-icons">arrow_forward</span></button>
-            </div>
         <?php endforeach; ?>
-    </div>
 
-    <!-- Footer -->
-    <div class="container-fluid" style="background-color: black; color: white; border-radius: 30px 30px 0 0;">
+        <!-- Events -->
+        <div class="events-container">
+            <?php foreach ($events as $event): ?>
+                <!-- Display all events initially with a class 'event' -->
+                <div class="event" event-id="<?php echo $event['id']; ?>" event-type="<?php echo $event['type']; ?>" <?php echo $event['archived'] ? 'data-archived="true"' : 'data-archived="false"'; ?>>
+                    <img src="<?php echo $event['image']; ?>" alt="Event Photo">
+                    <div class="event-details">
+                        <div class="event-title"><?php echo $event['title']; ?></div>
+                        <div class="event-type"><?php echo $event['type']; ?></div>
+                        <div class="event-date">
+                            <?php
+                                // Fill the event location and date/time (time is optional)
+                                echo $event['location'].' | '.$event['start_date'].(isset($event['start_time']) ? ' '.$event['start_time'] : '').' - '.$event['end_date'].(isset($event['end_time']) ? ' '.$event['end_time'] : '');
+                            ?>
+                        </div>
+                        <div class="event-description"><?php echo $event['description']; ?></div>
+                    </div>
+                    <button class="daftar-button" data-bs-toggle="modal" data-bs-target="#formModal<?php echo $event['id']; ?>" onclick="openFormModal(<?php echo $event['id']; ?>)">Daftar <span class="material-icons">arrow_forward</span></button>
+                </div>
+            <?php endforeach; ?>
+        </div>
+        <!-- Footer -->
+        <div class="container-fluid" style="background-color: black; color: white; border-radius: 30px 30px 0 0;">
             <div class="row">
                 <div class="col-md-6 d-flex justify-content-start">
                     <img src="img/ig.png" alt="Instagram">
@@ -806,11 +778,12 @@
                     <img src="img/yt.png" alt="YouTube">
                 </div>
             </div>
+        </div>
     </div>
 
     <script>
         const dropdownMenuButton = document.getElementById("dropdownMenuButton");
-        const typeDropdown = document.getElementById("type-dropdown");
+        const dropdownMenuButton2 = document.getElementById("dropdownMenuButton2");
 
         // Function to redirect to the event detail page
         function redirectToEventDetail(eventId) {
@@ -843,24 +816,26 @@
         // Call attachEventListeners initially
         attachEventListeners();
 
-        // Set the initial button text to "Upcoming"
+        // Set the initial button text
         dropdownMenuButton.innerText = "Upcoming";
+        dropdownMenuButton2.innerText = "All";
 
-        // Set the "Upcoming" option as selected by default when the page loads
+        // Set the default option when the page loads
         window.onload = function() {
             document.getElementById("upcoming").classList.add("active");
-            // Set the initial selectedDropdown value to "upcoming"
+            document.getElementById("all").classList.add("active");
+            // Set the initial value
             const selectedDropdown = "upcoming";
-            const selectedType = typeDropdown.value;
+            const selectedType = "all";
             updateEvents(selectedDropdown, selectedType); // Call the function to update events with the initial value
             updateEventSubheader(selectedDropdown); // Call the function to update the event subheader with the initial value
         };
 
         // Update the button text and apply the active class when an option is clicked
-        document.querySelectorAll('.dropdown-item').forEach(item => {
+        document.querySelectorAll('.dropdown-type-1').forEach(item => {
             item.addEventListener('click', event => {
                 // Remove the active class from all options
-                document.querySelectorAll('.dropdown-item').forEach(option => {
+                document.querySelectorAll('.dropdown-type-1').forEach(option => {
                     option.classList.remove('active');
                 });
 
@@ -872,19 +847,34 @@
 
                 // Get the selected dropdown value
                 const selectedDropdown = event.target.id;
-                const selectedType = typeDropdown.value;
+                const selectedType = document.querySelector('.dropdown-type-2.active').id;
 
                 // Call the function to update events with the selected value
                 updateEvents(selectedDropdown, selectedType);
-                updateEventSubheader(selectedDropdown); // Call the function to update the event subheader with the selected value
             });
         });
 
-        // Add event listener for type-dropdown change
-        typeDropdown.addEventListener('change', event => {
-            const selectedDropdown = document.querySelector('.dropdown-item.active').id;
-            const selectedType = event.target.value;
-            updateEvents(selectedDropdown, selectedType);
+        // Update the button text and apply the active class when an option is clicked
+        document.querySelectorAll('.dropdown-type-2').forEach(item => {
+            item.addEventListener('click', event => {
+                // Remove the active class from all options
+                document.querySelectorAll('.dropdown-type-2').forEach(option => {
+                    option.classList.remove('active');
+                });
+
+                // Add the active class to the clicked option
+                event.target.classList.add('active');
+
+                // Update the button text to the selected option
+                dropdownMenuButton2.innerText = event.target.innerText;
+
+                // Get the selected dropdown value
+                const selectedDropdown = document.querySelector('.dropdown-type-1.active').id;
+                const selectedType = event.target.id;
+
+                // Call the function to update events with the selected value
+                updateEvents(selectedDropdown, selectedType);
+            });
         });
 
         // Function to update the content of the event subheader
@@ -897,7 +887,6 @@
         function updateEvents(selectedDropdown, selectedType) {
             console.log(selectedDropdown);
             console.log(selectedType);
-
             // Loop through all events and hide/show them based on the selected dropdown value
             document.querySelectorAll('.event').forEach(event => {
                 const eventId = event.getAttribute('event-id');
@@ -928,6 +917,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
+    <script src="js/home.js"></script>
 </body>
 
 </html>
