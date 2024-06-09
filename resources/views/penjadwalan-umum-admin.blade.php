@@ -275,9 +275,11 @@
                                             </td>
                                             <td>Minggu, 7 April 2014</td>
                                             <td class="arrow-cell">
-                                                <button class="arrow-btn">
-                                                    <span class="material-icons">arrow_forward</span>
-                                                </button>
+                                                <a href="penjadwalan-umum-detail-admin.blade.php" class="arrow-link">
+                                                    <button class="arrow-btn">
+                                                        <span class="material-icons">arrow_forward</span>
+                                                    </button>
+                                                </a>
                                             </td>
                                         </tr>
                                         <tr>
@@ -289,9 +291,11 @@
                                             </td>
                                             <td>Minggu, 14 April 2014</td>
                                             <td class="arrow-cell">
-                                                <button class="arrow-btn">
-                                                    <span class="material-icons">arrow_forward</span>
-                                                </button>
+                                                <a href="penjadwalan-umum-detail-admin.blade.php" class="arrow-link">
+                                                    <button class="arrow-btn">
+                                                        <span class="material-icons">arrow_forward</span>
+                                                    </button>
+                                                </a>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -345,46 +349,50 @@
         </div>
     </body>
     <script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Get all switch elements
-    var switches = document.querySelectorAll('.form-check-input');
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all switch elements
+            var switches = document.querySelectorAll('.form-check-input');
 
-    // Iterate over each switch and add event listener
-    switches.forEach(function(switchElement) {
-        switchElement.addEventListener('change', function() {
-            // Get the corresponding label and row elements
-            var switchLabel = document.querySelector('label[for="' + switchElement.id + '"]');
-            var tableRow = switchElement.closest('tr');
-            var arrowCell = tableRow.querySelector('.arrow-cell');
-            var arrowButton = arrowCell.querySelector('.arrow-btn');
+            // Iterate over each switch and add event listener
+            switches.forEach(function(switchElement) {
+                switchElement.addEventListener('change', function() {
+                    // Get the corresponding label and row elements
+                    var switchLabel = document.querySelector('label[for="' + switchElement.id + '"]');
+                    var tableRow = switchElement.closest('tr');
+                    var arrowCell = tableRow.querySelector('.arrow-cell');
+                    var arrowLink = arrowCell.querySelector('.arrow-link');
 
-            // Check the switch state
-            if (switchElement.checked) {
-                // If switch is on, change label text to "On"
-                switchLabel.textContent = 'On';
-                // Remove table-secondary class from row
-                tableRow.classList.remove('table-secondary');
-                // If arrow button is not present, add it back
-                if (!arrowButton) {
-                    var newButton = document.createElement('button');
-                    newButton.classList.add('arrow-btn');
-                    newButton.innerHTML = '<span class="material-icons">arrow_forward</span>';
-                    arrowCell.appendChild(newButton);
-                }
-            } else {
-                // If switch is off, change label text to "Off"
-                switchLabel.textContent = 'Off';
-                // Add table-secondary class to row
-                tableRow.classList.add('table-secondary');
-                // Remove the arrow button element
-                if (arrowButton) {
-                    arrowButton.remove();
-                }
-            }
+                    // Check the switch state
+                    if (switchElement.checked) {
+                        // If switch is on, change label text to "On"
+                        switchLabel.textContent = 'On';
+                        // Remove table-secondary class from row
+                        tableRow.classList.remove('table-secondary');
+                        // If arrow link is not present, add it back
+                        if (!arrowLink) {
+                            var newLink = document.createElement('a');
+                            newLink.classList.add('arrow-link');
+                            // Set href attribute based on the switch id or any other logic
+                            newLink.href = (switchElement.id === 'availability1') ? 'penjadwalan-umum-detail-admin.blade.php' : 'penjadwalan-umum-detail-admin.blade.php';
+                            var newButton = document.createElement('button');
+                            newButton.classList.add('arrow-btn');
+                            newButton.innerHTML = '<span class="material-icons">arrow_forward</span>';
+                            newLink.appendChild(newButton);
+                            arrowCell.appendChild(newLink);
+                        }
+                    } else {
+                        // If switch is off, change label text to "Off"
+                        switchLabel.textContent = 'Off';
+                        // Add table-secondary class to row
+                        tableRow.classList.add('table-secondary');
+                        // Remove the arrow link element
+                        if (arrowLink) {
+                            arrowLink.remove();
+                        }
+                    }
+                });
+            });
         });
-    });
-});
-
     
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
