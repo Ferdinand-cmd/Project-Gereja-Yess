@@ -552,7 +552,7 @@
                             var newArrowButton = document.createElement('button');
                             newArrowButton.classList.add('arrow-btn');
                             newArrowButton.setAttribute('data-bs-toggle', 'modal');
-                            newArrowButton.setAttribute('data-bs-target', '#kebutuhanModal');
+                            newArrowButton.setAttribute('data-bs-target', '#kebutuhanModal'); // Replace '#kebutuhanModal' with wanted modal ID
                             newArrowButton.innerHTML = '<span class="material-icons">arrow_forward</span>';
                             arrowCell.appendChild(newArrowButton);
                         }
@@ -587,8 +587,6 @@
                 });
             });
         });
-
-    
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">

@@ -321,7 +321,7 @@
                                             </td>
                                             <td>Minggu, 14 April 2014</td>
                                             <td class="arrow-cell">
-                                                <a href="pelayanan-umum-detail-admin.blade.php" class="arrow-link">
+                                                <a href="penjadwalan-umum-detail-admin.blade.php" class="arrow-link">
                                                     <button class="arrow-btn">
                                                         <span class="material-icons">arrow_forward</span>
                                                     </button>
