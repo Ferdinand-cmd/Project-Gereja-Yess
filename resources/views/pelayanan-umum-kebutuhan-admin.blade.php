@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>YESS.SUB | Penjadwalan Umum Detail (Admin)</title>
+    <title>YESS.SUB | Pelayanan Umum Kebutuhan (Admin)</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -90,12 +90,12 @@
         }
 
         .date {
-        color: #fff;
-        align-self: end;
-        margin-top: 21px;
-        flex-grow: 1;
-        flex-basis: auto;
-        font: 600 32px Kanit, sans-serif;
+            color: #fff;
+            align-self: end;
+            margin-top: 21px;
+            flex-grow: 1;
+            flex-basis: auto;
+            font: 600 32px Kanit, sans-serif;
         }
 
         .btn-edit {
@@ -122,93 +122,6 @@
 
         .main-content-2 label {
             color: #fff;
-        }
-
-        .content-card {
-            border-radius: 20px;
-            border: 1px solid rgba(0, 0, 0, 1);
-            background-color: #f4f4f4;
-            display: flex;
-            width: 100%;
-            max-width: 1328px;
-            flex-direction: column;
-            color: #000;
-            padding: 28px 42px;
-        }
-
-        @media (max-width: 991px) {
-            .content-card {
-                max-width: 100%;
-                margin-bottom: 40px;
-                padding: 0 20px;
-            }
-        }
-
-        .content-date {
-            margin-left: 10px;
-            font-weight: 700;
-            display: inline-block;
-        }
-
-        @media (max-width: 991px) {
-            .content-date {
-                margin-left: 5px;
-            }
-        }
-
-        .content-date span {
-            display: flex;
-            align-items: center;
-        }
-
-        .content-date span {
-            margin-top: 17px;
-            font-size: 36px;
-        }
-
-        .divider {
-            box-shadow: inset 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-            border: 2px solid #fff;
-            background-color: #fff;
-            margin-top: 13px;
-            height: 2px;
-        }
-
-        .details-section {
-            display: flex;
-            flex-direction: column;
-        }
-
-
-        .details-content {
-            margin-top: 14px;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .content-card .table {
-            margin-top: 20px;
-        }
-
-        .table-main-action {
-            background-color: #eeb120; 
-            font: 400 32px Material Icons, sans-serif;
-            width: 100%;
-        }
-
-        .action-icon {
-        background-color: #eeb120;
-        border-color: #eeb120;
-        align-items: center;
-        justify-content: center;
-        font: 32px Material Icons, sans-serif;
-        }
-
-        .table-main-action:hover, .action-icon:hover {
-            background-color: #d4a100;
-            /* Change background color on hover */
-            border-color: #d4a100;
-            /* Change border color on hover */
         }
 
         th, td {
@@ -288,60 +201,6 @@
         .btn-save:hover {
             background-color: #333333;
             /* Darker gray background on hover */
-        }
-
-        /* Modal kebutuhan */
-        .title-content {
-            color: #000;
-            font: 500 22px/182% Montserrat, sans-serif;
-        }
-        @media (max-width: 991px) {
-            .title-content {
-            max-width: 100%;
-            }
-        }
-        .field-group {
-            border-radius: 20px;
-            background-color: #d9d9d9;
-            display: flex;
-            margin-top: 12px;
-            flex-direction: column;
-            align-items: start;
-            font-weight: 400;
-            padding: 16px 80px 16px 38px;
-        }
-        @media (max-width: 991px) {
-            .field-group {
-                padding: 16px 20px;
-                max-width: 100%;
-            }
-        }
-
-        .footer-spacer {
-        background-color: #fff;
-        height: 70px;
-        }
-
-        .footer-spacer-secondary {
-        background-color: #efefef;
-        height: 70px;
-        }
-
-        @media (max-width: 991px) {
-            .content-date span {
-                white-space: initial;
-                padding: 0 20px;
-            }
-
-            .details-section {
-                max-width: 100%;
-                padding: 0 20px;
-            }
-
-
-            .details-content {
-                max-width: 100%;
-            }
         }
     </style>
 </head>
