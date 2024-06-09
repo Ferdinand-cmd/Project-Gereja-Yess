@@ -414,28 +414,7 @@
     color: #fff;
     font: 24px Kanit, sans-serif;
   }
-
-  .autocomplete-items {
-        border: 1px solid #d4d4d4;
-        border-bottom: none;
-        border-top: none;
-        z-index: 99;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-    }
-
-    .autocomplete-items div {
-        padding: 10px;
-        cursor: pointer;
-        background-color: #fff;
-        border-bottom: 1px solid #d4d4d4;
-    }
-
-    .autocomplete-items div:hover {
-        background-color: #e9e9e9;
-    }
+  
           /* CSS for cancel button */
           .modal .btn-cancel {
             background-color: #ffffff;
@@ -717,6 +696,17 @@
             </div>
         </div>
     </nav>
+    
+    <datalist id="datalist">
+        <option value="Ferdinand">
+        <option value="Felita">
+        <option value="Fernando">
+        <option value="Ferari">
+        <option value="Ferdandi">
+        <option value="Felali">
+        <option value="Ferguso">
+        <option value="Ferdian">
+    </datalist>
 
     <!-- Modal add komsel -->
     <div class="modal modal-add-komsel fade" id="addKomsel" tabindex="-1" aria-labelledby="addKomselLabel" aria-hidden="true">
@@ -734,8 +724,7 @@
                     </div>
                     <div class="mb-3" style="position: relative;">
                         <label for="aKKetua" class="form-label">Nama Ketua</label>
-                        <input type="text" class="form-control" id="aKKetua" name="aKKetua" placeholder="Search Nama Ketua" required>
-                        <div id="autocomplete-list-aKKetua" class="autocomplete-items"></div>
+                        <input class="form-control" list="datalist" id="aKKetua" name="aKKetua" placeholder="Search Nama Ketua" required>
                     </div>
                     
                     <!-- <div class="input-wrapper">
@@ -777,8 +766,7 @@
                     </div>
                     <div class="mb-3" style="position: relative;">
                         <label for="eKKetua" class="form-label">Nama Ketua</label>
-                        <input type="text" class="form-control" id="eKKetua" name="eKKetua" placeholder="Search Nama Ketua" required>
-                        <div id="autocomplete-list-eKKetua" class="autocomplete-items"></div>
+                        <input class="form-control" list="datalist" id="eKKetua" name="eKKetua" placeholder="Search Nama Ketua" required>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -987,7 +975,7 @@
                             <td>YESSPRO CW</td>
                             <td>Steven Bryan Christanto</td>
                             <td>
-                                <button class="action-icon" data-bs-toggle="modal" data-bs-target="#editKomselModal">mode_edit</button>
+                                <button class="action-icon" data-bs-toggle="modal" data-bs-target="#editKomsel">mode_edit</button>
                                 <button class="action-icon">delete</button>
                             </td>
                         </tr>
@@ -1095,44 +1083,6 @@
             // Balikkan status isOriginalContent
             isOriginalContent = !isOriginalContent;
         });
-
-        // skrip untuk nama ketua komsel
-        const names = ["Ferdinand", "Felita", "Fernando", "Ferari", "Ferdandi", "Felali", "Ferguso"];
-        const addKomsel = document.getElementById("aKKetua");
-        const editKomsel = document.getElementById("eKKetua");
-
-        // auto complete untuk ID aKKetua & eKKetua
-        function addAutocomplete(input, listId) {
-            const autocompleteList = document.getElementById(listId);
-
-            input.addEventListener("input", function() {
-                const value = this.value;
-                autocompleteList.innerHTML = "";
-                if (!value) return;
-
-                // Hanya tampilkan 5 nama
-                const filteredNames = names.filter(name => name.toLowerCase().startsWith(value.toLowerCase())).slice(0, 5);
-
-                filteredNames.forEach(name => {
-                    const item = document.createElement("div");
-                    item.textContent = name;
-                    item.addEventListener("click", function() {
-                        input.value = name;
-                        autocompleteList.innerHTML = "";
-                    });
-                    autocompleteList.appendChild(item);
-                });
-            });
-
-            document.addEventListener("click", function(e) {
-                if (e.target !== input && e.target.parentNode !== autocompleteList) {
-                    autocompleteList.innerHTML = "";
-                }
-            });
-        }
-
-        addAutocomplete(addKomsel, "autocomplete-list-aKKetua");
-        addAutocomplete(editKomsel, "autocomplete-list-eKKetua");
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

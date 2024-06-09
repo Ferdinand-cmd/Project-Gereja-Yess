@@ -2,7 +2,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>YESS.SUB | Pelayanan Umum (Admin)</title>
+        <title>YESS.SUB | Penjadwalan Umum (Admin)</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
             integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400&display=swap" rel="stylesheet">
@@ -49,18 +49,41 @@
             }
             }
 
-            .section-header {
+            .arrow-btn-b {
+            background-color: black;
+            border: none;
+            border-radius: 50%;
+            padding: 10px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .arrow-btn-b .material-icons {
+            color: white;
+            font-size: 24px;
+        }
+
+        .arrow-link, .arrow-link-b {
+            text-decoration: none;
+        }
+
+        .section-header {
             color: #000;
             font: 700 64px Kanit, sans-serif;
-            }
+            display: inline-block;
+            margin-left: 10px;
+        }
 
-            @media (max-width: 991px) {
+        @media (max-width: 991px) {
             .section-header {
                 max-width: 100%;
+                margin-left: 5px;
                 margin-right: 6px;
                 font-size: 40px;
             }
-            }
+        }
 
             .content {
             margin-top: 41px;
@@ -175,7 +198,7 @@
                             <a class="nav-link" href="/admin">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/pelayanan-admin">Pelayanan</a>
+                            <a class="nav-link active" href="/pelayanan-admin">Pelayanan</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/admin">KomSel</a>
@@ -187,7 +210,7 @@
                             <a class="nav-link" href="/event-admin">Event</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="/admin">Penjadwalan</a>
+                            <a class="nav-link" href="/admin">Penjadwalan</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/admin">Analisis</a>
@@ -218,7 +241,14 @@
         <div class="main-container">
             <div class="wrapper">
                 <main class="section-container">
-                <h2 class="section-header">Umum - Ciputra World</h2>
+                <div>
+                    <a href="penjadwalan-admin.blade.php" class="arrow-link-b">
+                        <button class="arrow-btn-b">
+                            <span class="material-icons">arrow_back</span>
+                        </button>
+                    </a>
+                    <h2 class="section-header">Detail Ibadah Umum - Ciputra World</h2>
+                </div>
                 <section class="content">
                     <div class="right-column">
                         <div class="right-content">
@@ -275,7 +305,7 @@
                                             </td>
                                             <td>Minggu, 7 April 2014</td>
                                             <td class="arrow-cell">
-                                                <a href="penjadwalan-umum-detail-admin.blade.php" class="arrow-link">
+                                                <a href="pelayanan-umum-detail-admin.blade.php" class="arrow-link">
                                                     <button class="arrow-btn">
                                                         <span class="material-icons">arrow_forward</span>
                                                     </button>
@@ -291,7 +321,7 @@
                                             </td>
                                             <td>Minggu, 14 April 2014</td>
                                             <td class="arrow-cell">
-                                                <a href="penjadwalan-umum-detail-admin.blade.php" class="arrow-link">
+                                                <a href="pelayanan-umum-detail-admin.blade.php" class="arrow-link">
                                                     <button class="arrow-btn">
                                                         <span class="material-icons">arrow_forward</span>
                                                     </button>

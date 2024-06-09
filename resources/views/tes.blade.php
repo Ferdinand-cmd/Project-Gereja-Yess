@@ -397,92 +397,95 @@ body {
 </style>
 </head>
 <body>
-
-<div class="container">
-  <header class="header">
-    <div class="logo-container">
-      <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/ea70bf3cf3b7e9699c799d874034d07d6142067effe5e2fe8d61eed42517eff5?apiKey=f9ed83d6b13f4286938197498a891b31&" alt="Church logo" class="logo" />
-      <div class="logo-text">BEST CHURCH</div>
+<!-- Modal -->
+<div class="modal fade" id="editKomsel" tabindex="-1" aria-labelledby="editKomselLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editKomselLabel">Edit Kebaktian</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="kebaktianForm">
+                    <div class="mb-3">
+                        <label for="kebaktianName" class="form-label">Nama Kebaktian</label>
+                        <input type="text" class="form-control" id="kebaktianName" required>
+                    </div>
+                    <input type="hidden" id="rowIndex">
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="saveChanges">Save changes</button>
+            </div>
+        </div>
     </div>
-    <nav class="nav">
-      <div class="nav-highlight">
-        <div class="nav-item">Home</div>
-        <div class="nav-line"></div>
-      </div>
-      <div class="nav-item">Daftar <br /> Pelayanan</div>
-      <div class="nav-item">KomSel</div>
-      <div class="nav-item">Bareng</div>
-      <div class="nav-item">Event</div>
-      <div class="nav-item">Penjadwalan</div>
-      <div class="nav-item">List <br /> Jemaat</div>
-      <div class="nav-item">Analisis</div>
-    </nav>
-  </header>
-  <section class="section">
-    <div class="breadcrumb">
-      <div class="breadcrumb-icon">keyboard_arrow_left</div>
-      <div class="exhibit-content-title">Pelayanan Umum - Ciputra World</div>
-    </div>
-    <div class="main-content">
-      <div class="sub-header">
-        <div class="date">Minggu, 7 April 2024</div>
-        <div class="edit-button">mode_edit</div>
-      </div>
-      <div class="info-block">
-        <div class="label">Topik :</div>
-        <div class="value">Topik</div>
-      </div>
-      <div class="info-block">
-        <div class="label">Pendeta :</div>
-        <div class="value">Pendeta</div>
-      </div>
-      <div class="job-roles">
-        <div class="job-role">Pemain Musik</div>
-        <div class="job-role">Kameramen</div>
-      </div>
-      <div class="input-group">
-        <div class="input"></div>
-        <div class="input"></div>
-      </div>
-      <div class="input-group">
-        <div class="input"></div>
-        <div class="input"></div>
-      </div>
-      <div class="return-button">Nama</div>
-      <div class="action-buttons">
-        <div class="job-role">Worship Leader</div>
-        <div class="job-role">Multimedia</div>
-      </div>
-      <div class="input-group">
-        <div class="input"></div>
-        <div class="input"></div>
-      </div>
-      <div class="input-group">
-        <div class="input"></div>
-        <div class="input"></div>
-      </div>
-      <div class="action-buttons">
-        <div class="job-role">Singer</div>
-        <div class="job-role">Usher</div>
-      </div>
-      <div class="input-group">
-        <div class="input"></div>
-        <div class="input"></div>
-      </div>
-      <div class="input-group">
-        <div class="input"></div>
-        <div class="input"></div>
-      </div>
-      <div class="input-group">
-        <div class="input"></div>
-        <div class="input"></div>
-      </div>
-      <div class="return-container"></div>
-      <div class="return-container"></div>
-      <div class="main-button">KEMBALI</div>
-    </div>
-  </section>
 </div>
+
+<!-- Tabel -->
+<table class="table table-striped table-bordered border-secondary">
+    <thead>
+        <tr>
+            <th>Kebaktian</th>
+            <th><button class="table-main-action" id="addKebaktian">add_circle_outline</button></th>
+        </tr>
+    </thead>
+    <tbody id="kebaktianTableBody">
+        <tr>
+            <td>Umum</td>
+            <td>
+                <button class="action-icon edit-icon" data-bs-toggle="modal" data-bs-target="#editKomsel">mode_edit</button>
+                <button class="action-icon delete-icon">delete</button>
+            </td>
+        </tr>
+        <tr>
+            <td>YESS</td>
+            <td>
+                <button class="action-icon edit-icon" data-bs-toggle="modal" data-bs-target="#editKomsel">mode_edit</button>
+                <button class="action-icon delete-icon">delete</button>
+            </td>
+        </tr>
+        <tr>
+            <td>Worship Night</td>
+            <td>
+                <button class="action-icon edit-icon" data-bs-toggle="modal" data-bs-target="#editKomsel">mode_edit</button>
+                <button class="action-icon delete-icon">delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<table class="table table-striped table-bordered border-secondary">
+                        <thead>
+                            <tr>
+                                <th>Kebaktian</th>
+                                <th><button class="table-main-action">add_circle_outline</button></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Umum</td>
+                                <td>
+                                    <button class="action-icon" data-bs-toggle="modal" data-bs-target="#editKomsel">mode_edit</button>
+                                    <button class="action-icon">delete</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>YESS</td>
+                                <td>
+                                    <button class="action-icon" data-bs-toggle="modal" data-bs-target="#editKomsel">mode_edit</button>
+                                    <button class="action-icon">delete</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Worship Night</td>
+                                <td>
+                                    <button class="action-icon" data-bs-toggle="modal" data-bs-target="#editKomsel">mode_edit</button>
+                                    <button class="action-icon">delete</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
 
 <!-- Material Icons CDN -->
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
