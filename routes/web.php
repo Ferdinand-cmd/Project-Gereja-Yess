@@ -88,4 +88,5 @@ Route::get('/event-admin', [EventController::class, 'index']);
 Route::post('/event-admin/store', [EventController::class, 'store']);
 Route::post('/event-admin/archive/{id}', [EventController::class, 'archive']);
 Route::post('/event-admin/register/{eventId}', [EventController::class, 'register']);
+Route::get('/events', [EventController::class, 'index']);
 Route::post('/events/{id}/update', [EventController::class, 'update'])->name('events.update');

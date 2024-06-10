@@ -658,145 +658,63 @@
             data-bs-target="#addEventModal"><i class="fas fa-plus"></i> Add Event</button>
     </div>
 
-    <?php
-        $events = [
-            [
-                'id' => 1,
-                'title' => 'Putus atau Terus 1',
-                'location' => 'Ciputra World Mall 2nd floor',
-                'description' => 'YESS Surabaya Valentine\'s Day Celebration "Putus atau Terus"
-                Ini adalah kesempatan untuk terinspirasi sebagai pasangan!
-                juga merupakan PENGALAMAN YANG HEBAT bagi kamu ya...', 
-                'start_date' => '2024-03-30',
-                'start_time' => '16:30',
-                'end_date' => '2024-03-30',
-                'end_time' => '19:30',
-                'image' => 'img/event-photo1.jpg',
-                'registered_people' => ['Andi', 'Bagus', 'Cahyono'],
-                'archived' => false,
-                'type' => 'umum'
-            ],
-            [
-                'id' => 2,
-                'title' => 'YESS Leardership Mission Training VII',
-                'location' => 'Desa Birkium, Soe, Nusa Tenggara Timur',
-                'description' => 'Biarlah semangat misi terus menyala dalam hidup kita.
-                Uis Neno nokan kit, Immanuel!
-                Sampe ketemu di YLMT, basodara dong!',
-                'start_date' => '2024-04-19',
-                'start_time' => null,
-                'end_date' => '2024-04-21',
-                'end_time' => null,
-                'image' => 'img/event-photo2.jpg',
-                'registered_people' => ['Desi', 'Endah', 'Marwoto', 'SBC Ganteng'],
-                'archived' => false,
-                'type' => 'ladies devotion'
-            ],
-            [
-                'id' => 3,
-                'title' => 'Putus atau Terus 2',
-                'location' => 'Ciputra World Mall 2nd floor',
-                'description' => 'YESS Surabaya Valentine\'s Day Celebration "Putus atau Terus"
-                Ini adalah kesempatan untuk terinspirasi sebagai pasangan!
-                juga merupakan PENGALAMAN YANG HEBAT bagi kamu ya...', 
-                'start_date' => '2024-03-30',
-                'start_time' => '16:30',
-                'end_date' => '2024-03-30',
-                'end_time' => '19:30',
-                'image' => 'img/event-photo3.jpg',
-                'registered_people' => [],
-                'archived' => true,
-                'type' => 'sunday school'
-            ],
-            [
-                'id' => 4,
-                'title' => 'YESS Leardership Mission Training VIII',
-                'location' => 'Desa Birkium, Soe, Nusa Tenggara Timur',
-                'description' => 'Biarlah semangat misi terus menyala dalam hidup kita.
-                Uis Neno nokan kit, Immanuel!
-                Sampe ketemu di YLMT, basodara dong!',
-                'start_date' => '2024-04-19',
-                'start_time' => null,
-                'end_date' => '2024-04-21',
-                'end_time' => null,
-                'image' => 'img/event-photo4.jpg',
-                'registered_people' => [],
-                'archived' => true,
-                'type' => 'umum'
-            ]
-        ];
-    ?>
-
     <!-- Events -->
     <div class="events-container">
-        <?php foreach ($events as $event): ?>
-            <!-- Display events -->
-            <div class="event" event-id="<?php echo $event['id']; ?>" event-type="<?php echo $event['type']; ?>">
-                <img src="<?php echo $event['image']; ?>" alt="Event Photo">
+            @foreach ($events as $event)
+                <div class="event" event-id="{{ $event->id }}" event-type="{{ $event->type }}">
+                    <img src="{{ asset($event->image) }}" alt="Event Photo">
 
-                <!-- Content (buttons and details) -->
-                <div class="event-content">
-                    <!-- Buttons for event actions -->
-                    <div class="event-buttons">
-                        <!-- Buttons for event actions -->
-                        <div class="event-buttons-left">
-                            <!-- Archive button -->
-                            <button type="button" class="btn btn-danger black-button archive-button"><i class="fas fa-archive"></i> Archive</button>
+                    <div class="event-content">
+                        <div class="event-buttons">
+                            <div class="event-buttons-left">
+                                <button type="button" class="btn btn-danger black-button archive-button">
+                                    <i class="fas fa-archive"></i> Archive
+                                </button>
+                            </div>
+                            <div class="event-buttons-right">
+                                <button type="button" class="btn btn-danger black-button" data-bs-toggle="modal" data-bs-target="#deleteConfirmationModal{{ $event->id }}">
+                                    <i class="fas fa-trash"></i>Delete
+                                </button>
+                                <button type="button" class="btn btn-primary black-button" data-bs-toggle="modal" data-bs-target="#editEventModal{{ $event->id }}">
+                                    <i class="fas fa-pencil-alt"></i> Edit
+                                </button>
+                                <button type="button" class="btn btn-primary white-button" data-bs-toggle="modal" data-bs-target="#jemaatMendaftarModal{{ $event->id }}">
+                                    <div class="event-counter-box">
+                                        {{ $event->registered_people_count ?? 0 }}{{ $event->quota ? '/' . $event->quota : '' }}
+                                    </div>
+                                    <div class="event-button-text">
+                                        <div class="jemaat-text">Jemaat</div>
+                                        <div class="mendaftar-text">Mendaftar</div>
+                                    </div>
+                                    <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
                         </div>
-                        <div class="event-buttons-right">
-                            <!-- Delete button -->
-                            <button type="button" class="btn btn-danger black-button" data-bs-toggle="modal" data-bs-target="#deleteConfirmationModal<?php echo $event['id']; ?>"><i class="fas fa-trash"></i>Delete</button>
-                            <!-- Edit button -->
-                            <button type="button" class="btn btn-primary black-button" data-bs-toggle="modal" data-bs-target="#editEventModal<?php echo $event['id']; ?>"><i class="fas fa-pencil-alt"></i> Edit</button>
-                            <!-- Jemaat mendaftar button -->
-                            <button type="button" class="btn btn-primary white-button" data-bs-toggle="modal" data-bs-target="#jemaatMendaftarModal<?php echo $event['id']; ?>">
-                                <div class="event-counter-box">
-                                    <?php
-                                        echo count($event['registered_people']).(isset($event['quota']) ? '/'.$event['quota'] : '');
-                                    ?>
-                                </div>
-                                <div class="event-button-text">
-                                    <div class="jemaat-text">Jemaat</div>
-                                    <div class="mendaftar-text">Mendaftar</div>
-                                </div>
-                                <i class="fas fa-arrow-right"></i>
-                            </button>
+                        <div class="line"></div>
+                        <div class="event-details">
+                            <div class="event-title">{{ $event->title }}</div>
+                            <div class="event-type">{{ $event->type }}</div>
+                            <div class="event-info">
+                                {{ $event->location }} | {{ $event->start_date }} {{ $event->start_time }} - {{ $event->end_date }} {{ $event->end_time }}
+                            </div>
+                            <div class="event-description">{{ $event->description }}</div>
                         </div>
-                    </div>
-
-                    <!-- Line between buttons and details -->
-                    <div class="line"></div>
-                    
-                    <!-- Event details -->
-                    <div class="event-details">
-                        <div class="event-title"><?php echo $event['title']; ?></div>
-                        <div class="event-type"><?php echo $event['type']; ?></div>
-                        <div class="event-info">
-                            <?php
-                                // Fill the event location and date/time (time is optional)
-                                echo $event['location'].' | '.$event['start_date'].(empty($event['start_time']) ? '' : ' '.$event['start_time']).' - '.$event['end_date'].(empty($event['end_time']) ? '' : ' '.$event['end_time']);
-                            ?>
-                        </div>
-                        <div class="event-description"><?php echo $event['description']; ?></div>
                     </div>
                 </div>
-            </div>
-        <?php endforeach; ?>
-    </div>
+            @endforeach
+        </div>
 
     <!-- Modals -->
 
     <!-- Modal for Add Event -->
-    <div class="modal fade modal-lg add-event-modal" id="addEventModal" tabindex="-1" aria-labelledby="addEventModalLabel"
-        aria-hidden="true">
+    <div class="modal fade modal-lg add-event-modal" id="addEventModal" tabindex="-1" aria-labelledby="addEventModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header d-flex justify-content-between align-items-center">
                     <h5 class="modal-title" id="addEventModalLabel">Add Event</h5>
-                    <!-- Replace close button with switch -->
-                     <div class="header-selection">
+                    <div class="header-selection">
                         <select id="type-dropdown-init" class="type-dropdown-init" required>
-                            <option value="" selected disable>Pilih</option>
+                            <option value="" selected disabled>Pilih</option>
                             <option value="umum">Umum</option>
                             <option value="ladies devotion">Ladies Devotion</option>
                             <option value="sunday school">Sunday School</option>
@@ -806,7 +724,7 @@
                             <input class="form-check-input" type="checkbox" id="registrationSwitch">
                             <label class="form-check-label" for="registrationSwitch">Aktifkan Form Pendaftaran</label>
                         </div>
-                     </div>
+                    </div>
                 </div>
                 <div class="modal-body">
                     <div class="mb-3">
@@ -825,8 +743,7 @@
                         <div class="row">
                             <div class="col">
                                 <label class="aTanggalMulai">Tanggal mulai</label>
-                                <input type="date" class="form-control" id="aTanggalMulai" name="aTanggalMulai"
-                                    required>
+                                <input type="date" class="form-control" id="aTanggalMulai" name="aTanggalMulai" required>
                             </div>
                             <div class="col">
                                 <label class="aWaktuMulai">Waktu mulai (opsional)</label>
@@ -838,8 +755,7 @@
                         <div class="row">
                             <div class="col">
                                 <label class="aTanggalAkhir">Tanggal akhir</label>
-                                <input type="date" class="form-control" id="aTanggalAkhir" name="aTanggalAkhir"
-                                    required>
+                                <input type="date" class="form-control" id="aTanggalAkhir" name="aTanggalAkhir" required>
                             </div>
                             <div class="col">
                                 <label class="aWaktuAkhir">Waktu akhir (opsional)</label>
@@ -853,8 +769,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="aGambar" class="form-label">Gambar</label>
-                        <input type="file" class="form-control" id="aGambar" name="aGambar" accept="image/*"
-                            required>
+                        <input type="file" class="form-control" id="aGambar" name="aGambar" accept="image/*" required>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -1009,6 +924,7 @@
         </div>
     </div>
     <?php endforeach; ?>
+        
 
     <!-- Footer -->
 

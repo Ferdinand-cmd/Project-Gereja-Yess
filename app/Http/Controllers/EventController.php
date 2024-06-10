@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Event;
+use App\Models\ArchivedEvent;
+use App\Models\EventRegistration;
 use Illuminate\Support\Facades\Storage;
 
 class EventController extends Controller
@@ -21,19 +23,23 @@ class EventController extends Controller
     {
         $request->validate([
             'title' => 'required|string|max:255',
+            'quota' => 'nullable|integer|min:1',
             'location' => 'required|string|max:255',
             'start_date' => 'required|date',
             'end_date' => 'required|date',
             'start_time' => 'nullable|date_format:H:i',
             'end_time' => 'nullable|date_format:H:i',
             'description' => 'required|string',
-            'image' => 'required|image'
+            'image' => 'required|image',
+            'archived' => 'required|boolean',
+            'type' => 'required|string|max:255'
         ]);
 
         $imagePath = $request->file('image')->store('event_images', 'public');
 
         Event::create([
             'title' => $request->title,
+            'quota' => $request->quota ?? 150,
             'location' => $request->location,
             'start_date' => $request->start_date,
             'start_time' => $request->start_time,
@@ -41,6 +47,8 @@ class EventController extends Controller
             'end_time' => $request->end_time,
             'description' => $request->description,
             'image_path' => $imagePath,
+            'archived' => $request->archived,
+            'type' => $request->type,
         ]);
 
         return redirect()->back()->with('success', 'Event added successfully.');
@@ -48,28 +56,41 @@ class EventController extends Controller
 
     public function archive($id)
     {
-        ArchivedEvent::create(['event_id' => $id]);
-        return redirect()->back();
+        $event = Event::find($id);
+
+        if (!$event) {
+            return redirect()->back()->with('error', 'Event not found.');
+        }
+
+        $event->archived = true;
+        $event->save();
+
+        return redirect()->back()->with('success', 'Event archived successfully.');
     }
 
     public function register($eventId, Request $request)
     {
-        $request->validate(['registrant_email' => 'required|string']);
+        $request->validate(['registrant_email' => 'required|email']);
+
         EventRegistration::create(['event_id' => $eventId, 'registrant_email' => $request->registrant_email]);
-        return redirect()->back();
+
+        return redirect()->back()->with('success', 'Registration successful.');
     }
 
     public function update(Request $request, $id)
     {
         $request->validate([
             'title' => 'required|string|max:255',
+            'quota' => 'nullable|integer|min:1',
             'location' => 'required|string|max:255',
             'start_date' => 'required|date',
             'end_date' => 'required|date',
             'start_time' => 'nullable|date_format:H:i',
             'end_time' => 'nullable|date_format:H:i',
             'description' => 'required|string',
-            'image' => 'nullable|image'
+            'image' => 'nullable|image',
+            'archived' => 'required|boolean',
+            'type' => 'required|string|max:255'
         ]);
 
         $event = Event::find($id);
@@ -80,12 +101,15 @@ class EventController extends Controller
 
         // Update the event details
         $event->title = $request->title;
+        $event->quota = $request->quota ?? 150;
         $event->location = $request->location;
         $event->start_date = $request->start_date;
         $event->start_time = $request->start_time;
         $event->end_date = $request->end_date;
         $event->end_time = $request->end_time;
         $event->description = $request->description;
+        $event->archived = $request->archived;
+        $event->type = $request->type;
 
         // Handle file upload if an image is provided
         if ($request->hasFile('image')) {
