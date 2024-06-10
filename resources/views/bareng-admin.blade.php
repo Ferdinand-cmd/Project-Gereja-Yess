@@ -156,30 +156,33 @@
         color: #eeb120;
         text-align: center;
         width: 100%;
-        padding: 23px 45px;
+        padding: 23px 23px;
         }
 
         @media (max-width: 991px) {
         .penjemput-button {
             margin-top: 40px;
-            padding: 0 20px;
+            padding: 0 10px;
         }
         }
 
         .icon {
         align-self: start;
-        font: 52px Material Icons, sans-serif;
-        }
-
-        @media (max-width: 991px) {
-        .icon {
-            font-size: 40px;
-        }
+        font: 32px Material Icons, sans-serif;
         }
 
         .penjemput-text {
         flex-grow: 1;
-        font: 38px Kanit, sans-serif;
+        font: 24px Kanit, sans-serif;
+        }
+
+        @media (max-width: 991px) {
+        .icon {
+            font-size: 24px;
+        }
+        .penjemput-text {
+            font-size: 18px;
+        }
         }
 
         .content-card {
@@ -224,15 +227,10 @@
         border: 1px solid rgba(0, 0, 0, 1);
         background-color: #fff;
         justify-content: center;
-        flex-grow: 1;
+        
         padding: 20px;
         font: 400 20px Montserrat, sans-serif;
-        }
-
-        @media (max-width: 991px) {
-        .card-subtitle {
-            max-width: 100%;
-        }
+        
         }
 
         /* .card-main {
@@ -404,7 +402,7 @@
 
         /* Modal penjemput */
 
-        .sub-header {
+        .modal-penjemput .sub-header {
         color: #000;
         text-align: center;
         letter-spacing: 2px;
@@ -412,7 +410,7 @@
         font: 500 20px Montserrat, sans-serif;
     }
 
-    .search-container {
+    .modal-penjemput .search-container {
         box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
         background-color: #000;
         display: flex;
@@ -424,7 +422,7 @@
         max-width: 100%;
     }
 
-    .search-icon {
+    .modal-penjemput .search-icon {
         color: #fff;
         text-align: center;
         /* flex-grow: 1; */
@@ -432,7 +430,7 @@
         font: 24px Material Icons, sans-serif;
     }
 
-    .search-input {
+    .modal-penjemput .search-input {
         background-color: #fff;
         color: #888;
         justify-content: center;
@@ -441,6 +439,44 @@
         /* padding: 26px 31px; */
         font: 24px Kanit, sans-serif;
     }
+
+    .modal-penjemput .modal-dialog {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.modal-penjemput .modal-content {
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-penjemput .table-responsive {
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.modal-penjemput .table {
+  width: 100%;
+  max-width: 100%;
+}
+
+@media (max-width: 991px) {
+    .modal-penjemput .modal-dialog {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .modal-penjemput .modal-content {
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  .modal-penjemput .table-responsive {
+    max-height: 50vh;
+    overflow-y: auto;
+  }
+}
+
 
         /* Add & edit titik modal */
   /* .input-wrapper {
@@ -773,7 +809,6 @@
     </nav>
 
     <!-- Modal Penjemput -->
-        <!-- Penjemput modal -->
 <div class="modal modal-lg modal-penjemput fade" id="penjemputModal" tabindex="-1" aria-labelledby="penjemputModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
@@ -788,6 +823,7 @@
         <span class="search-icon" role="img" aria-label="search">search</span>
         <input class="search-input" type="search" placeholder="Search" aria-label="Search">
     </div>
+    <div class="table-responsive">
                     <table class="table table-striped table-bordered border-secondary">
                         <thead>
                             <tr class="table-dark">
@@ -822,6 +858,7 @@
                             </tr>
                         </tbody>
                     </table>
+    </div>
                 </div>
                 </div>
             </div>

@@ -165,24 +165,47 @@
         }
 
         .content-card {
-        border-radius: 20px;
-        border: 1px solid rgba(0, 0, 0, 1);
-        background-color: #f4f4f4;
-        display: flex;
-        width: 100%;
-        max-width: 1328px;
-        flex-direction: column;
-        color: #000;
-        padding: 28px 42px;
-        }
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 1);
+    background-color: #f4f4f4;
+    display: flex;
+    width: 100%;
+    max-width: 1328px;
+    flex-direction: column;
+    color: #000;
+    padding: 28px 42px;
+    overflow: hidden;
+}
 
-        @media (max-width: 991px) {
-        .content-card {
-            max-width: 100%;
-            margin-bottom: 40px;
-            padding: 0 20px;
-        }
-        }
+@media (max-width: 991px) {
+    .content-card {
+        max-width: 100%;
+        margin-bottom: 40px;
+        padding: 0 20px;
+    }
+}
+
+.content-card .table {
+    width: 100%;
+    max-width: 100%;
+}
+
+.content-card .table-responsive {
+    overflow-x: auto;
+}
+
+/* .content-card .detail-presensi {
+    background: none;
+    border: none;
+    color: inherit;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+} */
+
+.material-icons {
+    vertical-align: middle;
+}
 
         /* .card-main {
         background-color: #000;
@@ -954,33 +977,35 @@
                 presensiKomsel.classList.remove('header-detail');
 
                 content1 =
-                `<table class="table table-striped table-bordered border-secondary tabel-detail-komsel">
-                    <thead>
-                        <tr class="table-dark">
-                            <th>Nama Komsel</th>
-                            <th>Ketua Komsel</th>
-                            <th><button class="table-main-action" data-bs-toggle="modal" data-bs-target="#addKomsel">add_circle_outline</button></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>YESS CW</td>
-                            <td>Veronica</td>
-                            <td>
-                                <button class="action-icon" data-bs-toggle="modal" data-bs-target="#editKomsel">mode_edit</button>
-                                <button class="action-icon">delete</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>YESSPRO CW</td>
-                            <td>Steven Bryan Christanto</td>
-                            <td>
-                                <button class="action-icon" data-bs-toggle="modal" data-bs-target="#editKomsel">mode_edit</button>
-                                <button class="action-icon">delete</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>`;
+                `<div class="table-responsive">
+                    <table class="table table-striped table-bordered border-secondary tabel-detail-komsel">
+                        <thead>
+                            <tr class="table-dark">
+                                <th>Nama Komsel</th>
+                                <th>Ketua Komsel</th>
+                                <th><button class="table-main-action" data-bs-toggle="modal" data-bs-target="#addKomsel">add_circle_outline</button></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>YESS CW</td>
+                                <td>Veronica</td>
+                                <td>
+                                    <button class="action-icon" data-bs-toggle="modal" data-bs-target="#editKomsel">mode_edit</button>
+                                    <button class="action-icon">delete</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>YESSPRO CW</td>
+                                <td>Steven Bryan Christanto</td>
+                                <td>
+                                    <button class="action-icon" data-bs-toggle="modal" data-bs-target="#editKomsel">mode_edit</button>
+                                    <button class="action-icon">delete</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>`;
             } else {
                 detailKomsel.classList.add('header-detail-secondary');
                 detailKomsel.classList.remove('header-detail');
