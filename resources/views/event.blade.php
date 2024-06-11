@@ -635,6 +635,7 @@
                 [
                     'id' => 1,
                     'title' => 'Putus atau Terus 1',
+                    'quota' => 50,
                     'location' => 'Ciputra World Mall 2nd floor',
                     'description' => 'YESS Surabaya Valentine\'s Day Celebration "Putus atau Terus"
                     Ini adalah kesempatan untuk terinspirasi sebagai pasangan!

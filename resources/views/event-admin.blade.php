@@ -12,6 +12,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500&display=swap" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <style>
         body {
             background-color: white;
@@ -658,102 +660,29 @@
             data-bs-target="#addEventModal"><i class="fas fa-plus"></i> Add Event</button>
     </div>
 
-    <?php
-        $events = [
-            [
-                'id' => 1,
-                'title' => 'Putus atau Terus 1',
-                'location' => 'Ciputra World Mall 2nd floor',
-                'description' => 'YESS Surabaya Valentine\'s Day Celebration "Putus atau Terus"
-                Ini adalah kesempatan untuk terinspirasi sebagai pasangan!
-                juga merupakan PENGALAMAN YANG HEBAT bagi kamu ya...', 
-                'start_date' => '2024-03-30',
-                'start_time' => '16:30',
-                'end_date' => '2024-03-30',
-                'end_time' => '19:30',
-                'image' => 'img/event-photo1.jpg',
-                'registered_people' => ['Andi', 'Bagus', 'Cahyono'],
-                'archived' => false,
-                'type' => 'umum'
-            ],
-            [
-                'id' => 2,
-                'title' => 'YESS Leardership Mission Training VII',
-                'location' => 'Desa Birkium, Soe, Nusa Tenggara Timur',
-                'description' => 'Biarlah semangat misi terus menyala dalam hidup kita.
-                Uis Neno nokan kit, Immanuel!
-                Sampe ketemu di YLMT, basodara dong!',
-                'start_date' => '2024-04-19',
-                'start_time' => null,
-                'end_date' => '2024-04-21',
-                'end_time' => null,
-                'image' => 'img/event-photo2.jpg',
-                'registered_people' => ['Desi', 'Endah', 'Marwoto', 'SBC Ganteng'],
-                'archived' => false,
-                'type' => 'ladies devotion'
-            ],
-            [
-                'id' => 3,
-                'title' => 'Putus atau Terus 2',
-                'location' => 'Ciputra World Mall 2nd floor',
-                'description' => 'YESS Surabaya Valentine\'s Day Celebration "Putus atau Terus"
-                Ini adalah kesempatan untuk terinspirasi sebagai pasangan!
-                juga merupakan PENGALAMAN YANG HEBAT bagi kamu ya...', 
-                'start_date' => '2024-03-30',
-                'start_time' => '16:30',
-                'end_date' => '2024-03-30',
-                'end_time' => '19:30',
-                'image' => 'img/event-photo3.jpg',
-                'registered_people' => [],
-                'archived' => true,
-                'type' => 'sunday school'
-            ],
-            [
-                'id' => 4,
-                'title' => 'YESS Leardership Mission Training VIII',
-                'location' => 'Desa Birkium, Soe, Nusa Tenggara Timur',
-                'description' => 'Biarlah semangat misi terus menyala dalam hidup kita.
-                Uis Neno nokan kit, Immanuel!
-                Sampe ketemu di YLMT, basodara dong!',
-                'start_date' => '2024-04-19',
-                'start_time' => null,
-                'end_date' => '2024-04-21',
-                'end_time' => null,
-                'image' => 'img/event-photo4.jpg',
-                'registered_people' => [],
-                'archived' => true,
-                'type' => 'umum'
-            ]
-        ];
-    ?>
-
     <!-- Events -->
     <div class="events-container">
-        <?php foreach ($events as $event): ?>
-            <!-- Display events -->
-            <div class="event" event-id="<?php echo $event['id']; ?>" event-type="<?php echo $event['type']; ?>">
-                <img src="<?php echo $event['image']; ?>" alt="Event Photo">
+        @foreach ($events as $event)
+            <div class="event" event-id="{{ $event->id }}" event-type="{{ $event->type }}">
+                <img src="{{ asset($event->image_path) }}" alt="Event Photo">
 
-                <!-- Content (buttons and details) -->
                 <div class="event-content">
-                    <!-- Buttons for event actions -->
                     <div class="event-buttons">
-                        <!-- Buttons for event actions -->
                         <div class="event-buttons-left">
-                            <!-- Archive button -->
-                            <button type="button" class="btn btn-danger black-button archive-button"><i class="fas fa-archive"></i> Archive</button>
+                            <button type="button" class="btn btn-danger black-button archive-button" onclick="archiveEvent({{ $event->id }})">
+                                <i class="fas fa-archive"></i> Archive
+                            </button>
                         </div>
                         <div class="event-buttons-right">
-                            <!-- Delete button -->
-                            <button type="button" class="btn btn-danger black-button" data-bs-toggle="modal" data-bs-target="#deleteConfirmationModal<?php echo $event['id']; ?>"><i class="fas fa-trash"></i>Delete</button>
-                            <!-- Edit button -->
-                            <button type="button" class="btn btn-primary black-button" data-bs-toggle="modal" data-bs-target="#editEventModal<?php echo $event['id']; ?>"><i class="fas fa-pencil-alt"></i> Edit</button>
-                            <!-- Jemaat mendaftar button -->
-                            <button type="button" class="btn btn-primary white-button" data-bs-toggle="modal" data-bs-target="#jemaatMendaftarModal<?php echo $event['id']; ?>">
+                            <button type="button" class="btn btn-danger black-button" data-bs-toggle="modal" data-bs-target="#deleteConfirmationModal{{ $event->id }}">
+                                <i class="fas fa-trash"></i>Delete
+                            </button>
+                            <button type="button" class="btn btn-primary black-button" data-bs-toggle="modal" data-bs-target="#editEventModal{{ $event->id }}">
+                                <i class="fas fa-pencil-alt"></i> Edit
+                            </button>
+                            <button type="button" class="btn btn-primary white-button" data-bs-toggle="modal" data-bs-target="#jemaatMendaftarModal{{ $event->id }}">
                                 <div class="event-counter-box">
-                                    <?php
-                                        echo count($event['registered_people']).(isset($event['quota']) ? '/'.$event['quota'] : '');
-                                    ?>
+                                    {{ $event->registrations->count() }}{{ $event->quota ? '/' . $event->quota : '' }}
                                 </div>
                                 <div class="event-button-text">
                                     <div class="jemaat-text">Jemaat</div>
@@ -763,40 +692,32 @@
                             </button>
                         </div>
                     </div>
-
-                    <!-- Line between buttons and details -->
                     <div class="line"></div>
-                    
-                    <!-- Event details -->
                     <div class="event-details">
-                        <div class="event-title"><?php echo $event['title']; ?></div>
-                        <div class="event-type"><?php echo $event['type']; ?></div>
+                        <div class="event-title">{{ $event->title }}</div>
+                        <div class="event-type">{{ $event->type }}</div>
                         <div class="event-info">
-                            <?php
-                                // Fill the event location and date/time (time is optional)
-                                echo $event['location'].' | '.$event['start_date'].(empty($event['start_time']) ? '' : ' '.$event['start_time']).' - '.$event['end_date'].(empty($event['end_time']) ? '' : ' '.$event['end_time']);
-                            ?>
+                            {{ $event->location }} | {{ $event->start_date }} {{ $event->start_time }} - {{ $event->end_date }} {{ $event->end_time }}
                         </div>
-                        <div class="event-description"><?php echo $event['description']; ?></div>
+                        <div class="event-description">{{ $event->description }}</div>
                     </div>
                 </div>
             </div>
-        <?php endforeach; ?>
+        @endforeach
     </div>
+
 
     <!-- Modals -->
 
     <!-- Modal for Add Event -->
-    <div class="modal fade modal-lg add-event-modal" id="addEventModal" tabindex="-1" aria-labelledby="addEventModalLabel"
-        aria-hidden="true">
+    <div class="modal fade modal-lg add-event-modal" id="addEventModal" tabindex="-1" aria-labelledby="addEventModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header d-flex justify-content-between align-items-center">
                     <h5 class="modal-title" id="addEventModalLabel">Add Event</h5>
-                    <!-- Replace close button with switch -->
-                     <div class="header-selection">
+                    <div class="header-selection">
                         <select id="type-dropdown-init" class="type-dropdown-init" required>
-                            <option value="" selected disable>Pilih</option>
+                            <option value="" selected disabled>Pilih</option>
                             <option value="umum">Umum</option>
                             <option value="ladies devotion">Ladies Devotion</option>
                             <option value="sunday school">Sunday School</option>
@@ -806,7 +727,7 @@
                             <input class="form-check-input" type="checkbox" id="registrationSwitch">
                             <label class="form-check-label" for="registrationSwitch">Aktifkan Form Pendaftaran</label>
                         </div>
-                     </div>
+                    </div>
                 </div>
                 <div class="modal-body">
                     <div class="mb-3">
@@ -825,8 +746,7 @@
                         <div class="row">
                             <div class="col">
                                 <label class="aTanggalMulai">Tanggal mulai</label>
-                                <input type="date" class="form-control" id="aTanggalMulai" name="aTanggalMulai"
-                                    required>
+                                <input type="date" class="form-control" id="aTanggalMulai" name="aTanggalMulai" required>
                             </div>
                             <div class="col">
                                 <label class="aWaktuMulai">Waktu mulai (opsional)</label>
@@ -838,8 +758,7 @@
                         <div class="row">
                             <div class="col">
                                 <label class="aTanggalAkhir">Tanggal akhir</label>
-                                <input type="date" class="form-control" id="aTanggalAkhir" name="aTanggalAkhir"
-                                    required>
+                                <input type="date" class="form-control" id="aTanggalAkhir" name="aTanggalAkhir" required>
                             </div>
                             <div class="col">
                                 <label class="aWaktuAkhir">Waktu akhir (opsional)</label>
@@ -853,13 +772,12 @@
                     </div>
                     <div class="mb-3">
                         <label for="aGambar" class="form-label">Gambar</label>
-                        <input type="file" class="form-control" id="aGambar" name="aGambar" accept="image/*"
-                            required>
+                        <input type="file" class="form-control" id="aGambar" name="aGambar" accept="image/*" required>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-cancel float-start" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-save float-end" onclick="addEvent()">Save</button>
+                    <button type="button" class="btn btn-save float-end" data-bs-dismiss="modal" onclick="addEvent()">Save</button>
                 </div>
             </div>
         </div>
@@ -875,11 +793,11 @@
                     <h5 class="modal-title" id="editEventModalLabel<?php echo $event['id']; ?>">Edit Event</h5>
                     <!-- Replace close button with switch -->
                     <div class="header-selection">
-                        <select id="type-dropdown-init" class="type-dropdown-init" required>
-                            <option value="umum" <?php echo $event['type'] === 'umum' ? 'selected' : '' ?>>Umum</option>
-                            <option value="ladies devotion" <?php echo $event['type'] === 'ladies devotion' ? 'selected' : '' ?>>Ladies Devotion</option>
-                            <option value="sunday school" <?php echo $event['type'] === 'sunday school' ? 'selected' : '' ?>>Sunday School</option>
-                            <option value="yess" <?php echo $event['type'] === 'yess' ? 'selected' : '' ?>>YESS</option>
+                        <select id="type-dropdown-init<?php echo $event['id']; ?>" class="type-dropdown-init" required>
+                            <option value="umum" <?php echo $event['type'] === 'umum' ? 'selected' : ''; ?>>Umum</option>
+                            <option value="ladies devotion" <?php echo $event['type'] === 'ladies devotion' ? 'selected' : ''; ?>>Ladies Devotion</option>
+                            <option value="sunday school" <?php echo $event['type'] === 'sunday school' ? 'selected' : ''; ?>>Sunday School</option>
+                            <option value="yess" <?php echo $event['type'] === 'yess' ? 'selected' : ''; ?>>YESS</option>
                         </select>
                         <div class="form-check form-switch">
                             <input class="form-check-input" type="checkbox" id="registrationSwitch">
@@ -943,8 +861,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-cancel float-start" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-save float-end"
-                        onclick="updateEvent(<?php echo $event['id']; ?>)">Save</button>
+                    <button type="button" class="btn btn-save float-end" onclick="updateEvent(<?php echo $event['id']; ?>)" data-bs-dismiss="modal">Save</button>
                 </div>
             </div>
         </div>
@@ -976,39 +893,36 @@
     <?php endforeach; ?>
 
     <!-- Modal for Jemaat Mendaftar -->
-    <?php foreach ($events as $event): ?>
-    <div class="modal fade jemaat-mendaftar-modal" id="jemaatMendaftarModal<?php echo $event['id']; ?>" tabindex="-1"
-        aria-labelledby="jemaatMendaftarModalLabel<?php echo $event['id']; ?>" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">PENDAFTARAN EVENT > <?php echo $event['title']; ?></h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <table>
-                        <tr class="top-row">
-                            <td>Daftar nama jemaat yang sudah mendaftar</td>
-                            <td>
-                                <div class="modal-counter-box">
-                                    <div class="modal-counter-text">Jumlah</div>
-                                    <div class="modal-counter"><?php echo count($event['registered_people']).(isset($event['quota']) ? '/'.$event['quota'] : ''); ?></div>
-                                </div>
-                            </td>
-                        </tr>
-                        <?php $count = 0; ?>
-                        <?php foreach ($event['registered_people'] as $person): ?>
-                        <?php $count++; ?>
-                        <tr class="<?php echo $count % 2 == 0 ? 'even-row' : 'odd-row'; ?>">
-                            <td colspan="2"><?php echo $person; ?></td>
-                        </tr>
-                        <?php endforeach; ?>
-                    </table>
+    @foreach ($events as $event)
+        <div class="modal fade jemaat-mendaftar-modal" id="jemaatMendaftarModal{{ $event->id }}" tabindex="-1" aria-labelledby="jemaatMendaftarModalLabel{{ $event->id }}" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">PENDAFTARAN EVENT > {{ $event->title }}</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <table>
+                            <tr class="top-row">
+                                <td>Daftar nama jemaat yang sudah mendaftar</td>
+                                <td>
+                                    <div class="modal-counter-box">
+                                        <div class="modal-counter-text">Jumlah</div>
+                                        <div class="modal-counter">{{ $event->registrations->count() }}{{ $event->quota ? '/' . $event->quota : '' }}</div>
+                                    </div>
+                                </td>
+                            </tr>
+                            @foreach ($event->registrations as $registration)
+                                <tr class="{{ $loop->iteration % 2 == 0 ? 'even-row' : 'odd-row' }}">
+                                    <td colspan="2">{{ $registration->registrant_email }}</td>
+                                </tr>
+                            @endforeach
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <?php endforeach; ?>
+    @endforeach
 
     <!-- Footer -->
 
@@ -1097,8 +1011,10 @@
                     if (archiveButton) {
                         if (selectedDropdown === 'upcoming') {
                             archiveButton.innerHTML = '<i class="fas fa-archive"></i> Archive';
+                            archiveButton.setAttribute('onclick', `archiveEvent(${eventId})`);
                         } else if (selectedDropdown === 'archived') {
                             archiveButton.innerHTML = '<i class="fas fa-undo"></i> Restore';
+                            archiveButton.setAttribute('onclick', `archiveEvent(${eventId}, true)`);
                         }
                     }
                 } else {
@@ -1106,6 +1022,7 @@
                 }
             });
         }
+
 
         // JavaScript code for handling the switch state and text change
         document.addEventListener('DOMContentLoaded', function() {
@@ -1130,21 +1047,127 @@
 
         // Function to handle the click of save button on the add modal
         function addEvent() {
-            // Display an alert to indicate that the event is added
-            alert("Event is added!");
+            var formData = new FormData();
+            formData.append('title', $('#aNamaEvent').val());
+            formData.append('quota', $('#aQuota').val());
+            formData.append('location', $('#aTempat').val());
+            formData.append('start_date', $('#aTanggalMulai').val());
+            formData.append('start_time', $('#aWaktuMulai').val());
+            formData.append('end_date', $('#aTanggalAkhir').val());
+            formData.append('end_time', $('#aWaktuAkhir').val());
+            formData.append('description', $('#aDeskripsiEvent').val());
+            
+            var imageInput = $('#editGambar')[0];
+            if (imageInput && imageInput.files && imageInput.files[0]) {
+                formData.append('image', imageInput.files[0]); // File object for image
+            }
+
+            formData.append('type', $('#type-dropdown-init').val()); // Add type value
+
+            $.ajax({
+                url: '/event-admin/store',
+                type: 'POST',
+                data: formData,
+                processData: false,
+                contentType: false,
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                success: function(response) {
+                    alert("Event is added!");
+                    location.reload(); // Refresh the page to show the new event
+                },
+                error: function(xhr, status, error) {
+                    var errorMessage = xhr.responseJSON.message; // Get the error message from backend
+                    alert("Error: " + errorMessage); // Show the error message
+                }
+            });
         }
 
         // Function to handle the click of save button on the add modal
         function updateEvent(eventId) {
-            // Display an alert to indicate that the event is added
-            alert("Event is added!");
+            // Prepare data to be sent to the server
+            var formData = new FormData();
+            formData.append('title', $('#eNamaEvent' + eventId).val());
+            formData.append('quota', $('#eQuota' + eventId).val());
+            formData.append('location', $('#eTempat' + eventId).val());
+            formData.append('start_date', $('#eTanggalMulai' + eventId).val());
+            formData.append('start_time', $('#eWaktuMulai' + eventId).val());
+            formData.append('end_date', $('#eTanggalAkhir' + eventId).val());
+            formData.append('end_time', $('#eWaktuAkhir' + eventId).val());
+            formData.append('description', $('#eDeskripsiEvent' + eventId).val());
+
+            // Check if the file input exists and has a file selected
+            var imageInput = $('#eGambar' + eventId)[0];
+            if (imageInput && imageInput.files && imageInput.files[0]) {
+                formData.append('image', imageInput.files[0]); // File object for image
+            }
+            
+            formData.append('type', $('#type-dropdown-init' + eventId).val());
+
+            // Send data to the server
+            $.ajax({
+                url: '/event-admin/update/' + eventId, // Update the URL to match the route
+                type: 'POST',
+                data: formData,
+                processData: false,
+                contentType: false,
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                success: function(response) {
+                    alert("Event is updated!");
+                    location.reload(); // Refresh the page to reflect the updated event
+                },
+                error: function(xhr, status, error) {
+                    var errorMessage = xhr.responseJSON.message; // Get the error message from backend
+                    alert("Error: " + errorMessage); // Show the error message
+                }
+            });
         }
 
         // Function to handle the click event of the delete buttons
         function deleteEvent(eventId) {
-            // Display an alert to indicate that the event is deleted
-            alert("Event with ID " + eventId + " is deleted!");
+            $.ajax({
+                url: '/event-admin/delete/' + eventId,
+                type: 'DELETE',
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                success: function(response) {
+                    alert("Event with ID " + eventId + " is deleted!");
+                    location.reload(); // Refresh the page to reflect the deleted event
+                },
+                error: function(xhr, status, error) {
+                    var errorMessage = xhr.responseJSON.message;
+                    alert("Error: " + errorMessage);
+                }
+            });
         }
+        function archiveEvent(eventId, isArchived) {
+            let url = '/event-admin/archive/' + eventId;
+
+            $.ajax({
+                url: url,
+                type: 'POST',
+                data: { archived: isArchived }, // Mengirim nilai archived ke server
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                success: function(response) {
+                    alert(response.message);
+                    location.reload();
+                },
+                error: function(xhr, status, error) {
+                    var errorMessage = xhr.responseJSON.message;
+                    alert("Error: " + errorMessage);
+                }
+            });
+        }
+
+
+
+
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
