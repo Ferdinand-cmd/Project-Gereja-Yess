@@ -14,9 +14,10 @@ return new class extends Migration
         Schema::create('event_registrations', function (Blueprint $table) {
             $table->id();
             $table->foreignId('event_id')->constrained('events')->onDelete('cascade');
+            $table->string('name');
             $table->string('registrant_email');
             $table->timestamps();
-        });
+        });        
     }
     
 

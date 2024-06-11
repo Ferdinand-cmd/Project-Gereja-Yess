@@ -914,7 +914,7 @@
                             </tr>
                             @foreach ($event->registrations as $registration)
                                 <tr class="{{ $loop->iteration % 2 == 0 ? 'even-row' : 'odd-row' }}">
-                                    <td colspan="2">{{ $registration->registrant_email }}</td>
+                                    <td colspan="2">{{ $registration->name }}</td>
                                 </tr>
                             @endforeach
                         </table>
@@ -1057,13 +1057,17 @@
             formData.append('end_time', $('#aWaktuAkhir').val());
             formData.append('description', $('#aDeskripsiEvent').val());
             
-            var imageInput = $('#editGambar')[0];
+            var imageInput = $('#aGambar')[0]; // Perhatikan ID yang berbeda di sini
             if (imageInput && imageInput.files && imageInput.files[0]) {
                 formData.append('image', imageInput.files[0]); // File object for image
             }
 
             formData.append('type', $('#type-dropdown-init').val()); // Add type value
 
+            // Log formData untuk memeriksa isi FormData sebelum pengiriman
+            console.log('FormData:', formData);
+
+            // Lanjutkan dengan AJAX call untuk mengirim data form
             $.ajax({
                 url: '/event-admin/store',
                 type: 'POST',
