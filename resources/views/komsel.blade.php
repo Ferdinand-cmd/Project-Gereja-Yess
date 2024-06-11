@@ -15,7 +15,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
-    <link href="css/komsel.css" rel="stylesheet">
+    <link href="cssKomsel.css" rel="stylesheet">
     <style>
         body {
             overflow-x: hidden;
@@ -202,14 +202,92 @@
                 </div>
             @endauth
         </div>
+    </div>  
 
+    
+    <!-- BARU -->
+    <!-- Informasi event khusus KOMSEL -->
+    <div class="contEventKomsel">
+        <div class="contCard">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+
+            <!-- isi card 1 -> ini yg buat nambahanin isi/jumlah cardnya -->
+            <div class="slider-item swiper-slide">
+                <div class="slider-item-content">
+                    <div class="content">
+                        <span>Selasa, 21 Mei 2024</span>
+                        <div class="title">
+                            Komsel Gabungan YESS Pro Dafam x CW
+                        </div>
+                        <div class="textLokasi">
+                            Lokasi : Ruko Robert Dafam (Klaska)
+                        </div>
+                        <div class="textKeterangan">
+                            Keterangan : Ruko Klaska Jagir, masuk dari depan tulisan Klaska, di ruko kiri jalan, pintu ruko warna kuning
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- isi card 2 -->
+            <div class="slider-item swiper-slide">
+                <div class="slider-item-content">
+                    <div class="content">
+                        <span>Selasa, 21 Mei 2024</span>
+                        <div class="title">
+                            Outing Komsel Nonton  
+                        </div>
+                        <div class="textLokasi">
+                            Lokasi : Pakuwon Trade Center
+                        </div>
+                        <div class="textKeterangan">
+                            Keterangan : Lorem ipsum
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="slider-buttons">
+            <button class="swiper-button-prev">Prev</button>
+            <button class="swiper-button-next">Next</button>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        </div>
+    </div>
+      <!-- partial -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.5/swiper-bundle.min.js'></script>
+
+
+
+    <!-- tombol khusus ketua komsel-> Atur komsel & absen komsel -->
+
+    <div>
+        <div class="container-fluid px-2 contButtonKetua">
+            <div class="row g-2">
+                <div class="col-6 d-grid">
+                    <button class="pushable" id ="aturbutton" style ="background: hsl(345deg 100% 47%);"onclick="klikButtonAtur()">
+                        <span class="front" style ="background: hsl(340deg 100% 32%);">
+                            ATUR KOMSEL
+                        </span>
+                    </button>
+                </div>
+                <div class="col-6 d-grid">
+                    <button class="pushable" id ="absenbutton" style ="background: hsl(215, 100%, 52%);" onclick="klikButtonAbsen()">
+                        <span class="front"style ="background:  hsl(210, 100%, 32%);">
+                            ABSEN KOMSEL
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+
+
 
     <!-- code buat informasi dll -->
 
@@ -226,7 +304,7 @@
                     <div class="awal2-6-2">
                         Surabaya Timur | Surabaya Barat | Surabaya Selatan
                     </div>
-                    <img loading="lazy" srcset="img/komsel2.png" class="awal2-img" />
+                    <img loading="lazy" srcset="img/komsel22.png" class="awal2-img" />
                     <div class="awal2-7">
                         Discover our cell group, enhance your spiritual journey with us.
                     </div>
@@ -234,28 +312,22 @@
             </div>
             <div class="column-2">
                 <div class="awal2-8">
-                    <img loading="lazy" srcset="img/komsel1.png" class="awal2-img-2" />
-                    <img loading="lazy" srcset="img/komsel3.png" class="awal2-img-3" />
+                    <img loading="lazy" srcset="img/komsel11.png" class="awal2-img-2" />
+                    <img loading="lazy" srcset="img/komsel33.png" class="awal2-img-3" />
                 </div>
             </div>
         </div>
     </div>
+<br>
+<br>
+<br>
 
-    <!-- Footer -->
-    <div class="container-fluid" style="background-color: black; color: white; border-radius: 30px 30px 0 0;">
-        <div class="row">
-            <div class="col-md-6 d-flex justify-content-start">
-                <img src="img/ig.png" alt="Instagram">
-                <img src="img/tiktok.png" alt="TikTok">
-                <img src="img/yt.png" alt="YouTube">
-            </div>
-        </div>
-    </div>
-    </div>
+   
+</div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
-    <script src="js/komsel.js"></script>
+    <script src="jsKomsel.js"></script>
 </body>
 </html>
