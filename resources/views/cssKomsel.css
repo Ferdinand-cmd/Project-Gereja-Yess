@@ -1,0 +1,578 @@
+/* Base styles */
+body {
+    background-color: #000;
+}
+
+/* BUAT BAGIAN AWAL yang get connected blabla */
+
+.awal {
+    display: flex;
+    flex-direction: column;
+}
+.awal-2 {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+    z-index: 10;
+    display: flex;
+    min-height: 312px;
+    width: 100%;
+    align-items: center;
+    color: #fff;
+    justify-content: center;
+    padding: 76px 60px;
+}
+
+@media (max-width: 991px) {
+    .awal-2 {
+    max-width: 100%;
+    flex-wrap: wrap;
+    padding: 0 20px;
+    }
+}
+
+.img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.awal-3 {
+    position: relative;
+    display: flex;
+    margin-bottom: 16px;
+    flex-direction: column;
+}
+
+@media (max-width: 991px) {
+    .awal-3 {
+    max-width: 100%;
+    }
+}
+
+.awal-4 {
+    letter-spacing: 6px;
+    align-self: center;
+    font: 800 28px 'Alegreya Sans', sans-serif;
+}
+.awal-5 {
+    text-align: center;
+    margin-top: 20px;
+    font: 900 58px 'Roboto Serif', sans-serif;
+}
+
+@media (max-width: 991px) {
+    .awal-5 {
+    max-width: 100%;
+    font-size: 40px;
+    }
+}
+
+/* BUAT BUTTON DI GAMBAR */
+
+.button {
+    background-color: #EEB120; 
+    border: none;
+    color: white;
+    justify-content: center;
+    align-self: center;
+    z-index: 10;
+    margin-top: -18px;
+    letter-spacing: 1.6px;
+    padding: 8px 14px;
+    font: 550 15px/120% 'Montserrat', sans-serif;
+    text-align: center;
+    display: inline-block;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.button1 {
+    background-color: white; 
+    color: black; 
+}
+
+.button1:hover {
+    background-color: #EEB120;
+    color: white;
+}
+
+#myForm {
+    display: none;
+}
+
+.awalForm{
+    width: 100%;
+    padding: 50px 0;
+    text-align: center;
+    background-color: #E7E7E7;
+    margin-top: -45px;
+}
+
+
+.form1{
+    font: 22px 'Montserrat', sans-serif;
+    margin-top: 1%;
+
+}
+
+.form2{
+    font: 18px 'Montserrat', sans-serif;
+    margin-top: 1%;
+}
+
+/* buat bagian form supaya responsive dan interactive */
+
+.awal-2-Form{
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 2%;
+    padding-bottom: 5%;
+    background-color: #fff;
+    font-family :'Montserrat', sans-serif;
+
+}
+
+.main-user-info{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.user-input-box:nth-child(2n){
+    justify-content: end;
+}
+
+.user-input-box{
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+    padding-bottom: 15px;
+}
+
+.user-input-box label{
+    width: 95%;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    font-weight: 600;
+    margin: 5px 0;
+}
+
+.user-input-box input{
+    height: 40px;
+    width: 95%;
+    border: 1px solid rgb(143, 143, 143);
+    padding: 0 10px;
+    border-bottom-width: 2px ;
+}
+
+.kegiatan-title{
+    color:rgb(0, 0, 0);
+    font-size: 18px;
+    font-weight: 600;
+    border-bottom: 1px solid white;
+}
+
+.kegiatan-category{
+    margin: 15px 0;
+    color: rgb(0, 0, 0);
+}
+
+.kegiatan-category label{
+    padding: 0 20px 0 5px;
+}
+
+.kegiatan-category label,
+.kegiatan-category input,
+.form-submit-btn input{
+    cursor: pointer;
+}
+
+.form-submit-btn{
+    margin-top: 40px;
+}
+
+.form-submit-btn input{
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    font-size: 20px;
+    padding: 10px;
+    border:none;
+    color: rgb(0, 0, 0);
+    background: #f0a800 ;
+}
+
+.form-submit-btn input:hover{
+    background: #ffc517;
+    color: rgb(255, 255, 255);
+}
+
+@media(max-width: 600px){
+    .awal-2-Form{
+        min-width: 280px;
+    }
+
+    .user-input-box{
+        margin-bottom: 12px;
+        width: 100%;
+    }
+
+    .user-input-box:nth-child(2n){
+        justify-content: space-between;
+    }
+
+    .kegiatan-category{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .main-user-info{
+        max-height: 380px;
+        overflow: auto;
+    }
+
+    .main-user-info::-webkit-scrollbar{
+        width: 0;
+    }
+}
+
+
+
+/* Buat Bagian informasinya */
+.awal2-2 {
+    align-self: center;
+    width: 100%;
+}
+
+.awal2-3 {
+    gap: 20px;
+    display: flex;
+    align-self: center;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    line-height: normal;
+    width: 50%;
+    margin-left: 18px;
+}
+
+.awal2-4 {
+    display: flex;
+    margin-top: 12px;
+    flex-direction: column;
+    color: #fff;
+    font-weight: 500;
+    line-height: 50px;
+    padding: 0 20px;
+}
+
+.awal2-5 {
+    font: 32px 'Montserrat', sans-serif;
+}
+
+.awal2-6 {
+    margin-top: 49px;
+    font: 22px 'Montserrat', sans-serif;
+}
+
+.awal2-6-2 {
+    margin-top: 15px;
+    padding: 10px;
+    text-align: center;
+    border: 2px solid #fff;
+    font: 20px 'Montserrat', sans-serif;
+}
+
+.awal2-img {
+    aspect-ratio: 1.06;
+    object-fit: auto;
+    object-position: center;
+    width: 100%;
+    z-index: 10;
+    margin-top: 30px;
+}
+
+.awal2-7 {
+    margin-top: -32px;
+    z-index: 10;
+    margin-left: -15px;
+    font: 900 54px 'Roboto Serif', sans-serif;
+}
+
+.column-2 {
+    display: flex;
+    flex-direction: column;
+    line-height: normal;
+    width: 46%;
+    margin-left: -25px;
+}
+
+.awal2-8 {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+}
+
+.awal2-img-2 {
+    aspect-ratio: 1.01;
+    object-fit: auto;
+    object-position: center;
+    width: 100%;
+}
+
+.awal2-img-3 {
+    aspect-ratio: 1.03;
+    object-fit: auto;
+    object-position: center;
+    width: 100%;
+    margin-top: 22px;
+}
+
+/* For screens up to 620px */
+@media (max-width: 620px) {
+    .awal2-2,.awal2-3,.column, .awal2-4,.awal2-5,.awal2-6,.awal2-6-2,.awal2-img,.awal2-7,.column-2,.awal2-8,.awal2-img-2,.awal2-img-3 {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .awal2-3 {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0px;
+    }
+
+    .awal2-4 {
+        max-width: 100%;
+        margin-top: 25px;
+    }
+
+    .awal2-5 {
+        max-width: 100%;
+    }
+
+    .awal2-6 .awal2-6-2 {
+        max-width: 100%;
+        margin-top: 40px;
+    }
+
+    .awal2-img,
+    .awal2-img-2,
+    .awal2-img-3 {
+        max-width: 100%;
+        margin-top: 40px;
+    }
+
+    .awal2-7 {
+        max-width: 100%;
+        font-size: 40px;
+    }
+
+    .awal2-8 {
+        max-width: 100%;
+        margin-top: 13px;
+    }
+}
+
+.img-7 {
+    aspect-ratio: 1;
+    object-fit: auto;
+    object-position: center;
+    width: 50px;
+}
+
+
+/* BARU */
+/* Khusus kalo ada event khusus */
+
+.content{
+  width: 100%;
+}
+
+.content span{
+  display: block;
+  color: #7b7992;
+  font-size: 22px;
+  font-weight: 500
+}
+.content .title{
+  font-size: 30px;
+  font-weight: 700;
+  color: #0d0925;
+}
+
+  .contCard {
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 32px;
+    margin-bottom: 2%;
+  }
+ 
+  .swiper-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+    position: relative;
+  }
+  .swiper-container {
+    background: linear-gradient(270deg, #f7f9ff 0%, #f2f6ff 100%);
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    width: 100%;
+    position: relative;
+    max-width: 85%;
+    height: 100%;
+    max-height: 85%;
+    border-radius: 10px;
+  }
+  .slider-image-wrapper {
+    height: 200px;
+    width: 100%;
+    overflow: hidden;
+  }
+  .slider-item {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    opacity: 0;
+    background: linear-gradient(270deg, #f7f9ff 0%, #f2f6ff 100%);
+    cursor: -webkit-grab;
+    cursor: grab;
+  }
+  .slider-item-content {
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: 0.4s;
+  }
+  .slider-item-content > * {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  .swiper-slide-active .slider-item-content > * {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  
+  .swiper-pagination {
+    position: absolute;
+    left: 50%;
+    bottom: 8px;
+    transform: translatex(-50%);
+    z-index: 1;
+    width: auto !important;
+  }
+  .swiper-pagination-bullet {
+    border-radius: 0;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    line-height: 30px;
+    font-size: 12px;
+    opacity: 1;
+    background: rgba(255, 185, 0, 0.3);
+    display: inline-block;
+    margin-right: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .swiper-pagination-bullet-active {
+    background: #FFB200;
+    width: 20px;
+    border-radius: 10px;
+  }
+  .slider-buttons {
+    position: absolute;
+    display: flex;
+    top: 100%;
+    justify-content: flex-end;
+    width: 100%;
+    padding-top: 8px;
+  }
+  .swiper-button-next,
+  .swiper-button-prev {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    position: relative;
+    margin-left: 4px;
+  }
+  .swiper-button-next:before,
+  .swiper-button-prev:before {
+    content: "";
+    position: absolute;
+    background-color: #fff;
+    height: 1px;
+    width: 0;
+    left: 0;
+    bottom: -1px;
+    transition: 0.2s;
+  }
+  .swiper-button-next:hover:before,
+  .swiper-button-prev:hover:before {
+    width: 100%;
+  }
+  
+  @media screen and (max-width: 520px) {
+    .swiper-button-next:hover:before,
+  .swiper-button-prev:hover:before {
+      display: none;
+    }
+  }
+
+
+
+
+/* button ketua komsel */
+
+.pushable {
+    border-radius: 10px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font: 20px 'Montserrat', sans-serif;
+    font-weight: bold;
+    outline-offset: 4px;
+  }
+  .front {
+    display: block;
+    padding: 18px 42px;
+    border-radius: 10px;
+    font-size: 1.25rem;
+    color: white;
+    font: 20px 'Montserrat', sans-serif;
+    font-weight: bold;
+    transform: translateY(-6px);
+  }
+
+  .pushable:active .front {
+    transform: translateY(-2px);
+  }
+
+.contButtonKetua{
+    position: fixed;
+    bottom: 8px;
+    z-index: 12;
+
+}

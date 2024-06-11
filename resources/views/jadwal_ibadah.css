@@ -1,0 +1,643 @@
+    /* navbar + WA + footer */
+    body {
+        overflow-x: hidden;
+    }
+    .whatsapp-button {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 80px;
+        height: 80px;
+        background-color: green;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        cursor: pointer;
+    }
+    .whatsapp-button img {
+        width: 50px;
+        height: 50px;
+    }
+    /* Untuk membuat tulisan BEST berwarna orange dan memiliki garis bawah orange saat berada di halaman BEST */
+    .nav-item.active .nav-link,
+    .nav-item:hover .nav-link {
+        color: orange !important;
+        border-bottom: 2px solid orange;
+    }
+
+    /* Untuk mengubah warna teks dan garis bawah saat item dropdown ditekan */
+    .dropdown-item:focus,
+    .dropdown-item:hover {
+        color: orange !important;
+        background-color: transparent !important;
+    }
+
+    /* Untuk mengubah warna teks dan garis bawah saat item dropdown aktif */
+    .dropdown-item.active,
+    .dropdown-item:active {
+        color: orange !important;
+        background-color: transparent !important;
+    }
+
+    /* Untuk mengubah warna teks saat dropdown dihover */
+    .dropdown-menu a.dropdown-item:hover {
+        color: orange !important;
+        background-color: transparent !important;
+    }
+
+
+    /* jadwal ibadah css */
+    *
+    {
+        box-sizing: border-box;
+    }
+    .div {
+        background-color: #fff;
+        display: flex;
+        padding-bottom: 80px;
+        flex-direction: column;
+        align-items: center;
+    }
+    .fotoAwal {
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        align-self: stretch;
+        position: relative;
+        display: flex;
+        min-height: 978px;
+        width: 100%;
+        align-items: end;
+        font-size: 100px;
+        color: #fff;
+        font-weight: 900;
+        padding: 60px 580px;
+    }
+    @media (max-width: 991px) {
+        .fotoAwal {
+        max-width: 100%;
+        font-size: 40px;
+        padding: 0 20px;
+        }
+    }
+    .img {
+        position: absolute;
+        inset: 0;
+        height: 70%;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+    .expecting {
+        position: relative;
+        font-family: Roboto Serif, sans-serif;
+        line-height: 120px;
+        margin-top: 70px;
+    }
+    @media (max-width: 991px) {
+        .expecting {
+        max-width: 100%;
+        margin-top: 40px;
+        font-size: 60px;
+        }
+    }
+    .worship {
+        color: #000;
+        text-align: center;
+        margin-top: -185px;
+        letter-spacing: 2px;
+        font: 800 80px/50% Roboto Serif, -apple-system, Roboto, Helvetica,
+        sans-serif;
+    }
+    @media (max-width: 991px) {
+        .worship {
+        max-width: 100%;
+        margin-top: 40px;
+        font-size: 40px;
+        }
+    }
+    .worshipAlamat {
+        color: #000;
+        margin-top: 31px;
+        font: 550 28px Montserrat, sans-serif;
+    }
+    @media (max-width: 991px) {
+        .worshipAlamat {
+        max-width: 100%;
+        font-size: 18px;
+        }
+    }
+    .info1 {
+        background-color: #EEB120; 
+        border: none;
+        color: black;
+        justify-content: center;
+        align-self: center;
+        z-index: 10;
+        margin-top: 18px;
+        letter-spacing: 1.6px;
+        padding: 8px 35px;
+        font: 550 18px/187.5% Montserrat, -apple-system, Roboto, Helvetica,
+        sans-serif;
+        text-align: center;
+        display: inline-block;
+        border-radius: 40px;
+        
+    }
+    .contInfoWorship{
+        text-align: center;
+        color: white;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        
+    }
+    .img-3 {
+        aspect-ratio: 4;
+        object-fit: auto;
+        object-position: center;
+        width: 100%;
+        border-color: rgba(0, 0, 0, 0.75);
+        border-style: solid;
+        border-width: 1px;
+        align-self: stretch;
+        margin-top: -30px;
+    }
+    @media (max-width: 991px) {
+        .img-3 {
+        max-width: 100%;
+        margin-top: 40px;
+        }
+    }
+    
+    .pendetaInfoWorship, .topikInfoWorship, .waktuInfoWorship {
+        top: 100%;
+        transform: translate(0%, -440%);
+        font: 550 40px Montserrat, -apple-system, Roboto, Helvetica;
+        color: #fff;
+    }
+  
+    .yessUmum {
+        display: flex;
+        margin-top: 20px;
+        width: 100%;
+        max-width: 1230px;
+        flex-direction: column;
+        padding: 0 20px;
+    }
+    @media (max-width: 991px) {
+        .pendetaInfoWorship, .topikInfoWorship, .waktuInfoWorship {
+        max-width: 100%;
+        font-size: 30px;
+        line-height: 30px
+        }
+    }
+    .YESSAlamat {
+        color: #000;
+        align-self: start;
+        margin-left: 3%;
+        font: 550 26px Montserrat, sans-serif;
+    }
+    @media (max-width: 991px) {
+        .YESSAlamat {
+        max-width: 100%;
+        }
+    }
+    .YESSinfo {
+        color: #000;
+        margin-left: 3%;
+        letter-spacing: 1.92px;
+        align-self: start;
+        margin-top: 30px;
+        margin-bottom: 25px;
+        font: 800 80px/47% Roboto Serif, -apple-system, Roboto, Helvetica,
+        sans-serif;
+    }
+    @media (max-width: 991px) {
+        .YESSinfo {
+        max-width: 100%;
+        font-size: 40px;
+        }
+    }
+    .space {
+        margin-top: 10px;
+    }
+    @media (max-width: 991px) {
+        .space {
+        max-width: 100%;
+        margin-top: 40px;
+        }
+    }
+    .contYESS {
+        gap: 20px;
+        display: flex;
+    }
+    @media (max-width: 991px) {
+        .contYESS {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0px;
+        }
+    }
+    .columnImgYESS {
+        display: flex;
+        flex-direction: column;
+        line-height: normal;
+        width: 50%;
+        margin-left: 38px;
+    }
+    @media (max-width: 991px) {
+        .columnImgYESS {
+        width: 100%;
+        }
+    }
+    .img-4 {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+    @media (max-width: 991px) {
+        .img-4 {
+        max-width: 100%;
+        margin-top: 40px;
+        }
+    }
+    .columninfoYESS {
+        display: flex;
+        flex-direction: column;
+        line-height: normal;
+        width: 42%;
+        margin-left: 10px;
+    }
+    @media (max-width: 991px) {
+        .columninfoYESS {
+        width: 100%;
+        }
+    }
+    .contInfoYESS {
+        display: flex;
+        flex-direction: column;
+        font-size: 22px;
+    }
+    @media (max-width: 991px) {
+        .contInfoYESS {
+        max-width: 100%;
+        margin-top: 40px;
+        }
+    }
+    .borderInfoYESS {
+        border-color: rgba(0, 0, 0, 1);
+        border-style: solid;
+        border-width: 1px;
+        display: flex;
+        flex-direction: column;
+        color: #000;
+        font-weight: 500;
+        padding: 0 19px 40px;
+    }
+    @media (max-width: 991px) {
+        .borderInfoYESS {
+        max-width: 100%;
+        }
+    }
+    .InfoYESSTanggal {
+        background-color: #000000; 
+        border: none;
+        color: rgb(255, 255, 255);
+        justify-content: center;
+        align-self: center;
+        z-index: 10;
+        margin-top: -20px;
+        letter-spacing: 1.5px;
+        padding: 5px 20px;
+        font: 550 16px/160% Montserrat, -apple-system, Roboto, Helvetica,
+        sans-serif;
+        text-align: center;
+        display: inline-block;
+        border-radius: 40px;
+    }
+    @media (max-width: 991px) {
+        .InfoYESSTanggal {
+        max-width: 100%;
+        margin-right: 10px;
+        padding-left: 20px;
+        }
+    }
+    .InfoYESSTopik {
+        text-align: center;
+        align-self: center;
+        margin-top: 40px;
+        font: 800 44px Roboto Serif, sans-serif;
+    }
+    @media (max-width: 991px) {
+        .InfoYESSTopik {
+        max-width: 100%;
+        margin-top: 30px;
+        font-size: 40px;
+        }
+    }
+    .InfoYESSPendeta {
+        font-family: Montserrat, sans-serif;
+        background-color: #eeb120;
+        margin-top: 46px;
+        align-items: start;
+        line-height: 141%;
+        justify-content: center;
+        padding: 10px 11px;
+    }
+    @media (max-width: 991px) {
+        .InfoYESSPendeta {
+        max-width: 100%;
+        padding-right: 20px;
+        margin-top: 40px;
+        }
+    }
+    .InfoYESSOpen {
+        font-family: Montserrat, sans-serif;
+        background-color: #eeb120;
+        align-items: start;
+        line-height: 141%;
+        justify-content: center;
+        margin: 11px 0 9px;
+        padding: 10px 11px;
+    }
+    @media (max-width: 991px) {
+        .InfoYESSOpen {
+        max-width: 100%;
+        padding-right: 20px;
+        }
+    }
+    .map {
+        font-family: DM Sans, sans-serif;
+        border-color: rgb(0, 0, 0);
+        border-style: solid;
+        border-width: 3px;
+        background-color: #000;
+        margin-top: 33px;
+        align-items: center;
+        color: #fff;
+        font-weight: 700;
+        text-align: center;
+        line-height: 156%;
+        letter-spacing: 1.2;
+        justify-content: center;
+        padding: 30px 60px;
+        cursor: pointer;
+        transition-duration: 0.4s;
+        text-decoration: none;
+    }
+
+    .map span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+    }
+    .map:hover{
+        border-color: #EEB120;
+    }
+    .map span:after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+    }
+    .map:hover span {
+        padding-right: 25px;
+    }
+    
+    .map:hover span:after {
+        opacity: 1;
+        right: 0;
+    }
+
+    @media (max-width: 991px) {
+        .map {
+        max-width: 100%;
+        padding: 0 20px;
+        }
+    }
+    .lokasiUmum {
+        color: #000;
+        text-align: center;
+        letter-spacing: 0.72px;
+        align-items: center;
+        margin: 40px 0 0 0;
+        font: italic 500 24px Montserrat, sans-serif;
+    }
+    @media (max-width: 991px) {
+        .lokasiUmum {
+        max-width: 100%;
+        margin: 40px 10px 0 0;
+        }
+    }
+    .judulUmum {
+        color: #000;
+        text-align: center;
+        letter-spacing: 1.92px;
+        align-self: center;
+        margin-top: 41px;
+        font: 800 70px/47% Roboto Serif, -apple-system, Roboto, Helvetica,
+        sans-serif;
+    }
+    @media (max-width: 991px) {
+        .judulUmum {
+        max-width: 100%;
+        margin-top: 40px;
+        font-size: 40px;
+        }
+    }
+    .tglUmum {
+        border-radius: 40px;
+        background-color: #000;
+        align-self: center;
+        margin-top: 130px;
+        color: #fff;
+        justify-content: center;
+        padding: 8px 29px;
+        font: 600 20px/120% Montserrat, -apple-system, Roboto, Helvetica,
+        sans-serif;
+    }
+    @media (max-width: 991px) {
+        .tglUmum {
+        max-width: 100%;
+        margin-top: 40px;
+        padding: 0 20px;
+        }
+    }
+    .space2 {
+        margin-top: 30px;
+    }
+    @media (max-width: 991px) {
+        .space2 {
+        max-width: 100%;
+        margin-top: 40px;
+        }
+    }
+    .contCard {
+        gap: 20px;
+        display: flex;
+    }
+    @media (max-width: 991px) {
+        .contCard {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0px;
+        }
+    }
+
+
+    .columnCard {
+        display: flex;
+        flex-direction: column;
+        line-height: normal;
+        width: 33%;
+        margin-left: 20px;
+    }
+    @media (max-width: 991px) {
+        .columnCard {
+        width: 100%;
+        }
+    }
+    .img-7 {
+        aspect-ratio: 0.86;
+        object-fit: cover;
+        object-position: center;
+        width: 100%;
+        flex-grow: 1;
+        height: 100%;
+        border-radius: 2rem;
+    }
+
+
+    .img-back{
+        aspect-ratio: 0.86;
+        object-fit: cover;
+        object-position: center;
+        width: 100%;
+        flex-grow: 1;
+        height: 100%;
+        border-radius: 2rem;
+        z-index: -1;
+        position: absolute;
+        filter: brightness(40%);
+    
+        
+    }
+    
+    .container {
+        width: 350px;
+        height: 400px;
+        perspective: 800px;
+        
+    }
+    
+    .container:hover > .card {
+        cursor: pointer;
+        transform: rotateY(180deg);
+    }
+    
+    .card {
+        height: 100%;
+        width: 100%;
+        position: relative;
+        transition: transform 1500ms;
+        transform-style: preserve-3d;
+        border-radius: 2rem;
+    }
+    
+    .front,
+    .back {
+        height: 100%;
+        width: 100%;
+        border-radius: 2rem;
+        box-shadow: 0 0 5px 2px rgb(255, 255, 255);
+        position: absolute;
+        backface-visibility: hidden;
+    }
+    
+    .back {
+        background-color: #000000;
+        transform: rotateY(180deg);
+        display:inline-block;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5rem;
+    }
+
+    
+
+    .contInformasiIbadah{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        flex-direction: column;
+    }
+    /* ul */
+    ul {
+        width: 70%;
+        height: 100%;
+    
+        list-style: none;
+        color: white;
+        margin-left: -8%;
+    }
+
+    
+    /* li */
+    li {
+        width: 100%;
+        margin-top: 16px;
+        padding-bottom: 12px;
+        
+    
+        font-size: 14px;
+        text-align: center;
+    
+        position: relative;
+        color: white;
+        
+    }
+    
+    li:nth-child(2n) {
+        color: white;
+    }
+    
+    li:not(:last-child)::after {
+        content: "";
+    
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    
+        width: 100%;
+        height: 1.5px;
+        color: white;
+    
+        background: currentColor;
+        opacity: .5;
+    }
+
+    .contInformasiIbadah span{
+        display: block;
+        width: auto;
+        padding: 9px 20px;
+
+        font-weight: 500;
+        line-height: 1.2;
+        letter-spacing: 1.1px;
+        text-align: center;
+
+        position: absolute;
+        bottom: 0;
+    }
+  
+
