@@ -119,6 +119,57 @@
           margin-top: 31px;
           margin-bottom: 31px;
       }
+
+      /* Modal */
+      .modal-header {
+        font: 500 24px/167% Montserrat, sans-serif;
+      }
+      .modal-body {
+          background-color: #f4f4f4;
+      }
+      .modal-footer {
+          background-color: #a2a2a2;
+      }
+
+      /* CSS for cancel button */
+      .modal .btn-cancel {
+          background-color: #ffffff;
+          /* White background */
+          color: #000000;
+          /* Black text color */
+          font-family: 'DM Sans', sans-serif;
+          font-size: 1.11em;
+          font-weight: bold;
+          /* Bold weight */
+          width: 150px;
+          /* Set width to 150px */
+      }
+
+      /* Hover effect for cancel button & status container */
+      .modal .btn-cancel:hover, .status-container:hover {
+          background-color: #eeeeee;
+          /* Light gray background on hover */
+      }
+
+      /* CSS for book & submit button */
+      .modal .btn-save {
+          background-color: #000000;
+          /* Black background */
+          color: #ffffff;
+          /* White text color */
+          font-family: 'DM Sans', sans-serif;
+          font-size: 1.11em;
+          font-weight: bold;
+          /* Bold weight */
+          width: 150px;
+          /* Set width to 150px */
+          border-color: #000;
+      }
+      /* Hover effect for save button */
+      .btn-save {
+          background-color: #333333;
+          /* Darker gray background on hover */
+      }
       </style>
 </head>
 <body>
@@ -194,6 +245,40 @@
   <a href="https://api.whatsapp.com/send?phone=6285854526955&text=Halo%20mau%20tanya%20gereja" class="whatsapp-button">
     <img src="img/wa.png" alt="WhatsApp">
   </a>
+    <!-- Modal add pendeta  -->
+    <div class="modal modal-add fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="addModalLabel">ADD PENDETA</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                  <!-- Your content here -->
+                  <div class="mb-3">
+                      <label for="nama" class="form-label">Nama Lengkap</label>
+                      <input type="text" class="form-control" id="nama" name="nama" required>
+                  </div>
+                  <div class="mb-3">
+                      <label for="wa" class="form-label">WA</label>
+                      <input type="date" class="form-control" id="wa" name="wa" required>
+                  </div>
+                  <div class="mb-3">
+                      <label for="email" class="form-label">Email</label>
+                      <input type="text" class="form-control" id="email" name="email" required>
+                  </div>
+                  <div class="mb-3">
+                      <label for="role" class="form-label">Role</label>
+                      <input type="text" class="form-control" id="role" name="role" required>
+                  </div>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary btn-cancel" data-bs-dismiss="modal">CANCEL</button>
+                  <button type="button" class="btn btn-primary btn-save">SAVE</button>
+              </div>
+          </div>
+      </div>
+    </div>
   <div class="container">
     <h1>Daftar Pendeta BEST Surabaya</h1>
     <table class="content-table">
@@ -217,7 +302,7 @@
         </tbody>
       </table>
     <!-- TAMBAH ADD PENDETA -->
-    <button class="btn-add" tabindex="0">ADD</button>
+    <button class="btn-add" tabindex="0" data-bs-toggle="modal" data-bs-target="#addModal">ADD</button>
     <!-- Footer -->
     <div class="container-fluid" style="background-color: black; color: white; border-radius: 30px 30px 0 0;">
         <div class="row">
