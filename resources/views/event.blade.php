@@ -630,75 +630,6 @@
             Event subheader content that will be replaced by the js method
         </div>
 
-        <?php
-            $events = [
-                [
-                    'id' => 1,
-                    'title' => 'Putus atau Terus 1',
-                    'quota' => 50,
-                    'location' => 'Ciputra World Mall 2nd floor',
-                    'description' => 'YESS Surabaya Valentine\'s Day Celebration "Putus atau Terus"
-                    Ini adalah kesempatan untuk terinspirasi sebagai pasangan!
-                    juga merupakan PENGALAMAN YANG HEBAT bagi kamu ya...', 
-                    'start_date' => '2024-03-30',
-                    'start_time' => '16:30',
-                    'end_date' => '2024-03-30',
-                    'end_time' => '19:30',
-                    'image' => 'img/event-photo1.jpg',
-                    'registered_people' => ['Andi', 'Bagus', 'Cahyono'],
-                    'archived' => false,
-                    'type' => 'umum'
-                ],
-                [
-                    'id' => 2,
-                    'title' => 'YESS Leardership Mission Training VII',
-                    'location' => 'Desa Birkium, Soe, Nusa Tenggara Timur',
-                    'description' => 'Biarlah semangat misi terus menyala dalam hidup kita.
-                    Uis Neno nokan kit, Immanuel!
-                    Sampe ketemu di YLMT, basodara dong!',
-                    'start_date' => '2024-04-19',
-                    'start_time' => null,
-                    'end_date' => '2024-04-21',
-                    'end_time' => null,
-                    'image' => 'img/event-photo2.jpg',
-                    'registered_people' => ['Desi', 'Endah', 'Marwoto', 'SBC Ganteng'],
-                    'archived' => false,
-                    'type' => 'ladies devotion'
-                ],
-                [
-                    'id' => 3,
-                    'title' => 'Putus atau Terus 2',
-                    'location' => 'Ciputra World Mall 2nd floor',
-                    'description' => 'YESS Surabaya Valentine\'s Day Celebration "Putus atau Terus"
-                    Ini adalah kesempatan untuk terinspirasi sebagai pasangan!
-                    juga merupakan PENGALAMAN YANG HEBAT bagi kamu ya...', 
-                    'start_date' => '2024-03-30',
-                    'start_time' => '16:30',
-                    'end_date' => '2024-03-30',
-                    'end_time' => '19:30',
-                    'image' => 'img/event-photo3.jpg',
-                    'registered_people' => [],
-                    'archived' => true,
-                    'type' => 'sunday school'
-                ],
-                [
-                    'id' => 4,
-                    'title' => 'YESS Leardership Mission Training VIII',
-                    'location' => 'Desa Birkium, Soe, Nusa Tenggara Timur',
-                    'description' => 'Biarlah semangat misi terus menyala dalam hidup kita.
-                    Uis Neno nokan kit, Immanuel!
-                    Sampe ketemu di YLMT, basodara dong!',
-                    'start_date' => '2024-04-19',
-                    'start_time' => null,
-                    'end_date' => '2024-04-21',
-                    'end_time' => null,
-                    'image' => 'img/event-photo4.jpg',
-                    'registered_people' => [],
-                    'archived' => true,
-                    'type' => 'umum'
-                ]
-            ];
-        ?>
 
         <!-- Modal -->
         <?php foreach ($events as $event): ?>
@@ -751,25 +682,22 @@
 
         <!-- Events -->
         <div class="events-container">
-            <?php foreach ($events as $event): ?>
-                <!-- Display all events initially with a class 'event' -->
-                <div class="event" event-id="<?php echo $event['id']; ?>" event-type="<?php echo $event['type']; ?>" <?php echo $event['archived'] ? 'data-archived="true"' : 'data-archived="false"'; ?>>
-                    <img src="<?php echo $event['image']; ?>" alt="Event Photo">
+            @foreach ($events as $event)
+                <div class="event" event-id="{{ $event->id }}" event-type="{{ $event->type }}" {{ $event->archived ? 'data-archived=true' : 'data-archived=false' }}>
+                    <img src="{{ asset($event->image_path) }}" alt="Event Photo">
                     <div class="event-details">
-                        <div class="event-title"><?php echo $event['title']; ?></div>
-                        <div class="event-type"><?php echo $event['type']; ?></div>
+                        <div class="event-title">{{ $event->title }}</div>
+                        <div class="event-type">{{ $event->type }}</div>
                         <div class="event-date">
-                            <?php
-                                // Fill the event location and date/time (time is optional)
-                                echo $event['location'].' | '.$event['start_date'].(isset($event['start_time']) ? ' '.$event['start_time'] : '').' - '.$event['end_date'].(isset($event['end_time']) ? ' '.$event['end_time'] : '');
-                            ?>
+                            {{ $event->location }} | {{ $event->start_date }}{{ isset($event->start_time) ? ' ' . $event->start_time : '' }} - {{ $event->end_date }}{{ isset($event->end_time) ? ' ' . $event->end_time : '' }}
                         </div>
-                        <div class="event-description"><?php echo $event['description']; ?></div>
+                        <div class="event-description">{{ $event->description }}</div>
                     </div>
-                    <button class="daftar-button" data-bs-toggle="modal" data-bs-target="#formModal<?php echo $event['id']; ?>" onclick="openFormModal(<?php echo $event['id']; ?>)">Daftar <span class="material-icons">arrow_forward</span></button>
+                    <button class="daftar-button" data-bs-toggle="modal" data-bs-target="#formModal{{ $event->id }}" onclick="openFormModal({{ $event->id }})">Daftar <span class="material-icons">arrow_forward</span></button>
                 </div>
-            <?php endforeach; ?>
+            @endforeach
         </div>
+
         <!-- Footer -->
         <div class="container-fluid" style="background-color: black; color: white; border-radius: 30px 30px 0 0;">
             <div class="row">
@@ -913,7 +841,6 @@
             });
         }
     </script>
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">

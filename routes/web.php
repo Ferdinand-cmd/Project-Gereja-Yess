@@ -84,13 +84,13 @@ Route::post('/admin/pelayan_reg/{id}/reject', [AdminPelayananController::class, 
 Route::post('/admin/pelayan_approved/{id}/remove', [AdminPelayananController::class, 'removeApprovedMember'])->name('admin.registrations.remove');
 Route::get('/pelayanan-admin', [AdminPelayananController::class, 'showRegistrations'])->name('pelayanan-admin');
 Route::get('/admin/pelayan_reg', [AdminPelayananController::class, 'showRegistrations'])->name('admin.registrations.index');
-Route::get('/event-admin', [EventController::class, 'index']);
+Route::get('/event-admin', [EventController::class, 'admin']);
 Route::post('/event-admin/store', [EventController::class, 'store'])->name('events.store');;
 Route::post('/event-admin/update/{id}', [EventController::class, 'update'])->name('events.update');
 Route::delete('/event-admin/delete/{id}', [EventController::class, 'delete'])->name('events.delete');
 Route::post('/event-admin/archive/{id}', [EventController::class, 'archive'])->name('events.archive');
 Route::post('/event-admin/archive/{id}/undo', [EventController::class, 'archive'])->name('events.archive.undo');
 Route::post('/event-admin/register/{eventId}', [EventController::class, 'register']);
-Route::get('/events', [EventController::class, 'index']);
+Route::get('/event', [EventController::class, 'user']);
 // Route::post('/events/store', [EventController::class, 'store'])->name('events.store');
 // Route::post('/events/{id}/update', [EventController::class, 'update'])->name('events.update');

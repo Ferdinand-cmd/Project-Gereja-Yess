@@ -10,12 +10,22 @@ use Illuminate\Support\Facades\Storage;
 
 class EventController extends Controller
 {
-    public function index()
+    public function user()
     {
-        // Fetch all events with registrations
+        // Ambil semua event tanpa registrasi
+        $events = Event::all();
+
+        // Kembalikan tampilan event
+        return view('event', compact('events'));
+    }
+
+    // Metode untuk admin
+    public function admin()
+    {
+        // Ambil semua event dengan registrasi
         $events = Event::with('registrations')->get();
 
-        // Pass to the view
+        // Kembalikan tampilan event admin
         return view('event-admin', compact('events'));
     }
 
