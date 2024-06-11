@@ -352,6 +352,28 @@
             background-color: #333333;
             /* Darker gray background on hover */
         }
+        /* CSS untuk tombol daftar */
+        .daftar-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 24px;
+            background: var(--primary-color);
+            border: none;
+            border-radius: 40px;
+            font-family: DM Sans, var(--default-font-family);
+            font-size: 1em;
+            font-weight: 500;
+            color: #fff;
+            cursor: pointer;
+            text-decoration: none; /* tambahkan ini untuk menghilangkan underline */
+        }
+
+        /* Hover effect untuk tombol daftar */
+        .daftar-button:hover {
+            background-color: #ffac33; /* ganti dengan warna hover yang diinginkan */
+        }
+
     </style>
 </head>
 <body>
@@ -441,10 +463,7 @@
                 <!-- Header -->
                 <div class="event-header">
                     <h1 class="event-title" id="eventTitle"><?php echo $event->title; ?></h1>
-                    <button class="register-button" data-bs-toggle="modal" data-bs-target="#daftarModal">
-                        Daftar
-                        <span class="material-icons">arrow_forward</span>
-                    </button>
+                    <button class="daftar-button" data-bs-toggle="modal" data-bs-target="#daftarModal{{ $event->id }}" onclick="openFormModal(event, {{ $event->id }})">Daftar <span class="material-icons">arrow_forward</span></button>
                 </div>
                 <div class="event-info">
                     <div class="event-type" id="eventType"><?php echo $event->type; ?></div>
@@ -465,31 +484,32 @@
 
             
             <!-- Modal -->
-            <div class="modal fade" id="daftarModal" tabindex="-1"
-                aria-labelledby="formModalLabel" aria-hidden="true">
+            <div class="modal fade" id="daftarModal<?php echo $event['id']; ?>" tabindex="-1"
+                aria-labelledby="formModalLabel<?php echo $event['id']; ?>" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-custom-width">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title modal-event-title" id="formModalLabel">YESS Leardership Mission Training VII
+                            <h5 class="modal-title modal-event-title" id="formModalLabel<?php echo $event['id']; ?>">
+                                <?php echo $event['title']; ?>
                             </h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
                             <!-- Your form content goes here -->
-                            <label for="daftar" class="form-label form-label-daftar">Bagi jemaat yang ingin
+                            <label for="daftar<?php echo $event['id']; ?>" class="form-label form-label-daftar">Bagi jemaat yang ingin
                                 mendaftar dalam event YESS Surabaya silahkan mengisi form pendaftaran event dibawah ini.</label>
                             <!-- Alergi Anda -->
                             <div class="mb-3">
-                                <label for="alergi" class="form-label form-label-alergi">Alergi Anda (jika
+                                <label for="alergi<?php echo $event['id']; ?>" class="form-label form-label-alergi">Alergi Anda (jika
                                     tidak punya, isi "-")</label>
-                                <textarea class="form-control" id="alergi" rows="3"
+                                <textarea class="form-control" id="alergi<?php echo $event['id']; ?>" rows="3"
                                     placeholder="Masukkan alergi Anda jika ada"></textarea>
                             </div>
                             <!-- Informasi keluarga yang dapat dihubungi -->
                             <div class="mb-3">
-                                <label for="informasi" class="form-label form-label-informasi">Informasi
+                                <label for="informasi<?php echo $event['id']; ?>" class="form-label form-label-informasi">Informasi
                                     keluarga yang dapat dihubungi</label>
-                                <textarea class="form-control" id="informasi" rows="3"
+                                <textarea class="form-control" id="informasi<?php echo $event['id']; ?>" rows="3"
                                     placeholder="Masukkan nama dan nomor telepon keluarga yang dapat dihubungi"></textarea>
                                 <small>*sertakan nama dan nomor telepon aktif</small>
                             </div>
@@ -498,18 +518,18 @@
                                     <p class="image-text-1">Cari circle rohani yang sehat dan bikin semangat?</p>
                                     <p class="image-text-2">YUK SINI MERAPAT!</p>
                                 </div>
-                                <img src="img/form.jpg" alt="Image">
+                                <img src="img/form.png" alt="Image">
                             </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-cancel" data-bs-dismiss="modal">Cancel</button>
-                            <button type="button" class="btn btn-submit">Submit</button>
-                            <!-- You can include additional buttons or actions here -->
+                            <button type="button" class="btn btn-submit" onclick="registerEvent(<?php echo $event['id']; ?>)" data-bs-dismiss="modal">Submit</button>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+
+
         <!-- Footer -->
         <div class="container-fluid" style="background-color: black; color: white; border-radius: 30px 30px 0 0;">
             <div class="row">
@@ -526,6 +546,26 @@
         // Function to go back to the events page
         function goBackToEvents() {
             window.location.href = "/event"; // Redirect to event.blade.php
+        }
+        function openFormModal(event, eventId) {
+            event.stopPropagation(); // Stop event propagation to prevent opening detail events
+        }
+        function registerEvent(eventId) {
+            $.ajax({
+                url: '{{ route("event.register") }}',
+                type: 'POST',
+                data: {
+                    event_id: eventId,
+                    _token: '{{ csrf_token() }}'
+                },
+                success: function(response) {
+                    alert(response.message);
+                    location.reload();
+                },
+                error: function(xhr) {
+                    alert(xhr.responseJSON.message);
+                }
+            });
         }
     </script>
 
