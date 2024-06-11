@@ -172,4 +172,23 @@ class EventController extends Controller
 
         return response()->json(['success' => true, 'message' => 'Event deleted successfully.']);
     }
+    public function show($id)
+    {
+        // Ambil detail event berdasarkan ID
+        $event = Event::findOrFail($id);
+
+        // Tampilkan halaman detail event dengan data event
+        return view('event-detail', compact('event'));
+    }
+    public function showDetail(Request $request)
+    {
+        // Dapatkan ID dari query string
+        $eventId = $request->query('id');
+
+        // Ambil data event dari database berdasarkan ID
+        $event = Event::findOrFail($eventId);
+
+        // Tampilkan halaman detail event dengan data event
+        return view('event-detail', compact('event'));
+    }
 }

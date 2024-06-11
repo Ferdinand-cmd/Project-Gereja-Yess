@@ -436,34 +436,33 @@
                     <span class="material-icons">arrow_back</span>
                     Kembali ke events
                 </button>
-                <img src="img/event-photo5.jpg" alt="Event Image" class="event-image">
+                <img src="{{ asset($event->image_path) }}" alt="Event Photo" class="event-image">
 
                 <!-- Header -->
                 <div class="event-header">
-                    <h1 class="event-title">YESS Leardership Mission Training VII</h1>
+                    <h1 class="event-title" id="eventTitle"><?php echo $event->title; ?></h1>
                     <button class="register-button" data-bs-toggle="modal" data-bs-target="#daftarModal">
                         Daftar
                         <span class="material-icons">arrow_forward</span>
                     </button>
                 </div>
                 <div class="event-info">
-                    <div class="event-type">umum</div>
+                    <div class="event-type" id="eventType"><?php echo $event->type; ?></div>
                 </div>
                 <!-- Event details -->
                 <div class="event-info">
                     <span class="material-icons">date_range</span>
-                    <span>19-21 April 2024</span>
+                    <span id="eventDate"><?php echo $event->start_date . ' ' . $event->start_time . ' - ' . $event->end_date . ' ' . $event->end_time; ?></span>
                 </div>
                 <div class="event-info">
                     <span class="material-icons">location_on</span>
-                    <span>Desa Bikium, Soe, Nusa Tenggara Timur</span>
+                    <span id="eventLocation"><?php echo $event->location; ?></span>
                 </div>
-                <p class="event-description">
-                    Biarlah semangat misi terus menyala dalam hidup kita.<br />
-                    Uis Neno nokan kit, Immanuel!<br />
-                    Sampe ketemu di YLMT, basodara dong!
+                <p class="event-description" id="eventDescription">
+                    <?php echo $event->description; ?>
                 </p>
-            </div> 
+            </div>
+
             
             <!-- Modal -->
             <div class="modal fade" id="daftarModal" tabindex="-1"
@@ -526,7 +525,7 @@
     <script>
         // Function to go back to the events page
         function goBackToEvents() {
-            window.location.href = "event.blade.php"; // Redirect to event.blade.php
+            window.location.href = "/event"; // Redirect to event.blade.php
         }
     </script>
 

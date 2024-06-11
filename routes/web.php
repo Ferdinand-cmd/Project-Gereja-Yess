@@ -93,5 +93,5 @@ Route::post('/event-admin/archive/{id}/undo', [EventController::class, 'archive'
 Route::post('/event-admin/register/{eventId}', [EventController::class, 'register']);
 Route::get('/event', [EventController::class, 'user']);
 Route::post('/event/register', [EventController::class, 'register'])->name('event.register');
-// Route::post('/events/store', [EventController::class, 'store'])->name('events.store');
-// Route::post('/events/{id}/update', [EventController::class, 'update'])->name('events.update');
+Route::get('/event/{id}', [EventController::class, 'show'])->name('event.show');
+Route::get('/event-detail', [EventController::class, 'showDetail']);

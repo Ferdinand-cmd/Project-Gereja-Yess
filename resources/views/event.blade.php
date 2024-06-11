@@ -717,7 +717,7 @@
         // Function to redirect to the event detail page
         function redirectToEventDetail(eventId) {
             // Construct the URL for the event detail page using the eventId
-            var eventDetailURL = "event-detail.blade.php?id=" + eventId;
+            var eventDetailURL = "event-detail?id=" + eventId;
 
             // Redirect the user to the event detail page
             window.location.href = eventDetailURL;
