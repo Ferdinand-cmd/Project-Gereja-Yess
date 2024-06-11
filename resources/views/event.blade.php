@@ -672,13 +672,13 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-cancel" data-bs-dismiss="modal">Cancel</button>
-                        <button type="button" class="btn btn-submit">Submit</button>
-                        <!-- You can include additional buttons or actions here -->
+                        <button type="button" class="btn btn-submit" onclick="registerEvent(<?php echo $event['id']; ?>)" data-bs-dismiss="modal">Submit</button>
                     </div>
                 </div>
             </div>
         </div>
         <?php endforeach; ?>
+
 
         <!-- Events -->
         <div class="events-container">
@@ -837,6 +837,23 @@
                 if (daftarButton) {
                     // If the button exists, hide it when the "Archived" option is selected
                     daftarButton.style.display = selectedDropdown === 'archived' ? 'none' : 'block';
+                }
+            });
+        }
+        function registerEvent(eventId) {
+            $.ajax({
+                url: '{{ route("event.register") }}',
+                type: 'POST',
+                data: {
+                    event_id: eventId,
+                    _token: '{{ csrf_token() }}'
+                },
+                success: function(response) {
+                    alert(response.message);
+                    location.reload();
+                },
+                error: function(xhr) {
+                    alert(xhr.responseJSON.message);
                 }
             });
         }

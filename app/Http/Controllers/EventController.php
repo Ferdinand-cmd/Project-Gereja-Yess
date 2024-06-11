@@ -81,12 +81,26 @@ class EventController extends Controller
         return response()->json(['success' => true, 'message' => $event->archived ? 'Event archived.' : 'Event restored.']);
     }
 
-    public function register($eventId, Request $request)
+    public function register(Request $request)
     {
-        $request->validate(['registrant_email' => 'required|string']);
-        EventRegistration::create(['event_id' => $eventId, 'registrant_email' => $request->registrant_email]);
-        return redirect()->back();
+        $eventId = $request->input('event_id');
+        $user = auth()->user();
+
+        // Validate user is logged in
+        if (!$user) {
+            return response()->json(['message' => 'User not logged in.'], 401);
+        }
+
+        // Create a new event registration
+        EventRegistration::create([
+            'event_id' => $eventId,
+            'registrant_email' => $user->email,
+            'name' => $user->name
+        ]);
+
+        return response()->json(['message' => 'Registration successful.']);
     }
+
 
     public function update(Request $request, $id)
     {
