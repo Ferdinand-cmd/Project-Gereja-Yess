@@ -321,7 +321,8 @@
         }
 
         i {
-            margin-right: 8px; /* Atur jarak sesuai kebutuhan */
+            margin-right: 8px;
+            /* Atur jarak sesuai kebutuhan */
         }
 
         .event-counter-box {
@@ -496,7 +497,7 @@
             margin-right: 20px;
             /* Add right margin */
         }
-        
+
         .event-type {
             font-weight: bold;
             width: fit-content;
@@ -567,65 +568,7 @@
 
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="z-index: 1000;">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <div class="brand-text">
-                    <img src="img/logo_putih.png" alt="" style="width: 20%; margin-left: 10px;">
-                    <div class="lora-font">BEST CHURCH</div>
-                </div>
-            </a>
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-between" style="text-align:center;" id="navbarNav">
-                <ul class="navbar-nav" style="margin-bottom:10px;">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/admin">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/pelayanan-admin">Pelayanan</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/admin">KomSel</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/bareng-admin">Bareng</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="/event-admin">Event</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/admin">Penjadwalan</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/admin">Analisis</a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav">
-                    @auth
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Admin, {{ auth()->user()->name }}
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a class="dropdown-item" href="/">Switch to User View</a></li>
-                                <li>
-                                    <form action="/logout" method="POST">
-                                        @csrf
-                                        <button type="submit" class="dropdown-item">Logout</button>
-                                    </form>
-                                </li>
-                            </ul>
-                        </li>
-                    @endauth
-                </ul>
-            </div>
-        </div>
-    </nav>
+    @include('partials.admin-navbar')
 
     <!-- Content -->
     <div class="event-header">Event
@@ -649,7 +592,8 @@
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
                 <li><a class="dropdown-item dropdown-type-2" href="#" id="all">All</a></li>
                 <li><a class="dropdown-item dropdown-type-2" href="#" id="umum">Umum</a></li>
-                <li><a class="dropdown-item dropdown-type-2" href="#" id="ladies devotion">Ladies Devotion</a></li>
+                <li><a class="dropdown-item dropdown-type-2" href="#" id="ladies devotion">Ladies Devotion</a>
+                </li>
                 <li><a class="dropdown-item dropdown-type-2" href="#" id="sunday school">Sunday School</a></li>
                 <li><a class="dropdown-item dropdown-type-2" href="#" id="yess">YESS</a></li>
             </ul>
@@ -669,18 +613,22 @@
                 <div class="event-content">
                     <div class="event-buttons">
                         <div class="event-buttons-left">
-                            <button type="button" class="btn btn-danger black-button archive-button" onclick="archiveEvent({{ $event->id }})">
+                            <button type="button" class="btn btn-danger black-button archive-button"
+                                onclick="archiveEvent({{ $event->id }})">
                                 <i class="fas fa-archive"></i> Archive
                             </button>
                         </div>
                         <div class="event-buttons-right">
-                            <button type="button" class="btn btn-danger black-button" data-bs-toggle="modal" data-bs-target="#deleteConfirmationModal{{ $event->id }}">
+                            <button type="button" class="btn btn-danger black-button" data-bs-toggle="modal"
+                                data-bs-target="#deleteConfirmationModal{{ $event->id }}">
                                 <i class="fas fa-trash"></i>Delete
                             </button>
-                            <button type="button" class="btn btn-primary black-button" data-bs-toggle="modal" data-bs-target="#editEventModal{{ $event->id }}">
+                            <button type="button" class="btn btn-primary black-button" data-bs-toggle="modal"
+                                data-bs-target="#editEventModal{{ $event->id }}">
                                 <i class="fas fa-pencil-alt"></i> Edit
                             </button>
-                            <button type="button" class="btn btn-primary white-button" data-bs-toggle="modal" data-bs-target="#jemaatMendaftarModal{{ $event->id }}">
+                            <button type="button" class="btn btn-primary white-button" data-bs-toggle="modal"
+                                data-bs-target="#jemaatMendaftarModal{{ $event->id }}">
                                 <div class="event-counter-box">
                                     {{ $event->registrations->count() }}{{ $event->quota ? '/' . $event->quota : '' }}
                                 </div>
@@ -697,7 +645,8 @@
                         <div class="event-title">{{ $event->title }}</div>
                         <div class="event-type">{{ $event->type }}</div>
                         <div class="event-info">
-                            {{ $event->location }} | {{ $event->start_date }} {{ $event->start_time }} - {{ $event->end_date }} {{ $event->end_time }}
+                            {{ $event->location }} | {{ $event->start_date }} {{ $event->start_time }} -
+                            {{ $event->end_date }} {{ $event->end_time }}
                         </div>
                         <div class="event-description">{{ $event->description }}</div>
                     </div>
@@ -710,7 +659,8 @@
     <!-- Modals -->
 
     <!-- Modal for Add Event -->
-    <div class="modal fade modal-lg add-event-modal" id="addEventModal" tabindex="-1" aria-labelledby="addEventModalLabel" aria-hidden="true">
+    <div class="modal fade modal-lg add-event-modal" id="addEventModal" tabindex="-1"
+        aria-labelledby="addEventModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header d-flex justify-content-between align-items-center">
@@ -746,7 +696,8 @@
                         <div class="row">
                             <div class="col">
                                 <label class="aTanggalMulai">Tanggal mulai</label>
-                                <input type="date" class="form-control" id="aTanggalMulai" name="aTanggalMulai" required>
+                                <input type="date" class="form-control" id="aTanggalMulai" name="aTanggalMulai"
+                                    required>
                             </div>
                             <div class="col">
                                 <label class="aWaktuMulai">Waktu mulai (opsional)</label>
@@ -758,7 +709,8 @@
                         <div class="row">
                             <div class="col">
                                 <label class="aTanggalAkhir">Tanggal akhir</label>
-                                <input type="date" class="form-control" id="aTanggalAkhir" name="aTanggalAkhir" required>
+                                <input type="date" class="form-control" id="aTanggalAkhir" name="aTanggalAkhir"
+                                    required>
                             </div>
                             <div class="col">
                                 <label class="aWaktuAkhir">Waktu akhir (opsional)</label>
@@ -772,12 +724,14 @@
                     </div>
                     <div class="mb-3">
                         <label for="aGambar" class="form-label">Gambar</label>
-                        <input type="file" class="form-control" id="aGambar" name="aGambar" accept="image/*" required>
+                        <input type="file" class="form-control" id="aGambar" name="aGambar" accept="image/*"
+                            required>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-cancel float-start" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-save float-end" data-bs-dismiss="modal" onclick="addEvent()">Save</button>
+                    <button type="button" class="btn btn-save float-end" data-bs-dismiss="modal"
+                        onclick="addEvent()">Save</button>
                 </div>
             </div>
         </div>
@@ -803,7 +757,7 @@
                             <input class="form-check-input" type="checkbox" id="registrationSwitch">
                             <label class="form-check-label" for="registrationSwitch">Aktifkan Form Pendaftaran</label>
                         </div>
-                     </div>
+                    </div>
                 </div>
                 <div class="modal-body">
                     <div class="mb-3">
@@ -813,7 +767,8 @@
                     </div>
                     <div class="mb-3">
                         <label for="eQuota<?php echo $event['id']; ?>" class="form-label">Kuota (opsional)</label>
-                        <input type="number" class="form-control" id="eQuota<?php echo $event['id']; ?>" name="eQuota<?php echo $event['id']; ?>" value="<?php echo isset($event['quota']) ? $event['quota'] : ''; ?>" min="1">
+                        <input type="number" class="form-control" id="eQuota<?php echo $event['id']; ?>"
+                            name="eQuota<?php echo $event['id']; ?>" value="<?php echo isset($event['quota']) ? $event['quota'] : ''; ?>" min="1">
                     </div>
                     <div class="mb-3">
                         <label for="eTempat<?php echo $event['id']; ?>" class="form-label">Tempat</label>
@@ -861,7 +816,8 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-cancel float-start" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-save float-end" onclick="updateEvent(<?php echo $event['id']; ?>)" data-bs-dismiss="modal">Save</button>
+                    <button type="button" class="btn btn-save float-end" onclick="updateEvent(<?php echo $event['id']; ?>)"
+                        data-bs-dismiss="modal">Save</button>
                 </div>
             </div>
         </div>
@@ -894,12 +850,14 @@
 
     <!-- Modal for Jemaat Mendaftar -->
     @foreach ($events as $event)
-        <div class="modal fade jemaat-mendaftar-modal" id="jemaatMendaftarModal{{ $event->id }}" tabindex="-1" aria-labelledby="jemaatMendaftarModalLabel{{ $event->id }}" aria-hidden="true">
+        <div class="modal fade jemaat-mendaftar-modal" id="jemaatMendaftarModal{{ $event->id }}" tabindex="-1"
+            aria-labelledby="jemaatMendaftarModalLabel{{ $event->id }}" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title">PENDAFTARAN EVENT > {{ $event->title }}</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <table>
@@ -908,7 +866,9 @@
                                 <td>
                                     <div class="modal-counter-box">
                                         <div class="modal-counter-text">Jumlah</div>
-                                        <div class="modal-counter">{{ $event->registrations->count() }}{{ $event->quota ? '/' . $event->quota : '' }}</div>
+                                        <div class="modal-counter">
+                                            {{ $event->registrations->count() }}{{ $event->quota ? '/' . $event->quota : '' }}
+                                        </div>
                                     </div>
                                 </td>
                             </tr>
@@ -934,7 +894,7 @@
         // Set the initial button text
         dropdownMenuButton.innerText = "Upcoming";
         dropdownMenuButton2.innerText = "All";
-        
+
         // Set the default option when the page loads
         window.onload = function() {
             document.getElementById("upcoming").classList.add("active");
@@ -979,7 +939,7 @@
                 // Add the active class to the clicked option
                 event.target.classList.add('active');
 
-                
+
                 // Update the button text to the selected option
                 dropdownMenuButton2.innerText = event.target.innerText;
 
@@ -1002,7 +962,8 @@
                 const eventData = eventInfo.find(e => e.id === parseInt(eventId));
                 const archiveButton = event.querySelector('.archive-button');
 
-                const isDropdownMatch = (selectedDropdown === 'upcoming' && !eventData.archived) || (selectedDropdown === 'archived' && eventData.archived);
+                const isDropdownMatch = (selectedDropdown === 'upcoming' && !eventData.archived) || (
+                    selectedDropdown === 'archived' && eventData.archived);
                 const isTypeMatch = selectedType === 'all' || eventType === selectedType;
 
                 if (isDropdownMatch && isTypeMatch) {
@@ -1056,7 +1017,7 @@
             formData.append('end_date', $('#aTanggalAkhir').val());
             formData.append('end_time', $('#aWaktuAkhir').val());
             formData.append('description', $('#aDeskripsiEvent').val());
-            
+
             var imageInput = $('#aGambar')[0]; // Perhatikan ID yang berbeda di sini
             if (imageInput && imageInput.files && imageInput.files[0]) {
                 formData.append('image', imageInput.files[0]); // File object for image
@@ -1106,7 +1067,7 @@
             if (imageInput && imageInput.files && imageInput.files[0]) {
                 formData.append('image', imageInput.files[0]); // File object for image
             }
-            
+
             formData.append('type', $('#type-dropdown-init' + eventId).val());
 
             // Send data to the server
@@ -1148,13 +1109,16 @@
                 }
             });
         }
+
         function archiveEvent(eventId, isArchived) {
             let url = '/event-admin/archive/' + eventId;
 
             $.ajax({
                 url: url,
                 type: 'POST',
-                data: { archived: isArchived }, // Mengirim nilai archived ke server
+                data: {
+                    archived: isArchived
+                }, // Mengirim nilai archived ke server
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
@@ -1168,10 +1132,6 @@
                 }
             });
         }
-
-
-
-
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">

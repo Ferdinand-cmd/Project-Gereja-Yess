@@ -34,10 +34,12 @@
             z-index: 1000;
             cursor: pointer;
         }
+
         .whatsapp-button img {
             width: 50px;
             height: 50px;
         }
+
         /* Untuk membuat tulisan BEST berwarna orange dan memiliki garis bawah orange saat berada di halaman BEST */
         .nav-item.active .nav-link,
         .nav-item:hover .nav-link {
@@ -66,78 +68,14 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="background-color: #000 !important;">
-        <div class="container-fluid justify-content-between">
-            <a class="navbar-brand" href="#">
-                <div class="brand-text" style="display: inline-block; margin-left: 10px; color: #f5f5f5;">
-                    <img src="img/bestchurch.png" alt="" style="width: 60%;">
-                </div>
-            </a>
-            <div class="navbar-nav mx-auto" style="text-align: center;">
-                <ul class="navbar-nav" style="margin-bottom: 10px;">
-                    <li class="nav-item" style="margin-right: 20px;">
-                        <a class="nav-link" href="/" style="color: #f5f5f5;">Home</a>
-                    </li>
-                    <li class="nav-item dropdown" style="margin-right: 20px;">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #f5f5f5;">
-                            YESS
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
-                            <li><a class="dropdown-item" href="/yess" style="color: #000;">YESS</a></li>
-                            <li><a class="dropdown-item" href="/komsel" style="color: #000;">Komsel</a></li>
-                            <li><a class="dropdown-item" href="/bareng" style="color: #000;">Bareng</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item" style="margin-right: 20px;">
-                        <a class="nav-link" href="/jadwal" style="color: #f5f5f5;">Jadwal</a>
-                    </li>
-                    <li class="nav-item" style="margin-right: 20px;">
-                        <a class="nav-link" href="/ladies-devotion" style="color: #f5f5f5;">Ladies Devotion</a>
-                    </li>
-                    <li class="nav-item" style="margin-right: 20px;">
-                        <a class="nav-link" href="/sunday-school" style="color: #f5f5f5;">Sunday School</a>
-                    </li>
-                    <li class="nav-item" style="margin-right: 20px;">
-                        <a class="nav-link" href="/event" style="color: #f5f5f5;">Event</a>
-                    </li>
-                    <li class="nav-item active" style="margin-right: 20px;">
-                        <a class="nav-link" href="/pelayanan" style="color: #f5f5f5;">Pelayanan</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="navbar-nav" style="text-align: right;">
-                <ul class="navbar-nav">
-                    @auth
-                    <li class="nav-item dropdown" style="margin-right: 20px;">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #f5f5f5;">
-                            Welcome, {{ auth()->user()->name }}
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            @if (auth()->user()->is_admin)
-                            <li><a class="dropdown-item" href="/admin" style="color: #000;">Admin Dashboard</a></li>
-                            @endif
-                            <li>
-                                <form action="/logout" method="POST">
-                                    @csrf
-                                    <button type="submit" class="dropdown-item" style="color: #000;">Logout</button>
-                                </form>
-                            </li>
-                        </ul>
-                    </li>
-                    @else
-                    <li class="nav-item">
-                        <a class="nav-link login-link-border" href="/login" style="color: #f5f5f5; border: 1px solid #fff; border-radius: 5px; padding: 8px 20px;">Login</a>
-                    </li>
-                    @endauth
-                </ul>
-            </div>
-        </div>
-    </nav>
+    @include('partials.navbar')
     <!-- whasap terbang -->
-    <a href="https://api.whatsapp.com/send?phone=6285854526955&text=Halo%20mau%20tanya%20gereja" class="whatsapp-button">
-            <img src="img/wa.png" alt="WhatsApp">
+    <a href="https://api.whatsapp.com/send?phone=6285854526955&text=Halo%20mau%20tanya%20gereja"
+        class="whatsapp-button">
+        <img src="img/wa.png" alt="WhatsApp">
     </a>
 
     <div class="container" style="padding-top: 20px;">
@@ -169,209 +107,220 @@
         <button class="button button1" id = "butt1" onclick="myFunction()">Daftar Disini</button>
 
         <div id="myForm">
-        @auth
-            <div class="awalForm">
-                <div class="form1">PENDAFTARAN EVENT</div>
-                <div class="form2">Bagi jemaat yang ingin mendaftar dalam event YESS Surabaya silahkan mengisi form pendaftaran event dibawah ini</div>
-            </div>
-            <div class="awal-2-Form">
-                <form action="/register_event" method="POST">
-                    @csrf
-                    <!-- Dropdown for 'Tipe' -->
-                    <div class="kegiatan-details-box">
-                        <span class="kegiatan-title">Tempat Pelayanan: </span>
-                        <div class="kegiatan-category">
-                            <select name="tipe" required>
-                                <option value="" disabled selected>Pilih Tempat Pelayanan</option>
-                                <option value="Umum - Ciputra World">Umum - Ciputra World</option>
-                                <option value="Umum - Dafam">Umum - Dafam</option>
-                                <option value="Umum - Pondok Chandra">Umum - Pokchan</option>
-                                <option value="YESS">YESS - Ciputra World</option>
-                            </select>
+            @auth
+                <div class="awalForm">
+                    <div class="form1">PENDAFTARAN EVENT</div>
+                    <div class="form2">Bagi jemaat yang ingin mendaftar dalam event YESS Surabaya silahkan mengisi form
+                        pendaftaran event dibawah ini</div>
+                </div>
+                <div class="awal-2-Form">
+                    <form action="/register_event" method="POST">
+                        @csrf
+                        <!-- Dropdown for 'Tipe' -->
+                        <div class="kegiatan-details-box">
+                            <span class="kegiatan-title">Tempat Pelayanan: </span>
+                            <div class="kegiatan-category">
+                                <select name="tipe" required>
+                                    <option value="" disabled selected>Pilih Tempat Pelayanan</option>
+                                    <option value="Umum - Ciputra World">Umum - Ciputra World</option>
+                                    <option value="Umum - Dafam">Umum - Dafam</option>
+                                    <option value="Umum - Pondok Chandra">Umum - Pokchan</option>
+                                    <option value="YESS">YESS - Ciputra World</option>
+                                </select>
+                            </div>
                         </div>
-                    </div>
 
-                    <!-- Radio buttons for 'Role' -->
-                    <div class="kegiatan-details-box">
-                        <span class="kegiatan-title">Role: </span>
-                        <div class="kegiatan-category">
-                            <input type="radio" name="role" id="usher" value="Usher" required><label for="usher">Usher</label>
-                            <input type="radio" name="role" id="singer" value="Singer" required><label for="singer">Singer</label>
-                            <input type="radio" name="role" id="multimedia" value="Multimedia" required><label for="multimedia">Multimedia</label>
-                            <input type="radio" name="role" id="camera" value="Camera" required><label for="camera">Camera</label>
-                            <input type="radio" name="role" id="pemain_musik" value="Pemain Musik" required><label for="pemain_musik">Pemain Musik</label>
+                        <!-- Radio buttons for 'Role' -->
+                        <div class="kegiatan-details-box">
+                            <span class="kegiatan-title">Role: </span>
+                            <div class="kegiatan-category">
+                                <input type="radio" name="role" id="usher" value="Usher" required><label
+                                    for="usher">Usher</label>
+                                <input type="radio" name="role" id="singer" value="Singer" required><label
+                                    for="singer">Singer</label>
+                                <input type="radio" name="role" id="multimedia" value="Multimedia" required><label
+                                    for="multimedia">Multimedia</label>
+                                <input type="radio" name="role" id="camera" value="Camera" required><label
+                                    for="camera">Camera</label>
+                                <input type="radio" name="role" id="pemain_musik" value="Pemain Musik" required><label
+                                    for="pemain_musik">Pemain Musik</label>
+                            </div>
                         </div>
-                    </div>
 
-                    <!-- Alasan user -->
-                    <div class="user-input">
+                        <!-- Alasan user -->
+                        <div class="user-input">
                             <label for="alasan"><b>Alasan (Max 200 characters):</b></label>
                             <textarea id="alasan" name="alasan" required maxlength="200" placeholder="Your reason..." style="width: 100%"></textarea>
                         </div>
-                    
-                    <input type="hidden" name="email" value="{{ auth()->user()->email }}">
-                    <div class="form-submit-btn">
-                        <input type="submit" value="Register">
+
+                        <input type="hidden" name="email" value="{{ auth()->user()->email }}">
+                        <div class="form-submit-btn">
+                            <input type="submit" value="Register">
+                        </div>
+                    </form>
+                </div>
+            @else
+                <div class="alert alert-info" role="alert">
+                    Please <a href="/login">login</a> to register for events.
+                </div>
+            @endauth
+        </div>
+
+
+        <!-- Success Modal -->
+        <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="successModalLabel">Registration Success</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
                     </div>
-                </form>
-            </div>
-        @else
-            <div class="alert alert-info" role="alert">
-                Please <a href="/login">login</a> to register for events.
-            </div>
-        @endauth
-    </div>
-
-
-    <!-- Success Modal -->
-    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="successModalLabel">Registration Success</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    Your registration has been successfully submitted!
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <div class="modal-body">
+                        Your registration has been successfully submitted!
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Error Modal -->
-    <div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="errorModalLabel">Registration Failed</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    There was an error submitting your registration. Please try again.
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <!-- Error Modal -->
+        <div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="errorModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="errorModalLabel">Registration Failed</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        There was an error submitting your registration. Please try again.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- start pelayanan -->
-    <div class="content">
-        <span class="where-can-i-serve" style="margin-top: 100px;">Where can I serve?</span><span
-            class="at-yess-community">At YESS Community, we make it easy to use your gifts and talents
-            here.</span>
-        <div class="flex-row-d">
-            <div class="rectangle-6">
-                <div class="rectangle-7">
-                    <span class="creative-writing-content">Creative writing, content in social media, if you are
-                        creative
-                        we have a place for you!</span>
-                </div>
-                <div class="rectangle-8">
-                    <div class="screenshot-removebg-preview"></div>
-                </div>
-                <span class="worship-leader">Worship Leader</span>
-                <div class="rectangle-9"></div>
-            </div>
-            <div class="rectangle-a">
-                <div class="rectangle-b">
-                    <div class="screenshot-preview"></div>
-                    <div class="rectangle-c"><span class="singer">Singer</span></div>
-                </div>
-                <div class="rectangle-d">
-                    <span class="creative-writing">Creative writing, content in social media, if you are creative
-                        we have a place for you!</span>
-                </div>
-            </div>
-            <div class="rectangle-e">
-                <div class="rectangle-f">
-                    <span class="creative-writing-10">Creative writing, content in social media, if you are creative
-                        we have a place for you!</span>
-                </div>
-                <div class="rectangle-11">
-                    <div class="screenshot-preview-12"></div>
-                </div>
-                <div class="rectangle-13">
-                    <button class="pemain-musik">Pemain Musik</button>
-                </div>
-            </div>
-            <div class="rectangle-14">
-                <div class="rectangle-15">
-                    <span class="creative-writing-16">Creative writing, content in social media, if you are creative
-                        we have a place for you!</span>
-                </div>
-                <div class="rectangle-17">
-                    <div class="screenshot-preview-18"></div>
-                </div>
-                <div class="rectangle-19">
-                    <span class="kameramen">Kameramen</span>
-                </div>
-            </div>
-            <div class="rectangle-1a">
-                <div class="rectangle-1b">
-                    <span class="creative-writing-content-1c">Creative writing, content in social media, if you are
-                        creative
-                        we have a place for you!</span>
-                </div>
-                <div class="rectangle-1d">
-                    <div class="screenshot"
-                    style="background: url(img/multimedia.png) no-repeat center;"></div>
-                </div>
-                <div class="rectangle-1e">
-                    <span class="multimedia">Multimedia</span>
-                </div>
-            </div>
-            <div class="rectangle-1f">
-                <div class="rectangle-20">
-                    <div class="screenshot-21"
-                        style="background: url(img/usher.png) no-repeat center;">
-                    </div>
-                    <div class="group"></div>
-                    <div class="rectangle-22"><span class="usher">Usher</span></div>
-                    <div class="rectangle-23">
-                        <span class="creative-writing-content-24">Creative writing, content in social media, if you are
+        <!-- start pelayanan -->
+        <div class="content">
+            <span class="where-can-i-serve" style="margin-top: 100px;">Where can I serve?</span><span
+                class="at-yess-community">At YESS Community, we make it easy to use your gifts and talents
+                here.</span>
+            <div class="flex-row-d">
+                <div class="rectangle-6">
+                    <div class="rectangle-7">
+                        <span class="creative-writing-content">Creative writing, content in social media, if you are
                             creative
                             we have a place for you!</span>
                     </div>
+                    <div class="rectangle-8">
+                        <div class="screenshot-removebg-preview"></div>
+                    </div>
+                    <span class="worship-leader">Worship Leader</span>
+                    <div class="rectangle-9"></div>
+                </div>
+                <div class="rectangle-a">
+                    <div class="rectangle-b">
+                        <div class="screenshot-preview"></div>
+                        <div class="rectangle-c"><span class="singer">Singer</span></div>
+                    </div>
+                    <div class="rectangle-d">
+                        <span class="creative-writing">Creative writing, content in social media, if you are creative
+                            we have a place for you!</span>
+                    </div>
+                </div>
+                <div class="rectangle-e">
+                    <div class="rectangle-f">
+                        <span class="creative-writing-10">Creative writing, content in social media, if you are
+                            creative
+                            we have a place for you!</span>
+                    </div>
+                    <div class="rectangle-11">
+                        <div class="screenshot-preview-12"></div>
+                    </div>
+                    <div class="rectangle-13">
+                        <button class="pemain-musik">Pemain Musik</button>
+                    </div>
+                </div>
+                <div class="rectangle-14">
+                    <div class="rectangle-15">
+                        <span class="creative-writing-16">Creative writing, content in social media, if you are
+                            creative
+                            we have a place for you!</span>
+                    </div>
+                    <div class="rectangle-17">
+                        <div class="screenshot-preview-18"></div>
+                    </div>
+                    <div class="rectangle-19">
+                        <span class="kameramen">Kameramen</span>
+                    </div>
+                </div>
+                <div class="rectangle-1a">
+                    <div class="rectangle-1b">
+                        <span class="creative-writing-content-1c">Creative writing, content in social media, if you are
+                            creative
+                            we have a place for you!</span>
+                    </div>
+                    <div class="rectangle-1d">
+                        <div class="screenshot" style="background: url(img/multimedia.png) no-repeat center;"></div>
+                    </div>
+                    <div class="rectangle-1e">
+                        <span class="multimedia">Multimedia</span>
+                    </div>
+                </div>
+                <div class="rectangle-1f">
+                    <div class="rectangle-20">
+                        <div class="screenshot-21" style="background: url(img/usher.png) no-repeat center;">
+                        </div>
+                        <div class="group"></div>
+                        <div class="rectangle-22"><span class="usher">Usher</span></div>
+                        <div class="rectangle-23">
+                            <span class="creative-writing-content-24">Creative writing, content in social media, if you
+                                are
+                                creative
+                                we have a place for you!</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <br>
-        <br>
-        <br>
-        <div class="container-black">
-            <div class="row">
-                <div class="col-md-6">
-                    <img src="E:\Download to E\MANPROY\home ferdi\assets\images\backgroundpbottom.png"
-                        alt="Background Image" class="img-fluid">
-                </div>
-                <div class="col-md-6">
-                    <div class="text-container">
-                        <p class="text-white-build">Build relationships that build the church.</p>
-                        <p class="text-white-unlock">When you serve in the church, you begin to unlock your God-given
-                            purpose in life. All you have to do is sign up, click the link below to get started!</p>
-                        <br>
+            <br>
+            <br>
+            <br>
+            <div class="container-black">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="E:\Download to E\MANPROY\home ferdi\assets\images\backgroundpbottom.png"
+                            alt="Background Image" class="img-fluid">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="text-container">
+                            <p class="text-white-build">Build relationships that build the church.</p>
+                            <p class="text-white-unlock">When you serve in the church, you begin to unlock your
+                                God-given
+                                purpose in life. All you have to do is sign up, click the link below to get started!</p>
+                            <br>
 
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer -->
+            <div class="container-fluid" style="background-color: black; color: white;">
+                <div class="row">
+                    <div class="col-md-6 d-flex justify-content-start">
+                        <img src="img/ig.png" alt="Instagram">
+                        <img src="img/tiktok.png" alt="TikTok">
+                        <img src="img/yt.png" alt="YouTube">
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Footer -->
-        <div class="container-fluid" style="background-color: black; color: white;">
-            <div class="row">
-                <div class="col-md-6 d-flex justify-content-start">
-                    <img src="img/ig.png" alt="Instagram">
-                    <img src="img/tiktok.png" alt="TikTok">
-                    <img src="img/yt.png" alt="YouTube">
-                </div>
-            </div>
-        </div>
-    </div>
     </div>
     </div>
     </div>

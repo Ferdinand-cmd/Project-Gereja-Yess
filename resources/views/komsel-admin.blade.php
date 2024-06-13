@@ -16,31 +16,31 @@
     <link href="css/style.css" rel="stylesheet">
     <style>
         .container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 0 2px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 2px;
         }
 
         .wrapper {
-        background-color: #fff;
-        display: flex;
-        padding-bottom: 80px;
-        flex-direction: column;
-        align-items: center;
+            background-color: #fff;
+            display: flex;
+            padding-bottom: 80px;
+            flex-direction: column;
+            align-items: center;
         }
 
         .main-content {
-        z-index: 10;
-        margin-top: 20px;
-        width: 100%;
-        max-width: 1244px;
+            z-index: 10;
+            margin-top: 20px;
+            width: 100%;
+            max-width: 1244px;
         }
 
         @media (max-width: 991px) {
-        .main-content {
-            max-width: 100%;
-        }
+            .main-content {
+                max-width: 100%;
+            }
         }
 
         .section {
@@ -50,11 +50,11 @@
         }
 
         @media (max-width: 991px) {
-        .section {
-            flex-direction: column;
-            align-items: stretch;
-            gap: 0px;
-        }
+            .section {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0px;
+            }
         }
 
         .column {
@@ -64,39 +64,39 @@
         }
 
         @media (max-width: 991px) {
-        .column {
-            width: 100%;
-        }
+            .column {
+                width: 100%;
+            }
         }
 
         .column-header {
-        display: flex;
-        margin-top: 38px;
-        gap: 11px;
-        font-size: 32px;
-        font-weight: 500;
-        text-align: center;
-        letter-spacing: 1.6px;
-        line-height: 156%;
+            display: flex;
+            margin-top: 38px;
+            gap: 11px;
+            font-size: 32px;
+            font-weight: 500;
+            text-align: center;
+            letter-spacing: 1.6px;
+            line-height: 156%;
         }
 
         @media (max-width: 991px) {
-        .column-header {
-            margin-top: 40px;
-            flex-wrap: wrap;
-        }
+            .column-header {
+                margin-top: 40px;
+                flex-wrap: wrap;
+            }
         }
 
         .header-detail {
-        font-family: Kanit, sans-serif;
-        border-radius: 20px 20px 0px 0px;
-        border: 1px solid rgba(0, 0, 0, 1);
-        background-color: #f4f4f4;
-        color: #000;
-        justify-content: center;
-        padding: 24px 31px;
-        cursor: pointer;
-        transition: background-color 0.3s;
+            font-family: Kanit, sans-serif;
+            border-radius: 20px 20px 0px 0px;
+            border: 1px solid rgba(0, 0, 0, 1);
+            background-color: #f4f4f4;
+            color: #000;
+            justify-content: center;
+            padding: 24px 31px;
+            cursor: pointer;
+            transition: background-color 0.3s;
         }
 
         .header-detail:hover {
@@ -104,22 +104,22 @@
         }
 
         @media (max-width: 991px) {
-        .header-detail {
-            padding: 0 20px;
-        }
+            .header-detail {
+                padding: 0 20px;
+            }
         }
 
         .header-detail-secondary {
-        font-family: Kanit, sans-serif;
-        border-radius: 20px 20px 0px 0px;
-        border: 1px solid rgba(0, 0, 0, 1);
-        background-color: #d9d9d9;
-        color: #989898;
-        white-space: nowrap;
-        justify-content: center;
-        padding: 24px 31px;
-        transition: background-color 0.3s;
-        cursor: pointer;
+            font-family: Kanit, sans-serif;
+            border-radius: 20px 20px 0px 0px;
+            border: 1px solid rgba(0, 0, 0, 1);
+            background-color: #d9d9d9;
+            color: #989898;
+            white-space: nowrap;
+            justify-content: center;
+            padding: 24px 31px;
+            transition: background-color 0.3s;
+            cursor: pointer;
         }
 
         .header-detail-secondary:hover {
@@ -127,74 +127,74 @@
         }
 
         @media (max-width: 991px) {
-        .header-detail-secondary {
-            white-space: initial;
-            padding: 0 20px;
-        }
+            .header-detail-secondary {
+                white-space: initial;
+                padding: 0 20px;
+            }
         }
 
         .column-secondary {
-        display: flex;
-        flex-direction: column;
-        width: 29%;
-        margin-left: 20px;
+            display: flex;
+            flex-direction: column;
+            width: 29%;
+            margin-left: 20px;
         }
 
         @media (max-width: 991px) {
-        .column-secondary {
+            .column-secondary {
+                width: 100%;
+            }
+        }
+
+        .khusus-button {
+            border-radius: 25px;
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+            background-color: #000;
+            color: #eeb120;
             width: 100%;
-        }
-        }
-
-        .khusus-button {
-        border-radius: 25px;
-        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-        background-color: #000;
-        color: #eeb120;
-        width: 100%;
-        padding: 23px 23px;
-        font: 38px Kanit, sans-serif;
-        text-align: center;
+            padding: 23px 23px;
+            font: 38px Kanit, sans-serif;
+            text-align: center;
         }
 
         @media (max-width: 991px) {
-        .khusus-button {
-            margin-top: 40px;
-            padding: 0 20px;
-        }
+            .khusus-button {
+                margin-top: 40px;
+                padding: 0 20px;
+            }
         }
 
         .content-card {
-    border-radius: 20px;
-    border: 1px solid rgba(0, 0, 0, 1);
-    background-color: #f4f4f4;
-    display: flex;
-    width: 100%;
-    max-width: 1328px;
-    flex-direction: column;
-    color: #000;
-    padding: 28px 42px;
-    overflow: hidden;
-}
+            border-radius: 20px;
+            border: 1px solid rgba(0, 0, 0, 1);
+            background-color: #f4f4f4;
+            display: flex;
+            width: 100%;
+            max-width: 1328px;
+            flex-direction: column;
+            color: #000;
+            padding: 28px 42px;
+            overflow: hidden;
+        }
 
-@media (max-width: 991px) {
-    .content-card {
-        max-width: 100%;
-        margin-bottom: 40px;
-        padding: 0 20px;
-    }
-}
+        @media (max-width: 991px) {
+            .content-card {
+                max-width: 100%;
+                margin-bottom: 40px;
+                padding: 0 20px;
+            }
+        }
 
-.content-card .table {
-    width: 100%;
-    max-width: 100%;
-}
+        .content-card .table {
+            width: 100%;
+            max-width: 100%;
+        }
 
-.content-card .table-responsive {
-    overflow-x: auto;
-}
+        .content-card .table-responsive {
+            overflow-x: auto;
+        }
 
-/* .content-card .detail-presensi {
+        /* .content-card .detail-presensi {
     background: none;
     border: none;
     color: inherit;
@@ -203,9 +203,9 @@
     cursor: pointer;
 } */
 
-.material-icons {
-    vertical-align: middle;
-}
+        .material-icons {
+            vertical-align: middle;
+        }
 
         /* .card-main {
         background-color: #000;
@@ -325,13 +325,13 @@
         } */
 
         .footer-spacer {
-        background-color: #fff;
-        height: 70px;
+            background-color: #fff;
+            height: 70px;
         }
 
         .footer-spacer-secondary {
-        background-color: #efefef;
-        height: 70px;
+            background-color: #efefef;
+            height: 70px;
         }
 
         .content-card .table {
@@ -339,31 +339,35 @@
         }
 
         /* Detail komsel */
-        .tabel-detail-komsel, .tabel-event-khusus {
+        .tabel-detail-komsel,
+        .tabel-event-khusus {
             font-family: Montserrat, sans-serif;
         }
+
         .table-main-action {
-            background-color: #eeb120; 
+            background-color: #eeb120;
             font: 400 32px Material Icons, sans-serif;
             width: 100%;
         }
 
         .action-icon {
-        background-color: #eeb120;
-        border-color: #eeb120;
-        align-items: center;
-        justify-content: center;
-        font: 32px Material Icons, sans-serif;
+            background-color: #eeb120;
+            border-color: #eeb120;
+            align-items: center;
+            justify-content: center;
+            font: 32px Material Icons, sans-serif;
         }
 
-        .table-main-action:hover, .action-icon:hover {
+        .table-main-action:hover,
+        .action-icon:hover {
             background-color: #d4a100;
             /* Change background color on hover */
             border-color: #d4a100;
             /* Change border color on hover */
         }
 
-        th, td {
+        th,
+        td {
             vertical-align: middle;
         }
 
@@ -371,15 +375,17 @@
         .modal-header {
             font: 500 24px/167% Montserrat, sans-serif;
         }
+
         .modal-body {
             background-color: #f4f4f4;
         }
+
         .modal-footer {
             background-color: #a2a2a2;
         }
 
         /* Add & edit titik modal */
-  /* .input-wrapper {
+        /* .input-wrapper {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
@@ -430,16 +436,19 @@
       padding-right: 20px;
     }
   } */
-  .modal-add-komsel .modal-body, .modal-edit-komsel .modal-body {
-    background-color: #000;
-  }
-  .modal-add-komsel .form-label, .modal-edit-komsel .form-label {
-    color: #fff;
-    font: 24px Kanit, sans-serif;
-  }
-  
-          /* CSS for cancel button */
-          .modal .btn-cancel {
+        .modal-add-komsel .modal-body,
+        .modal-edit-komsel .modal-body {
+            background-color: #000;
+        }
+
+        .modal-add-komsel .form-label,
+        .modal-edit-komsel .form-label {
+            color: #fff;
+            font: 24px Kanit, sans-serif;
+        }
+
+        /* CSS for cancel button */
+        .modal .btn-cancel {
             background-color: #ffffff;
             /* White background */
             color: #000000;
@@ -483,12 +492,14 @@
         .presensi-date {
             font: 600 24px Kanit, sans-serif;
         }
+
         .detail-presensi {
             background-color: #eeb120;
             border-color: #d4a100;
             width: 100%;
             height: 100%;
         }
+
         .detail-presensi:hover {
             background-color: #d4a100;
             /* Change background color on hover */
@@ -652,74 +663,18 @@
         .modal-edit-khusus .form-label {
             font: 600 20px Montserrat, sans-serif;
         }
-        .modal-edit-khusus input, .modal-edit-khusus textarea {
+
+        .modal-edit-khusus input,
+        .modal-edit-khusus textarea {
             font: 600 16px Montserrat, sans-serif;
         }
-
     </style>
 </head>
-<body>
-        <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="z-index: 1000;">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <div class="brand-text">
-                    <img src="img/logo_putih.png" alt="" style="width: 20%; margin-left: 10px;">
-                    <div class="lora-font">BEST CHURCH</div>
-                </div>
-            </a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-between" style="text-align:center;" id="navbarNav">
-                <ul class="navbar-nav" style="margin-bottom:10px;">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/admin">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/pelayanan-admin">Pelayanan</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="/admin">KomSel</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/admin">Bareng</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/event-admin">Event</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/admin">Penjadwalan</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/admin">Analisis</a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav">
-                    @auth
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Admin, {{ auth()->user()->name }}
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a class="dropdown-item" href="/">Switch to User View</a></li>
-                                <li>
-                                    <form action="/logout" method="POST">
-                                        @csrf
-                                        <button type="submit" class="dropdown-item">Logout</button>
-                                    </form>
-                                </li>
-                            </ul>
-                        </li>
-                    @endauth
-                </ul>
-            </div>
-        </div>
-    </nav>
-    
+<body>
+    <!-- Navbar -->
+    @include('partials.admin-navbar')
+
     <datalist id="datalist">
         <option value="Ferdinand">
         <option value="Felita">
@@ -732,7 +687,8 @@
     </datalist>
 
     <!-- Modal add komsel -->
-    <div class="modal modal-add-komsel fade" id="addKomsel" tabindex="-1" aria-labelledby="addKomselLabel" aria-hidden="true">
+    <div class="modal modal-add-komsel fade" id="addKomsel" tabindex="-1" aria-labelledby="addKomselLabel"
+        aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
@@ -743,13 +699,15 @@
                     <!-- Your content here -->
                     <div class="mb-3">
                         <label for="aKKomsel" class="form-label">Nama Komsel</label>
-                        <input type="text" class="form-control" id="aKKomsel" name="aKKomsel" placeholder="Nama Komsel" required>
+                        <input type="text" class="form-control" id="aKKomsel" name="aKKomsel"
+                            placeholder="Nama Komsel" required>
                     </div>
                     <div class="mb-3" style="position: relative;">
                         <label for="aKKetua" class="form-label">Nama Ketua</label>
-                        <input class="form-control" list="datalist" id="aKKetua" name="aKKetua" placeholder="Search Nama Ketua" required>
+                        <input class="form-control" list="datalist" id="aKKetua" name="aKKetua"
+                            placeholder="Search Nama Ketua" required>
                     </div>
-                    
+
                     <!-- <div class="input-wrapper">
                         <label for="pickup-point" class="input-label">Titik Jemput</label>
                         <input type="text" id="pickup-point" class="input-field" placeholder="Titik Jemput">
@@ -762,7 +720,7 @@
                         <label for="region" class="input-label">Wilayah</label>
                         <select id="region" class="select-field">
                             <option>Pilih Wilayah</option>
-                        </select> 
+                        </select>
                     </div>-->
                 </div>
                 <div class="modal-footer">
@@ -774,7 +732,8 @@
     </div>
 
     <!-- Modal edit komsel -->
-    <div class="modal modal-edit-komsel fade" id="editKomsel" tabindex="-1" aria-labelledby="editKomselLabel" aria-hidden="true">
+    <div class="modal modal-edit-komsel fade" id="editKomsel" tabindex="-1" aria-labelledby="editKomselLabel"
+        aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
@@ -785,15 +744,18 @@
                     <!-- Your content here -->
                     <div class="mb-3">
                         <label for="eKKomsel" class="form-label">Nama Komsel</label>
-                        <input type="text" class="form-control" id="eKKomsel" name="eKKomsel" placeholder="Nama Komsel" required>
+                        <input type="text" class="form-control" id="eKKomsel" name="eKKomsel"
+                            placeholder="Nama Komsel" required>
                     </div>
                     <div class="mb-3" style="position: relative;">
                         <label for="eKKetua" class="form-label">Nama Ketua</label>
-                        <input class="form-control" list="datalist" id="eKKetua" name="eKKetua" placeholder="Search Nama Ketua" required>
+                        <input class="form-control" list="datalist" id="eKKetua" name="eKKetua"
+                            placeholder="Search Nama Ketua" required>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary btn-cancel" data-bs-dismiss="modal">CANCEL</button>
+                    <button type="button" class="btn btn-secondary btn-cancel"
+                        data-bs-dismiss="modal">CANCEL</button>
                     <button type="button" class="btn btn-primary btn-save">SAVE</button>
                 </div>
             </div>
@@ -801,7 +763,8 @@
     </div>
 
     <!-- Modal detail presensi -->
-    <div class="modal modal-lg modal-detail fade" id="detailModal" tabindex="-1" aria-labelledby="detailModalLabel" aria-hidden="true">
+    <div class="modal modal-lg modal-detail fade" id="detailModal" tabindex="-1" aria-labelledby="detailModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
@@ -827,7 +790,9 @@
                                             </div>
                                         </div>
                                         <figure class="column-small">
-                                            <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/b8c8985dd44e2f169afd33c57649d592a952f007a9889226292865e8e90d5cbc?apiKey=f9ed83d6b13f4286938197498a891b31&" class="image" alt="Komsel YESSPRO CW"/>
+                                            <img loading="lazy"
+                                                src="https://cdn.builder.io/api/v1/image/assets/TEMP/b8c8985dd44e2f169afd33c57649d592a952f007a9889226292865e8e90d5cbc?apiKey=f9ed83d6b13f4286938197498a891b31&"
+                                                class="image" alt="Komsel YESSPRO CW" />
                                         </figure>
                                     </div>
                                 </div>
@@ -846,7 +811,9 @@
                                             </div>
                                         </div>
                                         <figure class="column-small">
-                                            <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/f20dfe6dd1609dcacebe1d079fff08b96e55176179aadf90ece40c04aac8b749?apiKey=f9ed83d6b13f4286938197498a891b31&" class="image" alt="Komsel YESS CW"/>
+                                            <img loading="lazy"
+                                                src="https://cdn.builder.io/api/v1/image/assets/TEMP/f20dfe6dd1609dcacebe1d079fff08b96e55176179aadf90ece40c04aac8b749?apiKey=f9ed83d6b13f4286938197498a891b31&"
+                                                class="image" alt="Komsel YESS CW" />
                                         </figure>
                                     </div>
                                 </div>
@@ -866,7 +833,9 @@
                                             </div>
                                         </div>
                                         <figure class="column-small">
-                                            <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/b8c8985dd44e2f169afd33c57649d592a952f007a9889226292865e8e90d5cbc?apiKey=f9ed83d6b13f4286938197498a891b31&" class="image" alt="Komsel YESSPRO CW"/>
+                                            <img loading="lazy"
+                                                src="https://cdn.builder.io/api/v1/image/assets/TEMP/b8c8985dd44e2f169afd33c57649d592a952f007a9889226292865e8e90d5cbc?apiKey=f9ed83d6b13f4286938197498a891b31&"
+                                                class="image" alt="Komsel YESSPRO CW" />
                                         </figure>
                                     </div>
                                 </div>
@@ -885,7 +854,9 @@
                                             </div>
                                         </div>
                                         <figure class="column-small">
-                                            <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/f20dfe6dd1609dcacebe1d079fff08b96e55176179aadf90ece40c04aac8b749?apiKey=f9ed83d6b13f4286938197498a891b31&" class="image" alt="Komsel YESS CW"/>
+                                            <img loading="lazy"
+                                                src="https://cdn.builder.io/api/v1/image/assets/TEMP/f20dfe6dd1609dcacebe1d079fff08b96e55176179aadf90ece40c04aac8b749?apiKey=f9ed83d6b13f4286938197498a891b31&"
+                                                class="image" alt="Komsel YESS CW" />
                                         </figure>
                                     </div>
                                 </div>
@@ -898,7 +869,8 @@
     </div>
 
     <!-- Modal edit event khusus -->
-    <div class="modal modal-edit-khusus fade" id="editKhusus" tabindex="-1" aria-labelledby="editKhususLabel" aria-hidden="true">
+    <div class="modal modal-edit-khusus fade" id="editKhusus" tabindex="-1" aria-labelledby="editKhususLabel"
+        aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
@@ -909,11 +881,13 @@
                     <!-- Your content here -->
                     <div class="mb-3">
                         <label for="eENama" class="form-label">Nama Event</label>
-                        <input type="text" class="form-control" id="eENama" name="eENama" placeholder="Nama Event" required>
+                        <input type="text" class="form-control" id="eENama" name="eENama"
+                            placeholder="Nama Event" required>
                     </div>
                     <div class="mb-3">
                         <label for="eELokasi" class="form-label">Lokasi</label>
-                        <input type="text" class="form-control" id="eELokasi" name="eELokasi" placeholder="Lokasi" required>
+                        <input type="text" class="form-control" id="eELokasi" name="eELokasi"
+                            placeholder="Lokasi" required>
                     </div>
                     <div class="mb-3">
                         <label for="eEKeterangan" class="form-label">Keterangan</label>
@@ -921,7 +895,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary btn-cancel" data-bs-dismiss="modal">CANCEL</button>
+                    <button type="button" class="btn btn-secondary btn-cancel"
+                        data-bs-dismiss="modal">CANCEL</button>
                     <button type="button" class="btn btn-primary btn-save">SAVE</button>
                 </div>
             </div>
@@ -977,7 +952,7 @@
                 presensiKomsel.classList.remove('header-detail');
 
                 content1 =
-                `<div class="table-responsive">
+                    `<div class="table-responsive">
                     <table class="table table-striped table-bordered border-secondary tabel-detail-komsel">
                         <thead>
                             <tr class="table-dark">

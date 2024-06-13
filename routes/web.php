@@ -6,6 +6,7 @@ use App\Http\Controllers\PelayananController;
 use App\Http\Controllers\KomselController;
 use App\Http\Controllers\AdminPelayananController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\PickupPointController;
 
 Route::get('/', function () {
     return view('home');
@@ -54,23 +55,6 @@ Route::get('/sunday-school', function () {
     return view('sunday-school');
 });
 
-Route::middleware([\App\Http\Middleware\EnsureUserIsAdmin::class])->group(function () {
-    Route::get('/admin', function () {
-        return view('home-admin');
-    });
-});
-
-Route::middleware([\App\Http\Middleware\EnsureUserIsAdmin::class])->group(function () {
-    Route::get('/pelayanan-admin', function () {
-        return view('pelayanan-admin');
-    });
-});
-
-Route::middleware([\App\Http\Middleware\EnsureUserIsAdmin::class])->group(function () {
-    Route::get('/event-admin', function () {
-        return view('event-admin');
-    });
-});
 
 Route::middleware([\App\Http\Middleware\EnsureUserIsAdmin::class])->group(function () {
     Route::get('/admin', function () {
@@ -85,13 +69,84 @@ Route::middleware([\App\Http\Middleware\EnsureUserIsAdmin::class])->group(functi
         return view('event-admin');
     });
 
+    Route::get('/bareng-admin', function () {
+        return view('bareng-admin');
+    });
+
+    Route::get('/penjadwalan-admin', function () {
+        return view('penjadwalan-admin');
+    });
+    
+    Route::get('/analisis-admin', function () {
+        return view('analisis-admin');
+    });
+    
+    Route::get('/komsel-admin', function () {
+        return view('komsel-admin');
+    });
+    
+    Route::get('/penjadwalan-night-admin', function () {
+        return view('penjadwalan-night-admin');
+    });
+    
+    Route::get('/penjadwalan-night-kebutuhan-admin', function () {
+        return view('penjadwalan-night-kebutuhan-admin');
+    });
+    
+    Route::get('/penjadwalan-umum-admin', function () {
+        return view('penjadwalan-umum-admin');
+    });
+    
+    Route::get('/penjadwalan-umum-kebutuhan-admin', function () {
+        return view('penjadwalan-umum-kebutuhan-admin');
+    });
+    
+    Route::get('/penjadwalan-yess-admin', function () {
+        return view('penjadwalan-yess-admin');
+    });
+    
+    Route::get('/penjadwalan-yess-kebutuhan-admin', function () {
+        return view('penjadwalan-yess-kebutuhan-admin');
+    });
+    
 });
-Route::get('/bareng-admin', function () {
-    return view('bareng-admin');
+
+
+
+Route::get('/profile', function () {
+    return view('profile');
 });
-Route::get('/penjadwalan-admin', function () {
-    return view('penja-admin');
+
+Route::get('/profil', function () {
+    return view('profil');
 });
+
+Route::get('/absenKomsel', function () {
+    return view('absenKomsel');
+});
+
+Route::get('/aturKomsel_eventKhusus', function () {
+    return view('aturKomsel_eventKhusus');
+});
+
+Route::get('/bareng-jemput', function () {
+    return view('bareng-jemput');
+});
+
+Route::get('/bareng-terdaftar', function () {
+    return view('bareng-terdaftar');
+});
+
+
+Route::get('/jadwal-ibadah', function () {
+    return view('jadwal-ibadah');
+});
+
+Route::get('/home-2', function () {
+    return view('home-2');
+});
+
+
 
 
 Route::post('/register', [AuthController::class, 'register']);
@@ -115,3 +170,7 @@ Route::get('/event', [EventController::class, 'user']);
 Route::post('/event/register', [EventController::class, 'register'])->name('event.register');
 Route::get('/event/{id}', [EventController::class, 'show'])->name('event.show');
 Route::get('/event-detail', [EventController::class, 'showDetail']);
+
+Route::get('/bareng', [PickupPointController::class, 'index'])->name('bareng.index');
+Route::post('/bareng/book/{id}', [PickupPointController::class, 'book'])->name('bareng.book');
+Route::post('/bareng/cancel-booking/{id}', [PickupPointController::class, 'cancelBooking'])->name('bareng.cancelBooking');

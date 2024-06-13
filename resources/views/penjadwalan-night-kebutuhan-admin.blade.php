@@ -17,32 +17,32 @@
     <link href="css/bareng.css" rel="stylesheet">
     <style>
         .container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 0 2px;
-        margin-top: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 2px;
+            margin-top: 80px;
         }
 
         .wrapper {
-        background-color: #fff;
-        display: flex;
-        padding-bottom: 80px;
-        flex-direction: column;
-        align-items: center;
+            background-color: #fff;
+            display: flex;
+            padding-bottom: 80px;
+            flex-direction: column;
+            align-items: center;
         }
 
         .main-content {
-        z-index: 10;
-        margin-top: 20px;
-        width: 100%;
-        max-width: 1244px;
+            z-index: 10;
+            margin-top: 20px;
+            width: 100%;
+            max-width: 1244px;
         }
 
         @media (max-width: 991px) {
-        .main-content {
-            max-width: 100%;
-        }
+            .main-content {
+                max-width: 100%;
+            }
         }
 
         .section-header {
@@ -62,31 +62,31 @@
         }
 
         .main-content-2 {
-        background-color: #000;
-        display: flex;
-        margin-top: 26px;
-        flex-direction: column;
-        padding: 11px 63px 57px;
+            background-color: #000;
+            display: flex;
+            margin-top: 26px;
+            flex-direction: column;
+            padding: 11px 63px 57px;
         }
 
         @media (max-width: 991px) {
-        .main-content-2 {
-            max-width: 100%;
-            margin-right: 7px;
-            padding: 0 20px;
-        }
+            .main-content-2 {
+                max-width: 100%;
+                margin-right: 7px;
+                padding: 0 20px;
+            }
         }
 
         .sub-header {
-        display: flex;
-        gap: 20px;
+            display: flex;
+            gap: 20px;
         }
 
         @media (max-width: 991px) {
-        .sub-header {
-            max-width: 100%;
-            flex-wrap: wrap;
-        }
+            .sub-header {
+                max-width: 100%;
+                flex-wrap: wrap;
+            }
         }
 
         .date {
@@ -99,14 +99,14 @@
         }
 
         .btn-edit {
-        background-color: #eeb120;
-        /* align-items: start; */
-        color: #000;
-        /* white-space: nowrap; */
-        /* text-align: center;
+            background-color: #eeb120;
+            /* align-items: start; */
+            color: #000;
+            /* white-space: nowrap; */
+            /* text-align: center;
         justify-content: center; */
-        padding: 12px 31px;
-        font: 400 35px/63% Material Icons, -apple-system, Roboto, Helvetica, sans-serif;
+            padding: 12px 31px;
+            font: 400 35px/63% Material Icons, -apple-system, Roboto, Helvetica, sans-serif;
         }
 
         .btn-edit:hover {
@@ -115,16 +115,17 @@
         }
 
         @media (max-width: 991px) {
-        .btn-edit {
-            padding: 0 20px;
-        }
+            .btn-edit {
+                padding: 0 20px;
+            }
         }
 
         .main-content-2 label {
             color: #fff;
         }
 
-        th, td {
+        th,
+        td {
             vertical-align: middle;
         }
 
@@ -152,12 +153,15 @@
         .modal-header {
             font: 500 24px/167% Montserrat, sans-serif;
         }
+
         .modal-body {
             background-color: #000;
         }
+
         .modal-footer {
             background-color: #a2a2a2;
         }
+
         .form-label {
             color: #fff;
         }
@@ -204,9 +208,10 @@
         }
     </style>
 </head>
+
 <body>
-        <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="z-index: 1000;">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="z-index: 1000;">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <div class="brand-text">
@@ -267,7 +272,8 @@
     </nav>
 
     <!-- Modal edit -->
-    <div class="modal modal-edit fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal modal-edit fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
@@ -290,7 +296,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary btn-cancel" data-bs-dismiss="modal">CANCEL</button>
+                    <button type="button" class="btn btn-secondary btn-cancel"
+                        data-bs-dismiss="modal">CANCEL</button>
                     <button type="button" class="btn btn-primary btn-save">SAVE</button>
                 </div>
             </div>
@@ -312,73 +319,93 @@
                 <div class="main-content-2">
                     <div class="sub-header">
                         <div class="date">Jumat, 5 April 2024</div>
-                        <button class="btn-edit" data-bs-toggle="modal" data-bs-target="#editModal">mode_edit</button>
+                        <button class="btn-edit" data-bs-toggle="modal"
+                            data-bs-target="#editModal">mode_edit</button>
                     </div>
                     <div class="mb-3 row">
                         <label for="waktu" class="col-sm-2 col-form-label">Waktu</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="waktu" name="waktu" value="10:30" disabled readonly>
+                            <input type="text" class="form-control" id="waktu" name="waktu" value="10:30"
+                                disabled readonly>
                         </div>
                     </div>
                     <div class="mb-3 row">
                         <label for="topik" class="col-sm-2 col-form-label">Topik</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="topik" name="topik" value="Kecerdasan Buatan" disabled readonly>
+                            <input type="text" class="form-control" id="topik" name="topik"
+                                value="Kecerdasan Buatan" disabled readonly>
                         </div>
                     </div>
                     <div class="mb-3 row">
                         <label for="pendeta" class="col-sm-2 col-form-label">Pendeta</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="pendeta" name="pendeta" value="Steven Bryan Christanto" disabled readonly>
+                            <input type="text" class="form-control" id="pendeta" name="pendeta"
+                                value="Steven Bryan Christanto" disabled readonly>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col">
                             <label class="musik">Pemain Musik</label>
-                            <input type="text" class="form-control" id="musik1" name="musik1" value="Steven Bryan Christanto" disabled readonly>
-                            <input type="text" class="form-control" id="musik2" name="musik2" value="Steven Bryan Christanto" disabled readonly>
-                            <input type="text" class="form-control" id="musik3" name="musik3" value="Steven Bryan Christanto" disabled readonly>
+                            <input type="text" class="form-control" id="musik1" name="musik1"
+                                value="Steven Bryan Christanto" disabled readonly>
+                            <input type="text" class="form-control" id="musik2" name="musik2"
+                                value="Steven Bryan Christanto" disabled readonly>
+                            <input type="text" class="form-control" id="musik3" name="musik3"
+                                value="Steven Bryan Christanto" disabled readonly>
                         </div>
                         <div class="col">
-                        <label class="kameramen">Kameramen</label>
-                            <input type="text" class="form-control" id="kam1" name="kam1" value="Steven Bryan Christanto" disabled readonly>
-                            <input type="text" class="form-control" id="kam2" name="kam2" value="Steven Bryan Christanto" disabled readonly>
+                            <label class="kameramen">Kameramen</label>
+                            <input type="text" class="form-control" id="kam1" name="kam1"
+                                value="Steven Bryan Christanto" disabled readonly>
+                            <input type="text" class="form-control" id="kam2" name="kam2"
+                                value="Steven Bryan Christanto" disabled readonly>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col">
                             <label class="wl">Worship Leader</label>
-                            <input type="text" class="form-control" id="wl1" name="wl1" value="Steven Bryan Christanto" disabled readonly>
-                            <input type="text" class="form-control" id="wl2" name="wl2" value="Steven Bryan Christanto" disabled readonly>
+                            <input type="text" class="form-control" id="wl1" name="wl1"
+                                value="Steven Bryan Christanto" disabled readonly>
+                            <input type="text" class="form-control" id="wl2" name="wl2"
+                                value="Steven Bryan Christanto" disabled readonly>
                         </div>
                         <div class="col">
-                        <label class="mm">Multimedia</label>
-                            <input type="text" class="form-control" id="mm1" name="mm1" value="Steven Bryan Christanto" disabled readonly>
-                            <input type="text" class="form-control" id="mm2" name="mm2" value="Steven Bryan Christanto" disabled readonly>
+                            <label class="mm">Multimedia</label>
+                            <input type="text" class="form-control" id="mm1" name="mm1"
+                                value="Steven Bryan Christanto" disabled readonly>
+                            <input type="text" class="form-control" id="mm2" name="mm2"
+                                value="Steven Bryan Christanto" disabled readonly>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col">
                             <label class="singer">Singer</label>
-                            <input type="text" class="form-control" id="singer1" name="singer1" value="Steven Bryan Christanto" disabled readonly>
-                            <input type="text" class="form-control" id="singer2" name="singer2" value="Steven Bryan Christanto" disabled readonly>
-                            <input type="text" class="form-control" id="singer3" name="singer3" value="Steven Bryan Christanto" disabled readonly>
+                            <input type="text" class="form-control" id="singer1" name="singer1"
+                                value="Steven Bryan Christanto" disabled readonly>
+                            <input type="text" class="form-control" id="singer2" name="singer2"
+                                value="Steven Bryan Christanto" disabled readonly>
+                            <input type="text" class="form-control" id="singer3" name="singer3"
+                                value="Steven Bryan Christanto" disabled readonly>
                         </div>
                         <div class="col">
-                        <label class="usher">Usher</label>
-                            <input type="text" class="form-control" id="usher1" name="usher1" value="Steven Bryan Christanto" disabled readonly>
-                            <input type="text" class="form-control" id="usher2" name="usher2" value="Steven Bryan Christanto" disabled readonly>
-                            <input type="text" class="form-control" id="usher3" name="usher3" value="Steven Bryan Christanto" disabled readonly>
-                            <input type="text" class="form-control" id="usher4" name="usher4" value="Steven Bryan Christanto" disabled readonly>
-                            <input type="text" class="form-control" id="usher5" name="usher5" value="Steven Bryan Christanto" disabled readonly>
+                            <label class="usher">Usher</label>
+                            <input type="text" class="form-control" id="usher1" name="usher1"
+                                value="Steven Bryan Christanto" disabled readonly>
+                            <input type="text" class="form-control" id="usher2" name="usher2"
+                                value="Steven Bryan Christanto" disabled readonly>
+                            <input type="text" class="form-control" id="usher3" name="usher3"
+                                value="Steven Bryan Christanto" disabled readonly>
+                            <input type="text" class="form-control" id="usher4" name="usher4"
+                                value="Steven Bryan Christanto" disabled readonly>
+                            <input type="text" class="form-control" id="usher5" name="usher5"
+                                value="Steven Bryan Christanto" disabled readonly>
                         </div>
                     </div>
                 </div>
             </main>
         </section>
     </div>
-    <script>
-    </script>
+    <script></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">

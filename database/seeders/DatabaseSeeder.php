@@ -2,10 +2,9 @@
 
 namespace Database\Seeders;
 
+use Illuminate\Database\Seeder;
 use App\Models\User;
 use App\Models\Event;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,13 +13,17 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        $this->call([
+            PickupPointsTableSeeder::class,
+        ]);
+
         User::factory(10)->create();
 
         User::factory()->create([
             'name' => 'Test User',
             'email' => 'test@example.com',
         ]);
-        
+
         Event::create([
             'title' => 'Putus atau Terus 1',
             'quota' => 150,
@@ -34,6 +37,5 @@ class DatabaseSeeder extends Seeder
             'archived' => false,
             'type' => 'umum'
         ]);
-        
     }
 }

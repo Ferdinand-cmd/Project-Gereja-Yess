@@ -16,11 +16,12 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
-  
+
     <style>
         body {
             overflow-x: hidden;
         }
+
         .whatsapp-button {
             position: fixed;
             bottom: 20px;
@@ -36,26 +37,31 @@
             z-index: 1000;
             cursor: pointer;
         }
+
         .whatsapp-button img {
             width: 50px;
             height: 50px;
         }
+
         /* Styling Navbar */
         .navbar-nav .nav-item.active .nav-link,
         .navbar-nav .nav-item:hover .nav-link {
             color: orange !important;
             border-bottom: 2px solid orange;
         }
+
         .navbar-nav .dropdown-item:focus,
         .navbar-nav .dropdown-item:hover {
             color: orange !important;
             background-color: transparent !important;
         }
+
         .navbar-nav .dropdown-item.active,
         .navbar-nav .dropdown-item:active {
             color: orange !important;
             background-color: transparent !important;
         }
+
         .navbar-nav .dropdown-menu a.dropdown-item:hover {
             color: orange !important;
             background-color: transparent !important;
@@ -63,169 +69,182 @@
 
 
 
-    /* Content */
-    body {
-      background-color: #fff;
-      display: flex;
-      flex-direction: column;
-    }
-    .main-content {
-      display: flex;
-      margin-top: 100px;
-      width: 100%;
-      flex-direction: column;
-      padding: 0 55px;
-    }
-    @media (max-width: 991px) {
-      .main-content {
-        max-width: 100%;
-        padding: 0 20px;
-      }
-    }
-    .main-title {
-      align-self: start;
-      display: flex;
-      gap: 20px;
-      font-size: 40px;
-      color: #000;
-      font-weight: 600;
-    }
-    @media (max-width: 991px) {
-      .main-title {
-        flex-wrap: wrap;
-        font-size: 40px;
-      }
-    }
-    .btn-back {
-      border-radius: 35px;
-      align-items: center; /* Mengatur isi (tanda panah) menjadi terpusat secara vertikal */
-      justify-content: center; /* Mengatur isi (tanda panah) menjadi terpusat secara horizontal */
-      display: flex; /* Menjadikan elemen tampilan flex */
-      background: linear-gradient(0deg, #eeb120 0%, #eeb120 100%), #eeb120;
-      border-color: rgba(0, 0, 0, 1);
-      border-style: solid;
-      border-width: 1px;
-      width: 80px;
-      height: 60px;
-    }
+        /* Content */
+        body {
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+        }
 
-    .btn-back:hover {
-  box-shadow:  #eeb120 0 6px 8px;
-  transform: translateY(-2px);
-  border-color: transparent;
-}
+        .main-content {
+            display: flex;
+            margin-top: 100px;
+            width: 100%;
+            flex-direction: column;
+            padding: 0 55px;
+        }
 
-.btn-back:active {
-  box-shadow: none;
-  transform: translateY(0);
-}
+        @media (max-width: 991px) {
+            .main-content {
+                max-width: 100%;
+                padding: 0 20px;
+            }
+        }
 
-    .breadcrumbs {
-      font-family: Kanit, sans-serif;
-      align-self: start;
-      flex-grow: 1;
-      flex-basis: auto;
-      
-    }
-    @media (max-width: 991px) {
-      .breadcrumbs {
-        max-width: 100%;
-        font-size: 25px;
-      }
-    }
-    .card {
-      border-radius: 20px;
-      border: 1px solid rgba(0, 0, 0, 1);
-      background-color: #f4f4f4;
-      display: flex;
-      margin-top: 12px;
-      padding: 39px 42px 10px;
-      flex-direction: column;
-    }
-    @media (max-width: 991px) {
-      .card {
-        max-width: 100%;
-      }
-    }
-    .card-title {
-      color: #000;
-      align-self: start;
-      margin-left: 31px;
-      margin-top: -15px;
-      font: 700 26px Kanit, sans-serif;
-    }
-    @media (max-width: 991px) {
-      .card-title {
-        margin-left: 10px;
-      }
-    }
-    .card-divider {
-  height: 5px;
-  margin-top: 5px;
-  margin-bottom: 10px;
-  background: linear-gradient(
-    to bottom,
-    transparent 2px,
-    black 2px,
-    black 3px,
-    transparent 3px
-  );
-}
-    @media (max-width: 991px) {
-      .card-divider {
-        max-width: 100%;
-      }
-    }
-    
-/* search nama jemaat */
+        .main-title {
+            align-self: start;
+            display: flex;
+            gap: 20px;
+            font-size: 40px;
+            color: #000;
+            font-weight: 600;
+        }
 
-.sub-header {
-        color: #000;
-        text-align: center;
-        letter-spacing: 2px;
-        /* margin-top: 23px; */
-        font: 500 17px Montserrat, sans-serif;
-    }
+        @media (max-width: 991px) {
+            .main-title {
+                flex-wrap: wrap;
+                font-size: 40px;
+            }
+        }
 
-    .search-container {
-        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-        background-color: #000;
-        display: flex;
-        gap: 20px;
-        font-weight: 400;
-        white-space: nowrap;
-        padding: 8px 33px;
-        margin: 7px 0;
-        max-width: 100%;
+        .btn-back {
+            border-radius: 35px;
+            align-items: center;
+            /* Mengatur isi (tanda panah) menjadi terpusat secara vertikal */
+            justify-content: center;
+            /* Mengatur isi (tanda panah) menjadi terpusat secara horizontal */
+            display: flex;
+            /* Menjadikan elemen tampilan flex */
+            background: linear-gradient(0deg, #eeb120 0%, #eeb120 100%), #eeb120;
+            border-color: rgba(0, 0, 0, 1);
+            border-style: solid;
+            border-width: 1px;
+            width: 80px;
+            height: 60px;
+        }
 
-    }
+        .btn-back:hover {
+            box-shadow: #eeb120 0 6px 8px;
+            transform: translateY(-2px);
+            border-color: transparent;
+        }
 
-    .search-icon {
-        color: #fff;
-        text-align: center;
-        /* flex-grow: 1; */
-        margin: auto 0;
-        font: 24px Material Icons, sans-serif;
-    }
+        .btn-back:active {
+            box-shadow: none;
+            transform: translateY(0);
+        }
 
-    .search-input {
-        background-color: #fff;
-        color: #888;
-        justify-content: center;
-        flex-grow: 1;
-        width: fit-content;
-        /* padding: 26px 31px; */
-        font: 24px Kanit, sans-serif;
-    }
+        .breadcrumbs {
+            font-family: Kanit, sans-serif;
+            align-self: start;
+            flex-grow: 1;
+            flex-basis: auto;
 
-    /* jumlah */
-    .modal-counter-box {
+        }
+
+        @media (max-width: 991px) {
+            .breadcrumbs {
+                max-width: 100%;
+                font-size: 25px;
+            }
+        }
+
+        .card {
+            border-radius: 20px;
+            border: 1px solid rgba(0, 0, 0, 1);
+            background-color: #f4f4f4;
+            display: flex;
+            margin-top: 12px;
+            padding: 39px 42px 10px;
+            flex-direction: column;
+        }
+
+        @media (max-width: 991px) {
+            .card {
+                max-width: 100%;
+            }
+        }
+
+        .card-title {
+            color: #000;
+            align-self: start;
+            margin-left: 31px;
+            margin-top: -15px;
+            font: 700 26px Kanit, sans-serif;
+        }
+
+        @media (max-width: 991px) {
+            .card-title {
+                margin-left: 10px;
+            }
+        }
+
+        .card-divider {
+            height: 5px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            background: linear-gradient(to bottom,
+                    transparent 2px,
+                    black 2px,
+                    black 3px,
+                    transparent 3px);
+        }
+
+        @media (max-width: 991px) {
+            .card-divider {
+                max-width: 100%;
+            }
+        }
+
+        /* search nama jemaat */
+
+        .sub-header {
+            color: #000;
+            text-align: center;
+            letter-spacing: 2px;
+            /* margin-top: 23px; */
+            font: 500 17px Montserrat, sans-serif;
+        }
+
+        .search-container {
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+            background-color: #000;
+            display: flex;
+            gap: 20px;
+            font-weight: 400;
+            white-space: nowrap;
+            padding: 8px 33px;
+            margin: 7px 0;
+            max-width: 100%;
+
+        }
+
+        .search-icon {
+            color: #fff;
+            text-align: center;
+            /* flex-grow: 1; */
+            margin: auto 0;
+            font: 24px Material Icons, sans-serif;
+        }
+
+        .search-input {
+            background-color: #fff;
+            color: #888;
+            justify-content: center;
+            flex-grow: 1;
+            width: fit-content;
+            /* padding: 26px 31px; */
+            font: 24px Kanit, sans-serif;
+        }
+
+        /* jumlah */
+        .modal-counter-box {
             display: flex;
             justify-content: flex-end;
         }
 
         /* Text "Jumlah" */
-         .modal-counter-text {
+        .modal-counter-text {
             background-color: white;
             /* Set background color to white */
             color: black;
@@ -252,184 +271,117 @@
             text-align: center;
         }
 
-/* button save */
-.buttonSave {
-  appearance: none;
-  background-color: #000000;
-  border: 2px solid #1A1A1A;
-  border-radius: 15px;
-  box-sizing: border-box;
-  color: #FFFFFF;
-  cursor: pointer;
-  display: inline-block;
-  font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-  font-size: 16px;
-  font-weight: 600;
-  line-height: normal;
-  margin: 0;
-  min-height: 60px;
-  min-width: 0;
-  outline: none;
-  padding: 16px 24px;
-  text-align: center;
-  text-decoration: none;
-  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  width: 100%;
-  will-change: transform;
-}
+        /* button save */
+        .buttonSave {
+            appearance: none;
+            background-color: #000000;
+            border: 2px solid #1A1A1A;
+            border-radius: 15px;
+            box-sizing: border-box;
+            color: #FFFFFF;
+            cursor: pointer;
+            display: inline-block;
+            font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            font-size: 16px;
+            font-weight: 600;
+            line-height: normal;
+            margin: 0;
+            min-height: 60px;
+            min-width: 0;
+            outline: none;
+            padding: 16px 24px;
+            text-align: center;
+            text-decoration: none;
+            transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            width: 100%;
+            will-change: transform;
+        }
 
-.buttonSave:disabled {
-  pointer-events: none;
-}
+        .buttonSave:disabled {
+            pointer-events: none;
+        }
 
-.buttonSave:hover {
-  box-shadow: hsl(215, 100%, 50%) 0 8px 10px;
-  transform: translateY(-2px);
-  border-color: transparent;
-  background-color: hsl(215, 100%, 50%);
-}
+        .buttonSave:hover {
+            box-shadow: hsl(215, 100%, 50%) 0 8px 10px;
+            transform: translateY(-2px);
+            border-color: transparent;
+            background-color: hsl(215, 100%, 50%);
+        }
 
-.buttonSave:active {
-  box-shadow: none;
-  transform: translateY(0);
-}
-
-
-
+        .buttonSave:active {
+            box-shadow: none;
+            transform: translateY(0);
+        }
     </style>
 </head>
 
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container-fluid justify-content-between">
-            <a class="navbar-brand" href="#">
-                <div class="brand-text" style="display: inline-block; margin-left: 10px; color: #f5f5f5;">
-                    <img src="img/bestchurch.png" alt="" style="width: 60%;">
-                </div>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mx-auto" style="text-align: center;">
-                    <li class="nav-item active" style="margin-right: 20px;">
-                        <a class="nav-link" href="/" style="color: #f5f5f5;">Home</a>
-                    </li>
-                    <li class="nav-item dropdown" style="margin-right: 20px;">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #f5f5f5;">
-                            YESS
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
-                            <li><a class="dropdown-item" href="/yess" style="color: #000;">YESS</a></li>
-                            <li><a class="dropdown-item" href="/komsel" style="color: #000;">Komsel</a></li>
-                            <li><a class="dropdown-item" href="/bareng" style="color: #000;">Bareng</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item" style="margin-right: 20px;">
-                        <a class="nav-link" href="/jadwal" style="color: #f5f5f5;">Jadwal</a>
-                    </li>
-                    <li class="nav-item" style="margin-right: 20px;">
-                        <a class="nav-link" href="/ladies-devotion" style="color: #f5f5f5;">Ladies Devotion</a>
-                    </li>
-                    <li class="nav-item" style="margin-right: 20px;">
-                        <a class="nav-link" href="/sunday-school" style="color: #f5f5f5;">Sunday School</a>
-                    </li>
-                    <li class="nav-item" style="margin-right: 20px;">
-                        <a class="nav-link" href="/event" style="color: #f5f5f5;">Event</a>
-                    </li>
-                    <li class="nav-item" style="margin-right: 20px;">
-                        <a class="nav-link" href="/pelayanan" style="color: #f5f5f5;">Pelayanan</a>
-                    </li>
-                </ul>
-                <div class="navbar-nav" style="text-align: right;">
-                    <ul class="navbar-nav">
-                        @auth
-                        <li class="nav-item dropdown" style="margin-right: 20px;">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #f5f5f5;">
-                                Welcome, {{ auth()->user()->name }}
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                @if (auth()->user()->is_admin)
-                                <li><a class="dropdown-item" href="/admin" style="color: #000;">Admin Dashboard</a></li>
-                                @endif
-                                <li>
-                                    <form action="/logout" method="POST">
-                                        @csrf
-                                        <button type="submit" class="dropdown-item" style="color: #000;">Logout</button>
-                                    </form>
-                                </li>
-                            </ul>
-                        </li>
-                        @else
-                        <li class="nav-item">
-                            <a class="nav-link login-link-border" href="/login" style="color: #f5f5f5; border: 1px solid #fff; border-radius: 5px; padding: 8px 20px;">Login</a>
-                        </li>
-                        @endauth
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </nav>
+    @include('partials.navbar')
 
-    
+
     <!-- konten -->
     <main class="main-content">
         <section class="main-title">
-          <button class="btn-back" onclick="goBackToKomsel()"><span class="material-icons" style="font-size: 60%;">arrow_back</span></button>
-          <div class="breadcrumbs">Komsel &gt; Atur Komsel</div>
+            <button class="btn-back" onclick="goBackToKomsel()"><span class="material-icons"
+                    style="font-size: 60%;">arrow_back</span></button>
+            <div class="breadcrumbs">Komsel &gt; Atur Komsel</div>
         </section>
 
         <section class="card mb-4">
             <div class="card-title">Sabtu, 6 April 2024</div>
-            <div class="card-divider" ></div>
+            <div class="card-divider"></div>
             <!-- Form fields -->
             <div class="container-fluid">
                 <div class="row">
                     <div class="col">
-                        <div class="user-input-box" >
-                            <label for="inputGambar" class="form-label" >Gambar</label>
-                                <input type="file" class="form-control"  id="inputGambar" name="inputGambar" accept="image/*" required style="border-radius: 0; border-color: #939393;">
+                        <div class="user-input-box">
+                            <label for="inputGambar" class="form-label">Gambar</label>
+                            <input type="file" class="form-control" id="inputGambar" name="inputGambar"
+                                accept="image/*" required style="border-radius: 0; border-color: #939393;">
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col mb-4">
                         <div class="user-input-box mt-3">
-                                <label for="keterangan" class="mb-2">Keterangan</label>
-                                <textarea class="form-control" id="keterangan" rows="3" style="border-radius: 0; border-color: #939393;"></textarea>
+                            <label for="keterangan" class="mb-2">Keterangan</label>
+                            <textarea class="form-control" id="keterangan" rows="3" style="border-radius: 0; border-color: #939393;"></textarea>
                         </div>
                     </div>
                 </div>
-                </div>
+            </div>
             </div>
 
 
             <!-- daftarkan -->
-        <div class="sub-header">Cari Nama Jemaat</div>
-        <div class="search-container mb-3" style="width: 85%; align-self: center;">
-            <span class="search-icon" role="img" aria-label="search">search</span>
-            <input class="search-input" style="font-size: small; padding: 1%;"  type="search" placeholder="Search" aria-label="Search">
-        </div>
-                <table class="table table-striped table-bordered border-secondary mb-4">
-                    <thead>
-                        <tr class="table-dark" >
-                            <th style="padding-top: 1.5%; ">Daftar nama jemaat yang sudah melakukan absensi                                    
-                                <div class="modal-counter-box " style="display: block; background-color: white; float: right;  ">
-                                <div class="modal-counter-text" >Jumlah</div>
-                                <div class="modal-counter" >xx</div>
-                            </div></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Jackson Wang</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="sub-header">Cari Nama Jemaat</div>
+            <div class="search-container mb-3" style="width: 85%; align-self: center;">
+                <span class="search-icon" role="img" aria-label="search">search</span>
+                <input class="search-input" style="font-size: small; padding: 1%;" type="search" placeholder="Search"
+                    aria-label="Search">
+            </div>
+            <table class="table table-striped table-bordered border-secondary mb-4">
+                <thead>
+                    <tr class="table-dark">
+                        <th style="padding-top: 1.5%; ">Daftar nama jemaat yang sudah melakukan absensi
+                            <div class="modal-counter-box "
+                                style="display: block; background-color: white; float: right;  ">
+                                <div class="modal-counter-text">Jumlah</div>
+                                <div class="modal-counter">xx</div>
+                            </div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Jackson Wang</td>
+                    </tr>
+                </tbody>
+            </table>
             </div>
 
             <!-- button save -->
@@ -438,7 +390,7 @@
 
         </section>
 
-        
+
 
     </main>
 
@@ -448,8 +400,9 @@
     <script>
         // Function to go back to the komsel page
         function goBackToKomsel() {
-          window.location.href = "komsel.blade.php"; 
+            window.location.href = "komsel.blade.php";
         }
-      </script>
+    </script>
 </body>
+
 </html>

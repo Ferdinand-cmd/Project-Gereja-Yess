@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>YESS.SUB | Event Detail</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" />
     <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Icons:wght@400&display=swap" />
@@ -21,6 +23,7 @@
         body {
             overflow-x: hidden;
         }
+
         .whatsapp-button {
             position: fixed;
             bottom: 20px;
@@ -36,10 +39,12 @@
             z-index: 1000;
             cursor: pointer;
         }
+
         .whatsapp-button img {
             width: 50px;
             height: 50px;
         }
+
         /* Untuk membuat tulisan BEST berwarna orange dan memiliki garis bawah orange saat berada di halaman BEST */
         nav .nav-item.active .nav-link,
         nav .nav-item:hover .nav-link {
@@ -77,17 +82,21 @@
             --button-background: #000000;
             --button-text-color: #ffffff;
         }
-        body, html {
+
+        body,
+        html {
             margin: 0;
             padding: 0;
             font-family: var(--default-font-family);
             background-color: var(--background-color);
         }
+
         .main-container {
             max-width: 1440px;
             margin: 0 auto;
             background-color: #f4f4f4;
         }
+
         .content {
             width: calc(100% - 100px);
             max-width: 1337px;
@@ -95,8 +104,9 @@
             margin: 95px auto 35px auto;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
+
         .back-button {
             display: flex;
             align-items: center;
@@ -110,27 +120,32 @@
             font-weight: 600;
             margin-bottom: 20px;
         }
+
         .content .event-image {
             display: block;
             margin-left: auto;
             margin-right: auto;
             width: 50%;
         }
+
         .content .event-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin: 20px 0;
         }
+
         .content .event-title {
             font-family: Kanit, var(--default-font-family);
             font-size: 48px;
             font-weight: 600;
         }
+
         .content .event-title h1 {
             font-size: 2em;
             margin: 0;
-        } 
+        }
+
         .content .register-button {
             display: flex;
             align-items: center;
@@ -145,6 +160,7 @@
             color: #fff;
             cursor: pointer;
         }
+
         .content .event-info {
             display: flex;
             align-items: center;
@@ -155,6 +171,7 @@
             font-weight: 500;
             color: #646464;
         }
+
         .content .event-type {
             font-weight: bold;
             width: fit-content;
@@ -164,17 +181,20 @@
             font-family: 'Roboto', sans-serif;
             background-color: #000;
         }
+
         .content .event-description {
             font-family: Roboto, var(--default-font-family);
             font-size: 1.2em;
             font-weight: 400;
-            color: var(--secondary-color);;
+            color: var(--secondary-color);
+            ;
             line-height: 1.5;
             letter-spacing: 0.48px;
             margin: 20px 0;
         }
-                /* Modal */
-                .modal-dialog {
+
+        /* Modal */
+        .modal-dialog {
             max-width: 90%;
             /* Set max-width to 90% of the viewport width */
             width: auto;
@@ -352,6 +372,7 @@
             background-color: #333333;
             /* Darker gray background on hover */
         }
+
         /* CSS untuk tombol daftar */
         .daftar-button {
             display: flex;
@@ -366,86 +387,23 @@
             font-weight: 500;
             color: #fff;
             cursor: pointer;
-            text-decoration: none; /* tambahkan ini untuk menghilangkan underline */
+            text-decoration: none;
+            /* tambahkan ini untuk menghilangkan underline */
         }
 
         /* Hover effect untuk tombol daftar */
         .daftar-button:hover {
-            background-color: #ffac33; /* ganti dengan warna hover yang diinginkan */
+            background-color: #ffac33;
+            /* ganti dengan warna hover yang diinginkan */
         }
-
     </style>
 </head>
+
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="background-color: #000 !important;">
-        <div class="container-fluid justify-content-between">
-            <a class="navbar-brand" href="#">
-                <div class="brand-text" style="display: inline-block; margin-left: 10px; color: #f5f5f5;">
-                    <img src="img/bestchurch.png" alt="" style="width: 60%;">
-                </div>
-            </a>
-            <div class="navbar-nav mx-auto" style="text-align: center;">
-                <ul class="navbar-nav" style="margin-bottom: 10px;">
-                    <li class="nav-item" style="margin-right: 20px;">
-                        <a class="nav-link" href="/" style="color: #f5f5f5;">Home</a>
-                    </li>
-                    <li class="nav-item dropdown" style="margin-right: 20px;">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #f5f5f5;">
-                            YESS
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
-                            <li><a class="dropdown-item" href="/yess" style="color: #000;">YESS</a></li>
-                            <li><a class="dropdown-item" href="/komsel" style="color: #000;">Komsel</a></li>
-                            <li><a class="dropdown-item" href="/bareng" style="color: #000;">Bareng</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item" style="margin-right: 20px;">
-                        <a class="nav-link" href="/jadwal" style="color: #f5f5f5;">Jadwal</a>
-                    </li>
-                    <li class="nav-item" style="margin-right: 20px;">
-                        <a class="nav-link" href="/ladies-devotion" style="color: #f5f5f5;">Ladies Devotion</a>
-                    </li>
-                    <li class="nav-item" style="margin-right: 20px;">
-                        <a class="nav-link" href="/sunday-school" style="color: #f5f5f5;">Sunday School</a>
-                    </li>
-                    <li class="nav-item active" style="margin-right: 20px;">
-                        <a class="nav-link" href="/event" style="color: #f5f5f5;">Event</a>
-                    </li>
-                    <li class="nav-item" style="margin-right: 20px;">
-                        <a class="nav-link" href="/pelayanan" style="color: #f5f5f5;">Pelayanan</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="navbar-nav" style="text-align: right;">
-                <ul class="navbar-nav">
-                    @auth
-                    <li class="nav-item dropdown" style="margin-right: 20px;">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #f5f5f5;">
-                            Welcome, {{ auth()->user()->name }}
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            @if (auth()->user()->is_admin)
-                            <li><a class="dropdown-item" href="/admin" style="color: #000;">Admin Dashboard</a></li>
-                            @endif
-                            <li>
-                                <form action="/logout" method="POST">
-                                    @csrf
-                                    <button type="submit" class="dropdown-item" style="color: #000;">Logout</button>
-                                </form>
-                            </li>
-                        </ul>
-                    </li>
-                    @else
-                    <li class="nav-item">
-                        <a class="nav-link login-link-border" href="/login" style="color: #f5f5f5; border: 1px solid #fff; border-radius: 5px; padding: 8px 20px;">Login</a>
-                    </li>
-                    @endauth
-                </ul>
-            </div>
-        </div>
-    </nav>  
-    <a href="https://api.whatsapp.com/send?phone=6285854526955&text=Halo%20mau%20tanya%20gereja" class="whatsapp-button">
+    @include('partials.navbar')
+    <a href="https://api.whatsapp.com/send?phone=6285854526955&text=Halo%20mau%20tanya%20gereja"
+        class="whatsapp-button">
         <img src="img/wa.png" alt="WhatsApp">
     </a>
 
@@ -463,7 +421,10 @@
                 <!-- Header -->
                 <div class="event-header">
                     <h1 class="event-title" id="eventTitle"><?php echo $event->title; ?></h1>
-                    <button class="daftar-button" data-bs-toggle="modal" data-bs-target="#daftarModal{{ $event->id }}" onclick="openFormModal(event, {{ $event->id }})">Daftar <span class="material-icons">arrow_forward</span></button>
+                    <button class="daftar-button" data-bs-toggle="modal"
+                        data-bs-target="#daftarModal{{ $event->id }}"
+                        onclick="openFormModal(event, {{ $event->id }})">Daftar <span
+                            class="material-icons">arrow_forward</span></button>
                 </div>
                 <div class="event-info">
                     <div class="event-type" id="eventType"><?php echo $event->type; ?></div>
@@ -482,7 +443,7 @@
                 </p>
             </div>
 
-            
+
             <!-- Modal -->
             <div class="modal fade" id="daftarModal<?php echo $event['id']; ?>" tabindex="-1"
                 aria-labelledby="formModalLabel<?php echo $event['id']; ?>" aria-hidden="true">
@@ -492,22 +453,27 @@
                             <h5 class="modal-title modal-event-title" id="formModalLabel<?php echo $event['id']; ?>">
                                 <?php echo $event['title']; ?>
                             </h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
                             <!-- Your form content goes here -->
-                            <label for="daftar<?php echo $event['id']; ?>" class="form-label form-label-daftar">Bagi jemaat yang ingin
-                                mendaftar dalam event YESS Surabaya silahkan mengisi form pendaftaran event dibawah ini.</label>
+                            <label for="daftar<?php echo $event['id']; ?>" class="form-label form-label-daftar">Bagi jemaat yang
+                                ingin
+                                mendaftar dalam event YESS Surabaya silahkan mengisi form pendaftaran event dibawah
+                                ini.</label>
                             <!-- Alergi Anda -->
                             <div class="mb-3">
-                                <label for="alergi<?php echo $event['id']; ?>" class="form-label form-label-alergi">Alergi Anda (jika
+                                <label for="alergi<?php echo $event['id']; ?>" class="form-label form-label-alergi">Alergi Anda
+                                    (jika
                                     tidak punya, isi "-")</label>
                                 <textarea class="form-control" id="alergi<?php echo $event['id']; ?>" rows="3"
                                     placeholder="Masukkan alergi Anda jika ada"></textarea>
                             </div>
                             <!-- Informasi keluarga yang dapat dihubungi -->
                             <div class="mb-3">
-                                <label for="informasi<?php echo $event['id']; ?>" class="form-label form-label-informasi">Informasi
+                                <label for="informasi<?php echo $event['id']; ?>"
+                                    class="form-label form-label-informasi">Informasi
                                     keluarga yang dapat dihubungi</label>
                                 <textarea class="form-control" id="informasi<?php echo $event['id']; ?>" rows="3"
                                     placeholder="Masukkan nama dan nomor telepon keluarga yang dapat dihubungi"></textarea>
@@ -523,56 +489,60 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-cancel" data-bs-dismiss="modal">Cancel</button>
-                            <button type="button" class="btn btn-submit" onclick="registerEvent(<?php echo $event['id']; ?>)" data-bs-dismiss="modal">Submit</button>
+                            <button type="button" class="btn btn-submit"
+                                onclick="registerEvent(<?php echo $event['id']; ?>)" data-bs-dismiss="modal">Submit</button>
                         </div>
                     </div>
                 </div>
             </div>
 
 
-        <!-- Footer -->
-        <div class="container-fluid" style="background-color: black; color: white; border-radius: 30px 30px 0 0;">
-            <div class="row">
-                <div class="col-md-6 d-flex justify-content-start">
-                    <img src="img/ig.png" alt="Instagram">
-                    <img src="img/tiktok.png" alt="TikTok">
-                    <img src="img/yt.png" alt="YouTube">
+            <!-- Footer -->
+            <div class="container-fluid" style="background-color: black; color: white; border-radius: 30px 30px 0 0;">
+                <div class="row">
+                    <div class="col-md-6 d-flex justify-content-start">
+                        <img src="img/ig.png" alt="Instagram">
+                        <img src="img/tiktok.png" alt="TikTok">
+                        <img src="img/yt.png" alt="YouTube">
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <script>
-        // Function to go back to the events page
-        function goBackToEvents() {
-            window.location.href = "/event"; // Redirect to event.blade.php
-        }
-        function openFormModal(event, eventId) {
-            event.stopPropagation(); // Stop event propagation to prevent opening detail events
-        }
-        function registerEvent(eventId) {
-            $.ajax({
-                url: '{{ route("event.register") }}',
-                type: 'POST',
-                data: {
-                    event_id: eventId,
-                    _token: '{{ csrf_token() }}'
-                },
-                success: function(response) {
-                    alert(response.message);
-                    location.reload();
-                },
-                error: function(xhr) {
-                    alert(xhr.responseJSON.message);
-                }
-            });
-        }
-    </script>
+        <script>
+            // Function to go back to the events page
+            function goBackToEvents() {
+                window.location.href = "/event"; // Redirect to event.blade.php
+            }
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-    </script>
-    <script src="js/home.js"></script>
+            function openFormModal(event, eventId) {
+                event.stopPropagation(); // Stop event propagation to prevent opening detail events
+            }
+
+            function registerEvent(eventId) {
+                $.ajax({
+                    url: '{{ route('event.register') }}',
+                    type: 'POST',
+                    data: {
+                        event_id: eventId,
+                        _token: '{{ csrf_token() }}'
+                    },
+                    success: function(response) {
+                        alert(response.message);
+                        location.reload();
+                    },
+                    error: function(xhr) {
+                        alert(xhr.responseJSON.message);
+                    }
+                });
+            }
+        </script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+        </script>
+        <script src="js/home.js"></script>
 </body>
+
 </html>

@@ -21,6 +21,7 @@
         body {
             overflow-x: hidden;
         }
+
         .whatsapp-button {
             position: fixed;
             bottom: 20px;
@@ -36,10 +37,12 @@
             z-index: 1000;
             cursor: pointer;
         }
+
         .whatsapp-button img {
             width: 50px;
             height: 50px;
         }
+
         /* Untuk membuat tulisan BEST berwarna orange dan memiliki garis bawah orange saat berada di halaman BEST */
         .nav-item.active .nav-link,
         .nav-item:hover .nav-link {
@@ -67,15 +70,60 @@
             background-color: transparent !important;
         }
 
-        .main-content { box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25); background-color: #fff; display: flex; width: 100%; flex-direction: column; align-items: flex-start; padding: 37px 80px; margin-top: 40px;} @media (max-width: 991px) { .main-content { padding: 0 20px; } }
-        .user-name { color: #000; letter-spacing: 1.92px; font-size: 64px; font-family: Kanit, sans-serif;}
-        @media (max-width: 991px) { .user-name { font-size: 40px; } }
+        .main-content {
+            box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
+            background-color: #fff;
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 37px 80px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 991px) {
+            .main-content {
+                padding: 0 20px;
+            }
+        }
+
+        .user-name {
+            color: #000;
+            letter-spacing: 1.92px;
+            font-size: 64px;
+            font-family: Kanit, sans-serif;
+        }
+
+        @media (max-width: 991px) {
+            .user-name {
+                font-size: 40px;
+            }
+        }
+
         /* .tags { display: flex; margin-top: 24px; gap: 8px; } @media (max-width: 991px) { .tags { flex-wrap: wrap; padding-right: 20px; } }
         .tag { border-radius: 20px; background-color: #000; color: #fff; font-family: Montserrat, sans-serif; text-align: center; padding: 7px 22px; font-size: 20px; font-weight: 700; white-space: nowrap; } @media (max-width: 991px) { .tag { white-space: initial; padding: 0 20px; } }
         .more-tag { display: flex; border: 2px solid #000; gap: 7px; color: #000; text-align: center; padding: 5px 13px; border-radius: 20px; font-size: 16px; font-weight: 500; font-family: Montserrat, sans-serif; } .tag-icon { font-family: 'Material Icons'; }
         .more-text { margin: auto 0; } */
-        .section { display: flex; flex-direction: column; width: 100%; margin-top: 25px; }
-        .section-title { color: #000; font-size: 22px; font-family: Nunito, sans-serif; font-weight: 500; } @media (max-width: 991px) { .section-title { margin-right: 5px; } }
+        .section {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            margin-top: 25px;
+        }
+
+        .section-title {
+            color: #000;
+            font-size: 22px;
+            font-family: Nunito, sans-serif;
+            font-weight: 500;
+        }
+
+        @media (max-width: 991px) {
+            .section-title {
+                margin-right: 5px;
+            }
+        }
+
         /* .card { background-color: #000; display: flex; width: 100%; align-items: center; justify-content: space-between; gap: 20px; padding: 0 25px; margin-top: 10px; } @media (max-width: 991px) { .card { flex-wrap: wrap; margin-right: 6px; padding: 0 20px; } }
         .card-content { display: flex; align-items: center; gap: 11px; color: #fff; font-weight: 400; font-size: 22px; padding: 26px 0; width: 100%; } .card-icon { font-family: 'Material Icons'; }
         .date-time { display: flex; align-items: center; gap: 11px; } .date-text { font-weight: 800; font-family: Nunito, sans-serif; margin: auto 0; }
@@ -85,7 +133,7 @@
         .license-text { font-family: Montserrat, sans-serif; font-weight: 700; }
         .waiting-list { display: flex; align-items: center; gap: 20px; margin: auto 0; }
         .waiting-text { color: #eeb120; font-family: Montserrat, sans-serif; font-weight: 700; }
-        .radio-icon { background-color: #ff2929; color: #fff; border-radius: 25px; padding: 11px 28px; font-family: 'Material Icons'; font-size: 50px; text-align: center; } 
+        .radio-icon { background-color: #ff2929; color: #fff; border-radius: 25px; padding: 11px 28px; font-family: 'Material Icons'; font-size: 50px; text-align: center; }
         @media (max-width: 991px) { .radio-icon { font-size: 40px; padding: 0 20px; } } */
 
         /* Status container */
@@ -97,7 +145,8 @@
             color: #fff;
             justify-content: center;
             padding: 0;
-            height: 120px; /* Fixed height */
+            height: 120px;
+            /* Fixed height */
             overflow: hidden;
             cursor: pointer;
         }
@@ -110,12 +159,14 @@
             gap: 20px;
             justify-content: space-between;
             padding: 0 34px;
-            height: 100%; /* Ensure it takes the full height of the container */
+            height: 100%;
+            /* Ensure it takes the full height of the container */
         }
 
         @media (max-width: 991px) {
             .booking-details {
-                gap: 10px; /* Ubah jarak antar elemen menjadi lebih kecil */
+                gap: 10px;
+                /* Ubah jarak antar elemen menjadi lebih kecil */
                 overflow-x: auto;
             }
         }
@@ -223,65 +274,188 @@
         }
 
         .status-container .radio-off::before {
-            content: 'cancel'; /* Or use the Unicode equivalent */
+            content: 'cancel';
+            /* Or use the Unicode equivalent */
         }
 
         .status-container .radio-off:hover {
             background-color: #d92626;
         }
-        .profile-section { display: flex; flex-direction: column; gap: 20px; }
-        .profile-card { background-color: #000; display: flex; flex-direction: column; width: 100%; padding: 24px 29px 37px; } @media (max-width: 991px) { .profile-card { margin-top: 27px; padding: 0 20px; } }
-        .profile-header { display: flex; width: 100%; padding: 0 1px; } @media (max-width: 991px) { .profile-header { flex-wrap: wrap; } }
-        .profile-title { color: #fff; font-family: Nunito, sans-serif; font-weight: 800; font-size: 22px; }
-        .edit-profile { background-color: #eeb120; display: flex; gap: 7px; padding: 13px 16px; border-radius: 25px; border: 1px solid #000; font-family: Kanit, sans-serif; font-size: 24px; color: #000; margin-left: auto;}
+
+        .profile-section {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .profile-card {
+            background-color: #000;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            padding: 24px 29px 37px;
+        }
+
+        @media (max-width: 991px) {
+            .profile-card {
+                margin-top: 27px;
+                padding: 0 20px;
+            }
+        }
+
+        .profile-header {
+            display: flex;
+            width: 100%;
+            padding: 0 1px;
+        }
+
+        @media (max-width: 991px) {
+            .profile-header {
+                flex-wrap: wrap;
+            }
+        }
+
+        .profile-title {
+            color: #fff;
+            font-family: Nunito, sans-serif;
+            font-weight: 800;
+            font-size: 22px;
+        }
+
+        .edit-profile {
+            background-color: #eeb120;
+            display: flex;
+            gap: 7px;
+            padding: 13px 16px;
+            border-radius: 25px;
+            border: 1px solid #000;
+            font-family: Kanit, sans-serif;
+            font-size: 24px;
+            color: #000;
+            margin-left: auto;
+        }
+
         .edit-profile:hover {
             background-color: #d4a100;
             /* Change background color on hover */
         }
-        .img-3 { width: 30px; aspect-ratio: 1; object-fit: cover; }
-        .edit-text { margin: auto 0; }
-        .info { color: #fff; font-family: Nunito, sans-serif; }
-        .contact-item { display: flex; gap: 13px; font-size: 18px; color: #fff; font-weight: 500; margin-top: 30px; white-space: nowrap; } @media (max-width: 991px) { .contact-item { white-space: initial; } }
-        .contact-item > img { width: 19px; }
+
+        .img-3 {
+            width: 30px;
+            aspect-ratio: 1;
+            object-fit: cover;
+        }
+
+        .edit-text {
+            margin: auto 0;
+        }
+
+        .info {
+            color: #fff;
+            font-family: Nunito, sans-serif;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 13px;
+            font-size: 18px;
+            color: #fff;
+            font-weight: 500;
+            margin-top: 30px;
+            white-space: nowrap;
+        }
+
+        @media (max-width: 991px) {
+            .contact-item {
+                white-space: initial;
+            }
+        }
+
+        .contact-item>img {
+            width: 19px;
+        }
 
         .event-card {
             background-color: #fff;
             padding: 10px;
         }
+
         .event-date {
             background-color: gray;
             text-align: center;
             color: #fff;
             padding: 10px 0;
         }
+
         .month {
             font: 900 16px Roboto, sans-serif;
         }
+
         .day {
             font: 900 32px Roboto, sans-serif;
         }
+
         .event-name {
             font: 600 24px Kanit, sans-serif;
         }
+
         .event-location {
             font: 700 18px Roboto, sans-serif;
             color: #646464;
         }
 
 
-        .footer { border-radius: 40px 40px 0 0; background-color: #000; display: flex; justify-content: space-between; gap: 20px; padding: 36px 52px; margin-top: 41px; } @media (max-width: 991px) { .footer { flex-wrap: wrap; padding: 0 20px; margin-top: 40px; } }
-        .footer-links { display: flex; gap: 20px; justify-content: space-between; }
-        .footer-links > img { width: 70px; }
-        .footer-contact { display: flex; align-items: center; gap: 20px; font-size: 32px; font-family: Roboto, sans-serif; color: #fff; font-weight: 500; }
-        .contact-us { margin: auto 0; }
+        .footer {
+            border-radius: 40px 40px 0 0;
+            background-color: #000;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 36px 52px;
+            margin-top: 41px;
+        }
+
+        @media (max-width: 991px) {
+            .footer {
+                flex-wrap: wrap;
+                padding: 0 20px;
+                margin-top: 40px;
+            }
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 20px;
+            justify-content: space-between;
+        }
+
+        .footer-links>img {
+            width: 70px;
+        }
+
+        .footer-contact {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-size: 32px;
+            font-family: Roboto, sans-serif;
+            color: #fff;
+            font-weight: 500;
+        }
+
+        .contact-us {
+            margin: auto 0;
+        }
 
         /* Modal */
         .modal-header {
             font: 500 24px/167% Montserrat, sans-serif;
         }
+
         .modal-body {
             background-color: #f4f4f4;
         }
+
         .modal-footer {
             background-color: #a2a2a2;
         }
@@ -301,7 +475,8 @@
         }
 
         /* Hover effect for cancel button & status container */
-        .modal .btn-cancel:hover, .status-container:hover {
+        .modal .btn-cancel:hover,
+        .status-container:hover {
             background-color: #eeeeee;
             /* Light gray background on hover */
         }
@@ -320,11 +495,13 @@
             /* Set width to 150px */
             border-color: #000;
         }
+
         /* Hover effect for save button */
         .btn-save {
             background-color: #333333;
             /* Darker gray background on hover */
         }
+
         .row-bawah {
             width: 100%;
             margin-top: 10px;
@@ -336,6 +513,7 @@
             align-self: start;
             text-align: center;
         }
+
         .modal-bareng .date-label span {
             border-radius: 20px;
             background-color: #eeb120;
@@ -343,11 +521,13 @@
             padding: 4px 23px;
             font: 700 20px Montserrat, sans-serif;
         }
+
         .modal-bareng .content-row {
             display: flex;
             margin-top: 24px;
             gap: 18px;
         }
+
         .modal-bareng .stick-wrapper {
             display: flex;
             flex-direction: column;
@@ -355,37 +535,49 @@
             margin-top: 25px;
             margin-bottom: auto;
             width: 10px;
-            height: 340px; /* Sesuaikan dengan ketinggian yang diperlukan */
+            height: 340px;
+            /* Sesuaikan dengan ketinggian yang diperlukan */
         }
 
         .modal-bareng .line {
             position: absolute;
-            left: 50%; /* Atur posisi horizontal ke tengah */
+            left: 50%;
+            /* Atur posisi horizontal ke tengah */
             height: 100%;
             transform: translateX(-50%);
             height: 100%;
-            width: 2px; /* Lebar garis */
-            background-color: #000; /* Warna garis */
+            width: 2px;
+            /* Lebar garis */
+            background-color: #000;
+            /* Warna garis */
         }
 
-        .modal-bareng .circle-1, .modal-bareng .circle-2 {
+        .modal-bareng .circle-1,
+        .modal-bareng .circle-2 {
             position: absolute;
-            background-color: #eeb120; /* Warna lingkaran */
+            background-color: #eeb120;
+            /* Warna lingkaran */
             border-radius: 50%;
-            width: 20px; /* Diameter lingkaran */
-            height: 20px; /* Diameter lingkaran */
-            left: 50%; /* Atur posisi horizontal ke tengah */
+            width: 20px;
+            /* Diameter lingkaran */
+            height: 20px;
+            /* Diameter lingkaran */
+            left: 50%;
+            /* Atur posisi horizontal ke tengah */
             transform: translateX(-50%);
         }
 
         .modal-bareng .circle-1 {
-            top: 0; /* Atur lingkaran pertama di bagian atas */
+            top: 0;
+            /* Atur lingkaran pertama di bagian atas */
             z-index: 1;
         }
 
         .modal-bareng .circle-2 {
-            bottom: 0; /* Atur lingkaran kedua di bagian bawah */
+            bottom: 0;
+            /* Atur lingkaran kedua di bagian bawah */
         }
+
         .modal-bareng .text-content {
             display: flex;
             flex-direction: column;
@@ -393,6 +585,7 @@
             flex-basis: 0;
             width: fit-content;
         }
+
         @media (max-width: 991px) {
             .modal-bareng .text-content {
                 max-width: 100%;
@@ -407,9 +600,9 @@
         }
 
         @media (max-width: 991px) {
-        .modal-bareng .time-info {
-            white-space: initial;
-        }
+            .modal-bareng .time-info {
+                white-space: initial;
+            }
         }
 
         .modal-bareng .time {
@@ -489,81 +682,17 @@
 
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="background-color: #000 !important;">
-        <div class="container-fluid justify-content-between">
-            <a class="navbar-brand" href="#">
-                <div class="brand-text" style="display: inline-block; margin-left: 10px; color: #f5f5f5;">
-                    <img src="img/bestchurch.png" alt="" style="width: 60%;">
-                </div>
-            </a>
-            <div class="navbar-nav mx-auto" style="text-align: center;">
-                <ul class="navbar-nav" style="margin-bottom: 10px;">
-                    <li class="nav-item" style="margin-right: 20px;">
-                        <a class="nav-link" href="/" style="color: #f5f5f5;">Home</a>
-                    </li>
-                    <li class="nav-item dropdown" style="margin-right: 20px;">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #f5f5f5;">
-                            YESS
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
-                            <li><a class="dropdown-item" href="/yess" style="color: #000;">YESS</a></li>
-                            <li><a class="dropdown-item" href="/komsel" style="color: #000;">Komsel</a></li>
-                            <li><a class="dropdown-item" href="/bareng" style="color: #000;">Bareng</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item" style="margin-right: 20px;">
-                        <a class="nav-link" href="/jadwal" style="color: #f5f5f5;">Jadwal</a>
-                    </li>
-                    <li class="nav-item" style="margin-right: 20px;">
-                        <a class="nav-link" href="/ladies-devotion" style="color: #f5f5f5;">Ladies Devotion</a>
-                    </li>
-                    <li class="nav-item" style="margin-right: 20px;">
-                        <a class="nav-link" href="/sunday-school" style="color: #f5f5f5;">Sunday School</a>
-                    </li>
-                    <li class="nav-item" style="margin-right: 20px;">
-                        <a class="nav-link" href="/event" style="color: #f5f5f5;">Event</a>
-                    </li>
-                    <li class="nav-item" style="margin-right: 20px;">
-                        <a class="nav-link" href="/pelayanan" style="color: #f5f5f5;">Pelayanan</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="navbar-nav" style="text-align: right;">
-                <ul class="navbar-nav">
-                    @auth
-                    <li class="nav-item dropdown" style="margin-right: 20px;">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #f5f5f5;">
-                            Welcome, {{ auth()->user()->name }}
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            @if (auth()->user()->is_admin)
-                            <li><a class="dropdown-item" href="/admin" style="color: #000;">Admin Dashboard</a></li>
-                            @endif
-                            <li>
-                                <form action="/logout" method="POST">
-                                    @csrf
-                                    <button type="submit" class="dropdown-item" style="color: #000;">Logout</button>
-                                </form>
-                            </li>
-                        </ul>
-                    </li>
-                    @else
-                    <li class="nav-item">
-                        <a class="nav-link login-link-border" href="/login" style="color: #f5f5f5; border: 1px solid #fff; border-radius: 5px; padding: 8px 20px;">Login</a>
-                    </li>
-                    @endauth
-                </ul>
-            </div>
-        </div>
-    </nav>
+    @include('partials.navbar')
 
     <!-- whasap terbang -->
-    <a href="https://api.whatsapp.com/send?phone=6285854526955&text=Halo%20mau%20tanya%20gereja" class="whatsapp-button">
-            <img src="img/wa.png" alt="WhatsApp">
+    <a href="https://api.whatsapp.com/send?phone=6285854526955&text=Halo%20mau%20tanya%20gereja"
+        class="whatsapp-button">
+        <img src="img/wa.png" alt="WhatsApp">
     </a>
 
     <!-- Modal profil -->
-    <div class="modal modal-profil fade" id="profilModal" tabindex="-1" aria-labelledby="profilModalLabel" aria-hidden="true">
+    <div class="modal modal-profil fade" id="profilModal" tabindex="-1" aria-labelledby="profilModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
@@ -602,41 +731,44 @@
     </div>
 
     <!-- Bareng modal -->
-    <div class="modal modal-bareng fade" id="barengModal" tabindex="-1" aria-labelledby="barengModalLabel" aria-hidden="true">
+    <div class="modal modal-bareng fade" id="barengModal" tabindex="-1" aria-labelledby="barengModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="barengModalLabel">PESAN BERANGKAT BARENG</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <!-- Your content here -->
-                <div class="date-label"><span>2024-04-24</span></div>
-                <div class="content-row">
-                    <div class="stick-wrapper">
-                        <div class="circle-1"></div>
-                        <div class="line"></div>
-                        <div class="circle-2"></div>
-                    </div>
-                    <div class="text-content">
-                        <div class="time-info">
-                            <div class="time">08.00</div>
-                            <span class="time-zone">WIB</span>
+                <div class="modal-header">
+                    <h5 class="modal-title" id="barengModalLabel">PESAN BERANGKAT BARENG</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Your content here -->
+                    <div class="date-label"><span>2024-04-24</span></div>
+                    <div class="content-row">
+                        <div class="stick-wrapper">
+                            <div class="circle-1"></div>
+                            <div class="line"></div>
+                            <div class="circle-2"></div>
                         </div>
-                        <h2 class="location">Hotel Dafam Pacific Caesar</h2>
-                        <p class="address">Jl. Dr. Ir. H. Soekarno No.45c, Kalijudan, Kec. Mulyorejo, Surabaya, Jawa Timur.</p>
-                        <div class="plate-number">
-                            <div class="plate">L 123 ABC</div>
-                            <!-- <div class="plate-separator"></div> -->
+                        <div class="text-content">
+                            <div class="time-info">
+                                <div class="time">08.00</div>
+                                <span class="time-zone">WIB</span>
+                            </div>
+                            <h2 class="location">Hotel Dafam Pacific Caesar</h2>
+                            <p class="address">Jl. Dr. Ir. H. Soekarno No.45c, Kalijudan, Kec. Mulyorejo, Surabaya,
+                                Jawa Timur.</p>
+                            <div class="plate-number">
+                                <div class="plate">L 123 ABC</div>
+                                <!-- <div class="plate-separator"></div> -->
+                            </div>
+                            <h2 class="mall-name">Ciputra World Mall</h2>
                         </div>
-                        <h2 class="mall-name">Ciputra World Mall</h2>
                     </div>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary btn-cancel" data-bs-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-primary btn-save">Book</button>
-            </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary btn-cancel"
+                        data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary btn-save">Book</button>
+                </div>
             </div>
         </div>
     </div>
@@ -658,7 +790,8 @@
                 <div class="d-flex flex-wrap">
                     <button type="button" class="btn btn-dark m-2" disabled>Singer</button>
                     <button type="button" class="btn btn-dark m-2" disabled>Usher</button>
-                    <button type="button" class="btn btn-warning m-2"><span class="material-icons">add_circle_outline</span> Daftar lainnya</button>
+                    <button type="button" class="btn btn-warning m-2"><span
+                            class="material-icons">add_circle_outline</span> Daftar lainnya</button>
                 </div>
             </div>
             <section class="section">
@@ -698,16 +831,16 @@
                         <div class="time-location">
                             <span class="icon-time">access_time</span>
                             <time class="time" datetime="16:00">16:00</time>
-                        <div class="separator"></div>
-                        <span class="icon-location">location_on</span>
-                        <address class="location">Hotel Dafam Pacific Caesar</address>
-                        <div class="separator"></div>
+                            <div class="separator"></div>
+                            <span class="icon-location">location_on</span>
+                            <address class="location">Hotel Dafam Pacific Caesar</address>
+                            <div class="separator"></div>
                         </div>
                         <div class="status-info">
-                        <span class="license-plate">L 1234 ABC</span>
-                        <div class="separator"></div>
-                        <span class="status">Waiting list</span>
-                        <span class="radio-off"></span>
+                            <span class="license-plate">L 1234 ABC</span>
+                            <div class="separator"></div>
+                            <span class="status">Waiting list</span>
+                            <span class="radio-off"></span>
                         </div>
                     </article>
                 </section>
@@ -718,25 +851,31 @@
                         <div class="profile-card">
                             <div class="profile-header">
                                 <div class="profile-title">Profil Saya</div>
-                                <button class="edit-profile" tabindex="0" role="button" data-bs-toggle="modal" data-bs-target="#profilModal">
-                                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/a8e54a236d59476f298c15c5a4608c7570bfbe280cd9a4d7cde765c4687df355?apiKey=f9ed83d6b13f4286938197498a891b31&" alt="Edit Profile Icon" class="img-3"/>
+                                <button class="edit-profile" tabindex="0" role="button" data-bs-toggle="modal"
+                                    data-bs-target="#profilModal">
+                                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/a8e54a236d59476f298c15c5a4608c7570bfbe280cd9a4d7cde765c4687df355?apiKey=f9ed83d6b13f4286938197498a891b31&"
+                                        alt="Edit Profile Icon" class="img-3" />
                                     <div class="edit-text">Edit Profile</div>
                                 </button>
                             </div>
                             <div class="contact-item">
-                                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/8579333f87a4332b8886e50cf81891be29a9cd263e25f0b34ad7694a78f8d5dc?apiKey=f9ed83d6b13f4286938197498a891b31&" alt="Birthdate Icon"/>
+                                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/8579333f87a4332b8886e50cf81891be29a9cd263e25f0b34ad7694a78f8d5dc?apiKey=f9ed83d6b13f4286938197498a891b31&"
+                                    alt="Birthdate Icon" />
                                 <div class="info">12 Maret 2008</div>
                             </div>
                             <div class="contact-item">
-                                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/862c50a968a6f7cc4ac6a6faf0d67936a6bf52467c22337fe00b937d61798d1b?apiKey=f9ed83d6b13f4286938197498a891b31&" alt="Phone Icon"/>
+                                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/862c50a968a6f7cc4ac6a6faf0d67936a6bf52467c22337fe00b937d61798d1b?apiKey=f9ed83d6b13f4286938197498a891b31&"
+                                    alt="Phone Icon" />
                                 <div class="info">08588800088</div>
                             </div>
                             <div class="contact-item">
-                                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/cbb90c7f57489b1b97860b4e0eeec985de0c734cca7ef59aa6dca14159c66d09?apiKey=f9ed83d6b13f4286938197498a891b31&" alt="Address Icon"/>
+                                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/cbb90c7f57489b1b97860b4e0eeec985de0c734cca7ef59aa6dca14159c66d09?apiKey=f9ed83d6b13f4286938197498a891b31&"
+                                    alt="Address Icon" />
                                 <div class="info">Ngagel</div>
                             </div>
                             <div class="contact-item">
-                                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/8a014b95a8d1542e740afa09455d827c869a8206bcbe7d45d285ce21731551d6?apiKey=f9ed83d6b13f4286938197498a891b31&" alt="Email Icon"/>
+                                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/8a014b95a8d1542e740afa09455d827c869a8206bcbe7d45d285ce21731551d6?apiKey=f9ed83d6b13f4286938197498a891b31&"
+                                    alt="Email Icon" />
                                 <div class="info">anonim@gmail.com</div>
                             </div>
                         </div>
@@ -784,8 +923,7 @@
             </div>
         </div>
     </div>
-    <script>
-    </script>
+    <script></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>

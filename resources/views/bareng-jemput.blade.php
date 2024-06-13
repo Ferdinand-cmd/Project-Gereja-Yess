@@ -28,6 +28,7 @@ resources\views\bareng.blade.php
         body {
             overflow-x: hidden;
         }
+
         /* Untuk membuat tulisan BEST berwarna orange dan memiliki garis bawah orange saat berada di halaman BEST */
         nav .nav-item.active .nav-link,
         nav .nav-item:hover .nav-link {
@@ -60,6 +61,7 @@ resources\views\bareng.blade.php
             margin: 0;
             padding: 0;
         }
+
         .container {
             background-color: #fff;
             display: flex;
@@ -98,6 +100,7 @@ resources\views\bareng.blade.php
             .banner {
                 padding: 20px;
             }
+
             .banner-heading {
                 font-size: 50px;
             }
@@ -107,6 +110,7 @@ resources\views\bareng.blade.php
             .banner {
                 padding: 10px;
             }
+
             .banner-heading {
                 font-size: 30px;
             }
@@ -122,7 +126,7 @@ resources\views\bareng.blade.php
 
         @media (max-width: 991px) {
             .banner-subheading {
-            max-width: 100%;
+                max-width: 100%;
             }
         }
 
@@ -184,7 +188,8 @@ resources\views\bareng.blade.php
             width: 100%;
             padding: 22px 60px;
             font: 800 26px/154% Montserrat, sans-serif;
-            cursor: pointer; /* Add cursor pointer to indicate clickable */
+            cursor: pointer;
+            /* Add cursor pointer to indicate clickable */
         }
 
         @media (max-width: 991px) {
@@ -208,7 +213,8 @@ resources\views\bareng.blade.php
             width: 100%;
             padding: 24px 60px;
             font: 500 26px/154% Montserrat, sans-serif;
-            cursor: pointer; /* Add cursor pointer to indicate clickable */
+            cursor: pointer;
+            /* Add cursor pointer to indicate clickable */
         }
 
         .info-box .location-alt:hover {
@@ -234,7 +240,7 @@ resources\views\bareng.blade.php
 
         @media (max-width: 991px) {
             .img-column {
-            width: 100%;
+                width: 100%;
             }
         }
 
@@ -250,7 +256,7 @@ resources\views\bareng.blade.php
 
         @media (max-width: 991px) {
             .image {
-            margin-top: 40px;
+                margin-top: 40px;
             }
         }
 
@@ -285,9 +291,9 @@ resources\views\bareng.blade.php
 
         @media (max-width: 991px) {
             .location-alt-bg {
-            margin-top: 40px;
-            white-space: initial;
-            padding: 0 20px;
+                margin-top: 40px;
+                white-space: initial;
+                padding: 0 20px;
             }
         }
 
@@ -305,7 +311,7 @@ resources\views\bareng.blade.php
 
         @media (max-width: 991px) {
             .main-content {
-            max-width: 100%;
+                max-width: 100%;
             }
         }
 
@@ -325,7 +331,8 @@ resources\views\bareng.blade.php
         }
 
         .point-section {
-            display: none; /* Initially hide all point sections */
+            display: none;
+            /* Initially hide all point sections */
         }
 
         .point-info {
@@ -382,8 +389,10 @@ resources\views\bareng.blade.php
         @media (max-width: 991px) {
             .point-details-column {
                 width: 100%;
-                margin-left: 0; /* Hapus margin-left pada layar kecil */
-                margin-right: 0; /* Hapus margin-right pada layar kecil */
+                margin-left: 0;
+                /* Hapus margin-left pada layar kecil */
+                margin-right: 0;
+                /* Hapus margin-right pada layar kecil */
             }
         }
 
@@ -457,7 +466,8 @@ resources\views\bareng.blade.php
         @media (max-width: 991px) {
             .booking-info {
                 width: 100%;
-                margin: 12px 0 0 0; /* Hapus margin kiri pada layar kecil */
+                margin: 12px 0 0 0;
+                /* Hapus margin kiri pada layar kecil */
             }
         }
 
@@ -534,7 +544,8 @@ resources\views\bareng.blade.php
             width: fit-content;
             padding: 22px 50px;
             font: 500 18px/133% DM Sans, sans-serif;
-            cursor: context-menu; /* menandakan tidak bisa diklik */
+            cursor: context-menu;
+            /* menandakan tidak bisa diklik */
         }
 
         .seats-remaining {
@@ -548,17 +559,21 @@ resources\views\bareng.blade.php
             padding: 18px 25px;
             font: 700 26px Roboto, sans-serif;
         }
+
         .modal-header {
             font: 500 24px/167% Montserrat, sans-serif;
         }
+
         .modal-body {
             background-color: #f4f4f4;
         }
+
         .modal-bareng .date-label {
             display: flex;
             align-self: start;
             text-align: center;
         }
+
         .modal-bareng .date-label span {
             border-radius: 20px;
             background-color: #eeb120;
@@ -566,11 +581,13 @@ resources\views\bareng.blade.php
             padding: 4px 23px;
             font: 700 20px Montserrat, sans-serif;
         }
+
         .modal-bareng .content-row {
             display: flex;
             margin-top: 24px;
             gap: 18px;
         }
+
         .modal-bareng .stick-wrapper {
             display: flex;
             flex-direction: column;
@@ -578,37 +595,49 @@ resources\views\bareng.blade.php
             margin-top: 25px;
             margin-bottom: auto;
             width: 10px;
-            height: 340px; /* Sesuaikan dengan ketinggian yang diperlukan */
+            height: 340px;
+            /* Sesuaikan dengan ketinggian yang diperlukan */
         }
 
         .modal-bareng .line {
             position: absolute;
-            left: 50%; /* Atur posisi horizontal ke tengah */
+            left: 50%;
+            /* Atur posisi horizontal ke tengah */
             height: 100%;
             transform: translateX(-50%);
             height: 100%;
-            width: 2px; /* Lebar garis */
-            background-color: #000; /* Warna garis */
+            width: 2px;
+            /* Lebar garis */
+            background-color: #000;
+            /* Warna garis */
         }
 
-        .modal-bareng .circle-1, .modal-bareng .circle-2 {
+        .modal-bareng .circle-1,
+        .modal-bareng .circle-2 {
             position: absolute;
-            background-color: #eeb120; /* Warna lingkaran */
+            background-color: #eeb120;
+            /* Warna lingkaran */
             border-radius: 50%;
-            width: 20px; /* Diameter lingkaran */
-            height: 20px; /* Diameter lingkaran */
-            left: 50%; /* Atur posisi horizontal ke tengah */
+            width: 20px;
+            /* Diameter lingkaran */
+            height: 20px;
+            /* Diameter lingkaran */
+            left: 50%;
+            /* Atur posisi horizontal ke tengah */
             transform: translateX(-50%);
         }
 
         .modal-bareng .circle-1 {
-            top: 0; /* Atur lingkaran pertama di bagian atas */
+            top: 0;
+            /* Atur lingkaran pertama di bagian atas */
             z-index: 1;
         }
 
         .modal-bareng .circle-2 {
-            bottom: 0; /* Atur lingkaran kedua di bagian bawah */
+            bottom: 0;
+            /* Atur lingkaran kedua di bagian bawah */
         }
+
         .modal-bareng .text-content {
             display: flex;
             flex-direction: column;
@@ -616,6 +645,7 @@ resources\views\bareng.blade.php
             flex-basis: 0;
             width: fit-content;
         }
+
         @media (max-width: 991px) {
             .modal-bareng .text-content {
                 max-width: 100%;
@@ -630,9 +660,9 @@ resources\views\bareng.blade.php
         }
 
         @media (max-width: 991px) {
-        .modal-bareng .time-info {
-            white-space: initial;
-        }
+            .modal-bareng .time-info {
+                white-space: initial;
+            }
         }
 
         .modal-bareng .time {
@@ -733,7 +763,8 @@ resources\views\bareng.blade.php
         }
 
         /* CSS for book & submit button */
-        .modal .btn-book, .modal .btn-submit {
+        .modal .btn-book,
+        .modal .btn-submit {
             background-color: #000000;
             /* Black background */
             color: #ffffff;
@@ -748,188 +779,129 @@ resources\views\bareng.blade.php
         }
 
         /* Hover effect for book button */
-        .btn-book:hover, .btn-submit:hover {
+        .btn-book:hover,
+        .btn-submit:hover {
             background-color: #333333;
             /* Darker gray background on hover */
         }
 
-/* Status container */
-.status-container {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    padding: 0;
-    height: 120px; /* Fixed height */
-    overflow: hidden;
-}
+        /* Status container */
+        .status-container {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            padding: 0;
+            height: 120px;
+            /* Fixed height */
+            overflow: hidden;
+        }
 
-.status-container .booking-details {
-    background-color: #ff2929;
-    color: #fff;
-    font: 700 32px Montserrat, sans-serif;
-    width: 100%;
-    text-align: center;
-    padding: 40px 0;
-    height: 100%; /* Ensure it takes the full height of the container */
-    cursor: pointer;
-}
-.status-container .booking-details:hover {
-    background-color: #d92626;
-}
-.modal-penjemput .table {
-    vertical-align: middle;
-}
-.modal-penjemput th {
-    --bs-table-bg: #eeb120;
-}
+        .status-container .booking-details {
+            background-color: #ff2929;
+            color: #fff;
+            font: 700 32px Montserrat, sans-serif;
+            width: 100%;
+            text-align: center;
+            padding: 40px 0;
+            height: 100%;
+            /* Ensure it takes the full height of the container */
+            cursor: pointer;
+        }
+
+        .status-container .booking-details:hover {
+            background-color: #d92626;
+        }
+
+        .modal-penjemput .table {
+            vertical-align: middle;
+        }
+
+        .modal-penjemput th {
+            --bs-table-bg: #eeb120;
+        }
     </style>
 </head>
 
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="background-color: #000 !important;">
-        <div class="container-fluid justify-content-between">
-            <a class="navbar-brand" href="#">
-                <div class="brand-text" style="display: inline-block; margin-left: 10px; color: #f5f5f5;">
-                    <img src="img/bestchurch.png" alt="" style="width: 60%;">
-                </div>
-            </a>
-            <div class="navbar-nav mx-auto" style="text-align: center;">
-                <ul class="navbar-nav" style="margin-bottom: 10px;">
-                    <li class="nav-item" style="margin-right: 20px;">
-                        <a class="nav-link" href="/" style="color: #f5f5f5;">Home</a>
-                    </li>
-                    <li class="nav-item active dropdown" style="margin-right: 20px;">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #f5f5f5;">
-                            YESS
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
-                            <li><a class="dropdown-item" href="/yess" style="color: #000;">YESS</a></li>
-                            <li><a class="dropdown-item" href="/komsel" style="color: #000;">Komsel</a></li>
-                            <li><a class="dropdown-item active" href="/bareng" style="color: #000;">Bareng</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item" style="margin-right: 20px;">
-                        <a class="nav-link" href="/jadwal" style="color: #f5f5f5;">Jadwal</a>
-                    </li>
-                    <li class="nav-item" style="margin-right: 20px;">
-                        <a class="nav-link" href="/ladies-devotion" style="color: #f5f5f5;">Ladies Devotion</a>
-                    </li>
-                    <li class="nav-item" style="margin-right: 20px;">
-                        <a class="nav-link" href="/sunday-school" style="color: #f5f5f5;">Sunday School</a>
-                    </li>
-                    <li class="nav-item" style="margin-right: 20px;">
-                        <a class="nav-link" href="/event" style="color: #f5f5f5;">Event</a>
-                    </li>
-                    <li class="nav-item" style="margin-right: 20px;">
-                        <a class="nav-link" href="/pelayanan" style="color: #f5f5f5;">Pelayanan</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="navbar-nav" style="text-align: right;">
-                <ul class="navbar-nav">
-                    @auth
-                    <li class="nav-item dropdown" style="margin-right: 20px;">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #f5f5f5;">
-                            Welcome, {{ auth()->user()->name }}
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            @if (auth()->user()->is_admin)
-                            <li><a class="dropdown-item" href="/admin" style="color: #000;">Admin Dashboard</a></li>
-                            @endif
-                            <li>
-                                <form action="/logout" method="POST">
-                                    @csrf
-                                    <button type="submit" class="dropdown-item" style="color: #000;">Logout</button>
-                                </form>
-                            </li>
-                        </ul>
-                    </li>
-                    @else
-                    <li class="nav-item">
-                        <a class="nav-link login-link-border" href="/login" style="color: #f5f5f5; border: 1px solid #fff; border-radius: 5px; padding: 8px 20px;">Login</a>
-                    </li>
-                    @endauth
-                </ul>
-            </div>
-        </div>
-    </nav>
-    
+    @include('partials.navbar')
+
     <?php
-        $points = [
-            [
-                'id' => 1,
-                'region' => 'timur',
-                'title' => 'Hotel Dafam Pacific Caesar T1',
-                'description' => 'Jl. Dr. Ir. H. Soekarno No.45c, Kalijudan, Kec. Mulyorejo, Surabaya, Jawa Timur.', 
-                'date' => '2024-03-30',
-                'time' => '20.00',
-                'image' => 'https://cdn.builder.io/api/v1/image/assets/TEMP/52c6608380b375ed3bae2c5bba943d966a1aca55d824170efc6ec4445e95651e?apiKey=f9ed83d6b13f4286938197498a891b31&',
-                'seats_o' => 0,
-                'seats_t' => 8
-            ],
-            [
-                'id' => 2,
-                'region' => 'timur',
-                'title' => 'Hotel Dafam Pacific Caesar T2',
-                'description' => 'Jl. Dr. Ir. H. Soekarno No.45c, Kalijudan, Kec. Mulyorejo, Surabaya, Jawa Timur.', 
-                'date' => '2024-03-30',
-                'time' => '16.00',
-                'image' => 'https://cdn.builder.io/api/v1/image/assets/TEMP/52c6608380b375ed3bae2c5bba943d966a1aca55d824170efc6ec4445e95651e?apiKey=f9ed83d6b13f4286938197498a891b31&',
-                'seats_o' => 4,
-                'seats_t' => 4
-            ],
-            [
-                'id' => 3,
-                'region' => 'barat',
-                'title' => 'Hotel Dafam Pacific Caesar B1',
-                'description' => 'Jl. Dr. Ir. H. Soekarno No.45c, Kalijudan, Kec. Mulyorejo, Surabaya, Jawa Timur.', 
-                'date' => '2024-03-30',
-                'time' => '16.00',
-                'image' => 'https://cdn.builder.io/api/v1/image/assets/TEMP/52c6608380b375ed3bae2c5bba943d966a1aca55d824170efc6ec4445e95651e?apiKey=f9ed83d6b13f4286938197498a891b31&',
-                'seats_o' => 0,
-                'seats_t' => 8
-            ],
-            [
-                'id' => 4,
-                'region' => 'selatan',
-                'title' => 'Hotel Dafam Pacific Caesar S1',
-                'description' => 'Jl. Dr. Ir. H. Soekarno No.45c, Kalijudan, Kec. Mulyorejo, Surabaya, Jawa Timur.', 
-                'date' => '2024-03-30',
-                'time' => '16.00',
-                'image' => 'https://cdn.builder.io/api/v1/image/assets/TEMP/52c6608380b375ed3bae2c5bba943d966a1aca55d824170efc6ec4445e95651e?apiKey=f9ed83d6b13f4286938197498a891b31&',
-                'seats_o' => 0,
-                'seats_t' => 8
-            ],
-            [
-                'id' => 5,
-                'region' => 'pusat',
-                'title' => 'Hotel Dafam Pacific Caesar P1',
-                'description' => 'Jl. Dr. Ir. H. Soekarno No.45c, Kalijudan, Kec. Mulyorejo, Surabaya, Jawa Timur.', 
-                'date' => '2024-03-30',
-                'time' => '16.00',
-                'image' => 'https://cdn.builder.io/api/v1/image/assets/TEMP/52c6608380b375ed3bae2c5bba943d966a1aca55d824170efc6ec4445e95651e?apiKey=f9ed83d6b13f4286938197498a891b31&',
-                'seats_o' => 0,
-                'seats_t' => 8
-            ],
-            [
-                'id' => 6,
-                'region' => 'pusat',
-                'title' => 'Hotel Dafam Pacific Caesar P2',
-                'description' => 'Jl. Dr. Ir. H. Soekarno No.45c, Kalijudan, Kec. Mulyorejo, Surabaya, Jawa Timur.', 
-                'date' => '2024-03-30',
-                'time' => '16.00',
-                'image' => 'https://cdn.builder.io/api/v1/image/assets/TEMP/52c6608380b375ed3bae2c5bba943d966a1aca55d824170efc6ec4445e95651e?apiKey=f9ed83d6b13f4286938197498a891b31&',
-                'seats_o' => 0,
-                'seats_t' => 8
-            ]
-        ];
+    $points = [
+        [
+            'id' => 1,
+            'region' => 'timur',
+            'title' => 'Hotel Dafam Pacific Caesar T1',
+            'description' => 'Jl. Dr. Ir. H. Soekarno No.45c, Kalijudan, Kec. Mulyorejo, Surabaya, Jawa Timur.',
+            'date' => '2024-03-30',
+            'time' => '20.00',
+            'image' => 'https://cdn.builder.io/api/v1/image/assets/TEMP/52c6608380b375ed3bae2c5bba943d966a1aca55d824170efc6ec4445e95651e?apiKey=f9ed83d6b13f4286938197498a891b31&',
+            'seats_o' => 0,
+            'seats_t' => 8,
+        ],
+        [
+            'id' => 2,
+            'region' => 'timur',
+            'title' => 'Hotel Dafam Pacific Caesar T2',
+            'description' => 'Jl. Dr. Ir. H. Soekarno No.45c, Kalijudan, Kec. Mulyorejo, Surabaya, Jawa Timur.',
+            'date' => '2024-03-30',
+            'time' => '16.00',
+            'image' => 'https://cdn.builder.io/api/v1/image/assets/TEMP/52c6608380b375ed3bae2c5bba943d966a1aca55d824170efc6ec4445e95651e?apiKey=f9ed83d6b13f4286938197498a891b31&',
+            'seats_o' => 4,
+            'seats_t' => 4,
+        ],
+        [
+            'id' => 3,
+            'region' => 'barat',
+            'title' => 'Hotel Dafam Pacific Caesar B1',
+            'description' => 'Jl. Dr. Ir. H. Soekarno No.45c, Kalijudan, Kec. Mulyorejo, Surabaya, Jawa Timur.',
+            'date' => '2024-03-30',
+            'time' => '16.00',
+            'image' => 'https://cdn.builder.io/api/v1/image/assets/TEMP/52c6608380b375ed3bae2c5bba943d966a1aca55d824170efc6ec4445e95651e?apiKey=f9ed83d6b13f4286938197498a891b31&',
+            'seats_o' => 0,
+            'seats_t' => 8,
+        ],
+        [
+            'id' => 4,
+            'region' => 'selatan',
+            'title' => 'Hotel Dafam Pacific Caesar S1',
+            'description' => 'Jl. Dr. Ir. H. Soekarno No.45c, Kalijudan, Kec. Mulyorejo, Surabaya, Jawa Timur.',
+            'date' => '2024-03-30',
+            'time' => '16.00',
+            'image' => 'https://cdn.builder.io/api/v1/image/assets/TEMP/52c6608380b375ed3bae2c5bba943d966a1aca55d824170efc6ec4445e95651e?apiKey=f9ed83d6b13f4286938197498a891b31&',
+            'seats_o' => 0,
+            'seats_t' => 8,
+        ],
+        [
+            'id' => 5,
+            'region' => 'pusat',
+            'title' => 'Hotel Dafam Pacific Caesar P1',
+            'description' => 'Jl. Dr. Ir. H. Soekarno No.45c, Kalijudan, Kec. Mulyorejo, Surabaya, Jawa Timur.',
+            'date' => '2024-03-30',
+            'time' => '16.00',
+            'image' => 'https://cdn.builder.io/api/v1/image/assets/TEMP/52c6608380b375ed3bae2c5bba943d966a1aca55d824170efc6ec4445e95651e?apiKey=f9ed83d6b13f4286938197498a891b31&',
+            'seats_o' => 0,
+            'seats_t' => 8,
+        ],
+        [
+            'id' => 6,
+            'region' => 'pusat',
+            'title' => 'Hotel Dafam Pacific Caesar P2',
+            'description' => 'Jl. Dr. Ir. H. Soekarno No.45c, Kalijudan, Kec. Mulyorejo, Surabaya, Jawa Timur.',
+            'date' => '2024-03-30',
+            'time' => '16.00',
+            'image' => 'https://cdn.builder.io/api/v1/image/assets/TEMP/52c6608380b375ed3bae2c5bba943d966a1aca55d824170efc6ec4445e95651e?apiKey=f9ed83d6b13f4286938197498a891b31&',
+            'seats_o' => 0,
+            'seats_t' => 8,
+        ],
+    ];
     ?>
 
     <!-- Penjemput modal -->
-<div class="modal modal-penjemput fade" id="penjemputModal" tabindex="-1" aria-labelledby="penjemputModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
+    <div class="modal modal-penjemput fade" id="penjemputModal" tabindex="-1" aria-labelledby="penjemputModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="penjemputModalLabel">Ketersediaan Penjemput April 2024</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -947,15 +919,18 @@ resources\views\bareng.blade.php
                         <tbody>
                             <tr>
                                 <td>Sabtu, 6 April 2024</td>
-                                <td><input type="checkbox" id="dateOpt2024-04-06" name="checkDate" value="2024-04-06"></td>
+                                <td><input type="checkbox" id="dateOpt2024-04-06" name="checkDate" value="2024-04-06">
+                                </td>
                             </tr>
                             <tr>
                                 <td>Sabtu, 20 April 2024</td>
-                                <td><input type="checkbox" id="dateOpt2024-04-20" name="checkDate" value="2024-04-20"></td>
+                                <td><input type="checkbox" id="dateOpt2024-04-20" name="checkDate" value="2024-04-20">
+                                </td>
                             </tr>
                             <tr>
                                 <td>Sabtu, 27 April 2024</td>
-                                <td><input type="checkbox" id="dateOpt2024-04-27" name="checkDate" value="2024-04-27"></td>
+                                <td><input type="checkbox" id="dateOpt2024-04-27" name="checkDate" value="2024-04-27">
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -964,15 +939,16 @@ resources\views\bareng.blade.php
                     <button type="button" class="btn btn-secondary btn-cancel" data-bs-dismiss="modal">CANCEL</button>
                     <button type="button" class="btn btn-primary btn-submit">SUBMIT</button>
                 </div>
-                </div>
             </div>
         </div>
+    </div>
 
     <!-- Bareng Modal -->
     <?php foreach ($points as $point): ?>
-        <div class="modal modal-bareng fade" id="barengModal<?php echo $point['id']; ?>" tabindex="-1" aria-labelledby="barengModalLabel<?php echo $point['id']; ?>" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
+    <div class="modal modal-bareng fade" id="barengModal<?php echo $point['id']; ?>" tabindex="-1"
+        aria-labelledby="barengModalLabel<?php echo $point['id']; ?>" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="barengModalLabel<?php echo $point['id']; ?>">PESAN BERANGKAT BARENG</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -1005,15 +981,16 @@ resources\views\bareng.blade.php
                     <button type="button" class="btn btn-secondary btn-cancel" data-bs-dismiss="modal">CANCEL</button>
                     <button type="button" class="btn btn-primary btn-book">BOOK</button>
                 </div>
-                </div>
             </div>
         </div>
+    </div>
     <?php endforeach; ?>
 
     <div>
         <main class="container">
             <section class="banner">
-                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/6a625017315edd3df1ced9adbd4876287d53705099e254e0127107ea08037277?apiKey=f9ed83d6b13f4286938197498a891b31&" alt="Church gathering">
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/6a625017315edd3df1ced9adbd4876287d53705099e254e0127107ea08037277?apiKey=f9ed83d6b13f4286938197498a891b31&"
+                    alt="Church gathering">
                 <h1 class="banner-heading">Berangkat Bareng</h1>
                 <p class="banner-subheading">Berangkat ke gereja jadi lebih mudah dan hemat &gt;&gt;&gt;</p>
                 <div class="info-box">
@@ -1036,42 +1013,40 @@ resources\views\bareng.blade.php
 
             <section class="main-content">
                 <?php foreach ($points as $point): ?>
-                    <div class="point-section" point-id="<?php echo $point['id']; ?>" region="<?php echo $point['region']; ?>">
-                        <div class="point-info">
-                            <div class="point-img-column">
-                                <img src="<?php echo $point['image']; ?>" alt="Point location" class="point-img">
-                            </div>
-                            <div class="point-details-column">
-                                <div class="point-details">
-                                    <div class="point-title-box">
-                                        <h2 class="point-title"><?php echo $point['title']; ?></h2>
-                                        <p class="point-description"><?php echo $point['description']; ?></p>
+                <div class="point-section" point-id="<?php echo $point['id']; ?>" region="<?php echo $point['region']; ?>">
+                    <div class="point-info">
+                        <div class="point-img-column">
+                            <img src="<?php echo $point['image']; ?>" alt="Point location" class="point-img">
+                        </div>
+                        <div class="point-details-column">
+                            <div class="point-details">
+                                <div class="point-title-box">
+                                    <h2 class="point-title"><?php echo $point['title']; ?></h2>
+                                    <p class="point-description"><?php echo $point['description']; ?></p>
+                                </div>
+                                <div class="separator"></div>
+                                <div class="booking-info">
+                                    <div class="booking-details">
+                                        <div class="booking-details-inner">
+                                            <span class="icon">date_range</span>
+                                            <span class="date-time"><?php echo $point['date']; ?></span>
+                                        </div>
+                                        <div class="time-info">
+                                            <span class="icon">access_time</span>
+                                            <span class="time"><?php echo $point['time']; ?></span>
+                                        </div>
                                     </div>
-                                    <div class="separator"></div>
-                                    <div class="booking-info">
-                                        <div class="booking-details">
-                                            <div class="booking-details-inner">
-                                                <span class="icon">date_range</span>
-                                                <span class="date-time"><?php echo $point['date']; ?></span>
-                                            </div>
-                                            <div class="time-info">
-                                                <span class="icon">access_time</span>
-                                                <span class="time"><?php echo $point['time']; ?></span>
-                                            </div>
-                                        </div>
-                                        <div class="booking-stats">
+                                    <div class="booking-stats">
                                         <?php
-                                                echo $point['seats_o'] < $point['seats_t'] ?
-                                                '<button class="booking-button" data-bs-toggle="modal" data-bs-target="#barengModal'.$point['id'].'">BOOK A SEAT</button>' :
-                                                '<button class="booking-button-disable">BOOK A SEAT</button>';
-                                            ?>
-                                            <div class="seats-remaining"><?php echo $point['seats_o']; ?> / <?php echo $point['seats_t']; ?></div>
-                                        </div>
+                                        echo $point['seats_o'] < $point['seats_t'] ? '<button class="booking-button" data-bs-toggle="modal" data-bs-target="#barengModal' . $point['id'] . '">BOOK A SEAT</button>' : '<button class="booking-button-disable">BOOK A SEAT</button>';
+                                        ?>
+                                        <div class="seats-remaining"><?php echo $point['seats_o']; ?> / <?php echo $point['seats_t']; ?></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
                 <?php endforeach; ?>
             </section>
         </main>
@@ -1082,10 +1057,10 @@ resources\views\bareng.blade.php
         </section>
     </div>
     <script>
-  window.addEventListener('DOMContentLoaded', function () {
-    const myModal = new bootstrap.Modal(document.getElementById('penjemputModal'));
-    myModal.show();
-  });
+        window.addEventListener('DOMContentLoaded', function() {
+            const myModal = new bootstrap.Modal(document.getElementById('penjemputModal'));
+            myModal.show();
+        });
 
         // "timur" menjadi nilai bawaan dari info-box saat halaman dimuat
         window.onload = function() {
@@ -1101,10 +1076,11 @@ resources\views\bareng.blade.php
                 const selectedRegion = event.target.getAttribute('region');
 
                 // Reset all location styles to inactive
-                document.querySelectorAll('.info-box .location, .info-box .location-alt').forEach(location => {
-                    location.classList.remove('location');
-                    location.classList.add('location-alt');
-                });
+                document.querySelectorAll('.info-box .location, .info-box .location-alt').forEach(
+                    location => {
+                        location.classList.remove('location');
+                        location.classList.add('location-alt');
+                    });
 
                 // Set the clicked location to active
                 event.target.classList.remove('location-alt');
@@ -1124,18 +1100,17 @@ resources\views\bareng.blade.php
 
                 // Untuk point yang bersesuaian
                 if ((selectedRegion === 'timur' && pointData.region === 'timur') ||
-                (selectedRegion === 'barat' && pointData.region === 'barat') ||
-                (selectedRegion === 'selatan' && pointData.region === 'selatan') ||
-                (selectedRegion === 'pusat' && pointData.region === 'pusat')) {
+                    (selectedRegion === 'barat' && pointData.region === 'barat') ||
+                    (selectedRegion === 'selatan' && pointData.region === 'selatan') ||
+                    (selectedRegion === 'pusat' && pointData.region === 'pusat')) {
                     event.style.display = 'block'; // Tampilkan point
-                }
-                else {
+                } else {
                     event.style.display = 'none'; // sembunyikan pointnya
                 }
             });
         }
-            // Function to redirect to the bareng terdaftar page
-            function redirectToBarengTerdaftar(pointId) {
+        // Function to redirect to the bareng terdaftar page
+        function redirectToBarengTerdaftar(pointId) {
             // Construct the URL for the bareng terdaftar page using the pointId
             var terdaftarBarengURL = "bareng-terdaftar.blade.php?id=" + pointId;
 

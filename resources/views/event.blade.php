@@ -24,6 +24,7 @@
         body {
             overflow-x: hidden;
         }
+
         .whatsapp-button {
             position: fixed;
             bottom: 20px;
@@ -39,10 +40,12 @@
             z-index: 1000;
             cursor: pointer;
         }
+
         .whatsapp-button img {
             width: 50px;
             height: 50px;
         }
+
         /* Untuk membuat tulisan BEST berwarna orange dan memiliki garis bawah orange saat berada di halaman BEST */
         nav .nav-item.active .nav-link,
         nav .nav-item:hover .nav-link {
@@ -522,77 +525,13 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="background-color: #000 !important;">
-        <div class="container-fluid justify-content-between">
-            <a class="navbar-brand" href="#">
-                <div class="brand-text" style="display: inline-block; margin-left: 10px; color: #f5f5f5;">
-                    <img src="img/bestchurch.png" alt="" style="width: 60%;">
-                </div>
-            </a>
-            <div class="navbar-nav mx-auto" style="text-align: center;">
-                <ul class="navbar-nav" style="margin-bottom: 10px;">
-                    <li class="nav-item" style="margin-right: 20px;">
-                        <a class="nav-link" href="/" style="color: #f5f5f5;">Home</a>
-                    </li>
-                    <li class="nav-item dropdown" style="margin-right: 20px;">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #f5f5f5;">
-                            YESS
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
-                            <li><a class="dropdown-item" href="/yess" style="color: #000;">YESS</a></li>
-                            <li><a class="dropdown-item" href="/komsel" style="color: #000;">Komsel</a></li>
-                            <li><a class="dropdown-item" href="/bareng" style="color: #000;">Bareng</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item" style="margin-right: 20px;">
-                        <a class="nav-link" href="/jadwal" style="color: #f5f5f5;">Jadwal</a>
-                    </li>
-                    <li class="nav-item" style="margin-right: 20px;">
-                        <a class="nav-link" href="/ladies-devotion" style="color: #f5f5f5;">Ladies Devotion</a>
-                    </li>
-                    <li class="nav-item" style="margin-right: 20px;">
-                        <a class="nav-link" href="/sunday-school" style="color: #f5f5f5;">Sunday School</a>
-                    </li>
-                    <li class="nav-item active" style="margin-right: 20px;">
-                        <a class="nav-link" href="/event" style="color: #f5f5f5;">Event</a>
-                    </li>
-                    <li class="nav-item" style="margin-right: 20px;">
-                        <a class="nav-link" href="/pelayanan" style="color: #f5f5f5;">Pelayanan</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="navbar-nav" style="text-align: right;">
-                <ul class="navbar-nav">
-                    @auth
-                    <li class="nav-item dropdown" style="margin-right: 20px;">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #f5f5f5;">
-                            Welcome, {{ auth()->user()->name }}
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            @if (auth()->user()->is_admin)
-                            <li><a class="dropdown-item" href="/admin" style="color: #000;">Admin Dashboard</a></li>
-                            @endif
-                            <li>
-                                <form action="/logout" method="POST">
-                                    @csrf
-                                    <button type="submit" class="dropdown-item" style="color: #000;">Logout</button>
-                                </form>
-                            </li>
-                        </ul>
-                    </li>
-                    @else
-                    <li class="nav-item">
-                        <a class="nav-link login-link-border" href="/login" style="color: #f5f5f5; border: 1px solid #fff; border-radius: 5px; padding: 8px 20px;">Login</a>
-                    </li>
-                    @endauth
-                </ul>
-            </div>
-        </div>
-    </nav>  
-    <a href="https://api.whatsapp.com/send?phone=6285854526955&text=Halo%20mau%20tanya%20gereja" class="whatsapp-button">
-            <img src="img/wa.png" alt="WhatsApp">
+    @include('partials.navbar')
+    <a href="https://api.whatsapp.com/send?phone=6285854526955&text=Halo%20mau%20tanya%20gereja"
+        class="whatsapp-button">
+        <img src="img/wa.png" alt="WhatsApp">
     </a>
 
     <!-- Content -->
@@ -603,7 +542,8 @@
             </div>
             <!-- Dropdown for event filtering -->
             <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle custom-dropdown-button" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                <button class="btn btn-secondary dropdown-toggle custom-dropdown-button" type="button"
+                    id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                     Button for the dropdown text that will be replaced by the js method
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -620,8 +560,10 @@
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
                     <li><a class="dropdown-item dropdown-type-2" href="#" id="all">All</a></li>
                     <li><a class="dropdown-item dropdown-type-2" href="#" id="umum">Umum</a></li>
-                    <li><a class="dropdown-item dropdown-type-2" href="#" id="ladies devotion">Ladies Devotion</a></li>
-                    <li><a class="dropdown-item dropdown-type-2" href="#" id="sunday school">Sunday School</a></li>
+                    <li><a class="dropdown-item dropdown-type-2" href="#" id="ladies devotion">Ladies Devotion</a>
+                    </li>
+                    <li><a class="dropdown-item dropdown-type-2" href="#" id="sunday school">Sunday School</a>
+                    </li>
                     <li><a class="dropdown-item dropdown-type-2" href="#" id="yess">YESS</a></li>
                 </ul>
             </div>
@@ -645,11 +587,14 @@
                     </div>
                     <div class="modal-body">
                         <!-- Your form content goes here -->
-                        <label for="daftar<?php echo $event['id']; ?>" class="form-label form-label-daftar">Bagi jemaat yang ingin
-                            mendaftar dalam event YESS Surabaya silahkan mengisi form pendaftaran event dibawah ini.</label>
+                        <label for="daftar<?php echo $event['id']; ?>" class="form-label form-label-daftar">Bagi jemaat yang
+                            ingin
+                            mendaftar dalam event YESS Surabaya silahkan mengisi form pendaftaran event dibawah
+                            ini.</label>
                         <!-- Alergi Anda -->
                         <div class="mb-3">
-                            <label for="alergi<?php echo $event['id']; ?>" class="form-label form-label-alergi">Alergi Anda (jika
+                            <label for="alergi<?php echo $event['id']; ?>" class="form-label form-label-alergi">Alergi Anda
+                                (jika
                                 tidak punya, isi "-")</label>
                             <textarea class="form-control" id="alergi<?php echo $event['id']; ?>" rows="3"
                                 placeholder="Masukkan alergi Anda jika ada"></textarea>
@@ -672,7 +617,8 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-cancel" data-bs-dismiss="modal">Cancel</button>
-                        <button type="button" class="btn btn-submit" onclick="registerEvent(<?php echo $event['id']; ?>)" data-bs-dismiss="modal">Submit</button>
+                        <button type="button" class="btn btn-submit" onclick="registerEvent(<?php echo $event['id']; ?>)"
+                            data-bs-dismiss="modal">Submit</button>
                     </div>
                 </div>
             </div>
@@ -683,17 +629,23 @@
         <!-- Events -->
         <div class="events-container">
             @foreach ($events as $event)
-                <div class="event" event-id="{{ $event->id }}" event-type="{{ $event->type }}" {{ $event->archived ? 'data-archived=true' : 'data-archived=false' }}>
+                <div class="event" event-id="{{ $event->id }}" event-type="{{ $event->type }}"
+                    {{ $event->archived ? 'data-archived=true' : 'data-archived=false' }}>
                     <img src="{{ asset($event->image_path) }}" alt="Event Photo">
                     <div class="event-details">
                         <div class="event-title">{{ $event->title }}</div>
                         <div class="event-type">{{ $event->type }}</div>
                         <div class="event-date">
-                            {{ $event->location }} | {{ $event->start_date }}{{ isset($event->start_time) ? ' ' . $event->start_time : '' }} - {{ $event->end_date }}{{ isset($event->end_time) ? ' ' . $event->end_time : '' }}
+                            {{ $event->location }} |
+                            {{ $event->start_date }}{{ isset($event->start_time) ? ' ' . $event->start_time : '' }} -
+                            {{ $event->end_date }}{{ isset($event->end_time) ? ' ' . $event->end_time : '' }}
                         </div>
                         <div class="event-description">{{ $event->description }}</div>
                     </div>
-                    <button class="daftar-button" data-bs-toggle="modal" data-bs-target="#formModal{{ $event->id }}" onclick="openFormModal({{ $event->id }})">Daftar <span class="material-icons">arrow_forward</span></button>
+                    <button class="daftar-button" data-bs-toggle="modal"
+                        data-bs-target="#formModal{{ $event->id }}"
+                        onclick="openFormModal({{ $event->id }})">Daftar <span
+                            class="material-icons">arrow_forward</span></button>
                 </div>
             @endforeach
         </div>
@@ -757,7 +709,8 @@
             const selectedDropdown = "upcoming";
             const selectedType = "all";
             updateEvents(selectedDropdown, selectedType); // Call the function to update events with the initial value
-            updateEventSubheader(selectedDropdown); // Call the function to update the event subheader with the initial value
+            updateEventSubheader(
+            selectedDropdown); // Call the function to update the event subheader with the initial value
         };
 
         // Update the button text and apply the active class when an option is clicked
@@ -809,9 +762,10 @@
         // Function to update the content of the event subheader
         function updateEventSubheader(selectedDropdown) {
             const eventSubheader = document.querySelector('.event-subheader');
-            eventSubheader.innerHTML = selectedDropdown === 'upcoming' ? 'What\'s coming up at YESS Surabaya >>>' : 'Explore past events at YESS Surabaya >>>';
+            eventSubheader.innerHTML = selectedDropdown === 'upcoming' ? 'What\'s coming up at YESS Surabaya >>>' :
+                'Explore past events at YESS Surabaya >>>';
         }
-        
+
         // JavaScript function to handle dropdown change
         function updateEvents(selectedDropdown, selectedType) {
             console.log(selectedDropdown);
@@ -823,7 +777,8 @@
                 const eventInfo = <?php echo json_encode($events); ?>;
                 const eventData = eventInfo.find(e => e.id === parseInt(eventId));
 
-                const isDropdownMatch = (selectedDropdown === 'upcoming' && !eventData.archived) || (selectedDropdown === 'archived' && eventData.archived);
+                const isDropdownMatch = (selectedDropdown === 'upcoming' && !eventData.archived) || (
+                    selectedDropdown === 'archived' && eventData.archived);
                 const isTypeMatch = selectedType === 'all' || eventType === selectedType;
 
                 if (isDropdownMatch && isTypeMatch) {
@@ -840,9 +795,10 @@
                 }
             });
         }
+
         function registerEvent(eventId) {
             $.ajax({
-                url: '{{ route("event.register") }}',
+                url: '{{ route('event.register') }}',
                 type: 'POST',
                 data: {
                     event_id: eventId,
