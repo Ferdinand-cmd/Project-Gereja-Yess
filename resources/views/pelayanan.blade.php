@@ -169,77 +169,59 @@
         <button class="button button1" id = "butt1" onclick="myFunction()">Daftar Disini</button>
 
         <div id="myForm">
-            @auth
-                <div class="awalForm">
-                    <div class="form1">PENDAFTARAN EVENT</div>
-                    <div class="form2">Bagi jemaat yang ingin mendaftar dalam event YESS Surabaya silahkan mengisi form
-                        pendaftaran event dibawah ini</div>
-                </div>
-                <div class="awal-2-Form">
-                    <form action="/register_event" method="POST">
-                        @csrf
-                        <div class="main-user-info">
-                            <div class="user-input-box">
-                                <label for="nama">Nama</label>
-                                <input type="text" id="nama" name="nama" placeholder="Nama" required>
-                            </div>
-                            <div class="user-input-box">
-                                <label for="umur">Umur</label>
-                                <input type="number" id="umur" name="umur" placeholder="Umur" required>
-                            </div>
-                            <div class="user-input-box">
-                                <label for="nomor">No. HP (Whatapp)</label>
-                                <input type="text" id="nomor" name="no_hp" placeholder="No. HP (WhatsApp)"
-                                    required>
-                            </div>
-                            <div class="user-input-box">
-                                <label for="kecamatan">Kecamatan</label>
-                                <input type="text" id="kecamatan" name="kecamatan" placeholder="Kecamatan" required>
-                            </div>
-
+        @auth
+            <div class="awalForm">
+                <div class="form1">PENDAFTARAN EVENT</div>
+                <div class="form2">Bagi jemaat yang ingin mendaftar dalam event YESS Surabaya silahkan mengisi form pendaftaran event dibawah ini</div>
+            </div>
+            <div class="awal-2-Form">
+                <form action="/register_event" method="POST">
+                    @csrf
+                    <!-- Dropdown for 'Tipe' -->
+                    <div class="kegiatan-details-box">
+                        <span class="kegiatan-title">Tempat Pelayanan: </span>
+                        <div class="kegiatan-category">
+                            <select name="tipe" required>
+                                <option value="" disabled selected>Pilih Tempat Pelayanan</option>
+                                <option value="Umum - Ciputra World">Umum - Ciputra World</option>
+                                <option value="Umum - Dafam">Umum - Dafam</option>
+                                <option value="Umum - Pondok Chandra">Umum - Pokchan</option>
+                                <option value="YESS">YESS - Ciputra World</option>
+                            </select>
                         </div>
-                        <div class="user-input-box">
-                            <label for="alasan">Alasan (Max 200 characters):</label>
+                    </div>
+
+                    <!-- Radio buttons for 'Role' -->
+                    <div class="kegiatan-details-box">
+                        <span class="kegiatan-title">Role: </span>
+                        <div class="kegiatan-category">
+                            <input type="radio" name="role" id="usher" value="Usher" required><label for="usher">Usher</label>
+                            <input type="radio" name="role" id="singer" value="Singer" required><label for="singer">Singer</label>
+                            <input type="radio" name="role" id="multimedia" value="Multimedia" required><label for="multimedia">Multimedia</label>
+                            <input type="radio" name="role" id="camera" value="Camera" required><label for="camera">Camera</label>
+                            <input type="radio" name="role" id="pemain_musik" value="Pemain Musik" required><label for="pemain_musik">Pemain Musik</label>
+                        </div>
+                    </div>
+
+                    <!-- Alasan user -->
+                    <div class="user-input">
+                            <label for="alasan"><b>Alasan (Max 200 characters):</b></label>
                             <textarea id="alasan" name="alasan" required maxlength="200" placeholder="Your reason..." style="width: 100%"></textarea>
                         </div>
-                        <div class="kegiatan-details-box">
-                            <span class="kegiatan-title">Kegiatan saat ini : </span>
-                            <div class="kegiatan-category">
-                                <input type="radio" name="kegiatan_saat_ini" value="Sekolah" required>
-                                <label for="sekolah">Sekolah</label>
-                                <input type="radio" name="kegiatan_saat_ini" value="Kuliah" required>
-                                <label for="kuliah">Kuliah</label>
-                                <input type="radio" name="kegiatan_saat_ini" value="Bekerja" required>
-                                <label for="bekerja">Bekerja</label>
-                            </div>
-                        </div>
-                        <div class="kegiatan-details-box">
-                            <span class="kegiatan-title">Role : </span>
-                            <div class="kegiatan-category">
-                                <input type="radio" name="role" id="usher" value="Usher" required><label
-                                    for="usher">Usher</label>
-                                <input type="radio" name="role" id="singer" value="Singer" required><label
-                                    for="singer">Singer</label>
-                                <input type="radio" name="role" id="multimedia" value="Multimedia" required><label
-                                    for="multimedia">Multimedia</label>
-                                <input type="radio" name="role" id="camera" value="Camera" required><label
-                                    for="camera">Camera</label>
-                                <input type="radio" name="role" id="pemain_musik" value="Pemain Musik"
-                                    required><label for="pemain_musik">Pemain Musik</label>
-                            </div>
-                        </div>
-                        <input type="hidden" name="email" value="{{ auth()->user()->email }}">
-                        <div class="form-submit-btn">
-                            <input type="submit" value="Register">
-                    </form>
-                </div>
-            @else
-                <div class="alert alert-info" role="alert">
-                    Please <a href="/login">login</a> to register for events.
-                </div>
-            @endauth
-        </div>
+                    
+                    <input type="hidden" name="email" value="{{ auth()->user()->email }}">
+                    <div class="form-submit-btn">
+                        <input type="submit" value="Register">
+                    </div>
+                </form>
+            </div>
+        @else
+            <div class="alert alert-info" role="alert">
+                Please <a href="/login">login</a> to register for events.
+            </div>
+        @endauth
     </div>
+
 
     <!-- Success Modal -->
     <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel"
