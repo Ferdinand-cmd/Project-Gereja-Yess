@@ -592,7 +592,7 @@
                         <a class="nav-link" href="/admin">KomSel</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/admin">Bareng</a>
+                        <a class="nav-link" href="/bareng-admin">Bareng</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="/event-admin">Event</a>

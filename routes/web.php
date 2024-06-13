@@ -38,8 +38,20 @@ Route::get('/event-archived', function () {
     return view('event-archieved');
 });
 
-Route::get('/jadwal-ibadah', function () {
-    return view('jadwal-ibadah');
+Route::get('/jadwal', function () {
+    return view('jadwal_ibadah');
+});
+
+Route::get('/ladies-devotion', function () {
+    return view('ladies-devotion');
+});
+
+Route::get('/yess', function () {
+    return view('yess');
+});
+
+Route::get('/sunday-school', function () {
+    return view('sunday-school');
 });
 
 Route::middleware([\App\Http\Middleware\EnsureUserIsAdmin::class])->group(function () {
@@ -72,7 +84,15 @@ Route::middleware([\App\Http\Middleware\EnsureUserIsAdmin::class])->group(functi
     Route::get('/event-admin', function () {
         return view('event-admin');
     });
+
 });
+Route::get('/bareng-admin', function () {
+    return view('bareng-admin');
+});
+Route::get('/penjadwalan-admin', function () {
+    return view('penja-admin');
+});
+
 
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
