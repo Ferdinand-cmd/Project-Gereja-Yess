@@ -1,8 +1,7 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YESS.SUB | Event</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -79,9 +78,8 @@
             /* Set the background color to white */
             color: #000000;
             /* Set text color to black */
-            padding: 20px;
+            /* padding: 20px; */
             /* Add some padding for better readability */
-            overflow-x: hidden;
         }
 
         .event-header-container {
