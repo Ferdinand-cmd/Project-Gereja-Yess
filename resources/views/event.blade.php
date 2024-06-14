@@ -22,6 +22,12 @@
         /* Navbar & footer */
         body {
             overflow-x: hidden;
+            background-color: white;
+            /* Set the background color to white */
+            color: #000000;
+            /* Set text color to black */
+            /* padding: 20px; */
+            /* Add some padding for better readability */
         }
 
         .whatsapp-button {
@@ -73,14 +79,6 @@
         }
 
         /* Content */
-        body {
-            background-color: white;
-            /* Set the background color to white */
-            color: #000000;
-            /* Set text color to black */
-            /* padding: 20px; */
-            /* Add some padding for better readability */
-        }
 
         .event-header-container {
             display: flex;
