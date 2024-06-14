@@ -21,8 +21,8 @@
         }
 </style>
 <body style="background-color:black;">
-  <!-- Navbar -->
-  @include('partials.navbar')
+    <!-- Navbar -->
+    @include('partials.navbar')
       
     <!--Body / isi-->
 
