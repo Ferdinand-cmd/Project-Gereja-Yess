@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -12,13 +13,13 @@
         href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap"
         rel="stylesheet">
     <link
-        href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap"
-        rel="stylesheet">
-    <link
         href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
-    <link href="css/komsel.css" rel="stylesheet">
+    <link href="css/cssKomsel.css" rel="stylesheet">
     <style>
+        body {
+            overflow-x: hidden;
+        }
         .whatsapp-button {
             position: fixed;
             bottom: 20px;
@@ -34,19 +35,110 @@
             z-index: 1000;
             cursor: pointer;
         }
-
         .whatsapp-button img {
             width: 50px;
             height: 50px;
         }
+        /* Styling Navbar */
+        .navbar-nav .nav-item.active .nav-link,
+        .navbar-nav .nav-item:hover .nav-link {
+            color: orange !important;
+            border-bottom: 2px solid orange;
+        }
+        .navbar-nav .dropdown-item:focus,
+        .navbar-nav .dropdown-item:hover {
+            color: orange !important;
+            background-color: transparent !important;
+        }
+        .navbar-nav .dropdown-item.active,
+        .navbar-nav .dropdown-item:active {
+            color: orange !important;
+            background-color: transparent !important;
+        }
+        .navbar-nav .dropdown-menu a.dropdown-item:hover {
+            color: orange !important;
+            background-color: transparent !important;
+        }
     </style>
 </head>
-<a href="https://api.whatsapp.com/send?phone=6285854526955&text=Halo%20mau%20tanya%20gereja" class="whatsapp-button">
-    <img src="img/wa.png" alt="WhatsApp">
-</a>
 
 <body>
-    @include('partials.navbar')
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid justify-content-between">
+            <a class="navbar-brand" href="#">
+                <div class="brand-text" style="display: inline-block; margin-left: 10px; color: #f5f5f5;">
+                    <img src="img/bestchurch.png" alt="" style="width: 60%;">
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto" style="text-align: center;">
+                    <li class="nav-item active" style="margin-right: 20px;">
+                        <a class="nav-link" href="/" style="color: #f5f5f5;">Home</a>
+                    </li>
+                    <li class="nav-item dropdown" style="margin-right: 20px;">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #f5f5f5;">
+                            YESS
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                            <li><a class="dropdown-item" href="/yess" style="color: #000;">YESS</a></li>
+                            <li><a class="dropdown-item" href="/komsel" style="color: #000;">Komsel</a></li>
+                            <li><a class="dropdown-item" href="/bareng" style="color: #000;">Bareng</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item" style="margin-right: 20px;">
+                        <a class="nav-link" href="/jadwal" style="color: #f5f5f5;">Jadwal</a>
+                    </li>
+                    <li class="nav-item" style="margin-right: 20px;">
+                        <a class="nav-link" href="/ladies-devotion" style="color: #f5f5f5;">Ladies Devotion</a>
+                    </li>
+                    <li class="nav-item" style="margin-right: 20px;">
+                        <a class="nav-link" href="/sunday-school" style="color: #f5f5f5;">Sunday School</a>
+                    </li>
+                    <li class="nav-item" style="margin-right: 20px;">
+                        <a class="nav-link" href="/event" style="color: #f5f5f5;">Event</a>
+                    </li>
+                    <li class="nav-item" style="margin-right: 20px;">
+                        <a class="nav-link" href="/pelayanan" style="color: #f5f5f5;">Pelayanan</a>
+                    </li>
+                </ul>
+                <div class="navbar-nav" style="text-align: right;">
+                    <ul class="navbar-nav">
+                        @auth
+                        <li class="nav-item dropdown" style="margin-right: 20px;">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #f5f5f5;">
+                                Welcome, {{ auth()->user()->name }}
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                @if (auth()->user()->is_admin)
+                                <li><a class="dropdown-item" href="/admin" style="color: #000;">Admin Dashboard</a></li>
+                                @endif
+                                <li>
+                                    <form action="/logout" method="POST">
+                                        @csrf
+                                        <button type="submit" class="dropdown-item" style="color: #000;">Logout</button>
+                                    </form>
+                                </li>
+                            </ul>
+                        </li>
+                        @else
+                        <li class="nav-item">
+                            <a class="nav-link login-link-border" href="/login" style="color: #f5f5f5; border: 1px solid #fff; border-radius: 5px; padding: 8px 20px;">Login</a>
+                        </li>
+                        @endauth
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- whasap terbang -->
+    <a href="https://api.whatsapp.com/send?phone=6285854526955&text=Halo%20mau%20tanya%20gereja" class="whatsapp-button">
+            <img src="img/wa.png" alt="WhatsApp">
+    </a>
     <div class="awal" style="margin-top: 20px;">
         <div class="awal-2">
             <img loading="lazy" srcset="img/awal.png" class="img" />
@@ -84,7 +176,8 @@
                             </div>
                             <div class="user-input-box">
                                 <label for="kecamatan">Kecamatan</label>
-                                <input type="text" id="kecamatan" name="kecamatan" placeholder="Kecamatan" required />
+                                <input type="text" id="kecamatan" name="kecamatan" placeholder="Kecamatan"
+                                    required />
                             </div>
                         </div>
                         <div class="kegiatan-details-box">
@@ -109,14 +202,92 @@
                 </div>
             @endauth
         </div>
+    </div>  
 
+    
+    <!-- BARU -->
+    <!-- Informasi event khusus KOMSEL -->
+    <div class="contEventKomsel">
+        <div class="contCard">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+
+            <!-- isi card 1 -> ini yg buat nambahanin isi/jumlah cardnya -->
+            <div class="slider-item swiper-slide">
+                <div class="slider-item-content">
+                    <div class="content">
+                        <span>Selasa, 21 Mei 2024</span>
+                        <div class="title">
+                            Komsel Gabungan YESS Pro Dafam x CW
+                        </div>
+                        <div class="textLokasi">
+                            Lokasi : Ruko Robert Dafam (Klaska)
+                        </div>
+                        <div class="textKeterangan">
+                            Keterangan : Ruko Klaska Jagir, masuk dari depan tulisan Klaska, di ruko kiri jalan, pintu ruko warna kuning
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- isi card 2 -->
+            <div class="slider-item swiper-slide">
+                <div class="slider-item-content">
+                    <div class="content">
+                        <span>Selasa, 21 Mei 2024</span>
+                        <div class="title">
+                            Outing Komsel Nonton  
+                        </div>
+                        <div class="textLokasi">
+                            Lokasi : Pakuwon Trade Center
+                        </div>
+                        <div class="textKeterangan">
+                            Keterangan : Lorem ipsum
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="slider-buttons">
+            <button class="swiper-button-prev">Prev</button>
+            <button class="swiper-button-next">Next</button>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        </div>
+    </div>
+      <!-- partial -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.5/swiper-bundle.min.js'></script>
+
+
+
+    <!-- tombol khusus ketua komsel-> Atur komsel & absen komsel -->
+
+    <div>
+        <div class="container-fluid px-2 contButtonKetua">
+            <div class="row g-2">
+                <div class="col-6 d-grid">
+                    <button class="pushable" id ="aturbutton" style ="background: hsl(345deg 100% 47%);"onclick="klikButtonAtur()">
+                        <span class="front" style ="background: hsl(340deg 100% 32%);">
+                            ATUR KOMSEL
+                        </span>
+                    </button>
+                </div>
+                <div class="col-6 d-grid">
+                    <button class="pushable" id ="absenbutton" style ="background: hsl(215, 100%, 52%);" onclick="klikButtonAbsen()">
+                        <span class="front"style ="background:  hsl(210, 100%, 32%);">
+                            ABSEN KOMSEL
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+
+
 
     <!-- code buat informasi dll -->
 
@@ -147,24 +318,16 @@
             </div>
         </div>
     </div>
+<br>
+<br>
+<br>
 
-    <!-- Footer -->
-    <div class="container-fluid" style="background-color: black; color: white; border-radius: 30px 30px 0 0;">
-        <div class="row">
-            <div class="col-md-6 d-flex justify-content-start">
-                <img src="img/ig.png" alt="Instagram">
-                <img src="img/tiktok.png" alt="TikTok">
-                <img src="img/yt.png" alt="YouTube">
-            </div>
-        </div>
-    </div>
-    </div>
+   
+</div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
-    <script src="js/komsel.js"></script>
-
+    <script src="js/jsKomsel.js"></script>
 </body>
-
 </html>

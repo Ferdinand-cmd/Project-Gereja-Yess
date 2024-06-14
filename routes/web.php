@@ -125,6 +125,10 @@ Route::get('/absenKomsel', function () {
     return view('absenKomsel');
 });
 
+Route::get('/aturKomsel', function () {
+    return view('aturKomsel');
+});
+
 Route::get('/aturKomsel_eventKhusus', function () {
     return view('aturKomsel_eventKhusus');
 });
