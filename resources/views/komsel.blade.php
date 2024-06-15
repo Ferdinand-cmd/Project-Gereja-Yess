@@ -20,6 +20,7 @@
         body {
             overflow-x: hidden;
         }
+
         .whatsapp-button {
             position: fixed;
             bottom: 20px;
@@ -35,26 +36,31 @@
             z-index: 1000;
             cursor: pointer;
         }
+
         .whatsapp-button img {
             width: 50px;
             height: 50px;
         }
+
         /* Styling Navbar */
         .navbar-nav .nav-item.active .nav-link,
         .navbar-nav .nav-item:hover .nav-link {
             color: orange !important;
             border-bottom: 2px solid orange;
         }
+
         .navbar-nav .dropdown-item:focus,
         .navbar-nav .dropdown-item:hover {
             color: orange !important;
             background-color: transparent !important;
         }
+
         .navbar-nav .dropdown-item.active,
         .navbar-nav .dropdown-item:active {
             color: orange !important;
             background-color: transparent !important;
         }
+
         .navbar-nav .dropdown-menu a.dropdown-item:hover {
             color: orange !important;
             background-color: transparent !important;
@@ -71,7 +77,9 @@
                     <img src="img/bestchurch.png" alt="" style="width: 60%;">
                 </div>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -80,7 +88,8 @@
                         <a class="nav-link" href="/" style="color: #f5f5f5;">Home</a>
                     </li>
                     <li class="nav-item dropdown" style="margin-right: 20px;">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #f5f5f5;">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false" style="color: #f5f5f5;">
                             YESS
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
@@ -108,26 +117,30 @@
                 <div class="navbar-nav" style="text-align: right;">
                     <ul class="navbar-nav">
                         @auth
-                        <li class="nav-item dropdown" style="margin-right: 20px;">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #f5f5f5;">
-                                Welcome, {{ auth()->user()->name }}
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                @if (auth()->user()->is_admin)
-                                <li><a class="dropdown-item" href="/admin" style="color: #000;">Admin Dashboard</a></li>
-                                @endif
-                                <li>
-                                    <form action="/logout" method="POST">
-                                        @csrf
-                                        <button type="submit" class="dropdown-item" style="color: #000;">Logout</button>
-                                    </form>
-                                </li>
-                            </ul>
-                        </li>
+                            <li class="nav-item dropdown" style="margin-right: 20px;">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+                                    role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #f5f5f5;">
+                                    Welcome, {{ auth()->user()->name }}
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    @if (auth()->user()->is_admin)
+                                        <li><a class="dropdown-item" href="/admin" style="color: #000;">Admin
+                                                Dashboard</a></li>
+                                    @endif
+                                    <li>
+                                        <form action="/logout" method="POST">
+                                            @csrf
+                                            <button type="submit" class="dropdown-item"
+                                                style="color: #000;">Logout</button>
+                                        </form>
+                                    </li>
+                                </ul>
+                            </li>
                         @else
-                        <li class="nav-item">
-                            <a class="nav-link login-link-border" href="/login" style="color: #f5f5f5; border: 1px solid #fff; border-radius: 5px; padding: 8px 20px;">Login</a>
-                        </li>
+                            <li class="nav-item">
+                                <a class="nav-link login-link-border" href="/login"
+                                    style="color: #f5f5f5; border: 1px solid #fff; border-radius: 5px; padding: 8px 20px;">Login</a>
+                            </li>
                         @endauth
                     </ul>
                 </div>
@@ -136,8 +149,9 @@
     </nav>
 
     <!-- whasap terbang -->
-    <a href="https://api.whatsapp.com/send?phone=6285854526955&text=Halo%20mau%20tanya%20gereja" class="whatsapp-button">
-            <img src="img/wa.png" alt="WhatsApp">
+    <a href="https://api.whatsapp.com/send?phone=6285854526955&text=Halo%20mau%20tanya%20gereja"
+        class="whatsapp-button">
+        <img src="img/wa.png" alt="WhatsApp">
     </a>
     <div class="awal" style="margin-top: 20px;">
         <div class="awal-2">
@@ -202,132 +216,136 @@
                 </div>
             @endauth
         </div>
-    </div>  
+    </div>
 
-    
+
     <!-- BARU -->
     <!-- Informasi event khusus KOMSEL -->
     <div class="contEventKomsel">
         <div class="contCard">
-        <div class="swiper-container">
-            <div class="swiper-wrapper">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
 
-            <!-- isi card 1 -> ini yg buat nambahanin isi/jumlah cardnya -->
-            <div class="slider-item swiper-slide">
-                <div class="slider-item-content">
-                    <div class="content">
-                        <span>Selasa, 21 Mei 2024</span>
-                        <div class="title">
-                            Komsel Gabungan YESS Pro Dafam x CW
+                    <!-- isi card 1 -> ini yg buat nambahanin isi/jumlah cardnya -->
+                    <div class="slider-item swiper-slide">
+                        <div class="slider-item-content">
+                            <div class="content">
+                                <span>Selasa, 21 Mei 2024</span>
+                                <div class="title">
+                                    Komsel Gabungan YESS Pro Dafam x CW
+                                </div>
+                                <div class="textLokasi">
+                                    Lokasi : Ruko Robert Dafam (Klaska)
+                                </div>
+                                <div class="textKeterangan">
+                                    Keterangan : Ruko Klaska Jagir, masuk dari depan tulisan Klaska, di ruko kiri jalan,
+                                    pintu ruko warna kuning
+                                </div>
+                            </div>
                         </div>
-                        <div class="textLokasi">
-                            Lokasi : Ruko Robert Dafam (Klaska)
+                    </div>
+
+                    <!-- isi card 2 -->
+                    <div class="slider-item swiper-slide">
+                        <div class="slider-item-content">
+                            <div class="content">
+                                <span>Selasa, 21 Mei 2024</span>
+                                <div class="title">
+                                    Outing Komsel Nonton
+                                </div>
+                                <div class="textLokasi">
+                                    Lokasi : Pakuwon Trade Center
+                                </div>
+                                <div class="textKeterangan">
+                                    Keterangan : Lorem ipsum
+                                </div>
+                            </div>
                         </div>
-                        <div class="textKeterangan">
-                            Keterangan : Ruko Klaska Jagir, masuk dari depan tulisan Klaska, di ruko kiri jalan, pintu ruko warna kuning
-                        </div>
+                    </div>
+
+
+                    <div class="slider-buttons">
+                        <button class="swiper-button-prev">Prev</button>
+                        <button class="swiper-button-next">Next</button>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+        <!-- partial -->
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.5/swiper-bundle.min.js'></script>
+
+
+
+        <!-- tombol khusus ketua komsel-> Atur komsel & absen komsel -->
+
+        <div>
+            <div class="container-fluid px-2 contButtonKetua">
+                <div class="row g-2">
+                    <div class="col-6 d-grid">
+                        <button class="pushable" id ="aturbutton"
+                            style ="background: hsl(345deg 100% 47%);"onclick="klikButtonAtur()">
+                            <span class="front" style ="background: hsl(340deg 100% 32%);">
+                                ATUR KOMSEL
+                            </span>
+                        </button>
+                    </div>
+                    <div class="col-6 d-grid">
+                        <button class="pushable" id ="absenbutton" style ="background: hsl(215, 100%, 52%);"
+                            onclick="klikButtonAbsen()">
+                            <span class="front"style="background:  hsl(210, 100%, 32%);">
+                                ABSEN KOMSEL
+                            </span>
+                        </button>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- isi card 2 -->
-            <div class="slider-item swiper-slide">
-                <div class="slider-item-content">
-                    <div class="content">
-                        <span>Selasa, 21 Mei 2024</span>
-                        <div class="title">
-                            Outing Komsel Nonton  
+
+
+
+        <!-- code buat informasi dll -->
+
+        <div class="awal2-2">
+            <div class="awal2-3">
+                <div class="column">
+                    <div class="awal2-4">
+                        <div class="awal2-5">
+                            Find a group where you can grow in your faith, get encouraged, and
+                            create community.
                         </div>
-                        <div class="textLokasi">
-                            Lokasi : Pakuwon Trade Center
+                        <div class="awal2-6">
+                            Every Tuesday at 19.00 WIB </div>
+                        <div class="awal2-6-2">
+                            Surabaya Timur | Surabaya Barat | Surabaya Selatan
                         </div>
-                        <div class="textKeterangan">
-                            Keterangan : Lorem ipsum
+                        <img loading="lazy" srcset="img/komsel2.png" class="awal2-img" />
+                        <div class="awal2-7">
+                            Discover our cell group, enhance your spiritual journey with us.
                         </div>
                     </div>
                 </div>
+                <div class="column-2">
+                    <div class="awal2-8">
+                        <img loading="lazy" srcset="img/komsel1.png" class="awal2-img-2" />
+                        <img loading="lazy" srcset="img/komsel3.png" class="awal2-img-3" />
+                    </div>
+                </div>
             </div>
+        </div>
+        <br>
+        <br>
+        <br>
 
 
-            <div class="slider-buttons">
-            <button class="swiper-button-prev">Prev</button>
-            <button class="swiper-button-next">Next</button>
-            </div>
-            <div class="swiper-pagination"></div>
-        </div>
-        </div>
     </div>
-      <!-- partial -->
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
-      <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.5/swiper-bundle.min.js'></script>
-
-
-
-    <!-- tombol khusus ketua komsel-> Atur komsel & absen komsel -->
-
-    <div>
-        <div class="container-fluid px-2 contButtonKetua">
-            <div class="row g-2">
-                <div class="col-6 d-grid">
-                    <button class="pushable" id ="aturbutton" style ="background: hsl(345deg 100% 47%);"onclick="klikButtonAtur()">
-                        <span class="front" style ="background: hsl(340deg 100% 32%);">
-                            ATUR KOMSEL
-                        </span>
-                    </button>
-                </div>
-                <div class="col-6 d-grid">
-                    <button class="pushable" id ="absenbutton" style ="background: hsl(215, 100%, 52%);" onclick="klikButtonAbsen()">
-                        <span class="front"style ="background:  hsl(210, 100%, 32%);">
-                            ABSEN KOMSEL
-                        </span>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
-
-    <!-- code buat informasi dll -->
-
-    <div class="awal2-2">
-        <div class="awal2-3">
-            <div class="column">
-                <div class="awal2-4">
-                    <div class="awal2-5">
-                        Find a group where you can grow in your faith, get encouraged, and
-                        create community.
-                    </div>
-                    <div class="awal2-6">
-                        Every Tuesday at 19.00 WIB </div>
-                    <div class="awal2-6-2">
-                        Surabaya Timur | Surabaya Barat | Surabaya Selatan
-                    </div>
-                    <img loading="lazy" srcset="img/komsel2.png" class="awal2-img" />
-                    <div class="awal2-7">
-                        Discover our cell group, enhance your spiritual journey with us.
-                    </div>
-                </div>
-            </div>
-            <div class="column-2">
-                <div class="awal2-8">
-                    <img loading="lazy" srcset="img/komsel1.png" class="awal2-img-2" />
-                    <img loading="lazy" srcset="img/komsel3.png" class="awal2-img-3" />
-                </div>
-            </div>
-        </div>
-    </div>
-<br>
-<br>
-<br>
-
-   
-</div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
     <script src="js/jsKomsel.js"></script>
 </body>
+
 </html>

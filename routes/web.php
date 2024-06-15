@@ -7,6 +7,7 @@ use App\Http\Controllers\KomselController;
 use App\Http\Controllers\AdminPelayananController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\PickupPointController;
+use App\Http\Controllers\PendetaController;
 
 Route::get('/', function () {
     return view('home');
@@ -40,7 +41,7 @@ Route::get('/event-archived', function () {
 });
 
 Route::get('/jadwal', function () {
-    return view('jadwal_ibadah');
+    return view('jadwal-ibadah');
 });
 
 Route::get('/ladies-devotion', function () {
@@ -178,3 +179,6 @@ Route::get('/event-detail', [EventController::class, 'showDetail']);
 Route::get('/bareng', [PickupPointController::class, 'index'])->name('bareng.index');
 Route::post('/bareng/book/{id}', [PickupPointController::class, 'book'])->name('bareng.book');
 Route::post('/bareng/cancel-booking/{id}', [PickupPointController::class, 'cancelBooking'])->name('bareng.cancelBooking');
+
+Route::get('/admin', [PendetaController::class, 'index'])->name('admin.pendetas');
+Route::post('/admin', [PendetaController::class, 'store'])->name('admin.pendetas.store');

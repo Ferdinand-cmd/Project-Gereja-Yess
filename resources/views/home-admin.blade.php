@@ -1,11 +1,12 @@
+<!-- resources/views/admin/pendetas.blade.php -->
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YESS.SUB | Home</title>
+    <title>YESS.SUB | Admin</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
@@ -196,12 +197,11 @@
         <div class="d-flex justify-content-between align-items-center">
             <h1 id="mainTitle">Daftar Pendeta BEST Surabaya</h1>
             <div>
-                <button class="btn btn-warning" id="toggleToPendeta">Pendeta</button>
-                <button class="btn btn-secondary" id="toggleToJemaat">Jemaat</button>
+                <button class="btn btn-secondary" id="toggleToPendeta">Pendeta</button>
+                <button class="btn btn-warning" id="toggleToJemaat">Jemaat</button>
             </div>
         </div>
         <div id="jemaatTable" style="display: none;">
-            <h1></h1>
             <table class="content-table">
                 <thead>
                     <tr>
@@ -217,17 +217,19 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Felita Lysandra</td>
-                        <td>P</td>
-                        <td>10 Februari 2003</td>
-                        <td>089684753450</td>
-                        <td>Tambaksari</td>
-                        <td>felita@gmail.com</td>
-                        <td>YESS</td>
-                        <td>Aktif</td>
-                    </tr>
+                    @foreach ($jemaats as $jemaat)
+                        <tr>
+                            <td>{{ $loop->iteration }}</td>
+                            <td>{{ $jemaat->name }}</td>
+                            <td>{{ $jemaat->gender }}</td>
+                            <td>{{ $jemaat->tanggal_lahir }}</td>
+                            <td>{{ $jemaat->wa }}</td>
+                            <td>{{ $jemaat->domicile }}</td>
+                            <td>{{ $jemaat->email }}</td>
+                            <td>{{ $jemaat->category }}</td>
+                            <td>{{ $jemaat->status }}</td>
+                        </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>
@@ -243,13 +245,15 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Pdt. Pendeta satu</td>
-                        <td>0896754561</td>
-                        <td>pendeta1@gmail.com</td>
-                        <td>Gembala Surabaya</td>
-                    </tr>
+                    @foreach ($pendetas as $pendeta)
+                        <tr>
+                            <td>{{ $loop->iteration }}</td>
+                            <td>{{ $pendeta->name }}</td>
+                            <td>{{ $pendeta->wa }}</td>
+                            <td>{{ $pendeta->email }}</td>
+                            <td>{{ $pendeta->role }}</td>
+                        </tr>
+                    @endforeach
                 </tbody>
             </table>
             <button class="btn-add" tabindex="0" data-bs-toggle="modal" data-bs-target="#addModal">ADD</button>
@@ -265,27 +269,30 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <!-- Your content here -->
-                    <div class="mb-3">
-                        <label for="nama" class="form-label">Nama Lengkap</label>
-                        <input type="text" class="form-control" id="nama" name="nama" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="wa" class="form-label">WA</label>
-                        <input type="text" class="form-control" id="wa" name="wa" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="text" class="form-control" id="email" name="email" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="role" class="form-label">Role</label>
-                        <input type="text" class="form-control" id="role" name="role" required>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary btn-cancel" data-bs-dismiss="modal">CANCEL</button>
-                    <button type="button" class="btn btn-secondary btn-save">SAVE</button>
+                    <form action="{{ route('admin.pendetas.store') }}" method="POST">
+                        @csrf
+                        <div class="mb-3">
+                            <label for="nama" class="form-label">Nama Lengkap</label>
+                            <input type="text" class="form-control" id="nama" name="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="wa" class="form-label">WA</label>
+                            <input type="text" class="form-control" id="wa" name="wa" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="role" class="form-label">Role</label>
+                            <input type="text" class="form-control" id="role" name="role" required>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary btn-cancel"
+                                data-bs-dismiss="modal">CANCEL</button>
+                            <button type="submit" class="btn btn-primary btn-save">SAVE</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
