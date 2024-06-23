@@ -198,9 +198,26 @@
             <div class="col">
                 <div class="card">
                     <div class="section-header">
+                        <div class="card-title">CARD TITLE</div>
+                    </div>
+                    <div class ="row">
+                        <div class="col">
+                            <div class="card-content"><canvas id="chart-3"></canvas></div>
+                        </div>
+                        <div class="col">
+                            <div class="card-content"><canvas id="chart-4"></canvas></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row baris-2">
+            <div class="col">
+                <div class="card">
+                    <div class="section-header">
                         <div class="card-title">PENINGKATAN JUMLAH JEMAAT</div>
                     </div>
-                    <div class="card-content"><canvas id="chart-3"></canvas></div>
+                    <div class="card-content"><canvas id="chart-5"></canvas></div>
                 </div>
             </div>
             <div class="col">
@@ -498,20 +515,80 @@
             }
         });
 
-        // Inisialisasi chart 3
-        const x3 = [50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150];
-        const y3 = [7, 8, 8, 9, 9, 9, 10, 11, 14, 14, 15];
+        // Inisialisasi Chart 3
+        var x3 = ["A", "B", "C", "D", "E"];
+        var y3 = [55, 49, 44, 24, 15];
+        var colors3 = [
+            "#e69f00",
+            "#56b4e9",
+            "#009e73",
+            "#f0e442",
+            "#0072b2"
+        ];
 
         new Chart("chart-3", {
+        type: "pie",
+        data: {
+            labels: x3,
+            datasets: [{
+            backgroundColor: colors3,
+            data: y3
+            }]
+        },
+        options: {
+            title: {
+                display: true,
+                text: "Title"
+            },
+            responsive: true,
+            maintainAspectRatio: false
+        }
+        });
+
+        // Inisialisasi Chart 4
+        var x4 = ["A", "B", "C", "D", "E"];
+        var y4 = [55, 49, 44, 24, 15];
+        var colors4 = [
+            "#e69f00",
+            "#56b4e9",
+            "#009e73",
+            "#f0e442",
+            "#0072b2"
+        ];
+
+        new Chart("chart-4", {
+        type: "pie",
+        data: {
+            labels: x4,
+            datasets: [{
+            backgroundColor: colors4,
+            data: y4
+            }]
+        },
+        options: {
+            title: {
+                display: true,
+                text: "Title"
+            },
+            responsive: true,
+            maintainAspectRatio: false
+        }
+        });
+
+        // Inisialisasi chart 5
+        const x5 = [50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150];
+        const y5 = [7, 8, 8, 9, 9, 9, 10, 11, 14, 14, 15];
+
+        new Chart("chart-5", {
             type: "line",
             data: {
-                labels: x3,
+                labels: x5,
                 datasets: [{
                     fill: false,
                     lineTension: 0,
                     backgroundColor: "rgba(0,0,255,1.0)",
                     borderColor: "rgba(0,0,255,0.1)",
-                    data: y3
+                    data: y5
                 }]
             },
             options: {
