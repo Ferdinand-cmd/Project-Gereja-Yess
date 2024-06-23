@@ -79,7 +79,7 @@
       }
       
       .content-table thead tr {
-        background-color: #009879;
+        background-color: #000;
         color: #ffffff;
         text-align: left;
         font-weight: bold;
@@ -99,12 +99,12 @@
       }
       
       .content-table tbody tr:last-of-type {
-        border-bottom: 2px solid #009879;
+        border-bottom: 2px solid #000;
       }
       
       .content-table tbody tr.active-row {
         font-weight: bold;
-        color: #009879;
+        color: #000;
       }
       .btn-add {
           border: 1px solid #000;
@@ -174,77 +174,8 @@
 </head>
 <body>
       <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="background-color: #000 !important;">
-        <div class="container-fluid justify-content-between">
-            <a class="navbar-brand" href="#">
-                <div class="brand-text" style="display: inline-block; margin-left: 10px; color: #f5f5f5;">
-                    <img src="img/bestchurch.png" alt="" style="width: 60%;">
-                </div>
-            </a>
-            <div class="navbar-nav mx-auto" style="text-align: center;">
-                <ul class="navbar-nav" style="margin-bottom: 10px;">
-                    <li class="nav-item active" style="margin-right: 20px;">
-                        <a class="nav-link" href="/" style="color: #f5f5f5;">Home</a>
-                    </li>
-                    <li class="nav-item dropdown" style="margin-right: 20px;">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #f5f5f5;">
-                            YESS
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
-                            <li><a class="dropdown-item" href="/yess" style="color: #000;">YESS</a></li>
-                            <li><a class="dropdown-item" href="/komsel" style="color: #000;">Komsel</a></li>
-                            <li><a class="dropdown-item" href="/bareng" style="color: #000;">Bareng</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item" style="margin-right: 20px;">
-                        <a class="nav-link" href="/jadwal" style="color: #f5f5f5;">Jadwal</a>
-                    </li>
-                    <li class="nav-item" style="margin-right: 20px;">
-                        <a class="nav-link" href="/ladies-devotion" style="color: #f5f5f5;">Ladies Devotion</a>
-                    </li>
-                    <li class="nav-item" style="margin-right: 20px;">
-                        <a class="nav-link" href="/sunday-school" style="color: #f5f5f5;">Sunday School</a>
-                    </li>
-                    <li class="nav-item" style="margin-right: 20px;">
-                        <a class="nav-link" href="/event" style="color: #f5f5f5;">Event</a>
-                    </li>
-                    <li class="nav-item" style="margin-right: 20px;">
-                        <a class="nav-link" href="/pelayanan" style="color: #f5f5f5;">Pelayanan</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="navbar-nav" style="text-align: right;">
-                <ul class="navbar-nav">
-                    @auth
-                    <li class="nav-item dropdown" style="margin-right: 20px;">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #f5f5f5;">
-                            Welcome, {{ auth()->user()->name }}
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            @if (auth()->user()->is_admin)
-                            <li><a class="dropdown-item" href="/admin" style="color: #000;">Admin Dashboard</a></li>
-                            @endif
-                            <li>
-                                <form action="/logout" method="POST">
-                                    @csrf
-                                    <button type="submit" class="dropdown-item" style="color: #000;">Logout</button>
-                                </form>
-                            </li>
-                        </ul>
-                    </li>
-                    @else
-                    <li class="nav-item">
-                        <a class="nav-link login-link-border" href="/login" style="color: #f5f5f5; border: 1px solid #fff; border-radius: 5px; padding: 8px 20px;">Login</a>
-                    </li>
-                    @endauth
-                </ul>
-            </div>
-        </div>
-    </nav>
-  <!-- whasap terbang -->
-  <a href="https://api.whatsapp.com/send?phone=6285854526955&text=Halo%20mau%20tanya%20gereja" class="whatsapp-button">
-    <img src="img/wa.png" alt="WhatsApp">
-  </a>
+    @include('partials.admin-navbar')
+    
     <!-- Modal add pendeta  -->
     <div class="modal modal-add fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
@@ -280,6 +211,9 @@
       </div>
     </div>
   <div class="container">
+    <!-- TAMBAH ADD PENDETA -->
+    <button class="btn-add" tabindex="0" data-bs-toggle="modal" data-bs-target="#addModal">ADD</button>
+    
     <h1>Daftar Pendeta BEST Surabaya</h1>
     <table class="content-table">
         <thead>
@@ -301,18 +235,7 @@
           </tr>
         </tbody>
       </table>
-    <!-- TAMBAH ADD PENDETA -->
-    <button class="btn-add" tabindex="0" data-bs-toggle="modal" data-bs-target="#addModal">ADD</button>
-    <!-- Footer -->
-    <div class="container-fluid" style="background-color: black; color: white; border-radius: 30px 30px 0 0;">
-        <div class="row">
-            <div class="col-md-6 d-flex justify-content-start">
-                <img src="img/ig.png" alt="Instagram">
-                <img src="img/tiktok.png" alt="TikTok">
-                <img src="img/yt.png" alt="YouTube">
-            </div>
-        </div>
-    </div>
+    
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

@@ -5,8 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>YESS.SUB | Komsel (Admin)</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Icons:wght@400&display=swap">
@@ -23,7 +22,6 @@
         }
 
         .wrapper {
-            background-color: #fff;
             display: flex;
             padding-bottom: 80px;
             flex-direction: column;
@@ -158,8 +156,7 @@
     @include('partials.admin-navbar')
 
     <!-- atur modal -->
-    <div class="modal modal-lg modal-atur fade" id="aturModal" tabindex="-1" aria-labelledby="aturModalLabel"
-        aria-hidden="true">
+    <div class="modal modal-lg modal-atur fade" id="aturModal" tabindex="-1" aria-labelledby="aturModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
@@ -175,34 +172,32 @@
                                 <th>Aksi</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="kebaktian-table">
                             <tr>
                                 <td>
-                                    <input type="text" class="form-control" id="umum" name="umum"
-                                        value="umum" required>
+                                    <input type="text" class="form-control" id="umum" name="umum" value="umum" required>
                                 </td>
                                 <td>
-                                    <button class="action-icon">delete</button>
+                                    <button class="action-icon" onclick="deleteKebaktian(this)">delete</button>
                                 </td>
                             </tr>
                             <tr>
-                                <td><input type="text" class="form-control" id="yess" name="yess"
-                                        value="yess" required></td>
+                                <td><input type="text" class="form-control" id="yess" name="yess" value="yess" required></td>
                                 <td>
-                                    <button class="action-icon">delete</button>
+                                    <button class="action-icon" onclick="deleteKebaktian(this)">delete</button>
                                 </td>
                             </tr>
                             <tr>
-                                <td><input type="text" class="form-control" id="night" name="night"
-                                        value="worship night" required></td>
+                                <td><input type="text" class="form-control" id="night" name="night" value="worship night" required></td>
                                 <td>
-                                    <button class="action-icon">delete</button>
+                                    <button class="action-icon" onclick="deleteKebaktian(this)">delete</button>
                                 </td>
                             </tr>
                             <tr>
-                                <td><input type="text" class="form-control" id="new-kebaktian" name="new-kebaktian">
+                                <td><input type="text" class="form-control" id="new-kebaktian" name="new-kebaktian"></td>
+                                <td>
+                                    <button class="action-icon" onclick="addKebaktian()">add</button>
                                 </td>
-                                <td></td>
                             </tr>
                         </tbody>
                     </table>
@@ -214,37 +209,36 @@
                                 <th>Aksi</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="tempat-table">
                             <tr>
                                 <td>
-                                    <input type="text" class="form-control" id="ciputra world" name="ciputra world"
-                                        value="Ciputra World" required>
+                                    <input type="text" class="form-control" id="ciputra world" name="ciputra world" value="Ciputra World" required>
                                 </td>
                                 <td>Jl. Siwalankerto 121-131</td>
                                 <td>
-                                    <button class="action-icon">delete</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><input type="text" class="form-control" id="pondok tjandra" name="pondok tjandra"
-                                        value="Pondok Tjandra" required></td>
-                                <td>Jl. Siwalankerto 121-131</td>
-                                <td>
-                                    <button class="action-icon">delete</button>
+                                    <button class="action-icon" onclick="deleteTempat(this)">delete</button>
                                 </td>
                             </tr>
                             <tr>
-                                <td><input type="text" class="form-control" id="dafam" name="dafam"
-                                        value="Dafam" required></td>
+                                <td><input type="text" class="form-control" id="pondok tjandra" name="pondok tjandra" value="Pondok Tjandra" required></td>
                                 <td>Jl. Siwalankerto 121-131</td>
                                 <td>
-                                    <button class="action-icon">delete</button>
+                                    <button class="action-icon" onclick="deleteTempat(this)">delete</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" class="form-control" id="dafam" name="dafam" value="Dafam" required></td>
+                                <td>Jl. Siwalankerto 121-131</td>
+                                <td>
+                                    <button class="action-icon" onclick="deleteTempat(this)">delete</button>
                                 </td>
                             </tr>
                             <tr>
                                 <td><input type="text" class="form-control" id="new-tempat" name="new-tempat"></td>
                                 <td><input type="text" class="form-control" id="new-alamat" name="new-alamat"></td>
-                                <td></td>
+                                <td>
+                                    <button class="action-icon" onclick="addTempat()">add</button>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -273,8 +267,7 @@
                         </div>
                         <div class="col">
                             <div class="mb-3">
-                                <button type="button" class="btn btn-secondary btn-atur" data-bs-toggle="modal"
-                                    data-bs-target="#aturModal">ATUR</button>
+                                <button type="button" class="btn btn-secondary btn-atur" data-bs-toggle="modal" data-bs-target="#aturModal">ATUR</button>
                             </div>
                         </div>
                     </div>
@@ -322,21 +315,57 @@
                 var kebaktian = document.getElementById('kebaktian').value;
 
                 if (tempat && kebaktian) {
-                    // Create the URL based on the selected options
-                    // var url = 'https://example.com/' + tempat + '/' + kebaktian;
-                    var url = 'penjadwalan-' + kebaktian + '-admin.blade.php';
-                    // Redirect to the URL
+                    var url = 'penjadwalan-' + kebaktian + '-admin';
                     window.location.href = url;
                 } else {
                     alert('Silakan pilih tempat dan kebaktian!');
                 }
             });
         });
+
+        function deleteKebaktian(element) {
+            var row = element.closest('tr');
+            row.remove();
+        }
+
+        function addKebaktian() {
+            var table = document.getElementById('kebaktian-table');
+            var newKebaktian = document.getElementById('new-kebaktian').value;
+            if (newKebaktian) {
+                var newRow = document.createElement('tr');
+                newRow.innerHTML = `
+                    <td><input type="text" class="form-control" value="${newKebaktian}" required></td>
+                    <td><button class="action-icon" onclick="deleteKebaktian(this)">delete</button></td>
+                `;
+                table.insertBefore(newRow, table.lastElementChild);
+                document.getElementById('new-kebaktian').value = '';
+            }
+        }
+
+        function deleteTempat(element) {
+            var row = element.closest('tr');
+            row.remove();
+        }
+
+        function addTempat() {
+            var table = document.getElementById('tempat-table');
+            var newTempat = document.getElementById('new-tempat').value;
+            var newAlamat = document.getElementById('new-alamat').value;
+            if (newTempat && newAlamat) {
+                var newRow = document.createElement('tr');
+                newRow.innerHTML = `
+                    <td><input type="text" class="form-control" value="${newTempat}" required></td>
+                    <td>${newAlamat}</td>
+                    <td><button class="action-icon" onclick="deleteTempat(this)">delete</button></td>
+                `;
+                table.insertBefore(newRow, table.lastElementChild);
+                document.getElementById('new-tempat').value = '';
+                document.getElementById('new-alamat').value = '';
+            }
+        }
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 
 </html>

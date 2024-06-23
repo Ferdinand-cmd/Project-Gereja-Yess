@@ -110,9 +110,55 @@ Route::middleware([\App\Http\Middleware\EnsureUserIsAdmin::class])->group(functi
         return view('penjadwalan-yess-kebutuhan-admin');
     });
     
+    Route::get('/analisis-admin', function () {
+        return view('analisis-admin');
+    });
+    Route::get('/list-pendeta', function () {
+        return view('list-pendeta');
+    });
+    Route::get('/list-jemaat', function () {
+        return view('list-jemaat');
+    });
 });
 
 
+// jangan lupa hapus ini
+Route::get('/analisis-admin', function () {
+    return view('analisis-admin');
+});
+Route::get('/penjadwalan-admin', function () {
+    return view('penjadwalan-admin');
+});
+Route::get('/penjadwalan-night-admin', function () {
+    return view('penjadwalan-night-admin');
+});
+
+Route::get('/penjadwalan-night-kebutuhan-admin', function () {
+    return view('penjadwalan-night-kebutuhan-admin');
+});
+
+Route::get('/penjadwalan-umum-admin', function () {
+    return view('penjadwalan-umum-admin');
+});
+
+Route::get('/penjadwalan-umum-kebutuhan-admin', function () {
+    return view('penjadwalan-umum-kebutuhan-admin');
+});
+
+Route::get('/penjadwalan-yess-admin', function () {
+    return view('penjadwalan-yess-admin');
+});
+
+Route::get('/penjadwalan-yess-kebutuhan-admin', function () {
+    return view('penjadwalan-yess-kebutuhan-admin');
+});
+Route::get('/list-pendeta', function () {
+    return view('list-pendeta');
+});
+Route::get('/list-jemaat', function () {
+    return view('list-jemaat');
+});
+//
 
 Route::get('/profile', function () {
     return view('profile');
@@ -150,6 +196,8 @@ Route::get('/jadwal-ibadah', function () {
 Route::get('/home-2', function () {
     return view('home-2');
 });
+
+
 
 
 
