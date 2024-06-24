@@ -8,6 +8,8 @@ use App\Http\Controllers\AdminPelayananController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\PickupPointController;
 use App\Http\Controllers\PendetaController;
+use App\Http\Controllers\KebaktianController;
+
 
 Route::get('/', function () {
     return view('home');
@@ -230,3 +232,7 @@ Route::post('/bareng/cancel-booking/{id}', [PickupPointController::class, 'cance
 
 Route::get('/admin', [PendetaController::class, 'index'])->name('admin.pendetas');
 Route::post('/admin', [PendetaController::class, 'store'])->name('admin.pendetas.store');
+
+Route::get('/penjadwalan-admin', [KebaktianController::class, 'index'])->name('penjadwalan-admin');
+Route::post('/penjadwalan-admin', [KebaktianController::class, 'store'])->name('penjadwalan-admin.store');
+Route::delete('/penjadwalan-admin/{id}', [KebaktianController::class, 'destroy'])->name('penjadwalan-admin.destroy');
