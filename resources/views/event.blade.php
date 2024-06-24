@@ -214,6 +214,7 @@
         .event-type {
             font-weight: bold;
             width: fit-content;
+            margin: 5px 0;
             padding: 0 10px;
             font-size: 1.11em;
             color: #fff;
@@ -394,6 +395,14 @@
             /* Maintain aspect ratio */
         }
 
+        .modal-bayar .modal-body > .img-responsive {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 80%;
+            height: auto;
+        }
+
         .modal-footer {
             background-color: #a2a2a2;
         }
@@ -568,8 +577,8 @@
             Event subheader content that will be replaced by the js method
         </div>
 
-
-        <!-- Modal -->
+        <!-- Modals -->
+        <!-- Modal daftar -->
         <?php foreach ($events as $event): ?>
         <div class="modal fade" id="formModal<?php echo $event['id']; ?>" tabindex="-1"
             aria-labelledby="formModalLabel<?php echo $event['id']; ?>" aria-hidden="true">
@@ -621,6 +630,24 @@
         </div>
         <?php endforeach; ?>
 
+        <!-- Modal bayar -->
+        <div class="modal fade modal-bayar" id="bayarModal" tabindex="-1"
+            aria-labelledby="bayarModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered modal-custom-width">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title modal-event-title" id="bayarModalLabel">
+                            BAYAR
+                        </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Your form content goes here -->
+                        <img class="img-responsive" src="img/qris.jpg" alt="QRIS">
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- Events -->
         <div class="events-container">
@@ -631,6 +658,7 @@
                     <div class="event-details">
                         <div class="event-title">{{ $event->title }}</div>
                         <div class="event-type">{{ $event->type }}</div>
+                        <div class="event-type">Rp40.000</div>
                         <div class="event-date">
                             {{ $event->location }} |
                             {{ $event->start_date }}{{ isset($event->start_time) ? ' ' . $event->start_time : '' }} -

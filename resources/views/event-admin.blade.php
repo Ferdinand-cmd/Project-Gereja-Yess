@@ -501,6 +501,7 @@
         .event-type {
             font-weight: bold;
             width: fit-content;
+            margin: 5px 0;
             padding: 0 10px;
             font-size: 1.11em;
             color: #fff;
@@ -644,6 +645,7 @@
                     <div class="event-details">
                         <div class="event-title">{{ $event->title }}</div>
                         <div class="event-type">{{ $event->type }}</div>
+                        <div class="event-type">Rp40.000</div>
                         <div class="event-info">
                             {{ $event->location }} | {{ $event->start_date }} {{ $event->start_time }} -
                             {{ $event->end_date }} {{ $event->end_time }}
@@ -691,6 +693,10 @@
                     <div class="mb-3">
                         <label for="aTempat" class="form-label">Tempat</label>
                         <input type="text" class="form-control" id="aTempat" name="aTempat" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="aBiaya" class="form-label">Biaya</label>
+                        <input type="number" class="form-control" id="aBiaya" name="aBiaya" min="0" required>
                     </div>
                     <div class="mb-3">
                         <div class="row">
@@ -774,6 +780,11 @@
                         <label for="eTempat<?php echo $event['id']; ?>" class="form-label">Tempat</label>
                         <input type="text" class="form-control" id="eTempat<?php echo $event['id']; ?>"
                             name="eTempat<?php echo $event['id']; ?>" value="<?php echo $event['location']; ?>" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="eBiaya<?php echo $event['id']; ?>" class="form-label">Biaya</label>
+                        <input type="text" class="form-control" id="eBiaya<?php echo $event['id']; ?>"
+                            name="eBiaya<?php echo $event['id']; ?>" value="40000" required>
                     </div>
                     <div class="mb-3">
                         <div class="row">
