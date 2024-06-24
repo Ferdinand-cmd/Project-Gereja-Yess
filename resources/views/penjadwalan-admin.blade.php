@@ -208,30 +208,15 @@
                             </tr>
                         </thead>
                         <tbody id="tempat-table">
-                            <!-- Isi tempat yang sudah ada -->
+                            @foreach($tempats as $tempat)
                             <tr>
+                                <td contenteditable="true" data-id="{{ $tempat->id }}" class="editable-field">{{ $tempat->tempat }}</td>
+                                <td contenteditable="true" data-id="{{ $tempat->id }}" class="editable-field">{{ $tempat->alamat }}</td>
                                 <td>
-                                    <input type="text" class="form-control" id="ciputra-world" name="ciputra-world" value="Ciputra World" required>
-                                </td>
-                                <td>Jl. Siwalankerto 121-131</td>
-                                <td>
-                                    <button class="action-icon" onclick="deleteTempat(this)">delete</button>
+                                    <button type="button" class="action-icon" onclick="deleteTempat(this)">delete</button>
                                 </td>
                             </tr>
-                            <tr>
-                                <td><input type="text" class="form-control" id="pondok-candra" name="pondok-candra" value="Pondok Candra" required></td>
-                                <td>Jl. Siwalankerto 121-131</td>
-                                <td>
-                                    <button class="action-icon" onclick="deleteTempat(this)">delete</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><input type="text" class="form-control" id="dafam" name="dafam" value="Dafam" required></td>
-                                <td>Jl. Siwalankerto 121-131</td>
-                                <td>
-                                    <button class="action-icon" onclick="deleteTempat(this)">delete</button>
-                                </td>
-                            </tr>
+                            @endforeach
                             <!-- Baris untuk menambah tempat baru -->
                             <tr id="newTempatRow">
                                 <td>
@@ -246,6 +231,7 @@
                             </tr>
                         </tbody>
                     </table>
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary btn-cancel" data-bs-dismiss="modal">CANCEL</button>
@@ -280,10 +266,15 @@
                             </div>  
                         </div>
                         <div class="col">
-                            <label for="lokasi" class="form-label">Lokasi</label>
+                            <label for="tempat" class="form-label">Tempat</label>
                             <div class="mb-3">
-                                <input type="text" class="form-control" id="lokasi">
-                            </div>
+                                <select class="form-select" id="tempat">
+                                    <option value="" selected disabled>Pilih tempat</option>
+                                    @foreach($tempats as $tempat)
+                                        <option value="{{ $tempat->id }}">{{ $tempat->tempat }}</option>
+                                    @endforeach
+                                </select>
+                            </div> 
                         </div>
                         <div class="col">
                             <label for="tema" class="form-label">Tema</label>
@@ -509,12 +500,86 @@
 
             // Tandai untuk dihapus dari database dengan menyimpan ID
             row.classList.add('to-delete');
+
+            // Jika ada id, hapus dari database
+            if (id) {
+                $.ajax({
+                    url: '/penjadwalan-admin/' + id,
+                    type: 'DELETE',
+                    data: {
+                        _token: '{{ csrf_token() }}'
+                    },
+                    success: function(result) {
+                        console.log('Deleted:', result);
+                    },
+                    error: function(error) {
+                        console.error('Error:', error);
+                    }
+                });
+            }
+        }
+
+        // Fungsi untuk menambah tempat baru
+        function addTempat() {
+            // Ambil nilai dari input field
+            var newTempat = document.getElementById('new-tempat').value;
+            var newAlamat = document.getElementById('new-alamat').value;
+
+            // Validasi input kosong
+            if (newTempat === '' || newAlamat === '') {
+                return; // Jika input kosong, tidak menambahkan baris baru
+            }
+
+            // Buat baris HTML baru
+            var newRow = '<tr>' +
+                '<td contenteditable="true" class="editable-field">' + newTempat + '</td>' +
+                '<td contenteditable="true" class="editable-field">' + newAlamat + '</td>' +
+                '<td><button type="button" class="action-icon" onclick="deleteTempat(this)">delete</button></td>' +
+                '</tr>';
+
+            // Insert baris baru di atas baris terakhir (baris form)
+            var lastRowIndex = document.getElementById('newTempatRow').rowIndex;
+            document.getElementById('tempat-table').insertRow(lastRowIndex - 1).innerHTML = newRow;
+
+            // Kosongkan input field setelah ditambahkan
+            document.getElementById('new-tempat').value = '';
+            document.getElementById('new-alamat').value = '';
+        }
+
+        // Fungsi untuk menandai baris tempat untuk dihapus
+        function deleteTempat(button) {
+            var row = button.parentNode.parentNode;
+            var id = row.querySelector('.editable-field').dataset.id;
+
+            // Hapus baris dari tampilan (front-end)
+            row.style.display = 'none';
+
+            // Tandai untuk dihapus dari database dengan menyimpan ID
+            row.classList.add('to-delete');
+
+            // Jika ada id, hapus dari database
+            if (id) {
+                $.ajax({
+                    url: '/penjadwalan-admin/' + id,
+                    type: 'DELETE',
+                    data: {
+                        _token: '{{ csrf_token() }}'
+                    },
+                    success: function(result) {
+                        console.log('Deleted:', result);
+                    },
+                    error: function(error) {
+                        console.error('Error:', error);
+                    }
+                });
+            }
         }
 
         function saveState() {
             var kebaktians = [];
             var tempats = [];
-            var toDelete = [];
+            var toDeleteKebaktian = [];
+            var toDeleteTempat = [];
 
             // Ambil semua baris kebaktian dari tabel kecuali baris terakhir (newRow)
             $('#kebaktian-table tr').not('#newRow').each(function() {
@@ -527,10 +592,11 @@
 
             // Ambil semua baris tempat dari tabel kecuali baris terakhir (newTempatRow)
             $('#tempat-table tr').not('#newTempatRow').each(function() {
-                var tempat = $(this).find('td:nth-child(1)').text().trim();
-                var alamat = $(this).find('td:nth-child(2)').text().trim();
+                var tempat = $(this).find('.editable-field').eq(0).text().trim();
+                var alamat = $(this).find('.editable-field').eq(1).text().trim();
+                var id = $(this).find('.editable-field').data('id');
                 if (tempat && alamat) {
-                    tempats.push({ tempat: tempat, alamat: alamat });
+                    tempats.push({ id: id, tempat: tempat, alamat: alamat });
                 }
             });
 
@@ -538,13 +604,22 @@
             $('#kebaktian-table tr.to-delete').each(function() {
                 var id = $(this).find('.editable-field').data('id');
                 if (id) {
-                    toDelete.push(id);
+                    toDeleteKebaktian.push(id);
+                }
+            });
+
+            // Ambil semua baris yang ditandai untuk dihapus dari tempat
+            $('#tempat-table tr.to-delete').each(function() {
+                var id = $(this).find('.editable-field').data('id');
+                if (id) {
+                    toDeleteTempat.push(id);
                 }
             });
 
             console.log("Kebaktians data:", kebaktians);
             console.log("Tempats data:", tempats);
-            console.log("To delete IDs:", toDelete);
+            console.log("To delete Kebaktians IDs:", toDeleteKebaktian);
+            console.log("To delete Tempats IDs:", toDeleteTempat);
 
             // Kirim data ke server via AJAX untuk menyimpan ke basis data
             $.ajax({
@@ -552,11 +627,18 @@
                 method: 'POST',
                 contentType: 'application/json',
                 dataType: 'json',
-                data: JSON.stringify({ kebaktians: kebaktians, tempats: tempats, toDelete: toDelete, _token: '{{ csrf_token() }}' }),
+                data: JSON.stringify({ 
+                    kebaktians: kebaktians, 
+                    tempats: tempats,
+                    toDeleteKebaktian: toDeleteKebaktian, 
+                    toDeleteTempat: toDeleteTempat, 
+                    _token: '{{ csrf_token() }}' 
+                }),
                 success: function(response) {
                     console.log('Success:', response);
                     // Hapus baris yang ditandai setelah data disimpan
                     $('#kebaktian-table').find('.to-delete').remove();
+                    $('#tempat-table').find('.to-delete').remove();
                     // Tutup modal jika diperlukan
                     $('#aturModal').modal('hide');
                     // Tetap refresh halaman setelah perubahan berhasil
@@ -569,6 +651,8 @@
                 }
             });
         }
+
+
     </script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

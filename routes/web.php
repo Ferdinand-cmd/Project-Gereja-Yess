@@ -236,3 +236,6 @@ Route::post('/admin', [PendetaController::class, 'store'])->name('admin.pendetas
 Route::get('/penjadwalan-admin', [KebaktianController::class, 'index'])->name('penjadwalan-admin');
 Route::post('/penjadwalan-admin', [KebaktianController::class, 'store'])->name('penjadwalan-admin.store');
 Route::delete('/penjadwalan-admin/{id}', [KebaktianController::class, 'destroy'])->name('penjadwalan-admin.destroy');
+
+Route::post('/penjadwalan-admin/store', [KebaktianController::class, 'store'])->name('penjadwalan-admin.store');
+Route::delete('/penjadwalan-admin/destroy/{id}', [KebaktianController::class, 'destroy'])->name('penjadwalan-admin.destroy');

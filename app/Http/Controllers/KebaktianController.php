@@ -1,8 +1,8 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use App\Models\Kebaktian;
+use App\Models\Tempat;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -11,7 +11,8 @@ class KebaktianController extends Controller
     public function index()
     {
         $kebaktians = Kebaktian::all();
-        return view('penjadwalan-admin', compact('kebaktians'));
+        $tempats = Tempat::all();
+        return view('penjadwalan-admin', compact('kebaktians', 'tempats'));
     }
 
     public function store(Request $request)
@@ -20,34 +21,48 @@ class KebaktianController extends Controller
             'kebaktians' => 'required|array',
             'kebaktians.*.jenis' => 'required|string|max:255',
             'kebaktians.*.id' => 'nullable|integer|exists:kebaktians,id',
-            'toDelete' => 'nullable|array',
-            'toDelete.*' => 'integer|exists:kebaktians,id',
+            'tempats' => 'required|array',
+            'tempats.*.tempat' => 'required|string|max:255',
+            'tempats.*.alamat' => 'required|string|max:255',
+            'tempats.*.id' => 'nullable|integer|exists:tempats,id',
+            'toDeleteKebaktian' => 'nullable|array',
+            'toDeleteKebaktian.*' => 'integer|exists:kebaktians,id',
+            'toDeleteTempat' => 'nullable|array',
+            'toDeleteTempat.*' => 'integer|exists:tempats,id',
         ]);
-    
-        // Handle updates and new entries
+
+        // Handle Kebaktian updates and new entries
         foreach ($request->kebaktians as $kebaktianData) {
             if (isset($kebaktianData['id'])) {
-                // Update existing kebaktian
                 $kebaktian = Kebaktian::find($kebaktianData['id']);
                 $kebaktian->update(['jenis' => $kebaktianData['jenis']]);
             } else {
-                // Check if the kebaktian already exists
-                $existingKebaktian = Kebaktian::where('jenis', $kebaktianData['jenis'])->first();
-                if (!$existingKebaktian) {
-                    // Create new kebaktian
-                    Kebaktian::create(['jenis' => $kebaktianData['jenis']]);
-                }
+                Kebaktian::create(['jenis' => $kebaktianData['jenis']]);
             }
         }
-    
-        // Handle deletions
-        if ($request->filled('toDelete')) {
-            Kebaktian::whereIn('id', $request->toDelete)->delete();
+
+        // Handle Tempat updates and new entries
+        foreach ($request->tempats as $tempatData) {
+            if (isset($tempatData['id'])) {
+                $tempat = Tempat::find($tempatData['id']);
+                $tempat->update(['tempat' => $tempatData['tempat'], 'alamat' => $tempatData['alamat']]);
+            } else {
+                Tempat::create(['tempat' => $tempatData['tempat'], 'alamat' => $tempatData['alamat']]);
+            }
         }
 
-        
+        // Handle Kebaktian deletions
+        if ($request->filled('toDeleteKebaktian')) {
+            Kebaktian::whereIn('id', $request->toDeleteKebaktian)->delete();
+        }
+
+        // Handle Tempat deletions
+        if ($request->filled('toDeleteTempat')) {
+            Tempat::whereIn('id', $request->toDeleteTempat)->delete();
+        }
+
         return response()->json(['success' => true]);
-    }    
+    }
 
     public function destroy($id)
     {
@@ -61,3 +76,4 @@ class KebaktianController extends Controller
         }
     }
 }
+
