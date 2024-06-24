@@ -302,7 +302,10 @@
                             <div class="mb-3">
                                 <select class="form-select" id="pembicara">
                                     <option value="" selected disabled>Pilih pembicara</option>
-                                    <!-- Add options for pembicara here -->
+                                    <!-- Loop through pendeta data -->
+                                    @foreach($pendetas as $pendeta)
+                                        <option value="{{ $pendeta->id }}">{{ $pendeta->name }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>

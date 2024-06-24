@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Kebaktian;
 use App\Models\Tempat;
+use App\Models\Pendeta;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
@@ -13,7 +14,8 @@ class KebaktianController extends Controller
     {
         $kebaktians = Kebaktian::all();
         $tempats = Tempat::all();
-        return view('penjadwalan-admin', compact('kebaktians', 'tempats'));
+        $pendetas = Pendeta::all();
+        return view('penjadwalan-admin', compact('kebaktians', 'tempats','pendetas'));
     }
 
     public function store(Request $request)
