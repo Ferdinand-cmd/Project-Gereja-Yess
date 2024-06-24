@@ -220,13 +220,16 @@
                             <!-- Baris untuk menambah tempat baru -->
                             <tr id="newTempatRow">
                                 <td>
-                                    <input type="text" class="form-control" id="new-tempat" name="new-tempat" placeholder="Tambah tempat baru" required>
+                                    <form id="addTempatForm" onsubmit="addTempat(event)">
+                                        @csrf
+                                        <input type="text" class="form-control" id="new-tempat" name="new-tempat" placeholder="Tambah tempat baru" required>
                                 </td>
                                 <td>
                                     <input type="text" class="form-control" id="new-alamat" name="new-alamat" placeholder="Tambah alamat baru" required>
                                 </td>
                                 <td>
-                                    <button type="button" class="action-icon" onclick="addTempat()">add</button>
+                                    <button type="submit" class="action-icon">add</button>
+                                    </form>
                                 </td>
                             </tr>
                         </tbody>
@@ -519,31 +522,51 @@
             }
         }
 
-        // Fungsi untuk menambah tempat baru
-        function addTempat() {
-            // Ambil nilai dari input field
+        function addTempat(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Get the values from the input fields
             var newTempat = document.getElementById('new-tempat').value;
             var newAlamat = document.getElementById('new-alamat').value;
 
-            // Validasi input kosong
             if (newTempat === '' || newAlamat === '') {
-                return; // Jika input kosong, tidak menambahkan baris baru
+                return; // Do not add empty input
             }
 
-            // Buat baris HTML baru
-            var newRow = '<tr>' +
-                '<td contenteditable="true" class="editable-field">' + newTempat + '</td>' +
-                '<td contenteditable="true" class="editable-field">' + newAlamat + '</td>' +
-                '<td><button type="button" class="action-icon" onclick="deleteTempat(this)">delete</button></td>' +
-                '</tr>';
+            // Prepare the data to be sent
+            var data = {
+                _token: '{{ csrf_token() }}',
+                tempat: newTempat,
+                alamat: newAlamat
+            };
 
-            // Insert baris baru di atas baris terakhir (baris form)
-            var lastRowIndex = document.getElementById('newTempatRow').rowIndex;
-            document.getElementById('tempat-table').insertRow(lastRowIndex - 1).innerHTML = newRow;
+            console.log('Data to be sent:', data); // Log the data
 
-            // Kosongkan input field setelah ditambahkan
-            document.getElementById('new-tempat').value = '';
-            document.getElementById('new-alamat').value = '';
+            // Send the data to the server using AJAX
+            $.ajax({
+                url: '{{ route('penjadwalan-admin.store') }}',
+                method: 'POST',
+                data: JSON.stringify(data),
+                contentType: 'application/json',
+                success: function(response) {
+                    console.log('Response from server:', response); // Log the response
+                    // Create new row HTML
+                    var newRow = '<tr><td contenteditable="true" class="editable-field">' + newTempat + '</td>' +
+                                '<td contenteditable="true" class="editable-field">' + newAlamat + '</td>' +
+                                '<td><button type="button" class="action-icon" onclick="deleteTempat(this)">delete</button></td></tr>';
+
+                    // Insert new row above the last row (above the form row)
+                    var lastRowIndex = document.getElementById('newTempatRow').rowIndex;
+                    document.getElementById('tempat-table').insertRow(lastRowIndex - 1).innerHTML = newRow;
+
+                    // Clear the input fields after adding
+                    document.getElementById('new-tempat').value = '';
+                    document.getElementById('new-alamat').value = '';
+                },
+                error: function(error) {
+                    console.error('Error:', error);
+                }
+            });
         }
 
         // Fungsi untuk menandai baris tempat untuk dihapus
