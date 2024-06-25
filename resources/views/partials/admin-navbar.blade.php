@@ -15,7 +15,8 @@
                     <a class="nav-link {{ Request::is('event-admin') ? 'active' : '' }}" href="/event-admin">Event</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ Request::is('penjadwalan-admin') ? 'active' : '' }}" href="/penjadwalan-admin">Penjadwalan</a>
+                    <a class="nav-link {{ Request::is('penjadwalan-admin') ? 'active' : '' }}"
+                        href="/penjadwalan-admin">Penjadwalan</a>
                 </li>
                 <li class="nav-item dropdown {{ Request::is('list-jemaat', 'list-pendeta') ? 'active' : '' }}">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button"
@@ -23,7 +24,7 @@
                         Database
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
-                    <li class="nav-item">
+                        <li class="nav-item">
                             <a class="nav-link" href="/list-pendeta">List Pendeta</a>
                         </li>
                         <li class="nav-item">
@@ -43,16 +44,20 @@
                     </ul>
                 </li> -->
                 <li class="nav-item">
-                    <a class="nav-link {{ Request::is('komsel-admin') ? 'active' : '' }}" href="/komsel-admin">KomSel</a>
+                    <a class="nav-link {{ Request::is('komsel-admin') ? 'active' : '' }}"
+                        href="/komsel-admin">KomSel</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ Request::is('bareng-admin') ? 'active' : '' }}" href="/bareng-admin">Bareng</a>
+                    <a class="nav-link {{ Request::is('bareng-admin') ? 'active' : '' }}"
+                        href="/bareng-admin">Bareng</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ Request::is('daftar-pelayanan-admin') ? 'active' : '' }}" href="/daftar-pelayanan-admin">Daftar Pelayanan</a>
+                    <a class="nav-link {{ Request::is('daftar-pelayanan-admin') ? 'active' : '' }}"
+                        href="/pelayanan-admin">Daftar Pelayanan</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ Request::is('analisis-admin') ? 'active' : '' }}" href="/analisis-admin">Analisis</a>
+                    <a class="nav-link {{ Request::is('analisis-admin') ? 'active' : '' }}"
+                        href="/analisis-admin">Analisis</a>
                 </li>
             </ul>
         </div>
@@ -60,13 +65,14 @@
             <ul class="navbar-nav">
                 @auth
                     <li class="nav-item dropdown" style="margin-right: 20px;">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #f5f5f5;">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false" style="color: #f5f5f5;">
                             Welcome, {{ auth()->user()->name }}
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <li><a class="dropdown-item" href="/profile" style="color: #000;">Profile</a></li>
                             @if (auth()->user()->is_admin)
-                                <li><a class="dropdown-item" href="/admin" style="color: #000;">Admin Dashboard</a></li>
+                                <li><a class="dropdown-item" href="/" style="color: #000;">User Dashboard</a></li>
                             @endif
                             <li>
                                 <form action="/logout" method="POST">
@@ -78,7 +84,8 @@
                     </li>
                 @else
                     <li class="nav-item">
-                        <a class="nav-link login-link-border" href="/login" style="color: #f5f5f5; border: 1px solid #fff; border-radius: 5px; padding: 8px 20px;">Login</a>
+                        <a class="nav-link login-link-border" href="/login"
+                            style="color: #f5f5f5; border: 1px solid #fff; border-radius: 5px; padding: 8px 20px;">Login</a>
                     </li>
                 @endauth
             </ul>
