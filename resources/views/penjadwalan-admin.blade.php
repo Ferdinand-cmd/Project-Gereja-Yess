@@ -361,118 +361,117 @@
                                     <tr>
                                         <td class="text-center align-middle">Pemain Musik - Piano</td>
                                         <td class="text-center align-middle">
-                                            <button type="button" class="btn btn-primary btn-ok">Generate</button>
-                                        </td>                                    </tr>
+                                            <button type="button" class="btn btn-primary btn-generate" data-role="piano">Generate</button>
+                                        </td>
+                                    </tr>
                                     <tr>
                                         <td class="text-center align-middle">Pemain Musik - Drum</td>
                                         <td class="text-center align-middle">
-                                            <button type="button" class="btn btn-primary btn-ok">Generate</button>
-                                        </td>                                    </tr>
+                                            <button type="button" class="btn btn-primary btn-generate" data-role="drum">Generate</button>
+                                        </td>
+                                    </tr>
                                     <tr>
                                         <td class="text-center align-middle">Worship Leader</td>
                                         <td class="text-center align-middle">
-                                            <button type="button" class="btn btn-primary btn-ok">Generate</button>
-                                        </td>                                    </tr>
+                                            <button type="button" class="btn btn-primary btn-generate" data-role="worship-leader">Generate</button>
+                                        </td>
+                                    </tr>
                                     <tr>
-                                        <td class="text-center align-middle"></td>
+                                        <td class="text-center align-middle">Worship Leader</td>
                                         <td class="text-center align-middle">
-                                            <button type="button" class="btn btn-primary btn-ok">Generate</button>
-                                        </td>                                    </tr>
+                                            <button type="button" class="btn btn-primary btn-generate" data-role="worship-leader">Generate</button>
+                                        </td>
+                                    </tr>
                                     <tr>
                                         <td class="text-center align-middle">Singer</td>
                                         <td class="text-center align-middle">
-                                            <button type="button" class="btn btn-primary btn-ok">Generate</button>
-                                        </td>                                    </tr>
+                                            <button type="button" class="btn btn-primary btn-generate" data-role="singer">Generate</button>
+                                        </td>
+                                    </tr>
                                     <tr>
-                                        <td class="text-center align-middle"></td>
+                                        <td class="text-center align-middle">Singer</td>
                                         <td class="text-center align-middle">
-                                            <button type="button" class="btn btn-primary btn-ok">Generate</button>
-                                        </td>                                    </tr>
+                                            <button type="button" class="btn btn-primary btn-generate" data-role="singer">Generate</button>
+                                        </td>
+                                    </tr>
                                     <tr>
-                                        <td class="text-center align-middle"></td>
+                                        <td class="text-center align-middle">Singer</td>
                                         <td class="text-center align-middle">
-                                            <button type="button" class="btn btn-primary btn-ok">Generate</button>
-                                        </td>                                    </tr>
+                                            <button type="button" class="btn btn-primary btn-generate" data-role="singer">Generate</button>
+                                        </td>
+                                    </tr>
                                     <tr>
                                         <td class="text-center align-middle">Kameramen</td>
                                         <td class="text-center align-middle">
-                                            <button type="button" class="btn btn-primary btn-ok">Generate</button>
-                                        </td>                                    </tr>
+                                            <button type="button" class="btn btn-primary btn-generate" data-role="kameramen">Generate</button>
+                                        </td>
+                                    </tr>
                                     <tr>
-                                        <td class="text-center align-middle"></td>
+                                        <td class="text-center align-middle">Kameramen</td>
                                         <td class="text-center align-middle">
-                                            <button type="button" class="btn btn-primary btn-ok">Generate</button>
-                                        </td>                                    </tr>
+                                            <button type="button" class="btn btn-primary btn-generate" data-role="kameramen">Generate</button>
+                                        </td>
+                                    </tr>
                                     <tr>
-                                        <td class="text-center align-middle"></td>
+                                        <td class="text-center align-middle">Kameramen</td>
                                         <td class="text-center align-middle">
-                                            <button type="button" class="btn btn-primary btn-ok">Generate</button>
-                                        </td>                                    </tr>
+                                            <button type="button" class="btn btn-primary btn-generate" data-role="kameramen">Generate</button>
+                                        </td>
+                                    </tr>
                                     <tr>
                                         <td class="text-center align-middle">Multimedia</td>
                                         <td class="text-center align-middle">
-                                            <button type="button" class="btn btn-primary btn-ok">Generate</button>
-                                        </td>                                    </tr>
+                                            <button type="button" class="btn btn-primary btn-generate" data-role="multimedia">Generate</button>
+                                        </td>
+                                    </tr>
                                     <tr>
-                                        <td class="text-center align-middle"></td>
+                                        <td class="text-center align-middle">Multimedia</td>
                                         <td class="text-center align-middle">
-                                            <button type="button" class="btn btn-primary btn-ok">Generate</button>
-                                        </td>                                    </tr>
+                                            <button type="button" class="btn btn-primary btn-generate" data-role="multimedia">Generate</button>
+                                        </td>
+                                    </tr>
                                     <tr>
                                         <td class="text-center align-middle">Usher</td>
                                         <td class="text-center align-middle">
-                                            <button type="button" class="btn btn-primary btn-ok">Generate</button>
-                                        </td>                                    </tr>
+                                            <button type="button" class="btn btn-primary btn-generate" data-role="usher">Generate</button>
+                                        </td>
+                                    </tr>
                                     <tr>
-                                        <td class="text-center align-middle"></td>
+                                        <td class="text-center align-middle">Usher</td>
                                         <td class="text-center align-middle">
-                                            <button type="button" class="btn btn-primary btn-ok">Generate</button>
-                                        </td>                                    </tr>
+                                            <button type="button" class="btn btn-primary btn-generate" data-role="usher">Generate</button>
+                                        </td>
+                                    </tr>
                                     <tr>
-                                        <td class="text-center align-middle"></td>
+                                        <td class="text-center align-middle">Usher</td>
                                         <td class="text-center align-middle">
-                                            <button type="button" class="btn btn-primary btn-ok">Generate</button>
-                                        </td>                                    </tr>
+                                            <button type="button" class="btn btn-primary btn-generate" data-role="usher">Generate</button>
+                                        </td>
+                                    </tr>
                                     <tr>
-                                        <td class="text-center align-middle"></td>
+                                        <td class="text-center align-middle">Usher</td>
                                         <td class="text-center align-middle">
-                                            <button type="button" class="btn btn-primary btn-ok">Generate</button>
-                                        </td>                                    </tr>
+                                            <button type="button" class="btn btn-primary btn-generate" data-role="usher">Generate</button>
+                                        </td>
+                                    </tr>
                                     <tr>
-                                        <td class="text-center align-middle"></td>
+                                        <td class="text-center align-middle">Usher</td>
                                         <td class="text-center align-middle">
-                                            <button type="button" class="btn btn-primary btn-ok">Generate</button>
-                                        </td>                                    </tr>
+                                            <button type="button" class="btn btn-primary btn-generate" data-role="usher">Generate</button>
+                                        </td>
+                                    </tr>
                                     <tr>
-                                        <td class="text-center align-middle"></td>
+                                        <td class="text-center align-middle">Usher</td>
                                         <td class="text-center align-middle">
-                                            <button type="button" class="btn btn-primary btn-ok">Generate</button>
-                                        </td>                                    </tr>
+                                            <button type="button" class="btn btn-primary btn-generate" data-role="usher">Generate</button>
+                                        </td>
+                                    </tr>
                                     <tr>
-                                        <td class="text-center align-middle"></td>
+                                        <td class="text-center align-middle">Usher</td>
                                         <td class="text-center align-middle">
-                                            <button type="button" class="btn btn-primary btn-ok">Generate</button>
-                                        </td>                                    </tr>
-                                    <tr>
-                                        <td class="text-center align-middle"></td>
-                                        <td class="text-center align-middle">
-                                            <button type="button" class="btn btn-primary btn-ok">Generate</button>
-                                        </td>                                    </tr>
-                                    <tr>
-                                        <td class="text-center align-middle"></td>
-                                        <td class="text-center align-middle">
-                                            <button type="button" class="btn btn-primary btn-ok">Generate</button>
-                                        </td>                                    </tr>
-                                    <tr>
-                                        <td class="text-center align-middle"></td>
-                                        <td class="text-center align-middle">
-                                            <button type="button" class="btn btn-primary btn-ok">Generate</button>
-                                        </td>                                    </tr>
-                                    <tr>
-                                        <td class="text-center align-middle"></td>
-                                        <td class="text-center align-middle">
-                                            <button type="button" class="btn btn-primary btn-ok">Generate</button>
-                                        </td>                                    </tr>
+                                            <button type="button" class="btn btn-primary btn-generate" data-role="usher">Generate</button>
+                                        </td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
