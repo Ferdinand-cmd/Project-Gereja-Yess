@@ -675,10 +675,6 @@
                             <option value="sunday school">Sunday School</option>
                             <option value="yess">YESS</option>
                         </select>
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" id="registrationSwitch">
-                            <label class="form-check-label" for="registrationSwitch">Aktifkan Form Pendaftaran</label>
-                        </div>
                     </div>
                 </div>
                 <div class="modal-body">
@@ -759,10 +755,6 @@
                             <option value="sunday school" <?php echo $event['type'] === 'sunday school' ? 'selected' : ''; ?>>Sunday School</option>
                             <option value="yess" <?php echo $event['type'] === 'yess' ? 'selected' : ''; ?>>YESS</option>
                         </select>
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" id="registrationSwitch">
-                            <label class="form-check-label" for="registrationSwitch">Aktifkan Form Pendaftaran</label>
-                        </div>
                     </div>
                 </div>
                 <div class="modal-body">
@@ -994,28 +986,6 @@
                 }
             });
         }
-
-
-        // JavaScript code for handling the switch state and text change
-        document.addEventListener('DOMContentLoaded', function() {
-            // Get the switch element
-            var registrationSwitch = document.getElementById('registrationSwitch');
-
-            // Add event listener for switch change
-            registrationSwitch.addEventListener('change', function() {
-                // Get the label element
-                var switchLabel = document.querySelector('label[for="registrationSwitch"]');
-
-                // Check the switch state
-                if (registrationSwitch.checked) {
-                    // If switch is on, change label text to "Form Pendaftaran Aktif"
-                    switchLabel.textContent = 'Form Pendaftaran Aktif';
-                } else {
-                    // If switch is off, change label text to "Aktifkan Form Pendaftaran"
-                    switchLabel.textContent = 'Aktifkan Form Pendaftaran';
-                }
-            });
-        });
 
         // Function to handle the click of save button on the add modal
         function addEvent() {
