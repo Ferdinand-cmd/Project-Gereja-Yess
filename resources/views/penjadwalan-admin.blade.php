@@ -373,13 +373,13 @@
                                     <tr>
                                         <td class="text-center align-middle">Worship Leader</td>
                                         <td class="text-center align-middle">
-                                            <button type="button" class="btn btn-primary btn-generate" data-role="worship-leader">Generate</button>
+                                            <button type="button" class="btn btn-primary btn-generate" data-role="worship leader">Generate</button>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td class="text-center align-middle">Worship Leader</td>
                                         <td class="text-center align-middle">
-                                            <button type="button" class="btn btn-primary btn-generate" data-role="worship-leader">Generate</button>
+                                            <button type="button" class="btn btn-primary btn-generate" data-role="worship leader">Generate</button>
                                         </td>
                                     </tr>
                                     <tr>
@@ -482,9 +482,26 @@
                         </div>
                     </div>
                 </section>
+                <!-- Card untuk menampilkan data terpilih -->
+                <section class="card mt-4" id="selected-data-card" style="display: none;">
+                    <div class="card-header">
+                        Data yang Dipilih
+                    </div>
+                    <div class="card-body">
+                        <p><strong>Kebaktian:</strong> <span id="selected-kebaktian"></span></p>
+                        <p><strong>Tempat:</strong> <span id="selected-tempat"></span></p>
+                        <p><strong>Tema:</strong> <span id="selected-tema"></span></p>
+                        <p><strong>Tanggal:</strong> <span id="selected-tanggal"></span></p>
+                        <p><strong>Jam:</strong> <span id="selected-jam"></span></p>
+                        <p><strong>Pembicara:</strong> <span id="selected-pembicara"></span></p>
+                        <p><strong>Pelayanan:</strong></p>
+                        <ul id="selected-pelayanan"></ul>
+                    </div>
+                </section>
             </main>
         </section>
     </div>
+
     <script>
         $(document).ready(function() {
             console.log("Document is ready!");
@@ -725,6 +742,48 @@
             });
         }
 
+        document.addEventListener('DOMContentLoaded', function() {
+            const btnOk = document.querySelector('.btn-ok');
+            const selectedDataCard = document.getElementById('selected-data-card');
+
+            btnOk.addEventListener('click', function() {
+                // Ambil nilai dari inputan
+                const kebaktian = document.getElementById('kebaktian').value;
+                const tempat = document.getElementById('tempat').options[document.getElementById('tempat').selectedIndex].text;
+                const tema = document.getElementById('tema').value;
+                const tanggal = new Date(document.getElementById('tanggal').value).toLocaleDateString('en-US', { year: 'numeric', month: '2-digit', day: '2-digit' });
+                const jam = document.getElementById('jam').value;
+                const pembicara = document.getElementById('pembicara').options[document.getElementById('pembicara').selectedIndex].text;
+
+                // Ambil pelayanan yang dipilih
+                const pelayananItems = document.querySelectorAll('.btn-generate');
+                const selectedPelayanan = [];
+                pelayananItems.forEach(item => {
+                    if (item.classList.contains('active')) {
+                        selectedPelayanan.push(item.parentElement.previousElementSibling.textContent.trim());
+                    }
+                });
+
+                // Tampilkan nilai-nilai yang sudah dipilih di card
+                document.getElementById('selected-kebaktian').textContent = kebaktian;
+                document.getElementById('selected-tempat').textContent = tempat;
+                document.getElementById('selected-tema').textContent = tema;
+                document.getElementById('selected-tanggal').textContent = tanggal;
+                document.getElementById('selected-jam').textContent = jam;
+                document.getElementById('selected-pembicara').textContent = pembicara;
+
+                const selectedPelayananList = document.getElementById('selected-pelayanan');
+                selectedPelayananList.innerHTML = '';
+                selectedPelayanan.forEach(pelayanan => {
+                    const li = document.createElement('li');
+                    li.textContent = pelayanan;
+                    selectedPelayananList.appendChild(li);
+                });
+
+                // Tampilkan card data terpilih
+                selectedDataCard.style.display = 'block';
+            });
+        });
 
     </script>
 
