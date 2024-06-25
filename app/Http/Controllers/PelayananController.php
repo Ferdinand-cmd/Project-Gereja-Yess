@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\PelayananEvent;
+use App\Models\PelayanApproved;
 use Illuminate\Support\Facades\Log;
 
 class PelayananController extends Controller
@@ -32,4 +33,15 @@ class PelayananController extends Controller
             return redirect()->back()->with('error', 'Registration failed!');
         }
     }    
+    public function fetchData(Request $request)
+    {
+        try {
+            $role = $request->input('role'); // Ambil role dari request
+            $data = PelayanApproved::where('role', $role)->get();
+            return response()->json($data);
+        } catch (\Exception $e) {
+            Log::error('Error fetching data: ' . $e->getMessage());
+            return response()->json(['error' => 'Failed to fetch data'], 500);
+        }
+    }
 }

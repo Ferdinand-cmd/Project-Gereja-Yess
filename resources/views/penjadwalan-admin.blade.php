@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit:wght@600;700&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans+Hebrew:wght@300&display=swap">
     <link href="css/style.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <style>
         .container {
             display: flex;
@@ -123,6 +125,29 @@
         /* Hover effect for ok button */
         .modal .btn-save:hover,
         .btn-ok:hover {
+            background-color: #333333;
+            /* Darker gray background on hover */
+        }
+
+        /* CSS for save & ok button */
+        .modal .btn-save,
+        .btn-generate {
+            background-color: #000000;
+            /* Black background */
+            color: #ffffff;
+            /* White text color */
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1.11em;
+            font-weight: bold;
+            /* Bold weight */
+            width: 150px;
+            /* Set width to 150px */
+            border-color: #000;
+        }
+
+        /* Hover effect for ok button */
+        .modal .btn-save:hover,
+        .btn-generate:hover {
             background-color: #333333;
             /* Darker gray background on hover */
         }
@@ -324,14 +349,15 @@
                                     <tr>
                                         <td class="text-center align-middle">Pemain Musik - Gitar</td>
                                         <td class="text-center align-middle">
-                                            <button type="button" class="btn btn-primary btn-ok">Generate</button>
+                                            <button type="button" class="btn btn-primary btn-generate" data-role="gitar">Generate</button>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td class="text-center align-middle">Pemain Musik - Bass</td>
                                         <td class="text-center align-middle">
-                                            <button type="button" class="btn btn-primary btn-ok">Generate</button>
-                                        </td>                                    </tr>
+                                            <button type="button" class="btn btn-primary btn-generate" data-role="bass">Generate</button>
+                                        </td>
+                                    </tr>
                                     <tr>
                                         <td class="text-center align-middle">Pemain Musik - Piano</td>
                                         <td class="text-center align-middle">
@@ -470,6 +496,28 @@
 
                 // Panggil fungsi untuk menyimpan state
                 saveState();
+            });
+            $('.btn-generate').click(function() {
+                let role = $(this).data('role'); // Ambil role dari tombol yang diklik
+
+                $.ajax({
+                    type: 'GET',
+                    url: '/fetch-data',
+                    data: { role: role }, // Kirim parameter role ke server
+                    success: function(response) {
+                        if (response.length > 0) {
+                            let randomIndex = Math.floor(Math.random() * response.length);
+                            let selectedOrang = response[randomIndex];
+                            let nama = selectedOrang.name;
+                            $(this).parent().empty().text(nama);
+                        } else {
+                            alert('Tidak ada data dengan role ' + role + '.');
+                        }
+                    }.bind(this),
+                    error: function() {
+                        alert('Gagal mengambil data.');
+                    }
+                });
             });
         });
 
